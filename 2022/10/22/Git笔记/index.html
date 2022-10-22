@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="pumpkin, Wxy&#39;s blogs">
-    <meta name="description" content="可爱的胖宝贝不会的题">
+    <meta name="keywords" content="Git笔记, Wxy&#39;s blogs">
+    <meta name="description" content="Git与Github操作">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>pumpkin | Wxy&#39;s blogs</title>
+    <title>Git笔记 | Wxy&#39;s blogs</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -334,12 +334,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://tc.phpx.cn/uploads/2022/10/21/xGti1PYFAa.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">pumpkin</h1>
+                    <h1 class="description center-align post-title">Git笔记</h1>
                 </div>
             </div>
         </div>
@@ -363,23 +363,18 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%94%9F%E6%B4%BB/">
-                                <span class="chip bg-color">生活</span>
+                            <a href="/tags/Github/">
+                                <span class="chip bg-color">Github</span>
+                            </a>
+                        
+                            <a href="/tags/Git/">
+                                <span class="chip bg-color">Git</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E8%83%96%E5%AE%9D%E8%B4%9D/" class="post-category">
-                                胖宝贝
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -388,7 +383,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-10-21
+                    2022-10-22
                 </div>
                 
 
@@ -412,19 +407,114 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h1><img src="/images/pumpkin/image-20221021181846748.png" alt="image-20221021181846748" style="zoom:50%;" />
+                <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="GitHub加速"><a href="#GitHub加速" class="headerlink" title="GitHub加速"></a>GitHub加速</h2><p>方法一：修改hosts文件，hosts文件地址  <code>C:\Windows\System32\drivers\etc</code></p>
+<p>方法二：使用FastGithub加速器  <a target="_blank" rel="noopener" href="https://github.com/wxydaydayup/goodSoftware">FastGithub加速器</a></p>
+<h2 id="Git操作"><a href="#Git操作" class="headerlink" title="Git操作"></a>Git操作</h2><h3 id="Git上传到GitHub"><a href="#Git上传到GitHub" class="headerlink" title="Git上传到GitHub"></a>Git上传到GitHub</h3><h4 id="第一种方法"><a href="#第一种方法" class="headerlink" title="第一种方法"></a>第一种方法</h4><p>第一步：</p>
+<p>​	查看SSH key 秘钥位置  <code>c:/Users/LENOVO/.ssh/id_rsa </code>  并且在Github中创建SSH key</p>
+<p>第二步：</p>
+<p>​	在要上传的文件夹里右键打开<code>Git Bash Here</code></p>
+<p>第三步：</p>
+<p>​	把Github上面的仓库克隆到本地</p>
+<p>​		<code>git clone https://github.com/wxydaydayup/Study_Notes.git</code></p>
+<p>​	这个步骤以后本地项目文件夹下面就会多出个文件夹，该文件夹名即为Github上面的项目名，多出了个Study_Notes文件夹，把本地项目文件夹下的所有文件（除了新多出的那个文件夹不用），其余都复制到那个新多出的文件夹下</p>
+<p>​	继续输入命令 <code>cd Study_Notes</code>，进入Study_Notes文件夹接下来依次执行 </p>
+<ol>
+<li><code>git add *</code>    （注：别忘记后面的.，此操作是把Test文件夹下面的文件都添加进来）</li>
+<li><code>git commit  -m  &quot;提交信息&quot;</code>  （注：“提交信息”里面换成你需要，如“first commit”）</li>
+<li><code>git push -u origin main</code>   （注：此操作目的是把本地仓库push到Github上，此步骤需要你输入帐号和密码）</li>
+</ol>
+<h4 id="第二种方法"><a href="#第二种方法" class="headerlink" title="第二种方法"></a>第二种方法</h4><p>从第一种方法 的第三步开始输入</p>
+<ol>
+<li><p><code>git init</code></p>
+</li>
+<li><p><code>git add *</code></p>
+</li>
+<li><p><code>git commit -m 1.zip</code></p>
+<p>不加 -m 退出 ESC :wq </p>
+</li>
+<li><p><code>git remote add origin github.com/wxydaydayup/Study_Notes.git</code>（此时记得在github上创建一个仓库，并把仓库的ssh地址赋值下来，关联远程仓库）</p>
+</li>
+<li><p><code>git push -u origin master</code>  (这时github上就会多出文件，空加-u，不空不用,<code>git push -f origin master</code> 在这里，如果报错，就强制性上传代码)</p>
+</li>
+</ol>
+<h3 id="Git大文件上传"><a href="#Git大文件上传" class="headerlink" title="Git大文件上传"></a>Git大文件上传</h3><h4 id="Git-lfs"><a href="#Git-lfs" class="headerlink" title="Git lfs"></a>Git lfs</h4><h4 id="彻底删除lfs"><a href="#彻底删除lfs" class="headerlink" title="彻底删除lfs"></a>彻底删除lfs</h4><p><code>git lfs uninstall</code></p>
+<p><code>git filter-branch --force --index-filter</code></p>
+<h3 id="Git-分支"><a href="#Git-分支" class="headerlink" title="Git 分支"></a>Git 分支</h3><ol>
+<li>切换分支 <code>git checkout 分支名</code></li>
+<li>创建并切换 <code>git checkout -b 分支名</code></li>
+<li>合并分支  <code>git merge 分支名</code></li>
+<li>删除分支时，需要做各种检查  <code>git branch -d 分支名</code></li>
+<li>不做任何检查，强制删除分支 <code>git branch -D 分支名</code>（适用于dev分支没merge到主分支上）</li>
+</ol>
+<h3 id="Git常用命令"><a href="#Git常用命令" class="headerlink" title="Git常用命令"></a>Git常用命令</h3><ol>
+<li>查看仓库状态 :  <code>git status</code></li>
+<li>仓库初始化：<code>git init</code></li>
+<li>添加文件到Git仓库：<code>git add demo.txt</code></li>
+<li>提交文件到Git仓库：<code>git commit -m &quot;1&quot;</code></li>
+<li>版本回退 <code>git reset --hard XXXX</code></li>
+<li>查看版本信息 <code>git reflog</code></li>
+<li>以精简的方式显示提交记录 <code>git-log</code></li>
+</ol>
+<h3 id="Git错误"><a href="#Git错误" class="headerlink" title="Git错误"></a>Git错误</h3><h4 id="错误1："><a href="#错误1：" class="headerlink" title="错误1："></a>错误1：</h4><p>​	<code>git SSl certificate problem: unable to get local issuer certificate</code></p>
+<p>​	这个问题是由于没有配置信任的服务器HTTPS验证。默认，<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=cURL&spm=1001.2101.3001.7020">cURL</a>被设为不信任任何CAs，就是说，它不信任任何服务器验证。只需要执行下面命令就可以解决：</p>
+<p>​	<code>git config --global http.sslVerify false</code></p>
+<h4 id="错误2："><a href="#错误2：" class="headerlink" title="错误2："></a>错误2：</h4><p>​	<code>error: RPC failed; curl 18 transfer closed with outstanding read data remaining</code></p>
+<p>​	<code>send-pack: unexpected disconnect while reading sideband packet</code></p>
+<p>​	<code>fatal: the remote end hung up unexpectedly</code></p>
+<p>解决方法：</p>
+<ol>
+<li><p>缓存过小导致，可以尝试增大缓存 单位为byte, 524288000就是500M</p>
+<p>​	<code>git config --global http.postBuffer 524288000</code>  </p>
+<p>百度查到说是的postBuffer默认值太小的原因，我看有人说调整到500M就行，但我试了不可以，所以就调整到了2G，有人成功了，是根据以下命令调整的</p>
+<p>​	<code>git config --global http.postBuffer 2024288000</code></p>
+</li>
+<li><p>网络波动导致，可以尝试取消相关的网络限制</p>
+<p>​	<code>git config --global http.lowSpeedLimit 0</code></p>
+<p>​	<code>git config --global http.lowSpeedTime 999999</code></p>
+</li>
+<li><p>若传输文件实在太大，可以尝试增大压缩率(压缩率大小根据实际情况设置),compression 是压缩的意思，从 clone 的终端输出就知道，服务器会压缩目标文件，然后传输到客户端，客户端再解压。取值为 [-1, 9]，-1 以 zlib 为默认压缩库，0 表示不进行压缩，1…9 是压缩速度与最终获得文件大小的不同程度的权衡，数字越大，压缩越慢，当然得到的文件会越小</p>
+<p>​	<code>git config --global core.compression 3</code></p>
+</li>
+<li><p>推送的文件大小太大了，超过了HTTP的限制，更换远程地址，改用git 协议来推送代码，这个最终成功了</p>
+<p>​	<code>git remote set-url origin git@github.com:wxydaydayup/BookPdf.git</code></p>
+<p>​	<code>git push -u origin master</code></p>
+</li>
+</ol>
+<h2 id="Idea连接Github-x2F-Gitee"><a href="#Idea连接Github-x2F-Gitee" class="headerlink" title="Idea连接Github&#x2F;Gitee"></a>Idea连接Github&#x2F;Gitee</h2><ol>
+<li><p>创建Tooken  <a target="_blank" rel="noopener" href="https://github.com/settings/tokens/new">https://github.com/settings/tokens/new</a> 权限全部点上</p>
+<p><code>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</code></p>
+</li>
+<li><p>VCS –&gt; Import into version Control –&gt; Create Git Repository </p>
+</li>
+<li><p>VCS –&gt; clone</p>
+</li>
+<li><p>设置SDK 与 配置maven</p>
+<img src="/images/Git%E7%AC%94%E8%AE%B0/image-20221013151533015.png" alt="image-20221013151533015" style="zoom: 67%;" />
 
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span>TreeNode<span class="token operator">*</span> root<span class="token punctuation">,</span><span class="token keyword">int</span> <span class="token operator">&amp;</span>ans<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    ans <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>ans<span class="token punctuation">,</span>root<span class="token operator">-></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>root<span class="token operator">-></span>left<span class="token punctuation">)</span> <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token operator">-></span>left<span class="token punctuation">,</span>ans<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>root<span class="token operator">-></span>right<span class="token punctuation">)</span>  <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token operator">-></span>right<span class="token punctuation">,</span>ans<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">int</span> <span class="token function">PostOrderTraverse</span><span class="token punctuation">(</span>TreeNode<span class="token operator">*</span> root<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">int</span> ans <span class="token operator">=</span> INT_MIN<span class="token punctuation">;</span> 
-    <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> ans<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>pom.xml 点击右键 -》Add as Maven Project</p>
+</li>
+<li><p>连接数据库</p>
+<p>若出现错误：</p>
+<p>​	<code>Server returns invalid timezone. Go to &#39;Advanced&#39; tab and set &#39;serverTimezone&#39; property manually.</code></p>
+<p>在Advanced设置一下时区即可</p>
+<img src="/images/Git%E7%AC%94%E8%AE%B0/image-20221013154539389.png" alt="image-20221013154539389" style="zoom:67%;" />
+</li>
+<li><p>IDEA集成GitBash作为Terminal（建议）</p>
+<img src="/images/Git%E7%AC%94%E8%AE%B0/image-20221014095006382.png" alt="image-20221014095006382" style="zoom: 67%;" />
 
+<p>7、看看效果</p>
+<img src="/images/Git%E7%AC%94%E8%AE%B0/image-20221014095334858.png" alt="image-20221014095334858" style="zoom: 50%;" /></li>
+</ol>
+<h2 id="Git合并拉取代码规范"><a href="#Git合并拉取代码规范" class="headerlink" title="Git合并拉取代码规范"></a>Git合并拉取代码规范</h2><ol>
+<li>先拉取自己开发分支远端代码（适用多人共用一个开发分支）</li>
+<li>测试完成后将自己开发代码提交到本地仓库，上传到自己的远端开发分支</li>
+<li>换到master分支，拉取master远端的最新代码</li>
+<li>确保本地master分支的代码为远端最新代码后，把开发分支合并到master分支</li>
+<li>本地master分支代码上传到远端master</li>
+</ol>
+<h2 id="Github搜索技巧"><a href="#Github搜索技巧" class="headerlink" title="Github搜索技巧"></a>Github搜索技巧</h2><p>计算机图形学 in:name stars:&gt;100 language:java</p>
+<p>计算机图形学 in:readme</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zzzzlei123123123/article/details/105174595">Github删除自己的仓库</a></p>
 
                 
             </div>
@@ -441,7 +531,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">王欣艺</a>
+                    <a href="/about" rel="external nofollow noreferrer">WangXinYi</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -451,7 +541,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://wxydaydayup.github.io/2022/10/21/pumpkin/">https://wxydaydayup.github.io/2022/10/21/pumpkin/</a>
+                    <a href="https://wxydaydayup.github.io/2022/10/22/Git%E7%AC%94%E8%AE%B0/">https://wxydaydayup.github.io/2022/10/22/Git%E7%AC%94%E8%AE%B0/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -464,7 +554,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">王欣艺</a>
+                    <a href="/about" target="_blank">WangXinYi</a>
                     !
                 </span>
             </div>
@@ -489,8 +579,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%94%9F%E6%B4%BB/">
-                                    <span class="chip bg-color">生活</span>
+                                <a href="/tags/Github/">
+                                    <span class="chip bg-color">Github</span>
+                                </a>
+                            
+                                <a href="/tags/Git/">
+                                    <span class="chip bg-color">Git</span>
                                 </a>
                             
                         </div>
@@ -569,9 +663,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/10/22/Git%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
@@ -589,9 +684,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -600,6 +695,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -619,7 +715,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2022/10/21/pumpkin/">
@@ -652,7 +748,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
