@@ -94,7 +94,7 @@ hr {
 }
 
 blockquote {
-    border-left: 5px solid #42b983;
+    border-left: 5px solid #00b5fb;
     padding: 1rem 0.8rem 0.2rem 0.8rem;
     color: #666;
     background-color: rgba(66, 185, 131, .1);
@@ -124,8 +124,8 @@ code {
     padding: 1px 5px;
     top: 13px !important;
     font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
-    font-size: 0.91rem;
-    color: #e96900;
+    font-size: 1.1rem;
+    color: #000;
     background-color: #f8f8f8;
     border-radius: 2px;
 }
@@ -877,7 +877,7 @@ article a {
 
 article a:hover {
     font-weight: bold;
-    color: #42b983;
+    color: #00b5fb;
     text-decoration: underline;
 }
 
@@ -1060,7 +1060,7 @@ article .article-tags .chip {
     border-radius: 15px;
     margin-right: 5px;
     margin-bottom: 2px;
-    color: #42b983;
+    color: #00b5fb;
     background: #fff;
     border: 1px solid;
     transition: all 0.6s ease-in-out;
@@ -1068,17 +1068,17 @@ article .article-tags .chip {
 
 #artDetail .tag_share .article-tag .chip:hover {
     color: #fff;
-    background: #42b983;
+    background: #00b5fb;
 }
 
 #artDetail .post-cate {
     float: right;
-    color: #42b983;
+    color: #00b5fb;
 }
 
 #artDetail .post-cate a {
     padding-right: 5px;
-    color: #42b983;
+    color: #00b5fb;
     font-weight: 500;
 }
 
@@ -1097,7 +1097,7 @@ article .article-tags .chip {
 
 #artDetail .post-info .post-category:hover {
     font-weight: bold;
-    color: #42b983;
+    color: #00b5fb;
     text-decoration: underline;
 }
 
@@ -1160,7 +1160,7 @@ article .article-tags .chip {
 
 #artDetail .reprint a {
     font-size: 1.05rem;
-    color: #42b983;
+    color: #000;
     font-weight: 500;
 }
 
@@ -1176,7 +1176,7 @@ article .article-tags .chip {
 
 #articleContent a {
     padding: 0 2px;
-    color: #42b983;
+    color: #00b5fb;
     font-weight: 500;
     text-decoration: underline;
     word-wrap: break-word;
