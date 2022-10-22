@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Git笔记</title>
+      <link href="/2022/10/22/Git%E7%AC%94%E8%AE%B0/"/>
+      <url>/2022/10/22/Git%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="GitHub加速"><a href="#GitHub加速" class="headerlink" title="GitHub加速"></a>GitHub加速</h2><p>方法一：修改hosts文件，hosts文件地址  <code>C:\Windows\System32\drivers\etc</code></p><p>方法二：使用FastGithub加速器  <a href="https://github.com/wxydaydayup/goodSoftware">FastGithub加速器</a></p><h2 id="Git操作"><a href="#Git操作" class="headerlink" title="Git操作"></a>Git操作</h2><h3 id="Git上传到GitHub"><a href="#Git上传到GitHub" class="headerlink" title="Git上传到GitHub"></a>Git上传到GitHub</h3><h4 id="第一种方法"><a href="#第一种方法" class="headerlink" title="第一种方法"></a>第一种方法</h4><p>第一步：</p><p>​查看SSH key 秘钥位置  <code>C:/Users/LENOVO/.ssh/id_rsa </code>  并且在Github中创建SSH key</p><p>第二步：</p><p>​在要上传的文件夹里右键打开<code>Git Bash Here</code></p><p>第三步：</p><p>​把Github上面的仓库克隆到本地</p><p>​<code>git clone https://github.com/wxydaydayup/Study_Notes.git</code></p><p>​这个步骤以后本地项目文件夹下面就会多出个文件夹，该文件夹名即为Github上面的项目名，多出了个Study_Notes文件夹，把本地项目文件夹下的所有文件（除了新多出的那个文件夹不用），其余都复制到那个新多出的文件夹下</p><p>​继续输入命令 <code>cd Study_Notes</code>，进入Study_Notes文件夹接下来依次执行 </p><ol><li><code>git add *</code>    （注：别忘记后面的.，此操作是把Test文件夹下面的文件都添加进来）</li><li><code>git commit  -m  &quot;提交信息&quot;</code>  （注：“提交信息”里面换成你需要，如“first commit”）</li><li><code>git push -u origin main</code>   （注：此操作目的是把本地仓库push到Github上，此步骤需要你输入帐号和密码）</li></ol><h4 id="第二种方法"><a href="#第二种方法" class="headerlink" title="第二种方法"></a>第二种方法</h4><p>从第一种方法 的第三步开始输入</p><ol><li><p><code>git init</code></p></li><li><p><code>git add *</code></p></li><li><p><code>git commit -m 1.zip</code></p><p>不加 -m 退出 ESC :wq </p></li><li><p><code>git remote add origin github.com/wxydaydayup/Study_Notes.git</code>（此时记得在github上创建一个仓库，并把仓库的ssh地址赋值下来，关联远程仓库）</p></li><li><p><code>git push -u origin master</code>  (这时github上就会多出文件，空加-u，不空不用,<code>git push -f origin master</code> 在这里，如果报错，就强制性上传代码)</p></li></ol><h3 id="Git大文件上传"><a href="#Git大文件上传" class="headerlink" title="Git大文件上传"></a>Git大文件上传</h3><h4 id="Git-lfs"><a href="#Git-lfs" class="headerlink" title="Git lfs"></a>Git lfs</h4><h4 id="彻底删除lfs"><a href="#彻底删除lfs" class="headerlink" title="彻底删除lfs"></a>彻底删除lfs</h4><p><code>git lfs uninstall</code></p><p><code>git filter-branch --force --index-filter</code></p><h3 id="Git-分支"><a href="#Git-分支" class="headerlink" title="Git 分支"></a>Git 分支</h3><ol><li>切换分支 <code>git checkout 分支名</code></li><li>创建并切换 <code>git checkout -b 分支名</code></li><li>合并分支  <code>git merge 分支名</code></li><li>删除分支时，需要做各种检查  <code>git branch -d 分支名</code></li><li>不做任何检查，强制删除分支 <code>git branch -D 分支名</code>（适用于dev分支没merge到主分支上）</li></ol><h3 id="Git常用命令"><a href="#Git常用命令" class="headerlink" title="Git常用命令"></a>Git常用命令</h3><ol><li>查看仓库状态 :  <code>git status</code></li><li>仓库初始化：<code>git init</code></li><li>添加文件到Git仓库：<code>git add demo.txt</code></li><li>提交文件到Git仓库：<code>git commit -m &quot;1&quot;</code></li><li>版本回退 <code>git reset --hard XXXX</code></li><li>查看版本信息 <code>git reflog</code></li><li>以精简的方式显示提交记录 <code>git-log</code></li></ol><h3 id="Git错误"><a href="#Git错误" class="headerlink" title="Git错误"></a>Git错误</h3><h4 id="错误1："><a href="#错误1：" class="headerlink" title="错误1："></a>错误1：</h4><p>​<code>error: git SSl certificate problem: unable to get local issuer certificate</code></p><p>​这个问题是由于没有配置信任的服务器HTTPS验证。默认，CURL被设为不信任任何CAS，就是说，它不信任任何服务器验证。只需要执行下面命令就可以解决：</p><p>​<code>git config --global http.sslVerify false</code></p><h4 id="错误2："><a href="#错误2：" class="headerlink" title="错误2："></a>错误2：</h4><p>​<code>error: RPC failed; curl 18 transfer closed with outstanding read data remaining</code></p><p>​<code>send-pack: unexpected disconnect while reading sideband packet</code></p><p>​<code>fatal: the remote end hung up unexpectedly</code></p><p>解决方法：</p><ol><li><p>缓存过小导致，可以尝试增大缓存 单位为byte, 524288000就是500M</p><p>​<code>git config --global http.postBuffer 524288000</code>  </p><p>百度查到说是的postBuffer默认值太小的原因，我看有人说调整到500M就行，但我试了不可以，所以就调整到了2G，有人成功了，是根据以下命令调整的</p><p>​<code>git config --global http.postBuffer 2024288000</code></p></li><li><p>网络波动导致，可以尝试取消相关的网络限制</p><p>​<code>git config --global http.lowSpeedLimit 0</code></p><p>​<code>git config --global http.lowSpeedTime 999999</code></p></li><li><p>若传输文件实在太大，可以尝试增大压缩率(压缩率大小根据实际情况设置),compression 是压缩的意思，从 clone 的终端输出就知道，服务器会压缩目标文件，然后传输到客户端，客户端再解压。取值为 [-1, 9]，-1 以 zlib 为默认压缩库，0 表示不进行压缩，1…9 是压缩速度与最终获得文件大小的不同程度的权衡，数字越大，压缩越慢，当然得到的文件会越小</p><p>​<code>git config --global core.compression 3</code></p></li><li><p>推送的文件大小太大了，超过了HTTP的限制，更换远程地址，改用git 协议来推送代码，这个最终成功了</p><p>​<code>git remote set-url origin git@github.com:wxydaydayup/BookPdf.git</code></p><p>​<code>git push -u origin master</code></p></li></ol><h2 id="Idea连接Github-x2F-Gitee"><a href="#Idea连接Github-x2F-Gitee" class="headerlink" title="Idea连接Github&#x2F;Gitee"></a>Idea连接Github&#x2F;Gitee</h2><ol><li><p>创建Tooken  <a href="https://github.com/settings/tokens/new">https://github.com/settings/tokens/new</a> 权限全部点上</p><p><code>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</code></p></li><li><p>VCS –&gt; Import into version Control –&gt; Create Git Repository </p></li><li><p>VCS –&gt; clone</p></li><li><p>设置SDK 与 配置maven</p><img src="/images/Git%E7%AC%94%E8%AE%B0/image-20221013151533015.png" alt="image-20221013151533015" style="zoom: 67%;" /><p>pom.xml 点击右键 -》Add as Maven Project</p></li><li><p>连接数据库</p><p>若出现错误：</p><p>​<code>Server returns invalid timezone. Go to &#39;Advanced&#39; tab and set &#39;serverTimezone&#39; property manually.</code></p><p>在Advanced设置一下时区即可</p><img src="/images/Git%E7%AC%94%E8%AE%B0/image-20221013154539389.png" alt="image-20221013154539389" style="zoom:67%;" /></li><li><p>IDEA集成GitBash作为Terminal（建议）</p><img src="/images/Git%E7%AC%94%E8%AE%B0/image-20221014095006382.png" alt="image-20221014095006382" style="zoom: 67%;" /><p>7、看看效果</p><img src="/images/Git%E7%AC%94%E8%AE%B0/image-20221014095334858.png" alt="image-20221014095334858" style="zoom: 50%;" /></li></ol><h2 id="Git合并拉取代码规范"><a href="#Git合并拉取代码规范" class="headerlink" title="Git合并拉取代码规范"></a>Git合并拉取代码规范</h2><ol><li>先拉取自己开发分支远端代码（适用多人共用一个开发分支）</li><li>测试完成后将自己开发代码提交到本地仓库，上传到自己的远端开发分支</li><li>换到master分支，拉取master远端的最新代码</li><li>确保本地master分支的代码为远端最新代码后，把开发分支合并到master分支</li><li>本地master分支代码上传到远端master</li></ol><h2 id="Github搜索技巧"><a href="#Github搜索技巧" class="headerlink" title="Github搜索技巧"></a>Github搜索技巧</h2><p>计算机图形学 in:name stars:&gt;100 language:java</p><p>计算机图形学 in:readme</p><p><a href="https://blog.csdn.net/zzzzlei123123123/article/details/105174595">Github删除自己的仓库</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Github </category>
+          
+          <category> Git </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Github </tag>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>pumpkin</title>
+      <link href="/2022/10/21/pumpkin/"/>
+      <url>/2022/10/21/pumpkin/</url>
+      
+        <content type="html"><![CDATA[<h2 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h2><p>将关键字序列（7、8、30、11、18、9、14）散列存储到散列表中。散列表的存储空间是一个下标从0开始的一维数组，散列函数为： H(key) &#x3D; (key * 3) MOD 7，处理冲突采用线性探测再散列法，要求装填（载）因子为0.7。</p><p>（1）请画出所构造的散列表。</p><p>（2）分别计算等概率情况下查找成功和查找不成功的平均查找长度。</p><p><strong>装载因子</strong>是指所有关键子填充哈希表后饱和的程度，它等于 <strong>填入表中的关键字总数&#x2F;哈希表的长度</strong>。根据题意，我们可以确定哈希表的长度为 L &#x3D; 7&#x2F;0.7 &#x3D; 10；因此此题需要构建的哈希表是<strong>下标为0~9</strong>的一维数组。查找不成功的次数就直接找关键字到下一个地址关键字为空的距离，但根据散列函数地址为<strong>MOD7</strong>，因此初始只可能在0~6的位置，</p><p>参考链接： <a href="https://blog.csdn.net/dyw_666666/article/details/110291968">哈希表查找</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生活 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 生活 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
