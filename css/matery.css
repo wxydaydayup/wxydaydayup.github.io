@@ -241,11 +241,13 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+    /*background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);*/
+	background-image: linear-gradient(to right, #6dd5ed 0%, #2193b0 100%);
 }
 
 .text-color {
-    color: #0f9d58 !important;
+	/*color: #0f9d58 !important;原系统配色*/
+	color: #6dd5ed !important;
 }
 
 .white-color {
@@ -592,7 +594,7 @@ header .go-back i {
     font-size: 2.5rem;
     font-weight: 400;
 }
-
+/*
 @-webkit-keyframes rainbow {
 
     0%,
@@ -683,7 +685,7 @@ header .go-back i {
         background: -moz-linear-gradient(135deg, rgba(233, 30, 99, 0.75) 0%, rgba(233, 30, 99, 0.65) 100%);
         background: -webkit-linear-gradient(135deg, rgba(2233, 30, 99, 0.75) 0%, rgba(233, 30, 99, 0.65) 100%);
     }
-}
+}*/
 
 .index-card {
     margin-top: -10px;
