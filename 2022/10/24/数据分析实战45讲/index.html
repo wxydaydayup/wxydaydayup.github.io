@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Git笔记, Wxy&#39;s blogs">
-    <meta name="description" content="Git与Github操作">
+    <meta name="keywords" content="数据分析实战45讲, Wxy&#39;s blogs">
+    <meta name="description" content="陈旸 数据分析实战45讲与Kaggle比赛">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Git笔记 | Wxy&#39;s blogs</title>
+    <title>数据分析实战45讲 | Wxy&#39;s blogs</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <style>
@@ -343,12 +343,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://tc.phpx.cn/uploads/2022/10/22/fiGzbH2UDw.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://tc.phpx.cn/uploads/2022/10/22/XNIor9G5Mf.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Git笔记</h1>
+                    <h1 class="description center-align post-title">数据分析实战45讲</h1>
                 </div>
             </div>
         </div>
@@ -372,12 +372,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Github/">
-                                <span class="chip bg-color">Github</span>
+                            <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">机器学习</span>
                             </a>
                         
-                            <a href="/tags/Git/">
-                                <span class="chip bg-color">Git</span>
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
+                                <span class="chip bg-color">数据分析</span>
+                            </a>
+                        
+                            <a href="/tags/Kaggle/">
+                                <span class="chip bg-color">Kaggle</span>
                             </a>
                         
                     </div>
@@ -388,12 +392,16 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Github/" class="post-category">
-                                Github
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                机器学习
                             </a>
                         
-                            <a href="/categories/Github/Git/" class="post-category">
-                                Git
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" class="post-category">
+                                数据分析
+                            </a>
+                        
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/Kaggle/" class="post-category">
+                                Kaggle
                             </a>
                         
                     </div>
@@ -405,7 +413,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-10-22
+                    2022-10-24
                 </div>
                 
 
@@ -414,14 +422,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    2.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    9 分
                 </div>
                 
 
@@ -444,114 +452,130 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="GitHub加速"><a href="#GitHub加速" class="headerlink" title="GitHub加速"></a>GitHub加速</h2><p>方法一：修改hosts文件，hosts文件地址  <code>C:\Windows\System32\drivers\etc</code></p>
-<p>方法二：使用FastGithub加速器  <a target="_blank" rel="noopener" href="https://github.com/wxydaydayup/goodSoftware">FastGithub加速器</a></p>
-<h2 id="Git操作"><a href="#Git操作" class="headerlink" title="Git操作"></a>Git操作</h2><h3 id="Git上传到GitHub"><a href="#Git上传到GitHub" class="headerlink" title="Git上传到GitHub"></a>Git上传到GitHub</h3><h4 id="第一种方法"><a href="#第一种方法" class="headerlink" title="第一种方法"></a>第一种方法</h4><p>第一步：</p>
-<p>​	查看SSH key 秘钥位置  <code>C:/Users/LENOVO/.ssh/id_rsa </code>  并且在Github中创建SSH key</p>
-<p>第二步：</p>
-<p>​	在要上传的文件夹里右键打开<code>Git Bash Here</code></p>
-<p>第三步：</p>
-<p>​	把Github上面的仓库克隆到本地</p>
-<p>​		<code>git clone https://github.com/wxydaydayup/Study_Notes.git</code></p>
-<p>​	这个步骤以后本地项目文件夹下面就会多出个文件夹，该文件夹名即为Github上面的项目名，多出了个Study_Notes文件夹，把本地项目文件夹下的所有文件（除了新多出的那个文件夹不用），其余都复制到那个新多出的文件夹下</p>
-<p>​	继续输入命令 <code>cd Study_Notes</code>，进入Study_Notes文件夹接下来依次执行 </p>
+                <h1 id="数据分析实战45讲"><a href="#数据分析实战45讲" class="headerlink" title="数据分析实战45讲"></a>数据分析实战45讲</h1><h2 id="数据全景图"><a href="#数据全景图" class="headerlink" title="数据全景图"></a>数据全景图</h2><h3 id="一、数据采集"><a href="#一、数据采集" class="headerlink" title="一、数据采集"></a>一、数据采集</h3><p>​	数据源 ：开源数据源、爬虫抓取、日志采集、传感器</p>
+<p>​	工具使用：八爪鱼、火车采集器、搜集客</p>
+<p>​	利器：Python 爬虫</p>
+<h3 id="二、数据挖掘"><a href="#二、数据挖掘" class="headerlink" title="二、数据挖掘"></a>二、数据挖掘</h3><p>​	找到其中的规律，来指导公司业务，数据挖掘的核心是挖掘数据的商业价值</p>
 <ol>
-<li><code>git add *</code>    （注：别忘记后面的.，此操作是把Test文件夹下面的文件都添加进来）</li>
-<li><code>git commit  -m  &quot;提交信息&quot;</code>  （注：“提交信息”里面换成你需要，如“first commit”）</li>
-<li><code>git push -u origin main</code>   （注：此操作目的是把本地仓库push到Github上，此步骤需要你输入帐号和密码）</li>
+<li>商业理解：数据挖掘不是我们的目的，我们的目的是更好地帮助业务，所以第一步我们要从商业的角度理解项目需求，在这个基础上，再对数据挖掘的目标进行定义。 </li>
+<li>数据理解：尝试收集部分数据，然后对数据进行探索，包括数据描述、数据质量验证等，这有助于你对收集的数据有个初步的认知。 </li>
+<li>数据准备：开始收集数据，并对数据进行清洗、数据集成等操作，完成数据挖掘前的准备工作。 </li>
+<li>模型建立：选择和应用各种数据挖掘模型，并进行优化，以便得到更好的分类结果。 </li>
+<li>模型评估：对模型进行评价，并检查构建模型的每个步骤，确认模型是否实现了预定的 商业目标。 </li>
+<li>上线发布：模型的作用是从数据中找到金矿，也就是我们所说的“知识”，获得的知识需要转化成用户可以使用的方式，数据挖掘结果如果是日常运营的一部分，那么后续的监控和维护就会变得重要。</li>
 </ol>
-<h4 id="第二种方法"><a href="#第二种方法" class="headerlink" title="第二种方法"></a>第二种方法</h4><p>从第一种方法 的第三步开始输入</p>
+<h3 id="三、数据可视化"><a href="#三、数据可视化" class="headerlink" title="三、数据可视化"></a>三、数据可视化</h3><p>​	第一种：使用 Python，在 Python 对数据进行清洗、挖掘的过程中，我们可以使用 Matplotlib、Seaborn 等第三方库进行呈现。 </p>
+<p>​	第二种：使用第三方工具。如果你已经生成了 csv 格式文件，可以采用微图、DataV、Data GIF Maker 等第三方工具。</p>
+<h2 id="NumPy快速处理数据"><a href="#NumPy快速处理数据" class="headerlink" title="NumPy快速处理数据"></a>NumPy快速处理数据</h2><p>​		标准的 Python 中，用列表list 保存数组的数值。由于列表中的元素可以是任意 的对象，所以列表中 list 保存的是对象的指针。虽然在 Python 编程中隐去了指针的概 念，但是数组有指针，Python 的列表 list 其实就是数组。这样如果我要保存一个简单的数组 [0,1,2]，就需要有 3 个指针和 3 个整数的对象，这样对于 Python 来说是非常不经济 的，浪费了内存和计算时间。</p>
+<p>​	为什么使用 NumPy 让你的 Python 科学计算更高效</p>
 <ol>
-<li><p><code>git init</code></p>
-</li>
-<li><p><code>git add *</code></p>
-</li>
-<li><p><code>git commit -m 1.zip</code></p>
-<p>不加 -m 退出 ESC :wq </p>
-</li>
-<li><p><code>git remote add origin github.com/wxydaydayup/Study_Notes.git</code>（此时记得在github上创建一个仓库，并把仓库的ssh地址赋值下来，关联远程仓库）</p>
-</li>
-<li><p><code>git push -u origin master</code>  (这时github上就会多出文件，空加-u，不空不用,<code>git push -f origin master</code> 在这里，如果报错，就强制性上传代码)</p>
-</li>
+<li>列表 list 的元素 在系统内存中是分散存储的，而 NumPy 数组存储在一个均匀连续的内存块中。这样数组计算遍历所有的元素，不像列表 list 还需要对内存地址进行查找，从而节省了计算资源。</li>
+<li>在内存访问模式中，缓存会直接把字节块从 RAM 加载到 CPU 寄存器中。因为数据连 续的存储在内存中，NumPy 直接利用现代 CPU 的矢量化指令计算，加载寄存器中的多个 连续浮点数。</li>
+<li>另外 NumPy 中的矩阵计算可以采用多线程的方式，充分利用多核 CPU 计 算资源，大大提升了计算效率</li>
 </ol>
-<h3 id="Git大文件上传"><a href="#Git大文件上传" class="headerlink" title="Git大文件上传"></a>Git大文件上传</h3><h4 id="Git-lfs"><a href="#Git-lfs" class="headerlink" title="Git lfs"></a>Git lfs</h4><h4 id="彻底删除lfs"><a href="#彻底删除lfs" class="headerlink" title="彻底删除lfs"></a>彻底删除lfs</h4><p><code>git lfs uninstall</code></p>
-<p><code>git filter-branch --force --index-filter</code></p>
-<h3 id="Git-分支"><a href="#Git-分支" class="headerlink" title="Git 分支"></a>Git 分支</h3><ol>
-<li>切换分支 <code>git checkout 分支名</code></li>
-<li>创建并切换 <code>git checkout -b 分支名</code></li>
-<li>合并分支  <code>git merge 分支名</code></li>
-<li>删除分支时，需要做各种检查  <code>git branch -d 分支名</code></li>
-<li>不做任何检查，强制删除分支 <code>git branch -D 分支名</code>（适用于dev分支没merge到主分支上）</li>
-</ol>
-<h3 id="Git常用命令"><a href="#Git常用命令" class="headerlink" title="Git常用命令"></a>Git常用命令</h3><ol>
-<li>查看仓库状态 :  <code>git status</code></li>
-<li>仓库初始化：<code>git init</code></li>
-<li>添加文件到Git仓库：<code>git add demo.txt</code></li>
-<li>提交文件到Git仓库：<code>git commit -m &quot;1&quot;</code></li>
-<li>版本回退 <code>git reset --hard XXXX</code></li>
-<li>查看版本信息 <code>git reflog</code></li>
-<li>以精简的方式显示提交记录 <code>git-log</code></li>
-</ol>
-<h3 id="Git错误"><a href="#Git错误" class="headerlink" title="Git错误"></a>Git错误</h3><h4 id="错误1："><a href="#错误1：" class="headerlink" title="错误1："></a>错误1：</h4><p>​	<code>error: git SSl certificate problem: unable to get local issuer certificate</code></p>
-<p>​	这个问题是由于没有配置信任的服务器HTTPS验证。默认，CURL被设为不信任任何CAS，就是说，它不信任任何服务器验证。只需要执行下面命令就可以解决：</p>
-<p>​	<code>git config --global http.sslVerify false</code></p>
-<h4 id="错误2："><a href="#错误2：" class="headerlink" title="错误2："></a>错误2：</h4><p>​	<code>error: RPC failed; curl 18 transfer closed with outstanding read data remaining</code></p>
-<p>​	<code>send-pack: unexpected disconnect while reading sideband packet</code></p>
-<p>​	<code>fatal: the remote end hung up unexpectedly</code></p>
-<p>解决方法：</p>
-<ol>
-<li><p>缓存过小导致，可以尝试增大缓存 单位为byte, 524288000就是500M</p>
-<p>​	<code>git config --global http.postBuffer 524288000</code>  </p>
-<p>百度查到说是的postBuffer默认值太小的原因，我看有人说调整到500M就行，但我试了不可以，所以就调整到了2G，有人成功了，是根据以下命令调整的</p>
-<p>​	<code>git config --global http.postBuffer 2024288000</code></p>
-</li>
-<li><p>网络波动导致，可以尝试取消相关的网络限制</p>
-<p>​	<code>git config --global http.lowSpeedLimit 0</code></p>
-<p>​	<code>git config --global http.lowSpeedTime 999999</code></p>
-</li>
-<li><p>若传输文件实在太大，可以尝试增大压缩率(压缩率大小根据实际情况设置),compression 是压缩的意思，从 clone 的终端输出就知道，服务器会压缩目标文件，然后传输到客户端，客户端再解压。取值为 [-1, 9]，-1 以 zlib 为默认压缩库，0 表示不进行压缩，1…9 是压缩速度与最终获得文件大小的不同程度的权衡，数字越大，压缩越慢，当然得到的文件会越小</p>
-<p>​	<code>git config --global core.compression 3</code></p>
-</li>
-<li><p>推送的文件大小太大了，超过了HTTP的限制，更换远程地址，改用git 协议来推送代码，这个最终成功了</p>
-<p>​	<code>git remote set-url origin git@github.com:wxydaydayup/BookPdf.git</code></p>
-<p>​	<code>git push -u origin master</code></p>
-</li>
-</ol>
-<h2 id="Idea连接Github-x2F-Gitee"><a href="#Idea连接Github-x2F-Gitee" class="headerlink" title="Idea连接Github&#x2F;Gitee"></a>Idea连接Github&#x2F;Gitee</h2><ol>
-<li><p>创建Tooken  <a target="_blank" rel="noopener" href="https://github.com/settings/tokens/new">https://github.com/settings/tokens/new</a> 权限全部点上</p>
-</li>
-<li><p>VCS –&gt; Import into version Control –&gt; Create Git Repository </p>
-</li>
-<li><p>VCS –&gt; clone</p>
-</li>
-<li><p>设置SDK 与 配置maven</p>
-<img src="/images/Git%E7%AC%94%E8%AE%B0/image-20221013151533015.png" alt="image-20221013151533015" style="zoom: 67%;" />
+<p>在 NumPy 里有两个重要的对象： ndarray解决了多维数组问题，而 ufunc则是解决对数组进行处理的函数。</p>
+<h3 id="Ndarray"><a href="#Ndarray" class="headerlink" title="Ndarray"></a>Ndarray</h3><p>​	Ndarray全称为N-dimensional array object, 实际上是多维数组的含义。在 NumPy 数组中，维数称为秩（rank），一维数组 的秩为 1，二维数组的秩为 2，以此类推。在 NumPy 中，每一个线性的数组称为一个轴 （axes），其实秩就是描述轴的数量。</p>
+<p>​	可以通过函数 shape 属性获得数组的大小，通过 dtype 获得元素的属性，</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+a <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+b<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">10</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>dtype<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>pom.xml 点击右键 -》Add as Maven Project</p>
-</li>
-<li><p>连接数据库</p>
-<p>若出现错误：</p>
-<p>​	<code>Server returns invalid timezone. Go to &#39;Advanced&#39; tab and set &#39;serverTimezone&#39; property manually.</code></p>
-<p>在Advanced设置一下时区即可</p>
-<img src="/images/Git%E7%AC%94%E8%AE%B0/image-20221013154539389.png" alt="image-20221013154539389" style="zoom:67%;" />
-</li>
-<li><p>IDEA集成GitBash作为Terminal（建议）</p>
-<img src="/images/Git%E7%AC%94%E8%AE%B0/image-20221014095006382.png" alt="image-20221014095006382" style="zoom: 67%;" />
+<p>运行结果：</p>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">(3,)
+(3, 3)
+int32
+[[ 1  2  3]
+ [ 4 10  6]
+ [ 7  8  9]]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>7、看看效果</p>
-<img src="/images/Git%E7%AC%94%E8%AE%B0/image-20221014095334858.png" alt="image-20221014095334858" style="zoom: 50%;" /></li>
-</ol>
-<h2 id="Git合并拉取代码规范"><a href="#Git合并拉取代码规范" class="headerlink" title="Git合并拉取代码规范"></a>Git合并拉取代码规范</h2><ol>
-<li>先拉取自己开发分支远端代码（适用多人共用一个开发分支）</li>
-<li>测试完成后将自己开发代码提交到本地仓库，上传到自己的远端开发分支</li>
-<li>换到master分支，拉取master远端的最新代码</li>
-<li>确保本地master分支的代码为远端最新代码后，把开发分支合并到master分支</li>
-<li>本地master分支代码上传到远端master</li>
-</ol>
-<h2 id="Github搜索技巧"><a href="#Github搜索技巧" class="headerlink" title="Github搜索技巧"></a>Github搜索技巧</h2><p>计算机图形学 in:name stars:&gt;100 language:java</p>
-<p>计算机图形学 in:readme</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zzzzlei123123123/article/details/105174595">Github删除自己的仓库</a></p>
+<p>​	如果你想统计一个班级里面学生的姓名、年龄，以及语文、英语、数学成绩该怎么办？当 然你可以用数组的下标来代表不同的字段，比如下标为 0 的是姓名、小标为 1 的是年龄 等，但是这样不显性。</p>
+<p>Numpy中结构数组示例：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">persontype <span class="token operator">=</span> np<span class="token punctuation">.</span>dtype<span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">'names'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">,</span> <span class="token string">'chinese'</span><span class="token punctuation">,</span> <span class="token string">'math'</span><span class="token punctuation">,</span> <span class="token string">'english'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+					   <span class="token string">'formats'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'S32'</span><span class="token punctuation">,</span><span class="token string">'i'</span><span class="token punctuation">,</span> <span class="token string">'i'</span><span class="token punctuation">,</span> <span class="token string">'i'</span><span class="token punctuation">,</span> <span class="token string">'f'</span><span class="token punctuation">]</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+peoples <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">"ZhangFei"</span><span class="token punctuation">,</span><span class="token number">32</span><span class="token punctuation">,</span><span class="token number">75</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token string">"GuanYu"</span><span class="token punctuation">,</span><span class="token number">24</span><span class="token punctuation">,</span><span class="token number">85</span><span class="token punctuation">,</span><span class="token number">96</span><span class="token punctuation">,</span><span class="token number">88.5</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                   <span class="token punctuation">(</span><span class="token string">"ZhaoYun"</span><span class="token punctuation">,</span><span class="token number">28</span><span class="token punctuation">,</span><span class="token number">85</span><span class="token punctuation">,</span><span class="token number">92</span><span class="token punctuation">,</span><span class="token number">96.5</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token string">"HuangZhong"</span><span class="token punctuation">,</span><span class="token number">29</span><span class="token punctuation">,</span><span class="token number">65</span><span class="token punctuation">,</span><span class="token number">85</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>dtype<span class="token operator">=</span>persontype<span class="token punctuation">)</span>
+ages <span class="token operator">=</span> peoples<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'age'</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ages<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>mean<span class="token punctuation">(</span>ages<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<p>运行结果：</p>
+<pre class="line-numbers language-none"><code class="language-none">[32 24 28 29]
+28.25<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="Ufunc"><a href="#Ufunc" class="headerlink" title="Ufunc"></a>Ufunc</h3><h4 id="加、减、乘、除、指数、取余"><a href="#加、减、乘、除、指数、取余" class="headerlink" title="加、减、乘、除、指数、取余"></a>加、减、乘、除、指数、取余</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#arange 通过指定初始值、终值、步长来创建等差数列的一维数组，默认不包括终值</span>
+x1 <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">11</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token comment">#linspace 通过指定初始值、终值、元素个数来创建等差数列的一维数组，默认是包括终值的</span>
+x2 <span class="token operator">=</span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x1<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x2<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>add<span class="token punctuation">(</span>x1<span class="token punctuation">,</span> x2<span class="token punctuation">)</span><span class="token punctuation">)</span> 		<span class="token comment">#加</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>subtract<span class="token punctuation">(</span>x1<span class="token punctuation">,</span> x2<span class="token punctuation">)</span><span class="token punctuation">)</span> 	<span class="token comment">#减</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>multiply<span class="token punctuation">(</span>x1<span class="token punctuation">,</span> x2<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment">#乘</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>divide<span class="token punctuation">(</span>x1<span class="token punctuation">,</span> x2<span class="token punctuation">)</span><span class="token punctuation">)</span> 	<span class="token comment">#除</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>power<span class="token punctuation">(</span>x1<span class="token punctuation">,</span> x2<span class="token punctuation">)</span><span class="token punctuation">)</span> 	<span class="token comment">#指数</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>mod<span class="token punctuation">(</span>x1<span class="token punctuation">,</span> x2<span class="token punctuation">)</span><span class="token punctuation">)</span> 		<span class="token comment">#取余</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>运行结果</p>
+<pre class="line-numbers language-none"><code class="language-none">[1 3 5 7 9]
+[1. 3. 5. 7. 9.]
+[ 2.  6. 10. 14. 18.]
+[0. 0. 0. 0. 0.]
+[ 1.  9. 25. 49. 81.]
+[1. 1. 1. 1. 1.]
+[1.00000000e+00 2.70000000e+01 3.12500000e+03 8.23543000e+05 3.87420489e+08]
+[0. 0. 0. 0. 0.]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="最大值、最小值"><a href="#最大值、最小值" class="headerlink" title="最大值、最小值"></a>最大值、最小值</h4><p>amin() 用于计算数组中的元素沿指定轴的最小值, amax()同理。</p>
+<p>amin(a,0) 是延着 axis&#x3D;0 轴的最小值，axis&#x3D;0 轴是把元素看 成了 [1,4,7], [2,5,8], [3,6,9] 三个元素，所以最小值为 [1,2,3]，</p>
+<p>amin(a,1) 是延着 axis&#x3D;1 轴的最小值，axis&#x3D;1 轴是把元素看成了 [1,2,3], [4,5,6], [7,8,9] 三个元素，所以最小值为 [1,4,7]。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>amin<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>amin<span class="token punctuation">(</span>a<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>amin<span class="token punctuation">(</span>a<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>运行结果：</p>
+<pre class="line-numbers language-none"><code class="language-none">1
+[1 2 3]
+[1 4 7]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h1 id="机器学习Kaggle比赛"><a href="#机器学习Kaggle比赛" class="headerlink" title="机器学习Kaggle比赛"></a>机器学习Kaggle比赛</h1><h3 id="常见算法工具"><a href="#常见算法工具" class="headerlink" title="常见算法工具"></a>常见算法工具</h3><img src="/images/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%9845%E8%AE%B2/image-20221019150534162.png" alt="" style="zoom: 33%;" />
+
+<h3 id="四大分类"><a href="#四大分类" class="headerlink" title="四大分类"></a>四大分类</h3><ul>
+<li>分类算法 知道事先的定义<ul>
+<li>C4.5、朴素贝叶斯、SVM、KNN、AdaBoost、CART</li>
+</ul>
+</li>
+<li>聚类算法 不知道事先的定义<ul>
+<li>K-Means、EM</li>
+</ul>
+</li>
+<li>关联分析 A出现10次 B同时出现8次<ul>
+<li>Apriori</li>
+</ul>
+</li>
+<li>连接分析   比如通过邮件来连接<ul>
+<li>PageRank</li>
+</ul>
+</li>
+</ul>
+<h3 id="十大经典模型"><a href="#十大经典模型" class="headerlink" title="十大经典模型"></a>十大经典模型</h3><h4 id="1-C4-5"><a href="#1-C4-5" class="headerlink" title="1. C4.5"></a>1. C4.5</h4><p>​	C4.5 是决策树的算法，它创造性地在决策树构造过程中就进行了剪枝，并且可以处理连续的属性，也能对不完整的数据进行处理。</p>
+<h4 id="2-朴素贝叶斯"><a href="#2-朴素贝叶斯" class="headerlink" title="2. 朴素贝叶斯"></a>2. 朴素贝叶斯</h4><p>​	对于给出的未知物体想要进行分类，就需要求解在这个未知物体出现的条件下各个类别出现的概率，哪个最大，就认为 这个未知物体属于哪个分类。</p>
+<h4 id="3-SVM"><a href="#3-SVM" class="headerlink" title="3. SVM"></a>3. SVM</h4><p>​	SVM 在训练中建立了一个超平面的分类模型。</p>
+<h4 id="4-KNN"><a href="#4-KNN" class="headerlink" title="4. KNN"></a>4. KNN</h4><p>​	KNN 也叫 K 最近邻算法，就是每个样本都 可以用它最接近的 K 个邻居来代表。如果一个样本，它的 K 个最接近的邻居都属于分类 A，那么这个样本也属于分类 A。</p>
+<h4 id="5-AdaBoost"><a href="#5-AdaBoost" class="headerlink" title="5. AdaBoost"></a>5. AdaBoost</h4><p>​	Adaboost 在训练中建立了一个联合的分类模型。boost 在英文中代表提升的意思，所以 Adaboost 是个构建分类器的提升算法。它可以让我们多个弱的分类器组成一个强的分类器</p>
+<h4 id="6-CART"><a href="#6-CART" class="headerlink" title="6. CART"></a>6. CART</h4><p>​	CART 代表分类和回归树，英文是 Classification and Regression Trees，它构建了两棵树：一颗是分类树，另一个是回归树，和 C4.5 一样，是一个决策树学习方法。</p>
+<h4 id="7-K-Means"><a href="#7-K-Means" class="headerlink" title="7. K-Means"></a>7. K-Means</h4><p>​	K-Means 算法是一个聚类算法。你可以这么理解，最终我想把物体划分成 K 类。假设每 个类别里面，都有个“中心点”，即意见领袖，它是这个类别的核心。现在我有一个新点 要归类，这时候就只要计算这个新点与 K 个中心点的距离，距离哪个中心点近，就变成了 哪个类别。</p>
+<h4 id="8-EM"><a href="#8-EM" class="headerlink" title="8. EM"></a>8. EM</h4><p>​	EM 算法也叫最大期望算法，是求参数的最大似然估计的一种方法。原理是这样的：假设 我们想要评估参数 A 和参数 B，在开始状态下二者都是未知的，并且知道了 A 的信息就可 以得到 B 的信息，反过来知道了 B 也就得到了 A。可以考虑首先赋予 A 某个初值，以此 得到 B 的估值，然后从 B 的估值出发，重新估计 A 的取值，这个过程一直持续到收敛为 止。 EM 算法经常用于聚类和机器学习领域中。</p>
+<h4 id="9-Apriori"><a href="#9-Apriori" class="headerlink" title="9. Apriori"></a>9. Apriori</h4><p>​	Apriori 是一种挖掘关联规则（association rules）的算法，它通过挖掘频繁项集 （frequent item sets）来揭示物品之间的关联关系，被广泛应用到商业挖掘和网络安全 等领域中。频繁项集是指经常出现在一起的物品的集合，关联规则暗示着两种物品之间可能存在很强的关系。</p>
+<h4 id="10-PageRank"><a href="#10-PageRank" class="headerlink" title="10. PageRank"></a>10. PageRank</h4><p>​		PageRank 起源于论文影响力的计算方式，如果一篇文论被引入的次数越多，就代表这篇 论文的影响力越强。同样 PageRank 被 Google 创造性地应用到了网页权重的计算中：当 一个页面链出的页面越多，说明这个页面的“参考文献”越多，当这个页面被链入的频率 越高，说明这个页面被引用的次数越高。基于这个原理，我们可以得到网站的权重划分。</p>
+<h1 id="机器学习建模流程"><a href="#机器学习建模流程" class="headerlink" title="机器学习建模流程"></a>机器学习建模流程</h1><h2 id="一、数据探索"><a href="#一、数据探索" class="headerlink" title="一、数据探索"></a>一、数据探索</h2><h2 id="二、数据预处理"><a href="#二、数据预处理" class="headerlink" title="二、数据预处理"></a>二、数据预处理</h2><h2 id="三、特征工程"><a href="#三、特征工程" class="headerlink" title="三、特征工程"></a>三、特征工程</h2><h2 id="四、模型建立"><a href="#四、模型建立" class="headerlink" title="四、模型建立"></a>四、模型建立</h2><h2 id="五、参数调优"><a href="#五、参数调优" class="headerlink" title="五、参数调优"></a>五、参数调优</h2><h2 id="六、模型融合"><a href="#六、模型融合" class="headerlink" title="六、模型融合"></a>六、模型融合</h2>
                 
             </div>
             <hr/>
@@ -567,7 +591,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">WangXinYi</a>
+                    <a href="/about" rel="external nofollow noreferrer">王欣艺</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -577,7 +601,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://wxydaydayup.github.io/2022/10/22/Git%E7%AC%94%E8%AE%B0/">https://wxydaydayup.github.io/2022/10/22/Git%E7%AC%94%E8%AE%B0/</a>
+                    <a href="https://wxydaydayup.github.io/2022/10/24/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%9845%E8%AE%B2/">https://wxydaydayup.github.io/2022/10/24/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%9845%E8%AE%B2/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -590,7 +614,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">WangXinYi</a>
+                    <a href="/about" target="_blank">王欣艺</a>
                     !
                 </span>
             </div>
@@ -615,12 +639,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Github/">
-                                    <span class="chip bg-color">Github</span>
+                                <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">机器学习</span>
                                 </a>
                             
-                                <a href="/tags/Git/">
-                                    <span class="chip bg-color">Git</span>
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
+                                    <span class="chip bg-color">数据分析</span>
+                                </a>
+                            
+                                <a href="/tags/Kaggle/">
+                                    <span class="chip bg-color">Kaggle</span>
                                 </a>
                             
                         </div>
@@ -699,9 +727,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/10/24/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%9845%E8%AE%B2/">
                     <div class="card-image">
@@ -718,9 +747,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -741,6 +770,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -767,30 +797,34 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/10/21/pumpkin/">
+                <a href="/2022/10/22/Git%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
-                        <img src="https://tc.phpx.cn/uploads/2022/10/21/xGti1PYFAa.jpg" class="responsive-img" alt="pumpkin">
+                        <img src="https://tc.phpx.cn/uploads/2022/10/22/fiGzbH2UDw.png" class="responsive-img" alt="Git笔记">
                         
-                        <span class="card-title">pumpkin</span>
+                        <span class="card-title">Git笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            可爱的胖宝贝不会的题
+                            Git与Github操作
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="post-category">
-                                    生活
+                            <a href="/categories/Github/" class="post-category">
+                                    Github
+                                </a>
+                            
+                            <a href="/categories/Github/Git/" class="post-category">
+                                    Git
                                 </a>
                             
                             
@@ -800,8 +834,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%94%9F%E6%B4%BB/">
-                        <span class="chip bg-color">生活</span>
+                    <a href="/tags/Github/">
+                        <span class="chip bg-color">Github</span>
+                    </a>
+                    
+                    <a href="/tags/Git/">
+                        <span class="chip bg-color">Git</span>
                     </a>
                     
                 </div>
