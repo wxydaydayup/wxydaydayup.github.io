@@ -422,14 +422,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.5k
+                    3.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    12 分
                 </div>
                 
 
@@ -457,7 +457,7 @@
 <p>​	利器：Python 爬虫</p>
 <h3 id="二、数据挖掘"><a href="#二、数据挖掘" class="headerlink" title="二、数据挖掘"></a>二、数据挖掘</h3><p>​	找到其中的规律，来指导公司业务，数据挖掘的核心是挖掘数据的商业价值</p>
 <ol>
-<li>商业理解：数据挖掘不是我们的目的，我们的目的是更好地帮助业务，所以第一步我们要从商业的角度理解项目需求，在这个基础上，再对数据挖掘的目标进行定义。 </li>
+<li>商业理解：数据挖掘不是我们的目的，我们的目的是更好地帮助业务，所以首先要从商业的角度理解项目需求，在这个基础上，再对数据挖掘的目标进行定义。 </li>
 <li>数据理解：尝试收集部分数据，然后对数据进行探索，包括数据描述、数据质量验证等，这有助于你对收集的数据有个初步的认知。 </li>
 <li>数据准备：开始收集数据，并对数据进行清洗、数据集成等操作，完成数据挖掘前的准备工作。 </li>
 <li>模型建立：选择和应用各种数据挖掘模型，并进行优化，以便得到更好的分类结果。 </li>
@@ -476,7 +476,7 @@
 <p>在 NumPy 里有两个重要的对象： ndarray解决了多维数组问题，而 ufunc则是解决对数组进行处理的函数。</p>
 <h3 id="Ndarray"><a href="#Ndarray" class="headerlink" title="Ndarray"></a>Ndarray</h3><p>​	Ndarray全称为N-dimensional array object, 实际上是多维数组的含义。在 NumPy 数组中，维数称为秩（rank），一维数组 的秩为 1，二维数组的秩为 2，以此类推。在 NumPy 中，每一个线性的数组称为一个轴 （axes），其实秩就是描述轴的数量。</p>
 <p>​	可以通过函数 shape 属性获得数组的大小，通过 dtype 获得元素的属性，</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<h4 id="Shape-amp-dtype"><a href="#Shape-amp-dtype" class="headerlink" title="Shape&amp;dtype"></a>Shape&amp;dtype</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 a <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 b <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 b<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">10</span>
@@ -484,6 +484,8 @@ b<span class="token punctuation">[</span><span class="token number">1</span><spa
 <span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>dtype<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
 
 <p>运行结果：</p>
 <pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">(3,)
@@ -493,12 +495,11 @@ int32
  [ 4 10  6]
  [ 7  8  9]]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>​	如果你想统计一个班级里面学生的姓名、年龄，以及语文、英语、数学成绩该怎么办？当 然你可以用数组的下标来代表不同的字段，比如下标为 0 的是姓名、小标为 1 的是年龄 等，但是这样不显性。</p>
-<p>Numpy中结构数组示例：</p>
+<h4 id="结构数组"><a href="#结构数组" class="headerlink" title="结构数组"></a>结构数组</h4><p>​	如果你想统计一个班级里面学生的姓名、年龄，以及语文、英语、数学成绩该怎么办？当然你可以用数组的下标来代表不同的字段，比如下标为 0 的是姓名、小标为 1 的是年龄 等，但是这样不显性,可以使用Numpy中结构数组。</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">persontype <span class="token operator">=</span> np<span class="token punctuation">.</span>dtype<span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">'names'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">,</span> <span class="token string">'chinese'</span><span class="token punctuation">,</span> <span class="token string">'math'</span><span class="token punctuation">,</span> <span class="token string">'english'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-					   <span class="token string">'formats'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'S32'</span><span class="token punctuation">,</span><span class="token string">'i'</span><span class="token punctuation">,</span> <span class="token string">'i'</span><span class="token punctuation">,</span> <span class="token string">'i'</span><span class="token punctuation">,</span> <span class="token string">'f'</span><span class="token punctuation">]</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+			 <span class="token string">'formats'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'S32'</span><span class="token punctuation">,</span><span class="token string">'i'</span><span class="token punctuation">,</span> <span class="token string">'i'</span><span class="token punctuation">,</span> <span class="token string">'i'</span><span class="token punctuation">,</span> <span class="token string">'f'</span><span class="token punctuation">]</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 peoples <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">"ZhangFei"</span><span class="token punctuation">,</span><span class="token number">32</span><span class="token punctuation">,</span><span class="token number">75</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token string">"GuanYu"</span><span class="token punctuation">,</span><span class="token number">24</span><span class="token punctuation">,</span><span class="token number">85</span><span class="token punctuation">,</span><span class="token number">96</span><span class="token punctuation">,</span><span class="token number">88.5</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-                   <span class="token punctuation">(</span><span class="token string">"ZhaoYun"</span><span class="token punctuation">,</span><span class="token number">28</span><span class="token punctuation">,</span><span class="token number">85</span><span class="token punctuation">,</span><span class="token number">92</span><span class="token punctuation">,</span><span class="token number">96.5</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token string">"HuangZhong"</span><span class="token punctuation">,</span><span class="token number">29</span><span class="token punctuation">,</span><span class="token number">65</span><span class="token punctuation">,</span><span class="token number">85</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>dtype<span class="token operator">=</span>persontype<span class="token punctuation">)</span>
+          <span class="token punctuation">(</span><span class="token string">"ZhaoYun"</span><span class="token punctuation">,</span><span class="token number">28</span><span class="token punctuation">,</span><span class="token number">85</span><span class="token punctuation">,</span><span class="token number">92</span><span class="token punctuation">,</span><span class="token number">96.5</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token string">"HuangZhong"</span><span class="token punctuation">,</span><span class="token number">29</span><span class="token punctuation">,</span><span class="token number">65</span><span class="token punctuation">,</span><span class="token number">85</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>dtype<span class="token operator">=</span>persontype<span class="token punctuation">)</span>
 ages <span class="token operator">=</span> peoples<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'age'</span><span class="token punctuation">]</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>ages<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>mean<span class="token punctuation">(</span>ages<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -520,7 +521,7 @@ x2 <span class="token operator">=</span> np<span class="token punctuation">.</sp
 <span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>power<span class="token punctuation">(</span>x1<span class="token punctuation">,</span> x2<span class="token punctuation">)</span><span class="token punctuation">)</span> 	<span class="token comment">#指数</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>mod<span class="token punctuation">(</span>x1<span class="token punctuation">,</span> x2<span class="token punctuation">)</span><span class="token punctuation">)</span> 		<span class="token comment">#取余</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>运行结果</p>
+<p>运行结果：</p>
 <pre class="line-numbers language-none"><code class="language-none">[1 3 5 7 9]
 [1. 3. 5. 7. 9.]
 [ 2.  6. 10. 14. 18.]
@@ -531,8 +532,8 @@ x2 <span class="token operator">=</span> np<span class="token punctuation">.</sp
 [0. 0. 0. 0. 0.]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="最大值、最小值"><a href="#最大值、最小值" class="headerlink" title="最大值、最小值"></a>最大值、最小值</h4><p>amin() 用于计算数组中的元素沿指定轴的最小值, amax()同理。</p>
-<p>amin(a,0) 是延着 axis&#x3D;0 轴的最小值，axis&#x3D;0 轴是把元素看 成了 [1,4,7], [2,5,8], [3,6,9] 三个元素，所以最小值为 [1,2,3]，</p>
-<p>amin(a,1) 是延着 axis&#x3D;1 轴的最小值，axis&#x3D;1 轴是把元素看成了 [1,2,3], [4,5,6], [7,8,9] 三个元素，所以最小值为 [1,4,7]。</p>
+<p>amin(a,0) 是延着 axis&#x3D;0 轴的最小值，axis&#x3D;0 轴是把元素看成了 [1,4,7], [2,5,8], [3,6,9] 三个元素。</p>
+<p>amin(a,1) 是延着 axis&#x3D;1 轴的最小值，axis&#x3D;1 轴是把元素看成了 [1,2,3], [4,5,6], [7,8,9] 三个元素。</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>amin<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>amin<span class="token punctuation">(</span>a<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -543,7 +544,75 @@ x2 <span class="token operator">=</span> np<span class="token punctuation">.</sp
 [1 2 3]
 [1 4 7]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
+<h4 id="最大值与最小值之差"><a href="#最大值与最小值之差" class="headerlink" title="最大值与最小值之差"></a>最大值与最小值之差</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>ptp<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>ptp<span class="token punctuation">(</span>a<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>ptp<span class="token punctuation">(</span>a<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
+<p>运行结果：</p>
+<pre class="line-numbers language-none"><code class="language-none">a &#x3D; np.array([[1,2,3], [4,5,6], [7,8,9]])
+print(np.ptp(a))
+print(np.ptp(a,0))
+print(np.ptp(a,1))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="统计数组的百分位数-amp-中位数"><a href="#统计数组的百分位数-amp-中位数" class="headerlink" title="统计数组的百分位数&amp;中位数"></a>统计数组的百分位数&amp;中位数</h4><p>percentile() 代表着第 p 个百分位数，这里 p 的取值范围是 0-100，如果 p&#x3D;0， 那么就是求最小值，如果 p&#x3D;50 就是求平均值，如果 p&#x3D;100 就是求最大值。同样你也可 以求得在 axis&#x3D;0 和 axis&#x3D;1 两个轴上的 p% 的百分位数。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>percentile<span class="token punctuation">(</span>a<span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>percentile<span class="token punctuation">(</span>a<span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>percentile<span class="token punctuation">(</span>a<span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment"># 求中位数</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>median<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>median<span class="token punctuation">(</span>a<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>median<span class="token punctuation">(</span>a<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>运行结果：</p>
+<pre class="line-numbers language-none"><code class="language-none">5.0
+[4. 5. 6.]
+[2. 5. 8.]
+# 求中位数
+5.0
+[4. 5. 6.]
+[2. 5. 8.]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="统计数组中的加权平均值"><a href="#统计数组中的加权平均值" class="headerlink" title="统计数组中的加权平均值"></a>统计数组中的加权平均值</h4><p>average() 函数可以求加权平均，加权平均的意思就是每个元素可以设置个权重，默认情 况下每个元素的权重是相同的，所以 np.average(a)&#x3D;(1+2+3+4)&#x2F;4&#x3D;2.5，你也可以指定 权重数组 wts&#x3D;[1,2,3,4]，这样加权平均 np.average(a,weights&#x3D;wts)&#x3D; (1<em>1+2</em>2+3<em>3+4</em>4)&#x2F;(1+2+3+4)&#x3D;3.0。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+wts <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>average<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>average<span class="token punctuation">(</span>a<span class="token punctuation">,</span>weights<span class="token operator">=</span>wts<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>运行结果：</p>
+<pre class="line-numbers language-none"><code class="language-none">2.5
+3.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h4 id="统计数组中的标准差、方差"><a href="#统计数组中的标准差、方差" class="headerlink" title="统计数组中的标准差、方差"></a>统计数组中的标准差、方差</h4><p>方差的计算是指每个数值与平均值之差的平方求和的平均值，即 mean((x - x.mean())** 2)。标准差是方差的算术平方根。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>std<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#标准差</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>var<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#方差</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>运行结果：</p>
+<pre class="line-numbers language-none"><code class="language-none">1.118033988749895
+1.25<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h4 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h4><p>sort(a, axis&#x3D;-1, kind&#x3D;‘quicksort’, order&#x3D;None)；</p>
+<ul>
+<li><p>kind 字段：默认情况下使 用的是快速排序，可以指定 quicksort、mergesort、heapsort 分别表示快速排序、合并排序、堆排序。</p>
+</li>
+<li><p>axis 字段：默认是 -1，即沿着数组的最后一个轴进行排序， 也可以取不同的 axis 轴，或者 axis&#x3D;None 代表采用扁平化的方式作为一个向量进行排序。</p>
+</li>
+<li><p>order 字段：对于结构化的数组可以指定按照某个字段进行排序。</p>
+</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>sort<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>sort<span class="token punctuation">(</span>a<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>sort<span class="token punctuation">(</span>a<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>sort<span class="token punctuation">(</span>a<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>运行结果：</p>
+<pre class="line-numbers language-none"><code class="language-none">[[2 3 4][1 2 4]]
+[1 2 2 3 4 4]
+[[2 3 1][4 4 2]]
+[[2 3 4][1 2 4]]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h1 id="机器学习Kaggle比赛"><a href="#机器学习Kaggle比赛" class="headerlink" title="机器学习Kaggle比赛"></a>机器学习Kaggle比赛</h1><h3 id="常见算法工具"><a href="#常见算法工具" class="headerlink" title="常见算法工具"></a>常见算法工具</h3><img src="/images/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%9845%E8%AE%B2/image-20221019150534162.png" alt="" style="zoom: 33%;" />
 
@@ -976,7 +1045,7 @@ x2 <span class="token operator">=</span> np<span class="token punctuation">.</sp
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">4k</span>
+                        class="white-color">4.9k</span>
             
             
             
