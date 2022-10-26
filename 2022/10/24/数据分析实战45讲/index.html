@@ -422,14 +422,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.1k
+                    6.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    24 分
                 </div>
                 
 
@@ -453,8 +453,17 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="数据分析实战45讲"><a href="#数据分析实战45讲" class="headerlink" title="数据分析实战45讲"></a>数据分析实战45讲</h1><h2 id="数据全景图"><a href="#数据全景图" class="headerlink" title="数据全景图"></a>数据全景图</h2><h3 id="一、数据采集"><a href="#一、数据采集" class="headerlink" title="一、数据采集"></a>一、数据采集</h3><p>​	数据源 ：开源数据源、爬虫抓取、日志采集、传感器</p>
-<p>​	工具使用：八爪鱼、火车采集器、搜集客</p>
-<p>​	利器：Python 爬虫</p>
+<p>​	工具使用：火车采集器、八爪鱼、搜集客</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="http://www.locoy.com/">火车采集器 	</a>不仅可以做抓取工具，也可以做数据清洗、数据分析、数据挖掘和可视化等工作。数据源适用于绝大部分的网页，网页中能看到的内容都可以通过采集规则进行抓取。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="http://www.bazhuayu.com/">八爪鱼</a>    是知名的采集工具，它有两个版本，一个就是免费的采集模板，还有一个就是云采集（付费）。</p>
+<p>免费的采集模板实际上就是内容采集规则，包括了电商类、生活服务类、社交媒体类和论坛类的网站都可以采集，用起来非常方便。</p>
+<p>云采集就是当你配置好采集任务，就可以交给八爪鱼的云端进行采集。八爪鱼一共有5000台服务器，通过云端多节点并发采集，采集速度远远超过本地采集。此外还可以自动切换多个 IP，避免IP被封，影响采集。做过工程项目的同学应该能体会到，云采集这个功能太方便了，很多时候自动切换IP以及云采集才是自动化采集的关键。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="http://www.gooseeker.com/">集搜客</a>   这个工具的特点是完全可视化操作，无需编程。整个采集过程也是所见即所得，抓取结果信息、错误信息等都反应在软件中。相比于八爪鱼来说，集搜客没有流程的概念，用户只需要关注抓取什么数据，而流程细节完全交给集搜客来处理。但是集搜客的缺点是没有云采集功能，所有爬虫都是在用户自己电脑上跑的。</p>
+</li>
+</ul>
 <h3 id="二、数据挖掘"><a href="#二、数据挖掘" class="headerlink" title="二、数据挖掘"></a>二、数据挖掘</h3><p>​	找到其中的规律，来指导公司业务，数据挖掘的核心是挖掘数据的商业价值</p>
 <ol>
 <li>商业理解：数据挖掘不是我们的目的，我们的目的是更好地帮助业务，所以首先要从商业的角度理解项目需求，在这个基础上，再对数据挖掘的目标进行定义。 </li>
@@ -464,14 +473,56 @@
 <li>模型评估：对模型进行评价，并检查构建模型的每个步骤，确认模型是否实现了预定的 商业目标。 </li>
 <li>上线发布：模型的作用是从数据中找到金矿，也就是我们所说的“知识”，获得的知识需要转化成用户可以使用的方式，数据挖掘结果如果是日常运营的一部分，那么后续的监控和维护就会变得重要。</li>
 </ol>
-<h3 id="三、数据可视化"><a href="#三、数据可视化" class="headerlink" title="三、数据可视化"></a>三、数据可视化</h3><p>​	第一种：使用 Python，在 Python 对数据进行清洗、挖掘的过程中，我们可以使用 Matplotlib、Seaborn 等第三方库进行呈现。 </p>
-<p>​	第二种：使用第三方工具。如果你已经生成了 csv 格式文件，可以采用微图、DataV、Data GIF Maker 等第三方工具。</p>
-<h2 id="NumPy快速处理数据"><a href="#NumPy快速处理数据" class="headerlink" title="NumPy快速处理数据"></a>NumPy快速处理数据</h2><p>​		标准的 Python 中，用列表list 保存数组的数值。由于列表中的元素可以是任意 的对象，所以列表中 list 保存的是对象的指针。虽然在 Python 编程中隐去了指针的概 念，但是数组有指针，Python 的列表 list 其实就是数组。这样如果我要保存一个简单的数组 [0,1,2]，就需要有 3 个指针和 3 个整数的对象，这样对于 Python 来说是非常不经济 的，浪费了内存和计算时间。</p>
+<h3 id="三、数据可视化"><a href="#三、数据可视化" class="headerlink" title="三、数据可视化"></a>三、数据可视化</h3><p>第一种：使用 Python，在 Python 对数据进行清洗、挖掘的过程中，我们可以使用 Matplotlib、Seaborn 等第三方库进行呈现。 </p>
+<p>第二种：直接使用第三方工具。如果你已经生成了 csv 格式文件，可以采用微图、DataV、Data GIF Maker 等第三方工具。</p>
+<h2 id="数据分析的概念"><a href="#数据分析的概念" class="headerlink" title="数据分析的概念"></a>数据分析的概念</h2><h3 id="陈旸白话数据概念"><a href="#陈旸白话数据概念" class="headerlink" title="陈旸白话数据概念"></a>陈旸白话数据概念</h3><h4 id="1、商业智能、数据仓库、数据挖掘"><a href="#1、商业智能、数据仓库、数据挖掘" class="headerlink" title="1、商业智能、数据仓库、数据挖掘"></a>1、商业智能、数据仓库、数据挖掘</h4><p>比如你认识了两个漂亮的女孩。</p>
+<p><strong>商业智能</strong>会告诉你要追哪个？成功概率有多大？</p>
+<p><strong>数据仓库</strong>会说，我这里存储了这两个女孩的相关信息，你要吗？</p>
+<p>其中每个女孩的数据都有单独的文件夹，里面有她们各自的姓名、生日、喜好和联系方式等，这些具体的信息就是<strong>数据元</strong>，加起来叫作<strong>元数据</strong>。</p>
+<p><strong>数据挖掘</strong>会帮助你确定追哪个女孩，并且整理好数据仓库，这里就可以使用到各种算法，帮你做决策了。</p>
+<h4 id="2、数据挖掘中的类型"><a href="#2、数据挖掘中的类型" class="headerlink" title="2、数据挖掘中的类型"></a>2、数据挖掘中的类型</h4><p>你可能会用到<strong>分类算法</strong>。御姐、萝莉、女王，她到底属于哪个分类？</p>
+<p>如果认识的女孩太多了，多到你已经数不过来了，比如说5万人！你就可以使用<strong>聚类算法</strong>了，它帮你把这些女孩分成多个群组，比如5个组。然后再对每个群组的特性进行了解，进行决策。这样就把5万人的决策，转化成了5个组的决策。成功实现降维，大大提升了效率。</p>
+<p>如果你想知道这个女孩的闺蜜是谁，那么<strong>关联分析算法</strong>可以告诉你。</p>
+<h4 id="3、数据预处理中的术语"><a href="#3、数据预处理中的术语" class="headerlink" title="3、数据预处理中的术语"></a>3、数据预处理中的术语</h4><p>如果你的数据来源比较多，比如有很多朋友给你介绍女朋友，很多人都推荐了同一个，你就需要去重，这叫<strong>数据清洗</strong>；</p>
+<p>为了方便记忆，你把不同朋友推荐的女孩信息合成一个，这叫<strong>数据集成</strong>；</p>
+<p>有些数据渠道统计的体重的单位是公斤，有些是斤，你就需要将它们转换成同一个单位，这叫<strong>数据变换。</strong></p>
+<p>最后你可以进行数据可视化了，它会直观地把你想要的结果呈现出来。</p>
+<h3 id="用户画像建模"><a href="#用户画像建模" class="headerlink" title="用户画像建模"></a>用户画像建模</h3><h4 id="1、设计唯一标识"><a href="#1、设计唯一标识" class="headerlink" title="1、设计唯一标识"></a>1、设计唯一标识</h4><p>​	<strong>用户唯一标识是整个用户画像的核心</strong>。我们以一个App为例，它把“从用户开始使用APP到下单到售后整个所有的用户行为”进行串联，这样就可以更好地去跟踪和分析一个用户的特征。设计唯一标识可以从这些项中选择：用户名、注册手机号、联系人手机号、邮箱、设备号、CookieID等。</p>
+<h4 id="2、用户标签化"><a href="#2、用户标签化" class="headerlink" title="2、用户标签化"></a>2、用户标签化</h4><ul>
+<li>用户标签：它包括了性别、年龄、地域、收入、学历、职业等。这些包括了用户的基础属性。</li>
+<li>消费标签：消费习惯、购买意向、是否对促销敏感。这些统计分析用户的消费习惯。</li>
+<li>行为标签：时间段、频次、时长、访问路径。这些是通过分析用户行为，来得到他们使用App的习惯。</li>
+<li>内容分析：对用户平时浏览的内容，尤其是停留时间长、浏览次数多的内容进行分析，分析出用户对哪些内容感兴趣，比如，金融、娱乐、教育、体育、时尚、科技等。</li>
+</ul>
+<h4 id="3、赋能业务价值"><a href="#3、赋能业务价值" class="headerlink" title="3、赋能业务价值"></a>3、赋能业务价值</h4><ul>
+<li>获客：如何进行拉新，通过更精准的营销获取客户。</li>
+<li>粘客：个性化推荐，搜索排序，场景运营等。</li>
+<li>留客：流失率预测，分析关键节点降低流失率。</li>
+</ul>
+<h4 id="4、以美团为例"><a href="#4、以美团为例" class="headerlink" title="4、以美团为例"></a>4、以美团为例</h4><ul>
+<li><p>手机号是唯一标识</p>
+</li>
+<li><p>用户标签：性别、年龄、家乡、居住地、收货地址、婚姻、宝宝信息、通过何种渠道进行的注册。</p>
+</li>
+<li><p>消费标签：餐饮口味、消费均价、团购等级、预定使用等级、排队使用等级、外卖等级。</p>
+</li>
+<li><p>行为标签：点外卖时间段、使用频次、平均点餐用时、访问路径。</p>
+</li>
+<li><p>内容分析：基于用户平时浏览的内容进行统计，包括餐饮口味、优惠敏感度等。</p>
+</li>
+<li><p>在获客上，我们可以找到优势的宣传渠道，如何通过个性化的宣传手段，吸引有潜在需求的用户，并刺激其转化。</p>
+</li>
+<li><p>在粘客上，如何提升用户的单价和消费频次，方法可以包括购买后的个性化推荐、针对优质用户进行优质高价商品的推荐、以及重复购买，比如通过红包、优惠等方式激励对优惠敏感的人群，提升购买频次。</p>
+</li>
+<li><p>留客上，预测用户是否可能会从平台上流失。在营销领域，关于用户留存有一个观点——如果将顾客流失率降低5%，公司利润将提升25%~85%。可以看出留存率是多么的重要。用户流失可能会包括多种情况，比如用户体验、竞争对手、需求变化等，通过预测用户的流失率可以大幅降低用户留存的运营成本。</p>
+</li>
+</ul>
+<h2 id="NumPy"><a href="#NumPy" class="headerlink" title="NumPy"></a>NumPy</h2><p>​		标准的 Python 中，用列表list 保存数组的数值。由于列表中的元素可以是任意 的对象，所以列表中 list 保存的是对象的指针。虽然在 Python 编程中隐去了指针的概 念，但是数组有指针，Python 的列表 list 其实就是数组。这样如果我要保存一个简单的数组 [0,1,2]，就需要有 3 个指针和 3 个整数的对象，这样对于 Python 来说是非常不经济的，浪费了内存和计算时间。</p>
 <p>​	为什么使用 NumPy 让你的 Python 科学计算更高效</p>
 <ol>
 <li>列表 list 的元素 在系统内存中是分散存储的，而 NumPy 数组存储在一个均匀连续的内存块中。这样数组计算遍历所有的元素，不像列表 list 还需要对内存地址进行查找，从而节省了计算资源。</li>
-<li>在内存访问模式中，缓存会直接把字节块从 RAM 加载到 CPU 寄存器中。因为数据连 续的存储在内存中，NumPy 直接利用现代 CPU 的矢量化指令计算，加载寄存器中的多个 连续浮点数。</li>
-<li>另外 NumPy 中的矩阵计算可以采用多线程的方式，充分利用多核 CPU 计 算资源，大大提升了计算效率</li>
+<li>在内存访问模式中，缓存会直接把字节块从 RAM 加载到 CPU 寄存器中。因为数据连续的存储在内存中，NumPy 直接利用现代 CPU 的矢量化指令计算，加载寄存器中的多个连续浮点数。</li>
+<li>另外 NumPy 中的矩阵计算可以采用多线程的方式，充分利用多核 CPU 计算资源，大大提升了计算效率</li>
 </ol>
 <p>在 NumPy 里有两个重要的对象： ndarray解决了多维数组问题，而 ufunc则是解决对数组进行处理的函数。</p>
 <h3 id="Ndarray"><a href="#Ndarray" class="headerlink" title="Ndarray"></a>Ndarray</h3><p>​	Ndarray全称为N-dimensional array object, 实际上是多维数组的含义。在 NumPy 数组中，维数称为秩（rank），一维数组 的秩为 1，二维数组的秩为 2，以此类推。在 NumPy 中，每一个线性的数组称为一个轴 （axes），其实秩就是描述轴的数量。</p>
@@ -495,7 +546,7 @@ int32
  [ 4 10  6]
  [ 7  8  9]]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="结构数组"><a href="#结构数组" class="headerlink" title="结构数组"></a>结构数组</h4><p>​	如果你想统计一个班级里面学生的姓名、年龄，以及语文、英语、数学成绩该怎么办？当然你可以用数组的下标来代表不同的字段，比如下标为 0 的是姓名、小标为 1 的是年龄 等，但是这样不显性,可以使用Numpy中结构数组。</p>
+<h4 id="结构数组"><a href="#结构数组" class="headerlink" title="结构数组"></a>结构数组</h4><p>​	如果你想统计一个班级里面学生的姓名、年龄，以及语文、英语、数学成绩该怎么办？当然你可以用数组的下标来代表不同的字段，比如下标为 0 是姓名、下标为1是年龄等，但是这样不显性，此时便可以使用Numpy中的结构数组。</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">persontype <span class="token operator">=</span> np<span class="token punctuation">.</span>dtype<span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">'names'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">,</span> <span class="token string">'chinese'</span><span class="token punctuation">,</span> <span class="token string">'math'</span><span class="token punctuation">,</span> <span class="token string">'english'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
 			 <span class="token string">'formats'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'S32'</span><span class="token punctuation">,</span><span class="token string">'i'</span><span class="token punctuation">,</span> <span class="token string">'i'</span><span class="token punctuation">,</span> <span class="token string">'i'</span><span class="token punctuation">,</span> <span class="token string">'f'</span><span class="token punctuation">]</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 peoples <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">"ZhangFei"</span><span class="token punctuation">,</span><span class="token number">32</span><span class="token punctuation">,</span><span class="token number">75</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token string">"GuanYu"</span><span class="token punctuation">,</span><span class="token number">24</span><span class="token punctuation">,</span><span class="token number">85</span><span class="token punctuation">,</span><span class="token number">96</span><span class="token punctuation">,</span><span class="token number">88.5</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
@@ -574,7 +625,7 @@ print(np.ptp(a,1))<span aria-hidden="true" class="line-numbers-rows"><span></spa
 [4. 5. 6.]
 [2. 5. 8.]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="统计数组中的加权平均值"><a href="#统计数组中的加权平均值" class="headerlink" title="统计数组中的加权平均值"></a>统计数组中的加权平均值</h4><p>average() 函数可以求加权平均，加权平均的意思就是每个元素可以设置个权重，默认情 况下每个元素的权重是相同的，所以 np.average(a)&#x3D;(1+2+3+4)&#x2F;4&#x3D;2.5，你也可以指定 权重数组 wts&#x3D;[1,2,3,4]，这样加权平均 np.average(a,weights&#x3D;wts)&#x3D; (1<em>1+2</em>2+3<em>3+4</em>4)&#x2F;(1+2+3+4)&#x3D;3.0。</p>
+<h4 id="统计数组中的加权平均值"><a href="#统计数组中的加权平均值" class="headerlink" title="统计数组中的加权平均值"></a>统计数组中的加权平均值</h4><p>average() 函数可以求加权平均，加权平均的意思就是每个元素可以设置个权重，默认情况下每个元素的权重是相同的，所以 np.average(a)&#x3D;(1+2+3+4)&#x2F;4&#x3D;2.5，你也可以指定 权重数组 wts&#x3D;[1,2,3,4]，这样加权平均 np.average(a,weights&#x3D;wts)&#x3D; (1<em>1+2</em>2+3<em>3+4</em>4)&#x2F;(1+2+3+4)&#x3D;3.0。</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 wts <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>average<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -614,6 +665,185 @@ wts <span class="token operator">=</span> np<span class="token punctuation">.</s
 [[2 3 1][4 4 2]]
 [[2 3 4][1 2 4]]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h2 id="Pandas"><a href="#Pandas" class="headerlink" title="Pandas"></a>Pandas</h2><p>在数据分析工作中，Pandas 的使用频率是很高的，一方面是因为 Pandas 提供的基础数据结构DataFrame 与 json 的契合度很高，转换起来就很方便。另一方面，如果我们数据清理工作不是很复杂的话，通常用几句 Pandas 代码就可以对数据进行规整。</p>
+<p>Series 和 DataFrame 这两个核心数据结构，他们分别代表着一维的序列和二维的表结构。基于这两种数据结构，Pandas 可以对数据进行导入、清洗、处理、 统计和输出。</p>
+<h3 id="Series"><a href="#Series" class="headerlink" title="Series"></a>Series</h3><p>Series 是个定长的字典序列。说是定长是因为在存储的时候，相当于两个 ndarray，这也是和字典结构最大的不同。因为在字典的结构里，元素的个数是不固定的。 </p>
+<p>Series有两个基本属性：index 和 values。在 Series 结构中，index 默认是 0,1,2,……递增的整数序列，当然我们也可以自己来指定索引，比如 index&#x3D;[‘a’, ‘b’, ‘c’, ‘d’]。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">from</span> pandas <span class="token keyword">import</span> Series<span class="token punctuation">,</span> DataFrame
+x1 <span class="token operator">=</span> Series<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+x2 <span class="token operator">=</span> Series<span class="token punctuation">(</span>data<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x1<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x2<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>运行结果：</p>
+<pre class="line-numbers language-none"><code class="language-none">0    1
+1    2
+2    3
+3    4
+dtype: int64
+a    1
+b    2
+c    3
+d    4
+dtype: int64<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>我们也可以采用字典的方式来创建 Series</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">d <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'a'</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">:</span><span class="token number">4</span><span class="token punctuation">&#125;</span>
+x3 <span class="token operator">=</span> Series<span class="token punctuation">(</span>d<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x3<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>运行结果：</p>
+<pre class="line-numbers language-none"><code class="language-none">a    1
+b    2
+c    3
+d    4
+dtype: int64<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h3><p><strong>DataFrame 类型数据结构类似数据库表。</strong> </p>
+<p>它包括了行索引和列索引，我们可以将 DataFrame 看成是由相同索引的 Series 组成的字 典类型。</p>
+<p>一般会用 df, df1, df2 这些作为 DataFrame 数据类型的变量名，以例子中的 df2 为例，列索引是 [‘English’, ‘Math’, ‘Chinese’]，行索引是 [‘ZhangFei’, ‘GuanYu’, ‘ZhaoYun’, ‘HuangZhong’, ‘DianWei’]。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">data <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'Chinese'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">66</span><span class="token punctuation">,</span> <span class="token number">95</span><span class="token punctuation">,</span> <span class="token number">93</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">,</span><span class="token number">80</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">'English'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">65</span><span class="token punctuation">,</span> <span class="token number">85</span><span class="token punctuation">,</span> <span class="token number">92</span><span class="token punctuation">,</span> <span class="token number">88</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">'Math'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">98</span><span class="token punctuation">,</span> <span class="token number">96</span><span class="token punctuation">,</span> <span class="token number">77</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">]</span><span class="token punctuation">&#125;</span>
+df1<span class="token operator">=</span> DataFrame<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+df2 <span class="token operator">=</span> DataFrame<span class="token punctuation">(</span>data<span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'ZhangFei'</span><span class="token punctuation">,</span> <span class="token string">'GuanYu'</span><span class="token punctuation">,</span> <span class="token string">'ZhaoYun'</span><span class="token punctuation">,</span> <span class="token string">'HuangZhong'</span><span class="token punctuation">,</span> <span class="token string">'DianWei'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'English'</span><span class="token punctuation">,</span> <span class="token string">'Math'</span><span class="token punctuation">,</span> <span class="token string">'Chinese'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df1<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df2<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>运行结果：</p>
+<pre class="line-numbers language-none"><code class="language-none"> Chinese  English  Math
+0       66       65    30
+1       95       85    98
+2       93       92    96
+3       90       88    77
+4       80       90    90
+            English  Math  Chinese
+ZhangFei         65    30       66
+GuanYu           85    98       95
+ZhaoYun          92    96       93
+HuangZhong       88    77       90
+DianWei          90    90       80<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="用DataFranme进行数据处理"><a href="#用DataFranme进行数据处理" class="headerlink" title="用DataFranme进行数据处理"></a>用DataFranme进行数据处理</h3><h4 id="1、数据导入和输出"><a href="#1、数据导入和输出" class="headerlink" title="1、数据导入和输出"></a>1、数据导入和输出</h4><p>需要先下载依赖</p>
+<pre class="line-numbers language-none"><code class="language-none">pip install	xlrd
+pip install	openpyxl<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>将data.xlsx放在Jupyter目录下,默认为 C:\Users\${用户名}</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">score <span class="token operator">=</span> DataFrame<span class="token punctuation">(</span>pd<span class="token punctuation">.</span>read_excel<span class="token punctuation">(</span><span class="token string">'data.xlsx'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+score<span class="token punctuation">.</span>to_excel<span class="token punctuation">(</span><span class="token string">'data1.xlsx'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>score<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2、数据清洗"><a href="#2、数据清洗" class="headerlink" title="2、数据清洗"></a>2、数据清洗</h4><p>以上文df2为例</p>
+<p><strong>删除 DataFrame 中的不必要的列或行</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df2 <span class="token operator">=</span> df2<span class="token punctuation">.</span>drop<span class="token punctuation">(</span>columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'Chinese'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+df2 <span class="token operator">=</span> df2<span class="token punctuation">.</span>drop<span class="token punctuation">(</span>index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'ZhangFei'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>重命名列名 columns，让列表名更容易识别</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df2<span class="token punctuation">.</span>rename<span class="token punctuation">(</span>columns<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token string">'Chinese'</span><span class="token punctuation">:</span> <span class="token string">'YuWen'</span><span class="token punctuation">,</span> <span class="token string">'English'</span><span class="token punctuation">:</span> <span class="token string">'Yingyu'</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span> inplace <span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>去除重复的值</strong></p>
+<p>不是字段名相同就去除，而是这个字段里面的数组一样才去除</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df <span class="token operator">=</span> df2<span class="token punctuation">.</span>drop_duplicates<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">#去除重复行</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>更改数据格式</strong></p>
+<p>把 Chinese 字段的值改成 str 类型，或者 int64 可以这么写</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df2<span class="token punctuation">[</span><span class="token string">'Chinese'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>astype<span class="token punctuation">(</span><span class="token string">'str'</span><span class="token punctuation">)</span>
+df2<span class="token punctuation">[</span><span class="token string">'Chinese'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>astype<span class="token punctuation">(</span>np<span class="token punctuation">.</span>int64<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>数据间的空格</strong></p>
+<p>有时候我们先把格式转成了 str 类型，是为了方便对数据进行操作，这时想要删除数据间的空格或字符，我们就可以使用 strip 函数</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 删除左右两边空格</span>
+df2<span class="token punctuation">[</span><span class="token string">'Chinese'</span><span class="token punctuation">]</span><span class="token operator">=</span>df2<span class="token punctuation">[</span><span class="token string">'Chinese'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">.</span>strip<span class="token punctuation">)</span>
+<span class="token comment"># 删除左边空格</span>
+df2<span class="token punctuation">[</span><span class="token string">'Chinese'</span><span class="token punctuation">]</span><span class="token operator">=</span>df2<span class="token punctuation">[</span><span class="token string">'Chinese'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">.</span>lstrip<span class="token punctuation">)</span>
+<span class="token comment"># 删除右边空格</span>
+df2<span class="token punctuation">[</span><span class="token string">'Chinese'</span><span class="token punctuation">]</span><span class="token operator">=</span>df2<span class="token punctuation">[</span><span class="token string">'Chinese'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">.</span>rstrip<span class="token punctuation">)</span>
+<span class="token comment"># 删除其中的$符号</span>
+df2<span class="token punctuation">[</span><span class="token string">'Chinese'</span><span class="token punctuation">]</span><span class="token operator">=</span>df2<span class="token punctuation">[</span><span class="token string">'Chinese'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">str</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token string">'$'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>大小写转换</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#全部大写</span>
+df2<span class="token punctuation">.</span>columns <span class="token operator">=</span> df2<span class="token punctuation">.</span>columns<span class="token punctuation">.</span><span class="token builtin">str</span><span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">#全部小写</span>
+df2<span class="token punctuation">.</span>columns <span class="token operator">=</span> df2<span class="token punctuation">.</span>columns<span class="token punctuation">.</span><span class="token builtin">str</span><span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">#首字母大写</span>
+df2<span class="token punctuation">.</span>columns <span class="token operator">=</span> df2<span class="token punctuation">.</span>columns<span class="token punctuation">.</span><span class="token builtin">str</span><span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>查找空值</strong></p>
+<img src="/images/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%9845%E8%AE%B2/image-20221025092409470.png" alt="表结构" style="zoom:50%;" />
+
+<p>针对数据表df使用df.isnull()</p>
+<img src="/images/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%9845%E8%AE%B2/image-20221025092428614.png" alt="针对数据表df使用df.isnull()" style="zoom:50%;" />
+
+
+
+<p>针对某列使用df.isnull().any()</p>
+<img src="/images/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%9845%E8%AE%B2/image-20221025092518068.png" alt="针对某列使用df.isnull().any()" style="zoom:67%;" />
+
+<p><strong>使用 apply 函数对数据进行清洗</strong></p>
+<p>​	apply 函数是 Pandas 中自由度非常高的函数，使用频率也非常高。</p>
+<p>​	我们也可以定义个函数，在 apply中进行使用。比如定义 double_df 函数是将原来的数值 *2 进行返回。然后对 df1 中的“语文”列的数值进行 *2 处理，可以写成：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">double_df</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token keyword">return</span> <span class="token number">2</span><span class="token operator">*</span>x
+df1<span class="token punctuation">[</span><span class="token string">u'语文'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df1<span class="token punctuation">[</span><span class="token string">u'语文'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span>double_df<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="3、数据统计"><a href="#3、数据统计" class="headerlink" title="3、数据统计"></a>3、数据统计</h4><p><strong>统计函数</strong></p>
+<p>​	describe() 函数最简便。它是个统计大礼包，可以快速让我们对数据有个全面的了解。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df1 <span class="token operator">=</span> DataFrame<span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">'name'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'ZhangFei'</span><span class="token punctuation">,</span> <span class="token string">'GuanYu'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'data1'</span><span class="token punctuation">:</span><span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df1<span class="token punctuation">.</span>describe<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>运行结果：</p>
+<pre class="line-numbers language-none"><code class="language-none">          data1
+count  5.000000
+mean   2.000000
+std    1.581139
+min    0.000000
+25%    1.000000
+50%    2.000000
+75%    3.000000
+max    4.000000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>数据表合并</strong></p>
+<p>​	基于指定列进行连接</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df3 <span class="token operator">=</span> pd<span class="token punctuation">.</span>merge<span class="token punctuation">(</span>df1<span class="token punctuation">,</span> df2<span class="token punctuation">,</span> on<span class="token operator">=</span><span class="token string">'name'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<img src="/images/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%9845%E8%AE%B2/image-20221025093942797.png" alt="指定name进行连接"  style="zoom: 50%;" />	
+
+<p>​	inner 内连接</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df3 <span class="token operator">=</span> pd<span class="token punctuation">.</span>merge<span class="token punctuation">(</span>df1<span class="token punctuation">,</span> df2<span class="token punctuation">,</span> how<span class="token operator">=</span><span class="token string">'inner'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>​	<img src="/images/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%9845%E8%AE%B2/image-20221025094218284.png" alt="两表的交集" style="zoom:50%;" /></p>
+<p>left 左连接</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df3 <span class="token operator">=</span> pd<span class="token punctuation">.</span>merge<span class="token punctuation">(</span>df1<span class="token punctuation">,</span> df2<span class="token punctuation">,</span> how<span class="token operator">=</span><span class="token string">'left'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<img src="/images/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%9845%E8%AE%B2/image-20221025094330227.png" alt="以左表为主,右表做补充" style="zoom:50%;" />	
+
+<p>right 右连接</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df3 <span class="token operator">=</span> pd<span class="token punctuation">.</span>merge<span class="token punctuation">(</span>df1<span class="token punctuation">,</span> df2<span class="token punctuation">,</span> how<span class="token operator">=</span><span class="token string">'right'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<img src="/images/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%9845%E8%AE%B2/image-20221025094517630.png" alt="以右表为主,左表做补充" style="zoom:50%;" />	
+
+<p>outer 外连接</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df3 <span class="token operator">=</span> pd<span class="token punctuation">.</span>merge<span class="token punctuation">(</span>df1<span class="token punctuation">,</span> df2<span class="token punctuation">,</span> how<span class="token operator">=</span><span class="token string">'outer'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<img src="/images/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%9845%E8%AE%B2/image-20221025094558773.png" alt="两表的并集" style="zoom:50%;" />
+
+<p><strong>用 SQL 方式打开 Pandas</strong></p>
+<p>pandasql 中的主要函数是 sqldf，它接收两个参数：一个 SQL 查询语句，还有一组环境 变量 globals() 或 locals()。这样我们就可以在 Python 里，直接用 SQL 语句中对 DataFrame 进行操作</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">from</span> pandas <span class="token keyword">import</span> DataFrame
+<span class="token keyword">from</span> pandasql <span class="token keyword">import</span> sqldf<span class="token punctuation">,</span> load_meat<span class="token punctuation">,</span> load_births
+df1 <span class="token operator">=</span> DataFrame<span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">'name'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'ZhangFei'</span><span class="token punctuation">,</span> <span class="token string">'GuanYu'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'data1'</span><span class="token punctuation">:</span><span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+pysqldf <span class="token operator">=</span> <span class="token keyword">lambda</span> sql<span class="token punctuation">:</span> sqldf<span class="token punctuation">(</span>sql<span class="token punctuation">,</span> <span class="token builtin">globals</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+sql <span class="token operator">=</span> <span class="token string">"select * from df1 where name ='ZhangFei'"</span>
+<span class="token keyword">print</span> pysqldf<span class="token punctuation">(</span>sql<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p> lambda函数是用来定义一个匿名函数的，具体的使用形式为：</p>
+<pre class="line-numbers language-none"><code class="language-none">lambda argument_list: expression<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>这里 argument_list 是参数列表，expression 是关于参数的表达式，会根据 expression 表达式计算结果进行输出返回。 在上面的代码中，我们定义了：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">pysqldf <span class="token operator">=</span> <span class="token keyword">lambda</span> sql<span class="token punctuation">:</span> sqldf<span class="token punctuation">(</span>sql<span class="token punctuation">,</span> <span class="token builtin">globals</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>在这个例子里，输入的参数是 sql，返回的结果是 sqldf 对 sql 的运行结果，当然 sqldf 中也输入了 globals 全局参数，因为在 sql 中有对全局参数 df1 的使用。</p>
 <h1 id="机器学习Kaggle比赛"><a href="#机器学习Kaggle比赛" class="headerlink" title="机器学习Kaggle比赛"></a>机器学习Kaggle比赛</h1><h3 id="常见算法工具"><a href="#常见算法工具" class="headerlink" title="常见算法工具"></a>常见算法工具</h3><img src="/images/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%9845%E8%AE%B2/image-20221019150534162.png" alt="" style="zoom: 33%;" />
 
 <h3 id="四大分类"><a href="#四大分类" class="headerlink" title="四大分类"></a>四大分类</h3><ul>
@@ -1045,7 +1275,7 @@ wts <span class="token operator">=</span> np<span class="token punctuation">.</s
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">4.9k</span>
+                        class="white-color">8k</span>
             
             
             
