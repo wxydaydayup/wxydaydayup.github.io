@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="pumpkin, Wxy&#39;s blogs">
-    <meta name="description" content="可爱的胖宝贝不会的题">
+    <meta name="keywords" content="生日提醒脚本, Wxy&#39;s blogs">
+    <meta name="description" content="生日提醒脚本">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>pumpkin | Wxy&#39;s blogs</title>
+    <title>生日提醒脚本 | Wxy&#39;s blogs</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <style>
@@ -343,12 +343,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://tc.phpx.cn/uploads/2022/10/21/xGti1PYFAa.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://tc.phpx.cn/uploads/2022/10/27/9vbl7V9P5Z.webp')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">pumpkin</h1>
+                    <h1 class="description center-align post-title">生日提醒脚本</h1>
                 </div>
             </div>
         </div>
@@ -397,7 +397,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-10-21
+                    2021-10-21
                 </div>
                 
 
@@ -406,14 +406,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    907
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    5 分
                 </div>
                 
 
@@ -436,36 +436,243 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><h3 id="哈希表构造散列表并求平均查找长度"><a href="#哈希表构造散列表并求平均查找长度" class="headerlink" title="哈希表构造散列表并求平均查找长度"></a>哈希表构造散列表并求平均查找长度</h3><h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><p>将关键字序列（7、8、30、11、18、9、14）散列存储到散列表中。散列表的存储空间是一个下标从0开始的一维数组，散列函数为： H(key) &#x3D; (key * 3) MOD 7，处理冲突采用线性探测再散列法，要求装填（载）因子为0.7。</p>
-<p>（1）请画出所构造的散列表。</p>
-<p>（2）分别计算等概率情况下查找成功和查找不成功的平均查找长度。</p>
-<h4 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h4><p><strong>装载因子</strong>是指所有关键子填充哈希表后饱和的程度，它等于 <strong>填入表中的关键字总数&#x2F;哈希表的长度</strong>。根据题意，我们可以确定哈希表的长度为 L &#x3D; 7&#x2F;0.7 &#x3D; 10；因此此题需要构建的哈希表是<strong>下标为0~9</strong>的一维数组。查找不成功的次数就直接找关键字到下一个地址关键字为空的距离，但根据散列函数地址为<strong>MOD7</strong>，因此初始只可能在0~6的位置，</p>
-<p>参考链接： <a target="_blank" rel="noopener" href="https://blog.csdn.net/dyw_666666/article/details/110291968">哈希表查找</a></p>
-<h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><h3 id="硬链接和软链接引用区别"><a href="#硬链接和软链接引用区别" class="headerlink" title="硬链接和软链接引用区别"></a>硬链接和软链接引用区别</h3><h4 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h4><p>​	设文件F1当前引用计数值为1，先建立F1的符号链接文件F2，再建立F1的硬链接文件F3，然后删除F1。此时，F2和F3的引用计数值分别是() 。</p>
-<p>​	当建立F2时，F1和F2的引用计数值都为1。当再建立F3时，F1和F3的引用计数值就都变成了2。当后来删除F1时，F3的引用计数值为2-1&#x3D;1。F2的引用计数值仍然保持不变。综上：F2的引用值为1，F3的引用值也为1。</p>
-<h4 id="解答-1"><a href="#解答-1" class="headerlink" title="解答"></a>解答</h4><p>​	记住结论就行，硬链接删除原文件减一，软链接删除原文件不变</p>
-<p>​	记住结论就行，硬链接删除原文件引用数减1，软链接删除原文件引用数不变</p>
-<p>参考链接： <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_46264660/article/details/124763635">文件链接</a></p>
-<h2 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h2><h3 id="给定带宽求数据传输率"><a href="#给定带宽求数据传输率" class="headerlink" title="给定带宽求数据传输率"></a>给定带宽求数据传输率</h3><h4 id="问题-2"><a href="#问题-2" class="headerlink" title="问题"></a>问题</h4><p>​	一个带宽为4 KHz 的理想低通通道，其允许的最高码元传输速率为多少？</p>
-<p>​	采用8个相位，每相位取2种幅度值的调制技术，可以获得的数据传输率是多少？</p>
-<h4 id="解答-2"><a href="#解答-2" class="headerlink" title="解答"></a>解答</h4><ul>
-<li><p>数据传输速率：在数值上等于<strong>每秒传输构成数据代码的二进制比特数</strong>,单位为比特&#x2F;秒(bit&#x2F;second),记作bps.</p>
-</li>
-<li><p>信号传输速率：也称码元率、调制速率或波特率,表示<strong>单位时间内通过信道传输的码元个数</strong>,单位记做Baud.</p>
-</li>
-<li><p>信道容量：信道在单位时间内可以传输的最大信号量,表示信道的传输能力.信道容量有时也表示为<strong>单位时间内可传输的二进制位的位数（称信道的数据传输速率,位速率）</strong>,单位为位&#x2F;秒（b&#x2F;s）,简记为bps。</p>
-</li>
-</ul>
-<p>因为公式 若信道带宽为W,则奈氏定理的最大码元速率为： B &#x3D; 2W （Baud）</p>
-<p>所以带宽为4K的理想低通信道最大码元速率为：2 × 4000 &#x3D; 8000 （Baud）</p>
-<p>因为采用8个相位，每相位取2种幅度值的调制技术</p>
-<p>说明每个信号有2×8 &#x3D;16种变化，每个码元携带log(2, 16) &#x3D; 4比特的信息</p>
-<p>所以最高数据传送速率  Rmax &#x3D; Bmax × n &#x3D; 8000 × 4 &#x3D; 32000(b&#x2F;s)</p>
-<p>参考链接：</p>
+                <h2 id="服务器部署"><a href="#服务器部署" class="headerlink" title="服务器部署"></a>服务器部署</h2><h3 id="一、创建数据库"><a href="#一、创建数据库" class="headerlink" title="一、创建数据库"></a>一、创建数据库</h3><p>1、云服务器Mysql修改密码</p>
 <ul>
-<li>​	<a target="_blank" rel="noopener" href="https://blog.csdn.net/yang_gang2017/article/details/78226155">求数据传输率</a></li>
-<li>​	<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43336281/article/details/121486370">相位调制求码元携带信息</a></li>
+<li>在my.cnf中的[mysqld]下输入</li>
 </ul>
+<pre class="line-numbers language-none"><code class="language-none">skip-grant-tables<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>终端输入以下命令</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">service mysqld restart
+mysql -u root -p
+use mysql
+update user set password &#x3D; password (&#39;123456&#39;) where user &#x3D; &#39;root&#39;;
+flush privileges; 
+service mysqld restart<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>在my.cnf中的[mysqld]下删除刚刚输入的代码</li>
+</ul>
+<p>2、创建表</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token identifier"><span class="token punctuation">`</span>birth<span class="token punctuation">`</span></span> <span class="token punctuation">(</span>
+  <span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>isBirthday<span class="token punctuation">`</span></span> <span class="token keyword">tinyint</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>isPreGift<span class="token punctuation">`</span></span> <span class="token keyword">tinyint</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>isLunardate<span class="token punctuation">`</span></span> <span class="token keyword">tinyint</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>name<span class="token punctuation">`</span></span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>birDate<span class="token punctuation">`</span></span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span> <span class="token keyword">ENGINE</span><span class="token operator">=</span><span class="token keyword">InnoDB</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token operator">=</span><span class="token number">2</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CHARSET</span><span class="token operator">=</span>utf8<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>3、插入数据</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>birth<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token string">'1'</span><span class="token punctuation">,</span> <span class="token string">'1'</span><span class="token punctuation">,</span> <span class="token string">'1'</span><span class="token punctuation">,</span> <span class="token string">'1'</span><span class="token punctuation">,</span> <span class="token string">'XX'</span><span class="token punctuation">,</span> <span class="token string">'0824'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>4、远程连接云服务器数据库</p>
+<ul>
+<li>支持root用户允许远程连接mysql数据库</li>
+</ul>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">use</span> mysql<span class="token punctuation">;</span>
+<span class="token keyword">grant</span> <span class="token keyword">all</span> <span class="token keyword">privileges</span> <span class="token keyword">on</span> <span class="token operator">*</span><span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword">to</span> <span class="token string">'root'</span><span class="token variable">@'%'</span> identified <span class="token keyword">by</span> <span class="token string">'123456'</span> <span class="token keyword">with</span> <span class="token keyword">grant</span> <span class="token keyword">option</span><span class="token punctuation">;</span>
+flush <span class="token keyword">privileges</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>查看是否修改成功</li>
+</ul>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token keyword">user</span><span class="token punctuation">,</span>host <span class="token keyword">from</span> <span class="token keyword">user</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li><p>远程连接云服务器数据库</p>
+<p>​	这个密码是登录服务器SSH密码</p>
+</li>
+</ul>
+<img src="/images/%E7%94%9F%E6%97%A5%E6%8F%90%E9%86%92%E8%84%9A%E6%9C%AC/image-20221027153238411.png" alt="远程连接服务器" style="zoom: 67%;" />
+
+<p>​			这个密码是登录Mysql的密码，<strong>主机名一定要写localhost的</strong></p>
+<img src="/images/%E7%94%9F%E6%97%A5%E6%8F%90%E9%86%92%E8%84%9A%E6%9C%AC/image-20221027153314029.png" alt="远程连接Mysql" style="zoom:67%;" />
+
+<h3 id="二、服务器定时执行脚本"><a href="#二、服务器定时执行脚本" class="headerlink" title="二、服务器定时执行脚本"></a>二、服务器定时执行脚本</h3><p>1、安装crontab</p>
+<pre class="line-numbers language-none"><code class="language-none">yum install cronie
+yum install crontabs<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>2、开启crontab服务</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">service crond start 	<span class="token comment">#启动服务</span>
+<span class="token comment">#其他相关命令</span>
+service crond stop 		<span class="token comment">#关闭服务</span>
+service crond restart 	<span class="token comment">#重启服务</span>
+service crond <span class="token builtin">reload</span> 	<span class="token comment">#重新载入配置</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>3、在命令行输入: <code>crontab -e</code>  然后添加相应的任务，<code>:wq</code> 可以保存并退出编辑模式  或是  <code>ctrl+zz</code> 退出</p>
+<p>存放位置在&#x2F;var&#x2F;spool&#x2F;cron&#x2F;root目录下</p>
+<pre class="line-numbers language-none"><code class="language-none">0 7 * * * python &#x2F;wxyTest&#x2F;birth.py #每天七点执行
+* * * * * python &#x2F;wxyTest&#x2F;note.py #每分钟执行一次<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>4、时间的有关语法</p>
+<pre class="line-numbers language-none"><code class="language-none"># Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday&#x3D;0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * command to be executed<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="其他学到知识"><a href="#其他学到知识" class="headerlink" title="其他学到知识"></a>其他学到知识</h3><h4 id="1、导出-x2F-下载依赖"><a href="#1、导出-x2F-下载依赖" class="headerlink" title="1、导出&#x2F;下载依赖"></a>1、导出&#x2F;下载依赖</h4><p><strong>第一种方法</strong></p>
+<p>此命令将会列出当前开发环境所有依赖库到requirements.txt文件中，相对较为冗杂。在项目根目录位置，执行：</p>
+<pre class="line-numbers language-none"><code class="language-none">pip freeze &gt; requirements.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>第二种方法</strong></p>
+<p>使用pipreqs，这个工具的好处是可以通过对项目目录的扫描，自动发现使用了那些类库，自动生成依赖清单。缺点是可能会有些偏差，需要检查并自己调整下。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">pip install pipreqs<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>在项目根目录下运行：<code>pipreqs ./</code>  </p>
+<p>如果是Windows系统，会报编码错误 </p>
+<p>​		<code>(UnicodeDecodeError: &#39;gbk&#39; codec can&#39;t decode byte 0xa8 in position 24: illegal multibyte sequence)</code>  </p>
+<p>改成如下命令</p>
+<pre class="line-numbers language-none"><code class="language-none">pipreqs .&#x2F; --encoding&#x3D;utf8<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>生成requirements.txt 文件后，可以根据这个文件下载所有的依赖</p>
+<pre class="line-numbers language-none"><code class="language-none">pip install -r requirements.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="2、查询自己的公网ip"><a href="#2、查询自己的公网ip" class="headerlink" title="2、查询自己的公网ip"></a>2、查询自己的公网ip</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">curl ifconfig<span class="token punctuation">.</span>me  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="3、服务器改用465端口发送邮件"><a href="#3、服务器改用465端口发送邮件" class="headerlink" title="3、服务器改用465端口发送邮件"></a>3、服务器改用465端口发送邮件</h4><p>服务器会把25端口封掉，防止发送垃圾邮件，改用465端口发送邮件，可以看一下对比</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># server = smtplib.SMTP('smtp.qq.com')</span>
+server <span class="token operator">=</span> smtplib<span class="token punctuation">.</span>SMTP_SSL<span class="token punctuation">(</span><span class="token string">'smtp.qq.com'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h4 id="4、编码路径的三种写法"><a href="#4、编码路径的三种写法" class="headerlink" title="4、编码路径的三种写法"></a>4、编码路径的三种写法</h4><ul>
+<li>在路径前面加r，即保持字符原始值的意思。</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">sys.path.append(r‘c:\Users\mshacxiang\VScode_project\web_ddt‘)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>替换为双反斜杠</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">sys.path.append(‘c:\\Users\\mshacxiang\\VScode_project\\web_ddt‘)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>替换为正斜杠</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">sys.path.append(‘c:&#x2F;Users&#x2F;mshacxiang&#x2F;VScode_project&#x2F;web_ddt‘)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="5、最稳定的青龙面板2-10-2的安装"><a href="#5、最稳定的青龙面板2-10-2的安装" class="headerlink" title="5、最稳定的青龙面板2.10.2的安装"></a>5、最稳定的青龙面板2.10.2的安装</h4><ul>
+<li>安装Doker</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">yum install docker-io –y
+sudo systemctl start docker
+sudo systemctl status docker
+sudo systemctl enable docker<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>拉取镜像</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">docker pull ytong825&#x2F;qinglong:2.10.2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>创建容器&#x2F;多容器更改容器名，注意： <strong>端口是3885 不是5700 已经做了修改</strong></li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">docker run -dit \
+   -v $PWD&#x2F;ql&#x2F;config:&#x2F;ql&#x2F;config \
+   -v $PWD&#x2F;ql&#x2F;log:&#x2F;ql&#x2F;log \
+   -v $PWD&#x2F;ql&#x2F;db:&#x2F;ql&#x2F;db \
+   -v $PWD&#x2F;ql&#x2F;repo:&#x2F;ql&#x2F;repo \
+   -v $PWD&#x2F;ql&#x2F;raw:&#x2F;ql&#x2F;raw \
+   -v $PWD&#x2F;ql&#x2F;scripts:&#x2F;ql&#x2F;scripts \
+   -v $PWD&#x2F;ql&#x2F;jbot:&#x2F;ql&#x2F;jbot \
+   -p 3885:5700 \
+   --name qinglong \
+   --hostname qinglong \
+   --restart unless-stopped \
+   ytong825&#x2F;qinglong:2.10.2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>配置相关依赖</li>
+<li>NodeJs</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">crypto-js
+prettytable
+dotenv
+jsdom
+date-fns
+tough-cookie
+tslib
+ws@7.4.3
+ts-md5
+jsdom -g
+jieba
+fs
+form-data
+json5
+global-agent
+png-js
+@types&#x2F;node
+require
+typescript
+js-base64
+axios<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>Python3</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">requests
+canvas
+ping3
+jieba<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>Linux</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">bizCode
+bizMsg
+lxml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>拉取KR库</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">ql repo https:&#x2F;&#x2F;gh.fakev.cn&#x2F;KingRan&#x2F;KR.git &quot;jd_|jx_|jdCookie&quot; &quot;activity|backUp&quot; &quot;^jd[^_]|USER|utils|function|sign|sendNotify|ql|JDJR&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="6、删除Docker里的容器"><a href="#6、删除Docker里的容器" class="headerlink" title="6、删除Docker里的容器"></a>6、删除Docker里的容器</h4><ul>
+<li>重启docker</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">systemctl restart docker<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>列出所有容器ID</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">docker ps -aq<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>列出运行的容器ID</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">docker ps<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>停止所有的容器，这样才能够删除其中的镜像</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">docker stop $(docker ps -a -q) 或者 docker stop $(docker ps -aq) <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>删除所有容器指令</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">docker rm $(docker ps -a -q) 或者 docker rm $(docker ps -aq) <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>查看当前镜像</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">docker images<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>删除镜像，通过镜像的id来指定删除</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">docker rmi &lt;image id&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>强制删除全部镜像</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">docker rmi -f $(docker images -q)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 
                 
             </div>
@@ -492,7 +699,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://wxydaydayup.github.io/2022/10/21/pumpkin/">https://wxydaydayup.github.io/2022/10/21/pumpkin/</a>
+                    <a href="https://wxydaydayup.github.io/2021/10/21/%E7%94%9F%E6%97%A5%E6%8F%90%E9%86%92%E8%84%9A%E6%9C%AC/">https://wxydaydayup.github.io/2021/10/21/%E7%94%9F%E6%97%A5%E6%8F%90%E9%86%92%E8%84%9A%E6%9C%AC/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -614,34 +821,30 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/10/22/Git%E7%AC%94%E8%AE%B0/">
+                <a href="/2022/10/21/pumpkin/">
                     <div class="card-image">
                         
-                        <img src="https://tc.phpx.cn/uploads/2022/10/22/fiGzbH2UDw.png" class="responsive-img" alt="Git笔记">
+                        <img src="https://tc.phpx.cn/uploads/2022/10/21/xGti1PYFAa.jpg" class="responsive-img" alt="pumpkin">
                         
-                        <span class="card-title">Git笔记</span>
+                        <span class="card-title">pumpkin</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Git与Github操作
+                            可爱的胖宝贝不会的题
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-22
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-21
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Git/" class="post-category">
-                                    Git
-                                </a>
-                            
-                            <a href="/categories/Git/Github/" class="post-category">
-                                    Github
+                            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="post-category">
+                                    生活
                                 </a>
                             
                             
@@ -651,12 +854,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Git/">
-                        <span class="chip bg-color">Git</span>
-                    </a>
-                    
-                    <a href="/tags/Github/">
-                        <span class="chip bg-color">Github</span>
+                    <a href="/tags/%E7%94%9F%E6%B4%BB/">
+                        <span class="chip bg-color">生活</span>
                     </a>
                     
                 </div>
@@ -667,7 +866,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
                 <a href="/2021/10/21/%E7%94%9F%E6%97%A5%E6%8F%90%E9%86%92%E8%84%9A%E6%9C%AC/">
@@ -700,6 +899,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
