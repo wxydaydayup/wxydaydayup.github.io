@@ -81,6 +81,8 @@
 #floating-toc-btn .btn-floating {
     width: 48px;
     height: 48px;
+    margin-bottom: -85px;
+    margin-right: 62px;
 }
 
 #floating-toc-btn .btn-floating i {
