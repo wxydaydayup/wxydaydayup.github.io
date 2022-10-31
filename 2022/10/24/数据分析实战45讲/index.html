@@ -94,6 +94,17 @@
   
   <li class="hide-on-med-and-down nav-item">
     
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
     <a href="/categories" class="waves-effect waves-light">
       
       <i class="fas fa-sitemap" style="zoom: 0.6;"></i>
@@ -116,7 +127,7 @@
     <ul class="sub-nav menus_item_child ">
       
       <li>
-        <a href="/tags">
+        <a href="/about">
           
           <i class="fas fa-user-circle" style="margin-top: -20px; zoom: 0.6;"></i>
           
@@ -199,6 +210,17 @@
         
         <li class="m-nav-item">
 	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
 		<a href="/categories" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-sitemap"></i>
@@ -221,7 +243,7 @@
               
                 <li>
 
-                  <a href="/tags " style="margin-left:75px">
+                  <a href="/about " style="margin-left:75px">
 				  
 				   <i class="fa fas fa-user-circle" style="position: absolute;left:50px" ></i>
 			      
@@ -422,14 +444,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    14.2k
+                    16.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    53 分
+                    61 分
                 </div>
                 
 
@@ -911,8 +933,8 @@ df<span class="token punctuation">.</span>drop<span class="token punctuation">(<
 <li><strong>数据平滑</strong>：去除数据中的噪声，将连续数据离散化。这里可以采用分箱、聚类和回归的方式进行数据平滑；</li>
 <li><strong>数据聚集</strong>：对数据进行汇总，在SQL中有一些聚集函数可以供我们操作，比如Max()反馈某个字段的数值最大值，Sum()返回某个字段的数值总和；</li>
 <li><strong>数据概化</strong>：将数据由较低的概念抽象成为较高的概念，减少数据复杂度，即用更高的概念替代更低的概念。比如说上海、杭州、深圳、北京可以概化为中国。</li>
-<li><strong>数据规范化</strong>：使属性数据按比例缩放，这样就将原来的数值映射到一个新的特定区域中。常用的方法有最小—最大规范化、Z—score 规范化、按小数定标规范化等，我会在后面给你讲到这些方法的使用；</li>
-<li><strong>属性构造</strong>：构造出新的属性并添加到属性集中。这里会用到特征工程的知识，因为通过属性与属性的连接构造新的属性，其实就是特征工程。比如说，数据表中统计每个人的英语、语文和数学成绩，你可以构造一个“总和”这个属性，来作为新属性。这样“总和”这个属性就可以用到后续的数据挖掘计算中。</li>
+<li><strong>数据规范化</strong>：使属性数据按比例缩放，这样就将原来的数值映射到一个新的特定区域中。常用的方法有最小—最大规范化、Z—score 规范化、按小数定标规范化等；</li>
+<li><strong>属性构造</strong>：构造出新的属性并添加到属性集中。这里会用到特征工程的知识，因为通过属性与属性的连接构造新的属性，其实就是特征工程。比如说，数据表中统计每个人的英语、语文和数学成绩，可以构造一个“总和”这个属性，来作为新属性。这样“总和”这个属性就可以用到后续的数据挖掘计算中。</li>
 </ul>
 <p>在这些变换方法中，最简单易用的就是对数据进行规范化处理，下面介绍数据进行规范化处理的几种方法，并使用Python中的SciKit-Learn进行数据规范化。</p>
 <h4 id="2、Min-max-规范化"><a href="#2、Min-max-规范化" class="headerlink" title="2、Min-max 规范化"></a>2、Min-max 规范化</h4><p>Min-max标准化方法是将原始数据变换到[0,1]的空间中。用公式表示就是：新数值&#x3D;（原数值-极小值）&#x2F;（极大值-极小值）。</p>
@@ -980,7 +1002,7 @@ scaled_x <span class="token operator">=</span> x<span class="token operator">/</
 <p>通过决策树来进行泰坦尼克乘客生存预测</p>
 <h2 id="算法四大分类"><a href="#算法四大分类" class="headerlink" title="算法四大分类"></a>算法四大分类</h2><h3 id="一、分类算法"><a href="#一、分类算法" class="headerlink" title="一、分类算法"></a>一、分类算法</h3><p>​	知道事先的定义</p>
 <ul>
-<li>C4.5、朴素贝叶斯、SVM、KNN、AdaBoost、CART</li>
+<li>C4.5、CART、朴素贝叶斯、SVM、KNN、AdaBoost</li>
 </ul>
 <h3 id="二、聚类算法"><a href="#二、聚类算法" class="headerlink" title="二、聚类算法"></a>二、聚类算法</h3><p>​	不知道事先的定义</p>
 <ul>
@@ -994,7 +1016,7 @@ scaled_x <span class="token operator">=</span> x<span class="token operator">/</
 <ul>
 <li>PageRank</li>
 </ul>
-<h2 id="算法九大模型"><a href="#算法九大模型" class="headerlink" title="算法九大模型"></a>算法九大模型</h2><h3 id="一、决策树"><a href="#一、决策树" class="headerlink" title="一、决策树"></a>一、决策树</h3><p>总结：决策树的原理就是找到<strong>纯度最高的点作为根结点</strong>，并继续通过<strong>信息增益</strong>或<strong>基尼系数</strong>判断剩下结点那个纯度最高，继续选择根节点。直到递归终止到分到某个类时，目标属性全是一个值或者某个值的比例达到给定的阈值</p>
+<h2 id="算法十大模型"><a href="#算法十大模型" class="headerlink" title="算法十大模型"></a>算法十大模型</h2><h3 id="一、决策树"><a href="#一、决策树" class="headerlink" title="一、决策树"></a>一、决策树</h3><p>总结：决策树的原理就是找到<strong>纯度最高的点作为根结点</strong>，并继续通过<strong>信息增益</strong>或<strong>基尼系数</strong>判断剩下结点那个纯度最高，继续选择根节点。直到递归终止到分到某个类时，目标属性全是一个值或者某个值的比例达到给定的阈值</p>
 <p>讲的很好的相关视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1T7411b7DG/?spm_id_from=333.337.search-card.all.click&vd_source=178669e0797f36fb015c5fc3cb9c7a4f">【数据挖掘】决策树零基础入门教程，手把手教你学决策树！_哔哩哔哩_bilibili</a></p>
 <h4 id="1、纯度、信息熵"><a href="#1、纯度、信息熵" class="headerlink" title="1、纯度、信息熵"></a>1、纯度、信息熵</h4><p>​	决策树的在决策过程中有三个重要的问题：</p>
 <ul>
@@ -1151,31 +1173,29 @@ predict_price <span class="token operator">=</span> dtr<span class="token punctu
 <p>由此，我们可以得出通用的贝叶斯公式：</p>
 <img src="/images/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%9845%E8%AE%B2/image-20221029170146364.png" alt="通用贝叶斯公式" style="zoom: 50%;box-shadow:rgba(0,0,0,0) 0 1px 5px 0px;" />
 
-<p><strong>朴素贝叶斯</strong></p>
-<p>讲完贝叶斯原理之后，我们再来看下朴素贝叶斯。</p>
+<h4 id="1、朴素贝叶斯"><a href="#1、朴素贝叶斯" class="headerlink" title="1、朴素贝叶斯"></a>1、朴素贝叶斯</h4><p>讲完贝叶斯原理之后，我们再来看下朴素贝叶斯。</p>
 <p><strong>它是一种简单但极为强大的预测建模算法</strong>。之所以称为朴素贝叶斯，是因为它假设每个输入变量是独立的。这是一个强硬的假设，实际情况并不一定，但是这项技术对于绝大部分的复杂问题仍然非常有效。朴素贝叶斯模型由两种类型的概率组成：</p>
 <ol>
 <li>每个类别的概率P(C<SUB>j</SUB>)；</li>
 <li>每个属性的条件概率P(A<SUB>i</SUB>|C<SUB>j</SUB>)。</li>
 </ol>
-<p>贝叶斯原理、贝叶斯分类和朴素贝叶斯这三者之间是有区别的。</p>
-<p>贝叶斯原理是最大的概念，它解决了概率论中“逆向概率”的问题，在这个理论基础上，人们设计出了贝叶斯分类器，朴素贝叶斯分类是贝叶斯分类器中的一种，也是最简单，最常用的分类器。朴素贝叶斯之所以朴素是因为它假设属性是相互独立的，因此对实际情况有所约束，如果属性之间存在关联，分类准确率会降低。不过好在对于大部分情况下，朴素贝叶斯的分类效果都不错。</p>
-<p>sklearn机器学习包给我们提供了3个朴素贝叶斯分类算法，分别是</p>
+<h4 id="2、贝叶斯原理、贝叶斯分类和朴素贝叶斯的区别"><a href="#2、贝叶斯原理、贝叶斯分类和朴素贝叶斯的区别" class="headerlink" title="2、贝叶斯原理、贝叶斯分类和朴素贝叶斯的区别"></a>2、贝叶斯原理、贝叶斯分类和朴素贝叶斯的区别</h4><p>贝叶斯原理是最大的概念，它解决了概率论中“逆向概率”的问题，在这个理论基础上，人们设计出了贝叶斯分类器，朴素贝叶斯分类是贝叶斯分类器中的一种，也是最简单，最常用的分类器。</p>
+<p>朴素贝叶斯之所以朴素是因为它假设属性是相互独立的，因此对实际情况有所约束，如果属性之间存在关联，分类准确率会降低。不过好在对于大部分情况下，朴素贝叶斯的分类效果都不错。</p>
+<h4 id="3、Sklearn机器学习包中的朴素贝叶斯"><a href="#3、Sklearn机器学习包中的朴素贝叶斯" class="headerlink" title="3、Sklearn机器学习包中的朴素贝叶斯"></a>3、Sklearn机器学习包中的朴素贝叶斯</h4><p>sklearn机器学习包给我们提供了3个朴素贝叶斯分类算法，分别是</p>
 <ul>
 <li><strong>高斯朴素贝叶斯</strong>（GaussianNB）：特征变量是连续变量，符合高斯分布，比如说人的身高，物体的长度。</li>
 <li><strong>多项式朴素贝叶斯</strong>（MultinomialNB）：特征变量是离散变量，符合多项分布，在文档分类中特征变量体现在一个单词出现的次数，或者是单词的TF-IDF值等。</li>
 <li><strong>伯努利朴素贝叶斯</strong>（BernoulliNB）：特征变量是布尔变量，符合0&#x2F;1分布，在文档分类中特征是单词是否出现。</li>
 </ul>
-<p>补充 TF-IDF</p>
-<ul>
+<h4 id="4、TF-IDF（补充-）"><a href="#4、TF-IDF（补充-）" class="headerlink" title="4、TF-IDF（补充 ）"></a>4、TF-IDF（补充 ）</h4><ul>
 <li><strong>词频TF</strong>计算了一个单词在文档中出现的次数，它认为一个单词的重要性和它在文档中出现的次数呈正比。</li>
 </ul>
-<img src="/images/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%9845%E8%AE%B2/image-20221029172135853.png" alt="image-20221029172135853" style="zoom:50%;" />
+<img src="/images/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%9845%E8%AE%B2/image-20221029172135853.png" alt="image-20221029172135853" style="zoom:50%;box-shadow:rgba(0,0,0,0) 0 1px 5px 0px;" />
 
 <ul>
 <li><strong>逆向文档频率IDF</strong>，是指一个单词在文档中的区分度。它认为一个单词出现在的文档数越少，就越能通过这个单词把该文档和其他文档区分开。IDF越大就代表该单词的区分度越大。有些单词可能不会存在文档中，为了避免分母为0，统一给单词出现的文档数都加1。</li>
 </ul>
-<img src="/images/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%9845%E8%AE%B2/image-20221029172151209.png" alt="image-20221029172151209" style="zoom:50%;" />
+<img src="/images/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%9845%E8%AE%B2/image-20221029172151209.png" alt="image-20221029172151209" style="zoom:50%;box-shadow:rgba(0,0,0,0) 0 1px 5px 0px;" />
 
 <ul>
 <li><p><strong>所以TF-IDF实际上是词频TF和逆向文档频率IDF的乘积</strong>。这样我们倾向于找到TF和IDF取值都高的单词作为区分，即这个单词在一个文档中出现的次数多，同时又很少出现在其他文档中。这样的单词适合用于分类。</p>
@@ -1183,58 +1203,142 @@ predict_price <span class="token operator">=</span> dtr<span class="token punctu
 <li><p><strong>如何求TF-IDF</strong>，在sklearn中我们直接使用TfidfVectorizer类，它可以帮我们计算单词TF-IDF向量的值。在这个类中，取sklearn计算的对数log时，底数是e，不是10。</p>
 </li>
 </ul>
-<h3 id="三、SVM"><a href="#三、SVM" class="headerlink" title="三、SVM"></a>三、SVM</h3><p>​	<strong>SVM就是帮我们找到一个超平面</strong>，这个超平面能将不同的样本划分开，同时使得样本集中的点到这个分类超平面的最小距离（即分类间隔）最大化。</p>
-<p>​	在这个过程中，<strong>支持向量</strong>就是离<strong>分类超平面</strong>最近的样本点，实际上如果确定了支持向量也就确定了这个超平面。所以支持向量决定了分类间隔到底是多少，而在最大间隔以外的样本点，其实对分类都没有意义。</p>
-<p>​	所以说， SVM就是求解最大分类间隔的过程，我们还需要对分类间隔的大小进行定义。</p>
-<p>​	首先，我们定义某类样本集到超平面的距离是这个样本集合内的样本到超平面的最短距离。我们用di代表点xi到超平面wxi+b&#x3D;0的欧氏距离。因此我们要求di的最小值，用它来代表这个样本到超平面的最短距离。d<SUB>i</SUB>可以用公式计算得出：</p>
+<h3 id="三、SVM"><a href="#三、SVM" class="headerlink" title="三、SVM"></a>三、SVM</h3><h4 id="1、SVM的定义"><a href="#1、SVM的定义" class="headerlink" title="1、SVM的定义"></a>1、SVM的定义</h4><p>​	<strong>SVM就是帮我们找到一个超平面</strong>，这个超平面能将不同的样本划分开，同时使得样本集中的点到这个分类超平面的最小距离（即分类间隔）最大化。在这个过程中，<strong>支持向量</strong>就是离<strong>分类超平面</strong>最近的样本点，实际上如果确定了支持向量也就确定了这个超平面。所以支持向量决定了分类间隔到底是多少，而在最大间隔以外的样本点，其实对分类都没有意义。所以说， SVM就是求解最大分类间隔的过程，我们还需要对分类间隔的大小进行定义。</p>
+<p>​	首先，我们定义某类样本集到超平面的距离是这个样本集合内的样本到超平面的最短距离。我们用d<SUB>i</SUB>代表点x<SUB>i</SUB>到超平面wx<SUB>i</SUB>+b&#x3D;0的欧氏距离。因此我们要求d<SUB>i</SUB>的最小值，用它来代表这个样本到超平面的最短距离。d<SUB>i</SUB>可以用公式计算得出：</p>
 <img src="/images/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%9845%E8%AE%B2/image-20221029193733145.png" alt="image-20221029193733145" style="zoom: 33%;box-shadow:rgba(0,0,0,0) 0 1px 5px 0px;" />
 
-<p>其中||w||为超平面的范数，di的公式可以用解析几何知识进行推导，这里不做解释。</p>
-<p><strong>最大间隔的优化模型</strong>我们的目标就是找出所有分类间隔中最大的那个值对应的超平面。在数学上，这是一个凸优化问题（凸优化就是关于求凸集中的凸函数最小化的问题，这里不具体展开）。通过凸优化问题，最后可以求出最优的w和b，也就是我们想要找的最优超平面。中间求解的过程会用到拉格朗日乘子，和KKT（Karush-Kuhn-Tucker）条件。数学公式比较多，这里不进行展开。</p>
-<p><strong>核函数。它可以将样本从原始空间映射到一个更高维的特质空间中，使得样本在新的空间中线性可分</strong>。</p>
+<p><strong>最大间隔的优化模型</strong>我们的目标就是找出所有分类间隔中最大的那个值对应的超平面。在数学上，这是一个凸优化问题（凸优化就是关于求凸集中的凸函数最小化的问题，这里不具体展开）。通过凸优化问题，最后可以求出最优的w和b，也就是我们想要找的最优超平面。中间求解的过程会用到拉格朗日乘子，和KKT（Karush-Kuhn-Tucker）条件。</p>
+<h4 id="2、核函数（相当于激活函数）"><a href="#2、核函数（相当于激活函数）" class="headerlink" title="2、核函数（相当于激活函数）"></a>2、核函数（相当于激活函数）</h4><p><strong>核函数:它可以将样本从原始空间映射到一个更高维的特质空间中，使得样本在新的空间中线性可分</strong>。</p>
 <p>所以在非线性SVM中，核函数的选择就是影响SVM最大的变量。最常用的核函数有线性核、多项式核、高斯核、拉普拉斯核、sigmoid核，或者是这些核函数的组合。这些函数的区别在于映射方式的不同。通过这些核函数，我们就可以把样本空间投射到新的高维空间中。</p>
 <p>当然软间隔和核函数的提出，都是为了方便我们对上面超平面公式中的w和b进行求解，从而得到最大分类间隔的超平面。</p>
-<h2 id="硬间隔、软间隔和非线性SVM"><a href="#硬间隔、软间隔和非线性SVM" class="headerlink" title="硬间隔、软间隔和非线性SVM"></a>硬间隔、软间隔和非线性SVM</h2><p>假如数据是完全的线性可分的，那么学习到的模型可以称为硬间隔支持向量机。<strong>换个说法，硬间隔指的就是完全分类准确，不能存在分类错误的情况。软间隔，就是允许一定量的样本分类错误</strong>。</p>
-<p>我们知道，实际工作中的数据没有那么“干净”，或多或少都会存在一些噪点。所以线性可分是个理想情况。这时，我们需要使用到软间隔SVM（近似线性可分）</p>
-<h3 id="四、KNN"><a href="#四、KNN" class="headerlink" title="四、KNN"></a>四、KNN</h3><p>​	KNN 也叫 K 最近邻算法，就是每个样本都可以用它最接近的 K 个邻居来代表。如果一个样本，它的 K 个最接近的邻居都属于分类 A，那么这个样本也属于分类 A。原理如下：</p>
+<h4 id="3、硬间隔、软间隔和非线性SVM"><a href="#3、硬间隔、软间隔和非线性SVM" class="headerlink" title="3、硬间隔、软间隔和非线性SVM"></a>3、硬间隔、软间隔和非线性SVM</h4><p><strong>硬间隔</strong>，假如数据是完全的线性可分的，那么学习到的模型可以称为硬间隔支持向量机。换个说法，硬间隔指的就是完全分类准确，不能存在分类错误的情况。</p>
+<p><strong>软间隔</strong>，就是允许一定量的样本分类错误，我们知道，实际工作中的数据没有那么“干净”，或多或少都会存在一些噪点，所以线性可分是个理想情况。这时，我们需要使用到软间隔SVM（近似线性可分）</p>
+<h3 id="四、KNN"><a href="#四、KNN" class="headerlink" title="四、KNN"></a>四、KNN</h3><h4 id="1、KNN算法的定义"><a href="#1、KNN算法的定义" class="headerlink" title="1、KNN算法的定义"></a>1、KNN算法的定义</h4><p>​	KNN 也叫 K 最近邻算法，就是每个样本都可以用它最接近的 K 个邻居来代表。如果一个样本，它的 K 个最接近的邻居都属于分类 A，那么这个样本也属于分类 A。原理如下：</p>
 <ol>
 <li>计算待分类物体与其他物体之间的距离；</li>
 <li>统计距离最近的K个邻居；</li>
 <li>对于K个最近的邻居，它们属于哪个分类最多，待分类物体就属于哪一类。</li>
 </ol>
-<p>你能看出整个KNN的分类过程，K值的选择还是很重要的。那么问题来了，K值选择多少是适合的呢？</p>
-<p>如果 K 值比较小，就相当于未分类物体与它的邻居非常接近才行。这样产生的一个问题就是，如果邻居点是个噪声点，那么未分类物体的分类也会产生误差，这样KNN分类就会产生过拟合。</p>
-<p>如果K值比较大，相当于距离过远的点也会对未知物体的分类产生影响，虽然这种情况的好处是鲁棒性强，但是不足也很明显，会产生欠拟合情况，也就是没有把未分类物体真正分类出来。</p>
+<h4 id="2、KNN算法中K值的选择"><a href="#2、KNN算法中K值的选择" class="headerlink" title="2、KNN算法中K值的选择"></a>2、KNN算法中K值的选择</h4><p>你能看出整个KNN的分类过程，K值的选择还是很重要的。</p>
+<ul>
+<li><p>如果 K 值比较小，就相当于未分类物体与它的邻居非常接近才行。这样产生的一个问题就是，如果邻居点是个噪声点，那么未分类物体的分类也会产生误差，这样KNN分类就会产生过拟合。</p>
+</li>
+<li><p>如果K值比较大，相当于距离过远的点也会对未知物体的分类产生影响，虽然这种情况的好处是鲁棒性强，但是不足也很明显，会产生欠拟合情况，也就是没有把未分类物体真正分类出来。</p>
+</li>
+</ul>
 <p>所以K值应该是个实践出来的结果，并不是我们事先而定的。在工程上，我们一般采用交叉验证的方式选取 K 值。</p>
 <p>交叉验证的思路就是，把样本集中的大部分样本作为训练集，剩余的小部分样本用于预测，来验证分类模型的准确性。所以在KNN算法中，我们一般会把K值选取在较小的范围内，同时在验证集上准确率最高的那一个最终确定作为K值。</p>
-<p><strong>距离如何计算</strong></p>
-<p>在KNN算法中，还有一个重要的计算就是关于距离的度量。两个样本点之间的距离代表了这两个样本之间的相似度。距离越大，差异性越大；距离越小，相似度越大。</p>
+<h4 id="3、距离的计算"><a href="#3、距离的计算" class="headerlink" title="3、距离的计算"></a>3、距离的计算</h4><p>在KNN算法中，还有一个重要的计算就是关于距离的度量。两个样本点之间的距离代表了这两个样本之间的相似度。距离越大，差异性越大；距离越小，相似度越大。</p>
 <p>关于距离的计算方式有下面五种方式：</p>
 <ol>
-<li>欧氏距离；</li>
-<li>曼哈顿距离；</li>
-<li>闵可夫斯基距离；</li>
-<li>切比雪夫距离；</li>
-<li>余弦距离；</li>
-</ol>
-<p>3500</p>
-<p>3300</p>
-<p>2100*4</p>
-<p>7300*2</p>
+<li><p>欧氏距离</p>
 <p><strong>欧氏距离</strong>是我们最常用的距离公式，也叫做欧几里得距离。在二维空间中，两点的欧式距离就是：</p>
-<img src="https://static001.geekbang.org/resource/image/f8/80/f8d4fe58ec9580a4ffad5cee263b1b80.png" alt="img" style="zoom:33%;" />
+<img src="https://static001.geekbang.org/resource/image/f8/80/f8d4fe58ec9580a4ffad5cee263b1b80.png" alt="欧氏距离" style="zoom:33%;box-shadow:rgba(0,0,0,0) 0 1px 5px 0px;" />
 
 <p>同理，我们也可以求得两点在n维空间中的距离：</p>
-<img src="https://static001.geekbang.org/resource/image/40/6a/40efe7cb4a2571e55438b55f8d37366a.png" alt="img" style="zoom:33%;" />
-
+<img src="https://static001.geekbang.org/resource/image/40/6a/40efe7cb4a2571e55438b55f8d37366a.png" alt="多维欧氏距离" style="zoom:33%;box-shadow:rgba(0,0,0,0) 0 1px 5px 0px;" />
+</li>
+<li><p>曼哈顿距离</p>
 <p><strong>曼哈顿距离</strong>在几何空间中用的比较多。以下图为例，绿色的直线代表两点之间的欧式距离，而红色和黄色的线为两点的曼哈顿距离。所以曼哈顿距离等于两个点在坐标系上绝对轴距总和。用公式表示就是：</p>
-<img src="https://static001.geekbang.org/resource/image/bd/aa/bda520e8ee34ea19df8dbad3da85faaa.png" alt="img" style="zoom:33%;" />
+<img src="https://static001.geekbang.org/resource/image/bd/aa/bda520e8ee34ea19df8dbad3da85faaa.png" alt="曼哈顿距离" style="zoom:33%;box-shadow:rgba(0,0,0,0) 0 1px 5px 0px;" />
+</li>
+<li><p>闵可夫斯基距离；</p>
+</li>
+<li><p>切比雪夫距离；</p>
+</li>
+<li><p>余弦距离；</p>
+</li>
+</ol>
+<h4 id="4、KD树"><a href="#4、KD树" class="headerlink" title="4、KD树"></a>4、KD树</h4><p>其实从上文你也能看出来，KNN的计算过程是大量计算样本点之间的距离。为了减少计算距离次数，提升KNN的搜索效率，人们提出了KD树（K-Dimensional的缩写）。KD树是对数据点在K维空间中划分的一种数据结构。在KD树的构造中，每个节点都是k维数值点的二叉树。既然是二叉树，就可以采用二叉树的增删改查操作，这样就大大提升了搜索效率。</p>
+<h4 id="5、如何在sklearn中使用KNN"><a href="#5、如何在sklearn中使用KNN" class="headerlink" title="5、如何在sklearn中使用KNN"></a>5、如何在sklearn中使用KNN</h4><p>在Python的sklearn工具包中有KNN算法。KNN既可以做分类器，也可以做回归。如果是做分类，你需要引用：</p>
+<pre class="line-numbers language-none"><code class="language-none">from sklearn.neighbors import KNeighborsClassifier<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="五、AdaBoost"><a href="#五、AdaBoost" class="headerlink" title="五、AdaBoost"></a>五、AdaBoost</h3><p>​	Adaboost 在训练中建立了一个联合的分类模型。boost 在英文中代表提升的意思，所以 Adaboost 是个构建分类器的提升算法。它可以让我们多个弱的分类器组成一个强的分类器</p>
-<h3 id="六、K-Means"><a href="#六、K-Means" class="headerlink" title="六、K-Means"></a>六、K-Means</h3><p>​	K-Means 算法是一个聚类算法。你可以这么理解，最终我想把物体划分成 K 类。假设每 个类别里面，都有个“中心点”，即意见领袖，它是这个类别的核心。现在我有一个新点 要归类，这时候就只要计算这个新点与 K 个中心点的距离，距离哪个中心点近，就变成了 哪个类别。</p>
-<h3 id="七、EM"><a href="#七、EM" class="headerlink" title="七、EM"></a>七、EM</h3><p>​	EM 算法也叫最大期望算法，是求参数的最大似然估计的一种方法。原理是这样的：假设 我们想要评估参数 A 和参数 B，在开始状态下二者都是未知的，并且知道了 A 的信息就可 以得到 B 的信息，反过来知道了 B 也就得到了 A。可以考虑首先赋予 A 某个初值，以此 得到 B 的估值，然后从 B 的估值出发，重新估计 A 的取值，这个过程一直持续到收敛为 止。 EM 算法经常用于聚类和机器学习领域中。</p>
-<h3 id="八、Apriori"><a href="#八、Apriori" class="headerlink" title="八、Apriori"></a>八、Apriori</h3><p>​	Apriori 是一种挖掘关联规则（association rules）的算法，它通过挖掘频繁项集 （frequent item sets）来揭示物品之间的关联关系，被广泛应用到商业挖掘和网络安全 等领域中。频繁项集是指经常出现在一起的物品的集合，关联规则暗示着两种物品之间可能存在很强的关系。</p>
-<h3 id="九、PageRank"><a href="#九、PageRank" class="headerlink" title="九、PageRank"></a>九、PageRank</h3><p>​		PageRank 起源于论文影响力的计算方式，如果一篇文论被引入的次数越多，就代表这篇 论文的影响力越强。同样 PageRank 被 Google 创造性地应用到了网页权重的计算中：当 一个页面链出的页面越多，说明这个页面的“参考文献”越多，当这个页面被链入的频率 越高，说明这个页面被引用的次数越高。基于这个原理，我们可以得到网站的权重划分。</p>
+<p>如果是做回归，你需要引用：</p>
+<pre class="line-numbers language-none"><code class="language-none">from sklearn.neighbors import KNeighborsRegressor<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>从名字上你也能看出来Classifier对应的是分类，Regressor对应的是回归。一般来说如果一个算法有Classifier类，都能找到相应的Regressor类。比如在决策树分类中，你可以使用DecisionTreeClassifier，也可以使用决策树来做回归DecisionTreeRegressor。</p>
+<h3 id="五、AdaBoost"><a href="#五、AdaBoost" class="headerlink" title="五、AdaBoost"></a>五、AdaBoost</h3><h4 id="1、AdaBoost定义"><a href="#1、AdaBoost定义" class="headerlink" title="1、AdaBoost定义"></a>1、AdaBoost定义</h4><p>​	Adaboost 在训练中建立了一个联合的分类模型。boost 在英文中代表提升的意思，所以 Adaboost 是个构建分类器的提升算法。它可以让我们多个弱的分类器组成一个强的分类器。AdaBoost 算法与随机森林算法一样都属于分类算法中的集成算法。集成算法通常有两种方式，分别是投票选举（bagging）和再学习 （boosting）。</p>
+<ul>
+<li>​	投票选举：类似把专家召集到一个会议桌前，当做一个决定的时候， 让 K 个专家（K 个模型）分别进行分类，然后选择出现次数最多的那个类作为最终的分类结果。</li>
+<li>​	再学习：相当于把 K 个专家（K 个分类器）进行加权融合，形成一个新的超级专家 （强分类器），让这个超级专家做判断。</li>
+</ul>
+<p>Adaboost是通过一系列的弱分类器根据不同的权重组合而成的。 假设弱分类器为 G<SUB>i</SUB>(x)，它在强分类器中的权重 ，那么就可以得出强分类器 f(x)：</p>
+<img src="/images/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%9845%E8%AE%B2/image-20221031195751399.png" alt="强分类器" style="zoom: 50%; box-shadow: rgba(0, 0, 0, 0) 0px 1px 5px 0px;" />
+
+<ol>
+<li>每个弱分类器在强分类器中的权重是如何计算的？</li>
+<li>如何得到弱分类器，也就是在每次迭代训练的过程中，如何得到最优弱分类器？</li>
+</ol>
+<h4 id="2、弱分类器权重是计算"><a href="#2、弱分类器权重是计算" class="headerlink" title="2、弱分类器权重是计算"></a>2、弱分类器权重是计算</h4><p>实际上在一个由 K 个弱分类器中组成的强分类器中，如果弱分类器的分类效果好，那么权重应该比较大，如果弱分类器的分类效果一般，权重应该降低。所以我们需要基于这个弱分类器对样本的分类错误率来决定它的权重，其中e<SUB>i</SUB> 代表第 i 个分类器的分类错误率。用公式表示就是：</p>
+<img src="/images/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%9845%E8%AE%B2/image-20221031200339325.png" alt="弱分类器权重" style="zoom: 50%;box-shadow: rgba(0, 0, 0, 0) 0px 1px 5px 0px;" />
+
+
+
+<h4 id="3、在训练迭代中选择最优弱分类器"><a href="#3、在训练迭代中选择最优弱分类器" class="headerlink" title="3、在训练迭代中选择最优弱分类器"></a>3、在训练迭代中选择最优弱分类器</h4><p>​	实际上，AdaBoost 算法是通过改变样本的数据分布来实现选择最优弱分类器的。AdaBoost 会判断每次训练的样本是否正确分类，对于正确分类的样本，降低它的权重，对于被错误分类的样本， 增加它的权重。再基于上一次得到的分类准确率，来确定这次训练样本中每个样本的权 重。然后将修改过权重的新数据集传递给下一层的分类器进行训练。这样做的好处就是， 通过每一轮训练样本的动态权重，可以让训练的焦点集中到难分类的样本上，最终得到的弱分类器的组合更容易得到更高的分类准确率。</p>
+<p>我们可以用D<SUB>k+1</SUB>代表第 k+1 轮训练中，样本的权重集合，其中W<SUB>k+1,k</SUB>代表第 k+1 轮 中第一个样本的权重，以此类推W<SUB>k+1,N</SUB>代表第 k+1 轮中第 N 个样本的权重，因此用公式表示为：</p>
+<img src="/images/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%9845%E8%AE%B2/image-20221031201305653.png"  style="zoom:50%;box-shadow: rgba(0, 0, 0, 0) 0px 1px 5px 0px;" />
+
+<p>第 k+1 轮中的样本权重，是根据该样本在第 k 轮的权重以及第 k 个分类器的准确率而 定，具体的公式为：</p>
+<img src="/images/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%9845%E8%AE%B2/image-20221031201330118.png"  style="zoom:50%;box-shadow: rgba(0, 0, 0, 0) 0px 1px 5px 0px;" />
+
+<h3 id="六、K-Means"><a href="#六、K-Means" class="headerlink" title="六、K-Means"></a>六、K-Means</h3><h4 id="1、K-Means原理"><a href="#1、K-Means原理" class="headerlink" title="1、K-Means原理"></a>1、K-Means原理</h4><p>​	K-Means 算法是一个聚类算法。你可以这么理解，最终我想把物体划分成 K 类。假设每 个类别里面，都有个“中心点”，即意见领袖，它是这个类别的核心。现在我有一个新点 要归类，这时候就只要计算这个新点与 K 个中心点的距离，距离哪个中心点近，就变成了 哪个类别。</p>
+<ol>
+<li>选取K个点作为初始的类中心点，这些点一般都是从数据集中随机抽取的；</li>
+<li>将每个点分配到最近的类中心点，这样就形成了K个类，然后重新计算每个类的中心点；</li>
+<li>重复第二步，直到类不发生变化，或者你也可以设置最大迭代次数，这样即使类中心点发生变化，但是只要达到最大迭代次数就会结束。</li>
+</ol>
+<h4 id="2、K-Means和KNN的区别"><a href="#2、K-Means和KNN的区别" class="headerlink" title="2、K-Means和KNN的区别"></a>2、K-Means和KNN的区别</h4><p>我们可以从三个维度来区分K-Means和KNN这两个算法：</p>
+<ul>
+<li>首先，这两个算法解决数据挖掘的两类问题。K-Means是聚类算法，KNN是分类算法。</li>
+<li>这两个算法分别是两种不同的学习方式。K-Means是非监督学习，也就是不需要事先给出分类标签，而KNN是有监督学习，需要我们给出训练数据的分类标识。</li>
+<li>最后，K值的含义不同。K-Means中的K值代表K类。KNN中的K值代表K个最接近的邻居。</li>
+</ul>
+<h4 id="3、K-Means的缺陷"><a href="#3、K-Means的缺陷" class="headerlink" title="3、K-Means的缺陷"></a>3、K-Means的缺陷</h4><p>K-Means聚类有个缺陷：聚类个数K值需要事先指定。如果你不知道该聚成几类，那么最好会给K值多设置几个，然后选择聚类结果最好的那个值。</p>
+<h3 id="七、EM"><a href="#七、EM" class="headerlink" title="七、EM"></a>七、EM</h3><h4 id="1、EM-算法"><a href="#1、EM-算法" class="headerlink" title="1、EM 算法"></a>1、EM 算法</h4><p>​	EM 算法也叫最大期望算法，是求参数的最大似然估计的一种方法,最大似然也就是求大可能性。</p>
+<p>​	原理是这样的：假设 我们想要评估参数 A 和参数 B，在开始状态下二者都是未知的，并且知道了 A 的信息就可 以得到 B 的信息，反过来知道了 B 也就得到了 A。可以考虑首先赋予 A 某个初值，以此 得到 B 的估值，然后从 B 的估值出发，重新估计 A 的取值，这个过程一直持续到收敛为 止。 EM 算法经常用于聚类和机器学习领域中。</p>
+<p>​	EM算法相当于一个聚类框架，里面有不同的聚类模型，比如GMM高斯混合模型，或者HMM隐马尔科夫模型。</p>
+<h4 id="2、GMM高斯混合模型"><a href="#2、GMM高斯混合模型" class="headerlink" title="2、GMM高斯混合模型"></a>2、GMM高斯混合模型</h4><h4 id="3、HMM隐马尔科夫模型"><a href="#3、HMM隐马尔科夫模型" class="headerlink" title="3、HMM隐马尔科夫模型"></a>3、HMM隐马尔科夫模型</h4><h3 id="八、Apriori"><a href="#八、Apriori" class="headerlink" title="八、Apriori"></a>八、Apriori</h3><h4 id="1、Apriori"><a href="#1、Apriori" class="headerlink" title="1、Apriori"></a>1、Apriori</h4><p>Apriori 是一种挖掘关联规则（association rules）的算法，它通过挖掘频繁项集 （frequent item sets）来揭示物品之间的关联关系，被广泛应用到商业挖掘和网络安全 等领域中。频繁项集是指经常出现在一起的物品的集合，关联规则暗示着两种物品之间可能存在很强的关系。</p>
+<ul>
+<li><p>支持度：是个百分比，它指的是某个商品组合出现的次数与总次数之间的比例。支持度越高，代表这个组合出现的频率越大</p>
+</li>
+<li><p>置信度：是个条件概念，就是说在A发生的情况下，B发生的概率是多少</p>
+</li>
+<li><p>提升度：代表的是“商品A的出现，对商品B的出现概率提升的程度。</p>
+</li>
+<li><p>频繁项集：小于最小值支持度的项目就是非频繁项集，而大于等于最小支持度的项集就是频繁项集。</p>
+</li>
+</ul>
+<p>我们刚完成了Apriori算法的模拟，你能看到Apriori在计算的过程中有以下几个缺点：</p>
+<ol>
+<li>可能产生大量的候选集。因为采用排列组合的方式，把可能的项集都组合出来了；</li>
+<li>每次计算都需要重新扫描数据集，来计算每个项集的支持度。</li>
+</ol>
+<p>所以Apriori算法会浪费很多计算空间和计算时间，为此人们提出了FP-Growth算法，它的特点是：</p>
+<ol>
+<li>创建了一棵FP树来存储频繁项集。在创建前对不满足最小支持度的项进行删除，减少了存储空间。我稍后会讲解如何构造一棵FP树；</li>
+<li>整个生成过程只遍历数据集2次，大大减少了计算量。</li>
+</ol>
+<p>所以在实际工作中，我们常用FP-Growth来做频繁项集的挖掘，</p>
+<h4 id="2、FP-Growth"><a href="#2、FP-Growth" class="headerlink" title="2、FP-Growth"></a>2、FP-Growth</h4><p><strong>1.创建项头表（item header table）</strong></p>
+<p>创建项头表的作用是为FP构建及频繁项集挖掘提供索引。</p>
+<p>这一步的流程是先扫描一遍数据集，对于满足最小支持度的单个项（K&#x3D;1项集）按照支持度从高到低进行排序，这个过程中删除了不满足最小支持度的项。</p>
+<p>项头表包括了项目、支持度，以及该项在FP树中的链表。初始的时候链表为空。</p>
+<p><strong>2.构造FP树</strong></p>
+<p>FP树的根节点记为NULL节点。</p>
+<p>整个流程是需要再次扫描数据集，对于每一条数据，按照支持度从高到低的顺序进行创建节点（也就是第一步中项头表中的排序结果），节点如果存在就将计数count+1，如果不存在就进行创建。同时在创建的过程中，需要更新项头表的链表。</p>
+<p><strong>3.通过FP树挖掘频繁项集</strong></p>
+<p>到这里，我们就得到了一个存储频繁项集的FP树，以及一个项头表。我们可以通过项头表来挖掘出每个频繁项集。</p>
+<p>具体的操作会用到一个概念，叫“条件模式基”，它指的是以要挖掘的节点为叶子节点，自底向上求出FP子树，然后将FP子树的祖先节点设置为叶子节点之和。</p>
+<h3 id="九、PageRank"><a href="#九、PageRank" class="headerlink" title="九、PageRank"></a>九、PageRank</h3><p>​		PageRank 起源于论文影响力的计算方式，如果一篇文论被引入的次数越多，就代表这篇论文的影响力越强。同样 PageRank 被 Google 创造性地应用到了网页权重的计算中：当 一个页面链出的页面越多，说明这个页面的“参考文献”越多，当这个页面被链入的频率 越高，说明这个页面被引用的次数越高。基于这个原理，我们可以得到网站的权重划分。</p>
+<ol>
+<li>等级泄露（Rank Leak）：如果一个网页没有出链，就像是一个黑洞一样，吸收了其他 网页的影响力而不释放，最终会导致其他网页的 PR 值为 0。</li>
+<li>等级沉没（Rank Sink）：如果一个网页只有出链，没有入链（如下图所示），计算的 过程迭代下来，会导致这个网页的 PR 值为 0（也就是不存在公式中的 V）。</li>
+</ol>
+<h3 id="十、随机森林（补充）"><a href="#十、随机森林（补充）" class="headerlink" title="十、随机森林（补充）"></a>十、随机森林（补充）</h3><p>随机森林的英文是 Random Forest，英文简写是 RF。它实际上是一个包含多个决策树的分类 器，每一个子分类器都是一棵 CART 分类回归树。所以随机森林既可以做分类，又可以做回归。</p>
+<ul>
+<li>当它做分类的时候，输出结果是每个子分类器的分类结果中最多的那个。你可以理解是每个分类器都做投票，取投票最多的那个结果。</li>
+<li>当它做回归的时候，输出结果是每棵 CART 树的回归结果 的平均值。</li>
+</ul>
 <h1 id="机器学习Kaggle比赛"><a href="#机器学习Kaggle比赛" class="headerlink" title="机器学习Kaggle比赛"></a>机器学习Kaggle比赛</h1><h2 id="机器学习建模流程"><a href="#机器学习建模流程" class="headerlink" title="机器学习建模流程"></a>机器学习建模流程</h2><h3 id="一、数据探索"><a href="#一、数据探索" class="headerlink" title="一、数据探索"></a>一、数据探索</h3><h3 id="二、数据预处理"><a href="#二、数据预处理" class="headerlink" title="二、数据预处理"></a>二、数据预处理</h3><h3 id="三、特征工程"><a href="#三、特征工程" class="headerlink" title="三、特征工程"></a>三、特征工程</h3><h3 id="四、模型建立"><a href="#四、模型建立" class="headerlink" title="四、模型建立"></a>四、模型建立</h3><h3 id="五、参数调优"><a href="#五、参数调优" class="headerlink" title="五、参数调优"></a>五、参数调优</h3><h3 id="六、模型融合"><a href="#六、模型融合" class="headerlink" title="六、模型融合"></a>六、模型融合</h3>
                 
             </div>
@@ -1558,7 +1662,7 @@ predict_price <span class="token operator">=</span> dtr<span class="token punctu
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             collapseDepth: Number('0'),
-            headingSelector: 'h1, h2, h3, h4'
+            headingSelector: 'h2, h3, h4'
         });
 
         // Set scroll toc fixed.
@@ -1636,7 +1740,7 @@ predict_price <span class="token operator">=</span> dtr<span class="token punctu
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">17.6k</span>
+                        class="white-color">20k</span>
             
             
             
@@ -1906,6 +2010,8 @@ $(function () {
 
     
 
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
     
 
     
