@@ -912,8 +912,7 @@ test_features<span class="token punctuation">[</span><span class="token string">
 <h4 id="2、APP版本与操作系统版本差"><a href="#2、APP版本与操作系统版本差" class="headerlink" title="2、APP版本与操作系统版本差"></a>2、APP版本与操作系统版本差</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">features<span class="token punctuation">[</span><span class="token string">'version_osv'</span><span class="token punctuation">]</span> <span class="token operator">=</span> features<span class="token punctuation">[</span><span class="token string">'osv'</span><span class="token punctuation">]</span> <span class="token operator">-</span> features<span class="token punctuation">[</span><span class="token string">'version'</span><span class="token punctuation">]</span>
 test_features<span class="token punctuation">[</span><span class="token string">'version_osv'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test_features<span class="token punctuation">[</span><span class="token string">'osv'</span><span class="token punctuation">]</span> <span class="token operator">-</span> test_features<span class="token punctuation">[</span><span class="token string">'version'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h3 id="二、xgboost模型"><a href="#二、xgboost模型" class="headerlink" title="二、xgboost模型"></a>二、xgboost模型</h3><p>1、LightGBM 祖传参数</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">clf <span class="token operator">=</span> lgb<span class="token punctuation">.</span>LGBMClassifier<span class="token punctuation">(</span>
+<h3 id="二、xgboost模型"><a href="#二、xgboost模型" class="headerlink" title="二、xgboost模型"></a>二、xgboost模型</h3><h4 id="1、LightGBM-祖传参数"><a href="#1、LightGBM-祖传参数" class="headerlink" title="1、LightGBM 祖传参数"></a>1、LightGBM 祖传参数</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">clf <span class="token operator">=</span> lgb<span class="token punctuation">.</span>LGBMClassifier<span class="token punctuation">(</span>
             num_leaves<span class="token operator">=</span><span class="token number">2</span><span class="token operator">**</span><span class="token number">5</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> reg_alpha<span class="token operator">=</span><span class="token number">0.25</span><span class="token punctuation">,</span> reg_lambda<span class="token operator">=</span><span class="token number">0.25</span><span class="token punctuation">,</span> objective<span class="token operator">=</span><span class="token string">'multiclass'</span><span class="token punctuation">,</span>
             max_depth<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> learning_rate<span class="token operator">=</span><span class="token number">0.005</span><span class="token punctuation">,</span> min_child_samples<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">2021</span><span class="token punctuation">,</span>
             n_estimators<span class="token operator">=</span><span class="token number">2000</span><span class="token punctuation">,</span> subsample<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> colsample_bytree<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
@@ -921,15 +920,13 @@ device <span class="token operator">=</span> gpu
 gpu_platform_id <span class="token operator">=</span> <span class="token number">0</span>
 gpu_device_id <span class="token operator">=</span> <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>2、XGBoost祖传参数</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">model_xgb <span class="token operator">=</span> xgb<span class="token punctuation">.</span>XGBClassifier<span class="token punctuation">(</span>
+<h4 id="2、XGBoost祖传参数"><a href="#2、XGBoost祖传参数" class="headerlink" title="2、XGBoost祖传参数"></a>2、XGBoost祖传参数</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">model_xgb <span class="token operator">=</span> xgb<span class="token punctuation">.</span>XGBClassifier<span class="token punctuation">(</span>
             max_depth<span class="token operator">=</span><span class="token number">9</span><span class="token punctuation">,</span> learning_rate<span class="token operator">=</span><span class="token number">0.005</span><span class="token punctuation">,</span> n_estimators<span class="token operator">=</span><span class="token number">2000</span><span class="token punctuation">,</span> 
             objective<span class="token operator">=</span><span class="token string">'multi:softprob'</span><span class="token punctuation">,</span> tree_method<span class="token operator">=</span><span class="token string">'gpu_hist'</span><span class="token punctuation">,</span> 
             subsample<span class="token operator">=</span><span class="token number">0.8</span><span class="token punctuation">,</span> colsample_bytree<span class="token operator">=</span><span class="token number">0.8</span><span class="token punctuation">,</span> 
             min_child_samples<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> eval_metric<span class="token operator">=</span><span class="token string">'logloss'</span><span class="token punctuation">,</span> reg_lambda<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>3、使用xgboost并使用祖传参数</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">%</span><span class="token operator">%</span>time
+<h4 id="3、使用xgboost并使用祖传参数"><a href="#3、使用xgboost并使用祖传参数" class="headerlink" title="3、使用xgboost并使用祖传参数"></a>3、使用xgboost并使用祖传参数</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">%</span><span class="token operator">%</span>time
 <span class="token comment">#lightgbm进行训练与预测</span>
 <span class="token keyword">import</span> xgboost <span class="token keyword">as</span> xgb
 model_xgb <span class="token operator">=</span> xgb<span class="token punctuation">.</span>XGBClassifier<span class="token punctuation">(</span>
@@ -994,8 +991,7 @@ res<span class="token punctuation">.</span>to_csv<span class="token punctuation"
 <td align="left">L2正则化系数</td>
 </tr>
 </tbody></table>
-<p>可视化的方式查看特征的重要程度</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> xgboost <span class="token keyword">import</span> plot_importance
+<h4 id="4、可视化的方式查看特征的重要程度"><a href="#4、可视化的方式查看特征的重要程度" class="headerlink" title="4、可视化的方式查看特征的重要程度"></a>4、可视化的方式查看特征的重要程度</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> xgboost <span class="token keyword">import</span> plot_importance
 <span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
 plot_importance<span class="token punctuation">(</span>model_xgb<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
@@ -1474,7 +1470,7 @@ key_feature
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">30.7k</span>
+                        class="white-color">32.5k</span>
             
             
             
