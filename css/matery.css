@@ -547,9 +547,10 @@ header .go-back i {
 .index-cover {
     height: 100vh;
 }
-
+/* 去掉opacity可显示顶部图片 */
 .post-cover {
     height: 40vh !important;
+    opacity: 0 !important;
 }
 
 .bg-cover:after {
