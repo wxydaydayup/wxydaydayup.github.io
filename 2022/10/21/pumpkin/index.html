@@ -428,14 +428,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    5 分
                 </div>
                 
 
@@ -472,12 +472,12 @@
 <p>​	记住结论就行，硬链接删除原文件减一，软链接删除原文件不变</p>
 <p>​	记住结论就行，硬链接删除原文件引用数减1，软链接删除原文件引用数不变</p>
 <p>参考链接： <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_46264660/article/details/124763635">文件链接</a></p>
-<h4 id="2、Raid的实现方式"><a href="#2、Raid的实现方式" class="headerlink" title="2、Raid的实现方式"></a>2、Raid的实现方式</h4><p>有两种方法可以实现RAID</p>
+<h3 id="二、Raid"><a href="#二、Raid" class="headerlink" title="二、Raid"></a>二、Raid</h3><h4 id="2、Raid的实现方式"><a href="#2、Raid的实现方式" class="headerlink" title="2、Raid的实现方式"></a>2、Raid的实现方式</h4><p>有两种方法可以实现RAID</p>
 <ul>
 <li>一种是使用RAID控制器组建RAID，称为硬RAID</li>
 <li>一种是直接用程序创建RAID，称为软RAID</li>
 </ul>
-<h4 id="3、操作系统如何实现缓冲技术"><a href="#3、操作系统如何实现缓冲技术" class="headerlink" title="3、操作系统如何实现缓冲技术"></a>3、操作系统如何实现缓冲技术</h4><p>参考链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44096670/article/details/121632471">操作系统如何实现缓冲技术</a></p>
+<h3 id="三、缓冲技术"><a href="#三、缓冲技术" class="headerlink" title="三、缓冲技术"></a>三、缓冲技术</h3><h4 id="3、操作系统如何实现缓冲技术"><a href="#3、操作系统如何实现缓冲技术" class="headerlink" title="3、操作系统如何实现缓冲技术"></a>3、操作系统如何实现缓冲技术</h4><p>参考链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44096670/article/details/121632471">操作系统如何实现缓冲技术</a></p>
 <h2 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h2><h3 id="一、数据传输率"><a href="#一、数据传输率" class="headerlink" title="一、数据传输率"></a>一、数据传输率</h3><h4 id="1、给定带宽求数据传输率"><a href="#1、给定带宽求数据传输率" class="headerlink" title="1、给定带宽求数据传输率"></a>1、给定带宽求数据传输率</h4><p><strong>问题</strong></p>
 <p>​	一个带宽为4 KHz 的理想低通通道，其允许的最高码元传输速率为多少？</p>
 <p>​	采用8个相位，每相位取2种幅度值的调制技术，可以获得的数据传输率是多少？</p>
@@ -500,6 +500,61 @@
 <li>​	<a target="_blank" rel="noopener" href="https://blog.csdn.net/yang_gang2017/article/details/78226155">求数据传输率</a></li>
 <li>​	<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43336281/article/details/121486370">相位调制求码元携带信息</a></li>
 </ul>
+<h3 id="二、DNS工作原理"><a href="#二、DNS工作原理" class="headerlink" title="二、DNS工作原理"></a>二、DNS工作原理</h3><h4 id="1、DNS工作原理和递归迭代查询的过程"><a href="#1、DNS工作原理和递归迭代查询的过程" class="headerlink" title="1、DNS工作原理和递归迭代查询的过程"></a>1、DNS工作原理和递归迭代查询的过程</h4><ul>
+<li>A1.A.com是主机</li>
+<li>DNS.A.com是本地域名服务器</li>
+<li>DNS.com是顶级域名服务器</li>
+</ul>
+<p>参考链接：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1JZ4y1f7tU/?spm_id_from=333.337.search-card.all.click&vd_source=178669e0797f36fb015c5fc3cb9c7a4f">DNS的工作原理和递归迭代查询的过程</a></li>
+</ul>
+<h2 id="C语言基础"><a href="#C语言基础" class="headerlink" title="C语言基础"></a>C语言基础</h2><h3 id="一、指针"><a href="#一、指针" class="headerlink" title="一、指针"></a>一、指针</h3><p>先说一个特殊的场景，就是在声明一个指针时候，是要加上星号的，比如：</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int *a &#x3D; NULL;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>这里的星号没别的意思，就是告诉编译器，a是个指针。而“&amp;”是一个取地址的运算符</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int a &#x3D; 1;
+printf(&quot;变量a自己的地址是:  %x\n&quot;, &amp;a);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>输出的结果是   22feb4  表示变量a存放的地址</p>
+<p>用这个五个方面来说明指针：<strong>己址、己值、他值、他址、他型</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;bits&#x2F;stdc++.h&gt;
+using namespace std;
+int main(void)
+&#123;
+	int *a &#x3D; NULL;
+	printf(&quot;指针变量a的地址是:  %x\n&quot;, &amp;a);
+	int b &#x3D; 1;
+	printf(&quot;指针变量b的地址是:  %x\n&quot;, &amp;b);
+	printf(&quot;---------------------------------\n&quot;);
+	a &#x3D; &amp;b;
+	printf(&quot;指针变量a自己的地址是:  %x\n&quot;, &amp;a);
+	printf(&quot;指针变量a自己的值是:  %x\n&quot;,a);
+	printf(&quot;指针变量*a的值是:  %x\n&quot;,*a);
+	return 0; 
+&#125; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>运行结果</p>
+<img src="/images/pumpkin/image-20221017094755194-1667797230202.png" style="zoom:80%;" />
+
+<ul>
+<li><p>己址：表示自己真实的内存地址</p>
+</li>
+<li><p>己值：表示自己真实内存地址存放的值</p>
+</li>
+<li><p>他值：表示自己加*后可以取到自己真实内存地址存放的值</p>
+</li>
+<li><p>他址：表示自己真实内存地址存放的值就是他址</p>
+</li>
+<li><p>他型：表示声明指针时 int *a &#x3D; NULL; int是指针加星后要取的类型</p>
+</li>
+</ul>
+<p>*和-&gt;的作用一样 都是用来获取他值</p>
+<p>符号<code>.和-&gt;</code>的作用和区别</p>
+<ol>
+<li>A.B则A为对象或者结构体； 点号（.）：左边必须为实体。</li>
+<li>A-&gt;B则A为指针，-&gt;是成员提取，A-&gt;B是提取A中的成员B， <strong>箭头（-&gt;）：左边必须为指针；</strong></li>
+</ol>
 
                 
             </div>
@@ -875,7 +930,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">32.7k</span>
+                        class="white-color">33.2k</span>
             
             
             
