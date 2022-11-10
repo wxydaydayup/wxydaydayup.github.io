@@ -428,14 +428,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    8 分
                 </div>
                 
 
@@ -472,12 +472,12 @@
 <p>​	记住结论就行，硬链接删除原文件减一，软链接删除原文件不变</p>
 <p>​	记住结论就行，硬链接删除原文件引用数减1，软链接删除原文件引用数不变</p>
 <p>参考链接： <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_46264660/article/details/124763635">文件链接</a></p>
-<h3 id="二、Raid"><a href="#二、Raid" class="headerlink" title="二、Raid"></a>二、Raid</h3><h4 id="2、Raid的实现方式"><a href="#2、Raid的实现方式" class="headerlink" title="2、Raid的实现方式"></a>2、Raid的实现方式</h4><p>有两种方法可以实现RAID</p>
+<h3 id="二、Raid"><a href="#二、Raid" class="headerlink" title="二、Raid"></a>二、Raid</h3><h4 id="1、Raid的实现方式"><a href="#1、Raid的实现方式" class="headerlink" title="1、Raid的实现方式"></a>1、Raid的实现方式</h4><p>有两种方法可以实现RAID</p>
 <ul>
 <li>一种是使用RAID控制器组建RAID，称为硬RAID</li>
 <li>一种是直接用程序创建RAID，称为软RAID</li>
 </ul>
-<h3 id="三、缓冲技术"><a href="#三、缓冲技术" class="headerlink" title="三、缓冲技术"></a>三、缓冲技术</h3><h4 id="3、操作系统如何实现缓冲技术"><a href="#3、操作系统如何实现缓冲技术" class="headerlink" title="3、操作系统如何实现缓冲技术"></a>3、操作系统如何实现缓冲技术</h4><p>参考链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44096670/article/details/121632471">操作系统如何实现缓冲技术</a></p>
+<h3 id="三、缓冲技术"><a href="#三、缓冲技术" class="headerlink" title="三、缓冲技术"></a>三、缓冲技术</h3><h4 id="1、操作系统如何实现缓冲技术"><a href="#1、操作系统如何实现缓冲技术" class="headerlink" title="1、操作系统如何实现缓冲技术"></a>1、操作系统如何实现缓冲技术</h4><p>参考链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44096670/article/details/121632471">操作系统如何实现缓冲技术</a></p>
 <h2 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h2><h3 id="一、数据传输率"><a href="#一、数据传输率" class="headerlink" title="一、数据传输率"></a>一、数据传输率</h3><h4 id="1、给定带宽求数据传输率"><a href="#1、给定带宽求数据传输率" class="headerlink" title="1、给定带宽求数据传输率"></a>1、给定带宽求数据传输率</h4><p><strong>问题</strong></p>
 <p>​	一个带宽为4 KHz 的理想低通通道，其允许的最高码元传输速率为多少？</p>
 <p>​	采用8个相位，每相位取2种幅度值的调制技术，可以获得的数据传输率是多少？</p>
@@ -508,6 +508,25 @@
 <p>参考链接：</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1JZ4y1f7tU/?spm_id_from=333.337.search-card.all.click&vd_source=178669e0797f36fb015c5fc3cb9c7a4f">DNS的工作原理和递归迭代查询的过程</a></li>
+</ul>
+<h3 id="三、IP地址分类的意义"><a href="#三、IP地址分类的意义" class="headerlink" title="三、IP地址分类的意义"></a>三、IP地址分类的意义</h3><h4 id="1、IP地址分类的意义"><a href="#1、IP地址分类的意义" class="headerlink" title="1、IP地址分类的意义"></a>1、IP地址分类的意义</h4><p>为了方便对 IP 地址的管理，将 IP 地址基本分为三大类，每类地址的分类与含义如下：</p>
+<ul>
+<li>A 类：前 8 位表示网络 ID，后 24 位表示主机 ID；该地址分配给政府机关单位使用。</li>
+<li>B 类：前 16 位表示网络 ID，后 16 位表示主机 ID；该地址分配给中等规模的企业使用。</li>
+<li>C 类：前 24 位表示网络 ID，后 8 位表示主机 ID；该地址分配给任何需要的人使用。</li>
+</ul>
+<p>除了上述的 A、B、C 三类地址以外，还有两类隐藏地址，即 D 类地址和E类地址：</p>
+<ul>
+<li>D 类：不分网络 ID 和主机 ID；该地址用于多播。</li>
+<li>E 类：不分网络 ID 和主机 ID；该地址用于实验。</li>
+</ul>
+<p>但现在来说IP地址分类已经没有什么意义：</p>
+<img src="/images/pumpkin/image-20221110161732053.png" alt="image-20221110161732053" style="zoom:50%;" />
+
+<p>这里原文也写出了当年划分ABCDE类的初衷: 使得路由表能够做的非常小, 路由器能够快速地处理网络转发，而现在CIDR消除了传统的A类、B类、C类地址、以及划分子网的概念。</p>
+<p>参考链接：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://c.biancheng.net/view/6407.html">IP地址的格式和分类 </a></li>
 </ul>
 <h2 id="C语言基础"><a href="#C语言基础" class="headerlink" title="C语言基础"></a>C语言基础</h2><h3 id="一、指针"><a href="#一、指针" class="headerlink" title="一、指针"></a>一、指针</h3><p>先说一个特殊的场景，就是在声明一个指针时候，是要加上星号的，比如：</p>
 <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int *a &#x3D; NULL;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -555,68 +574,69 @@ int main(void)
 <li>A.B则A为对象或者结构体； 点号（.）：左边必须为实体。</li>
 <li>A-&gt;B则A为指针，-&gt;是成员提取，A-&gt;B是提取A中的成员B， <strong>箭头（-&gt;）：左边必须为指针；</strong></li>
 </ol>
-<h3 id="二、循环链表模拟队列"><a href="#二、循环链表模拟队列" class="headerlink" title="二、循环链表模拟队列"></a>二、循环链表模拟队列</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;bits&#x2F;stdc++.h&gt;
-using namespace std;
-typedef struct Node&#123;
-	int data;
-	struct Node *next;
-&#125;LinkQueueNode,*LinkQueue;
+<h3 id="二、循环链表模拟队列"><a href="#二、循环链表模拟队列" class="headerlink" title="二、循环链表模拟队列"></a>二、循环链表模拟队列</h3><h4 id="1、循环链表模拟队列"><a href="#1、循环链表模拟队列" class="headerlink" title="1、循环链表模拟队列"></a>1、循环链表模拟队列</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+using namespace std<span class="token punctuation">;</span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">Node</span><span class="token punctuation">&#123;</span>
+	<span class="token keyword">int</span> data<span class="token punctuation">;</span>
+	<span class="token keyword">struct</span> <span class="token class-name">Node</span> <span class="token operator">*</span>next<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>LinkQueueNode<span class="token punctuation">,</span><span class="token operator">*</span>LinkQueue<span class="token punctuation">;</span>
 
-int InitLinkQueue(LinkQueue &amp;LQ)&#123;
-	LQ &#x3D; (LinkQueue)malloc(sizeof(LinkQueueNode));
-	if(LQ &#x3D;&#x3D; NULL) return 0;
-	LQ-&gt;next &#x3D; LQ;
-	return 1;
-&#125; 
+<span class="token keyword">int</span> <span class="token function">InitLinkQueue</span><span class="token punctuation">(</span>LinkQueue <span class="token operator">&amp;</span>LQ<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	LQ <span class="token operator">=</span> <span class="token punctuation">(</span>LinkQueue<span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>LinkQueueNode<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span>LQ <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	LQ<span class="token operator">-></span>next <span class="token operator">=</span> LQ<span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span> 
 
-int EnterQueue(LinkQueue &amp;LQ,int x)&#123;
-	LinkQueue temp &#x3D; (LinkQueueNode*)malloc(sizeof(LinkQueueNode));
-	temp-&gt;data &#x3D; x;
-	temp-&gt;next &#x3D; LQ-&gt;next;
-	LQ-&gt;next &#x3D; temp;
-	LQ &#x3D; temp;
-	return 1;
-&#125;
+<span class="token keyword">int</span> <span class="token function">EnterQueue</span><span class="token punctuation">(</span>LinkQueue <span class="token operator">&amp;</span>LQ<span class="token punctuation">,</span><span class="token keyword">int</span> x<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	LinkQueue temp <span class="token operator">=</span> <span class="token punctuation">(</span>LinkQueueNode<span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>LinkQueueNode<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	temp<span class="token operator">-></span>data <span class="token operator">=</span> x<span class="token punctuation">;</span>
+	temp<span class="token operator">-></span>next <span class="token operator">=</span> LQ<span class="token operator">-></span>next<span class="token punctuation">;</span>
+	LQ<span class="token operator">-></span>next <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+	LQ <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-int DeleteQueue(LinkQueue &amp;LQ,int &amp;x)&#123;
-	if(LQ-&gt;next &#x3D;&#x3D; LQ) return 0;
-	LinkQueue temp &#x3D; LQ-&gt;next-&gt;next;
-&#x2F;&#x2F;	if(LQ &#x3D;&#x3D; temp) LQ &#x3D; temp-&gt;next;
-	LQ-&gt;next-&gt;next &#x3D; temp-&gt;next;
-	x &#x3D; temp-&gt;data;
-	free(temp);
-	return 1; 
-&#125;
+<span class="token keyword">int</span> <span class="token function">DeleteQueue</span><span class="token punctuation">(</span>LinkQueue <span class="token operator">&amp;</span>LQ<span class="token punctuation">,</span><span class="token keyword">int</span> <span class="token operator">&amp;</span>x<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span>LQ<span class="token operator">-></span>next <span class="token operator">==</span> LQ<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	LinkQueue temp <span class="token operator">=</span> LQ<span class="token operator">-></span>next<span class="token operator">-></span>next<span class="token punctuation">;</span>
+<span class="token comment">//	if(LQ == temp) LQ = temp->next;</span>
+	LQ<span class="token operator">-></span>next<span class="token operator">-></span>next <span class="token operator">=</span> temp<span class="token operator">-></span>next<span class="token punctuation">;</span>
+	x <span class="token operator">=</span> temp<span class="token operator">-></span>data<span class="token punctuation">;</span>
+	<span class="token function">free</span><span class="token punctuation">(</span>temp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span> 
+<span class="token punctuation">&#125;</span>
 
-void forQueue(LinkQueue LQ)
-&#123;
-	LinkQueue head &#x3D; LQ;
-	LinkQueue q &#x3D; head-&gt;next; 
-	while(head !&#x3D; q)&#123;
-		cout&lt;&lt; q-&gt;data &lt;&lt;endl;
-		q &#x3D; q-&gt;next;
-	&#125; 
-	cout&lt;&lt;head-&gt;data&lt;&lt;endl; 
-&#125;
-int main()
-&#123;
-	LinkQueue LQ;
-	InitLinkQueue(LQ);
-	EnterQueue(LQ,100);
-	EnterQueue(LQ,200);
-	EnterQueue(LQ,300);
-	forQueue(LQ);
-	cout&lt;&lt;&quot;-----------------&quot;&lt;&lt;endl; 
-	int x; 
-	DeleteQueue(LQ,x);
-	DeleteQueue(LQ,x);
-	DeleteQueue(LQ,x);
-	forQueue(LQ);
-	return 0;	
-&#125; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">void</span> <span class="token function">forQueue</span><span class="token punctuation">(</span>LinkQueue LQ<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+	LinkQueue head <span class="token operator">=</span> LQ<span class="token punctuation">;</span>
+	LinkQueue q <span class="token operator">=</span> head<span class="token operator">-></span>next<span class="token punctuation">;</span> 
+	<span class="token keyword">while</span><span class="token punctuation">(</span>head <span class="token operator">!=</span> q<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		cout<span class="token operator">&lt;&lt;</span> q<span class="token operator">-></span>data <span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+		q <span class="token operator">=</span> q<span class="token operator">-></span>next<span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span> 
+	cout<span class="token operator">&lt;&lt;</span>head<span class="token operator">-></span>data<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span> 
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+	LinkQueue LQ<span class="token punctuation">;</span>
+	<span class="token function">InitLinkQueue</span><span class="token punctuation">(</span>LQ<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">EnterQueue</span><span class="token punctuation">(</span>LQ<span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">EnterQueue</span><span class="token punctuation">(</span>LQ<span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">EnterQueue</span><span class="token punctuation">(</span>LQ<span class="token punctuation">,</span><span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">forQueue</span><span class="token punctuation">(</span>LQ<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	cout<span class="token operator">&lt;&lt;</span><span class="token string">"-----------------"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span> 
+	<span class="token keyword">int</span> x<span class="token punctuation">;</span> 
+	<span class="token function">DeleteQueue</span><span class="token punctuation">(</span>LQ<span class="token punctuation">,</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">DeleteQueue</span><span class="token punctuation">(</span>LQ<span class="token punctuation">,</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">DeleteQueue</span><span class="token punctuation">(</span>LQ<span class="token punctuation">,</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">forQueue</span><span class="token punctuation">(</span>LQ<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>	
+<span class="token punctuation">&#125;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>运行结果：</p>
-<img src="/images/pumpkin/image-20221109162320579.png" alt="image-20221109162320579" style="zoom: 67%;" />
+<img src="/images/pumpkin/image-20221109162320579.png" alt="循环链表模拟队列删除结果" style="zoom: 50%;" />
                 
             </div>
             <hr/>
@@ -999,7 +1019,7 @@ int main()
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">37.6k</span>
+                        class="white-color">38.4k</span>
             
             
             
