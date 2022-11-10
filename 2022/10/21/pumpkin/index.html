@@ -428,14 +428,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    7 分
                 </div>
                 
 
@@ -555,7 +555,68 @@ int main(void)
 <li>A.B则A为对象或者结构体； 点号（.）：左边必须为实体。</li>
 <li>A-&gt;B则A为指针，-&gt;是成员提取，A-&gt;B是提取A中的成员B， <strong>箭头（-&gt;）：左边必须为指针；</strong></li>
 </ol>
+<h3 id="二、循环链表模拟队列"><a href="#二、循环链表模拟队列" class="headerlink" title="二、循环链表模拟队列"></a>二、循环链表模拟队列</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;bits&#x2F;stdc++.h&gt;
+using namespace std;
+typedef struct Node&#123;
+	int data;
+	struct Node *next;
+&#125;LinkQueueNode,*LinkQueue;
 
+int InitLinkQueue(LinkQueue &amp;LQ)&#123;
+	LQ &#x3D; (LinkQueue)malloc(sizeof(LinkQueueNode));
+	if(LQ &#x3D;&#x3D; NULL) return 0;
+	LQ-&gt;next &#x3D; LQ;
+	return 1;
+&#125; 
+
+int EnterQueue(LinkQueue &amp;LQ,int x)&#123;
+	LinkQueue temp &#x3D; (LinkQueueNode*)malloc(sizeof(LinkQueueNode));
+	temp-&gt;data &#x3D; x;
+	temp-&gt;next &#x3D; LQ-&gt;next;
+	LQ-&gt;next &#x3D; temp;
+	LQ &#x3D; temp;
+	return 1;
+&#125;
+
+int DeleteQueue(LinkQueue &amp;LQ,int &amp;x)&#123;
+	if(LQ-&gt;next &#x3D;&#x3D; LQ) return 0;
+	LinkQueue temp &#x3D; LQ-&gt;next-&gt;next;
+&#x2F;&#x2F;	if(LQ &#x3D;&#x3D; temp) LQ &#x3D; temp-&gt;next;
+	LQ-&gt;next-&gt;next &#x3D; temp-&gt;next;
+	x &#x3D; temp-&gt;data;
+	free(temp);
+	return 1; 
+&#125;
+
+void forQueue(LinkQueue LQ)
+&#123;
+	LinkQueue head &#x3D; LQ;
+	LinkQueue q &#x3D; head-&gt;next; 
+	while(head !&#x3D; q)&#123;
+		cout&lt;&lt; q-&gt;data &lt;&lt;endl;
+		q &#x3D; q-&gt;next;
+	&#125; 
+	cout&lt;&lt;head-&gt;data&lt;&lt;endl; 
+&#125;
+int main()
+&#123;
+	LinkQueue LQ;
+	InitLinkQueue(LQ);
+	EnterQueue(LQ,100);
+	EnterQueue(LQ,200);
+	EnterQueue(LQ,300);
+	forQueue(LQ);
+	cout&lt;&lt;&quot;-----------------&quot;&lt;&lt;endl; 
+	int x; 
+	DeleteQueue(LQ,x);
+	DeleteQueue(LQ,x);
+	DeleteQueue(LQ,x);
+	forQueue(LQ);
+	return 0;	
+&#125; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>运行结果：</p>
+<img src="/images/pumpkin/image-20221109162320579.png" alt="image-20221109162320579" style="zoom: 67%;" />
                 
             </div>
             <hr/>
@@ -759,34 +820,34 @@ int main(void)
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/11/08/JavaEE%E7%9B%B8%E5%85%B3%E5%9F%BA%E7%A1%80/">
+                <a href="/2022/01/08/%E5%89%91%E6%8C%87offer/">
                     <div class="card-image">
                         
-                        <img src="https://pic1.imgdb.cn/item/6369fe0216f2c2beb1d359e0.png" class="responsive-img" alt="JavaEE相关基础">
+                        <img src="https://pic1.imgdb.cn/item/636c59e916f2c2beb1841cf1.jpg" class="responsive-img" alt="剑指offer">
                         
-                        <span class="card-title">JavaEE相关基础</span>
+                        <span class="card-title">剑指offer</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            JavaEE相关基础
+                            剑指offer二刷总结
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-08
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java/" class="post-category">
-                                    Java
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
                                 </a>
                             
-                            <a href="/categories/Java/Mysql/" class="post-category">
-                                    Mysql
+                            <a href="/categories/%E7%AE%97%E6%B3%95/C/" class="post-category">
+                                    C++
                                 </a>
                             
                             
@@ -796,12 +857,12 @@ int main(void)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
-                    <a href="/tags/Mysql/">
-                        <span class="chip bg-color">Mysql</span>
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
                     </a>
                     
                 </div>
@@ -938,7 +999,7 @@ int main(void)
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">36.6k</span>
+                        class="white-color">37.6k</span>
             
             
             
