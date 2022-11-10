@@ -428,14 +428,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2k
+                    2.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    9 分
                 </div>
                 
 
@@ -521,8 +521,7 @@
 <li>E 类：不分网络 ID 和主机 ID；该地址用于实验。</li>
 </ul>
 <p>但现在来说IP地址分类已经没有什么意义：</p>
-<img src="/images/pumpkin/image-20221110161732053.png" alt="image-20221110161732053" style="zoom:50%;" />
-
+<p><img src="/images/pumpkin/image-20221110161732053.png"  style="zoom:50%;" /></p>
 <p>这里原文也写出了当年划分ABCDE类的初衷: 使得路由表能够做的非常小, 路由器能够快速地处理网络转发，而现在CIDR消除了传统的A类、B类、C类地址、以及划分子网的概念。</p>
 <p>参考链接：</p>
 <ul>
@@ -637,6 +636,54 @@ using namespace std<span class="token punctuation">;</span>
 
 <p>运行结果：</p>
 <img src="/images/pumpkin/image-20221109162320579.png" alt="循环链表模拟队列删除结果" style="zoom: 50%;" />
+
+
+
+
+
+<h3 id="三、判断数字序列的出栈顺序是否合法"><a href="#三、判断数字序列的出栈顺序是否合法" class="headerlink" title="三、判断数字序列的出栈顺序是否合法"></a>三、判断数字序列的出栈顺序是否合法</h3><h4 id="1、思路如下"><a href="#1、思路如下" class="headerlink" title="1、思路如下"></a>1、思路如下</h4><p>左边为模拟栈,  右边为题目给定数字序列</p>
+<p>(1) 模拟栈给定序列的栈顶数字<strong>不等于</strong>题目所给的数字序列的开头时，数字进入。</p>
+<p>(2) 模拟栈中的栈顶数字<strong>等于</strong>题目所给的数字序列的开头时，模拟栈和数字序列的首数字同时出栈;</p>
+<p>之后，再进行下一个数字的比较，反复1、2过程。</p>
+<p>(3) 当题目所给的数字序列全部入栈后，判断模拟栈中的元素是否为空</p>
+<ul>
+<li>若为空，说明数字序列合法</li>
+<li>若不为空，说明数字序列不合法</li>
+</ul>
+<h4 id="2、模拟过程如下"><a href="#2、模拟过程如下" class="headerlink" title="2、模拟过程如下"></a>2、模拟过程如下</h4><img src="/images/pumpkin/image-20221110210029217.png" alt="步骤一" style="zoom:40%;box-shadow:rgba(0,0,0,0) 0 1px 5px 0px;" />
+
+<img src="/images/pumpkin/image-20221110210311559.png" alt="步骤二" style="zoom:40%;box-shadow:rgba(0,0,0,0) 0 1px 5px 0px;"/>
+
+<img src="/images/pumpkin/image-20221110210427565.png" alt="步骤三" style="zoom:40%;box-shadow:rgba(0,0,0,0) 0 1px 5px 0px;" />
+
+<img src="/images/pumpkin/image-20221110210503465.png" alt="步骤四" style="zoom:40%;box-shadow:rgba(0,0,0,0) 0 1px 5px 0px;" />
+
+<img src="/images/pumpkin/image-20221110210527942.png" alt="步骤五" style="zoom:40%;box-shadow:rgba(0,0,0,0) 0 1px 5px 0px;" />
+
+<h4 id="3、代码如下"><a href="#3、代码如下" class="headerlink" title="3、代码如下"></a>3、代码如下</h4><p>给定输出顺序用栈存可以,用队列存储也可以，下列代码是用栈存储。</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+using namespace std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>	
+	stack<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> inputStack<span class="token punctuation">,</span>s<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> a<span class="token punctuation">;</span>
+	<span class="token keyword">while</span><span class="token punctuation">(</span>cin<span class="token operator">>></span>a<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>a <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+		inputStack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span> 
+	<span class="token keyword">int</span> n <span class="token operator">=</span> inputStack<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		s<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">while</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span><span class="token number">0</span> <span class="token operator">&amp;&amp;</span> inputStack<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> s<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+			s<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			inputStack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">&#125;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">0</span> <span class="token punctuation">)</span> cout<span class="token operator">&lt;&lt;</span><span class="token string">"不合法"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span> 
+	<span class="token keyword">else</span> cout<span class="token operator">&lt;&lt;</span><span class="token string">"合法"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span> 
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
                 
             </div>
             <hr/>
@@ -1019,7 +1066,7 @@ using namespace std<span class="token punctuation">;</span>
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">38.4k</span>
+                        class="white-color">39.7k</span>
             
             
             
