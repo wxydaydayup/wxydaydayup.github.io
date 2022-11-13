@@ -444,14 +444,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    775
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    5 分
                 </div>
                 
 
@@ -480,6 +480,77 @@
 <li>使用 XPath 解析内容。XPath 是XML Path的缩写，也就是XML 路径语言。它是一种用来确定 XML 文档中某部分位置的语言，在开发中经常用来当作小型查询语言。XPath可以通过元素和属性进行位置索引。</li>
 <li>使用 Pandas 保存数据。Pandas 是让数据分析工作变得更加简单的高级数据结构，我们可以用 Pandas 保存爬取的数据。最后通过Pandas再写入到XLS或者MySQL等数据库中。</li>
 </ol>
+<h1 id="爬虫采集免费IP代理"><a href="#爬虫采集免费IP代理" class="headerlink" title="爬虫采集免费IP代理"></a>爬虫采集免费IP代理</h1><h3 id="一、网站分析与请求数据"><a href="#一、网站分析与请求数据" class="headerlink" title="一、网站分析与请求数据"></a>一、网站分析与请求数据</h3><pre class="line-numbers language-none"><code class="language-none">dict &#x3D; &#123;&#39;http&#39;: &#39;http:&#x2F;&#x2F;&#39; + IP:端口号&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>下载 requests包</p>
+<pre class="line-numbers language-none"><code class="language-none">pip install requests<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>请求数据</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests
+url <span class="token operator">=</span> <span class="token string">'https://www.kuaidaili.com/free/'</span>
+headers <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">'User-Agent'</span><span class="token punctuation">:</span> <span class="token string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 Edg/107.0.1418.42'</span>
+<span class="token punctuation">&#125;</span>
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url <span class="token operator">=</span> url<span class="token punctuation">,</span>headers <span class="token operator">=</span> headers<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="二、解析数据"><a href="#二、解析数据" class="headerlink" title="二、解析数据"></a>二、解析数据</h3><p>解析数据的3种写法</p>
+<h4 id="1、可以使用re正则提取数据"><a href="#1、可以使用re正则提取数据" class="headerlink" title="1、可以使用re正则提取数据"></a>1、可以使用re正则提取数据</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> re
+IP_list <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'&lt;td data-title="IP">(.*?)&lt;/td>'</span><span class="token punctuation">,</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+Post_list <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'&lt;td data-title="PORT">(.*?)&lt;/td>'</span><span class="token punctuation">,</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2、CSS提取数据"><a href="#2、CSS提取数据" class="headerlink" title="2、CSS提取数据"></a>2、CSS提取数据</h4><pre class="line-numbers language-none"><code class="language-none">pip install parsel<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>转换数据类型,根据标签层层定位</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> parsel
+selector <span class="token operator">=</span> parsel<span class="token punctuation">.</span>Selector<span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+IP_list <span class="token operator">=</span> selector<span class="token punctuation">.</span>css<span class="token punctuation">(</span><span class="token string">'#list tbody tr td:nth-child(1)::text'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>getall<span class="token punctuation">(</span><span class="token punctuation">)</span>
+Post_list <span class="token operator">=</span> selector<span class="token punctuation">.</span>css<span class="token punctuation">(</span><span class="token string">'#list tbody tr td:nth-child(2)::text'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>getall<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>IP_list<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>Post_list<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="3、xpath提取数据"><a href="#3、xpath提取数据" class="headerlink" title="3、xpath提取数据"></a>3、xpath提取数据</h4><pre class="line-numbers language-none"><code class="language-none">pip install parsel<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>转换数据类型,根据标签层层定位</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> parsel
+selector <span class="token operator">=</span> parsel<span class="token punctuation">.</span>Selector<span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+IP_list <span class="token operator">=</span> selector<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//*[@id ="list"]//tbody/tr/td[1]/text()'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>getall<span class="token punctuation">(</span><span class="token punctuation">)</span>
+Post_list <span class="token operator">=</span> selector<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//*[@id ="list"]//tbody/tr/td[2]/text()'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>getall<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="三、检测IP并进行打印"><a href="#三、检测IP并进行打印" class="headerlink" title="三、检测IP并进行打印"></a>三、检测IP并进行打印</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">all_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+use_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+err_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+num <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">for</span> page <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    url <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f'https://www.kuaidaili.com/free/inha/</span><span class="token interpolation"><span class="token punctuation">&#123;</span>page<span class="token punctuation">&#125;</span></span><span class="token string">/'</span></span>
+    headers <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+        <span class="token string">'User-Agent'</span><span class="token punctuation">:</span> <span class="token string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 Edg/107.0.1418.42'</span>
+    <span class="token punctuation">&#125;</span>
+    response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url <span class="token operator">=</span> url<span class="token punctuation">,</span>headers <span class="token operator">=</span> headers<span class="token punctuation">)</span>
+    IP_list <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'&lt;td data-title="IP">(.*?)&lt;/td>'</span><span class="token punctuation">,</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+    Post_list <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'&lt;td data-title="PORT">(.*?)&lt;/td>'</span><span class="token punctuation">,</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> IP<span class="token punctuation">,</span>Post <span class="token keyword">in</span> <span class="token builtin">zip</span><span class="token punctuation">(</span>IP_list<span class="token punctuation">,</span>Post_list<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token builtin">dict</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'http'</span><span class="token punctuation">:</span> <span class="token string">'http://'</span> <span class="token operator">+</span> IP <span class="token operator">+</span> <span class="token string">':'</span> <span class="token operator">+</span> Post<span class="token punctuation">&#125;</span>
+        all_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token builtin">dict</span><span class="token punctuation">)</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            num <span class="token operator">+=</span> <span class="token number">1</span>
+            checkResponse <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token operator">=</span><span class="token string">'https://www.baidu.com/'</span><span class="token punctuation">,</span>headers <span class="token operator">=</span> headers<span class="token punctuation">,</span>proxies <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> checkResponse<span class="token punctuation">.</span>status_code <span class="token operator">==</span> <span class="token number">200</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>num <span class="token operator">%</span> <span class="token number">20</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'已采集有效代理</span><span class="token interpolation"><span class="token punctuation">&#123;</span>num<span class="token punctuation">&#125;</span></span><span class="token string">条'</span></span><span class="token punctuation">)</span>
+                use_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token builtin">dict</span><span class="token punctuation">)</span>
+        <span class="token keyword">except</span><span class="token punctuation">:</span>
+            err_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token builtin">dict</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'一共采集到</span><span class="token interpolation"><span class="token punctuation">&#123;</span><span class="token builtin">len</span><span class="token punctuation">(</span>all_list<span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span><span class="token string">条代理,其中有效代理</span><span class="token interpolation"><span class="token punctuation">&#123;</span><span class="token builtin">len</span><span class="token punctuation">(</span>use_list<span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span><span class="token string">条'</span></span><span class="token punctuation">)</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="四、保存IP"><a href="#四、保存IP" class="headerlink" title="四、保存IP"></a>四、保存IP</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'target.txt'</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">,</span>encoding <span class="token operator">=</span> <span class="token string">'utf-8'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+	f<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token builtin">str</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> use_list<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"已保存为可用http代理.txt"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h1 id="八爪鱼"><a href="#八爪鱼" class="headerlink" title="八爪鱼"></a>八爪鱼</h1><p><strong>1. 打开网页</strong></p>
 <p>所有的采集默认第一项都是打开网页。所以在新建任务之后，系统会提示你输入网址。当你输入之后，八爪鱼就会自动建立一个“打开网页”的流程。</p>
 <p><strong>2. 点击元素</strong></p>
@@ -877,7 +948,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">39.9k</span>
+                        class="white-color">40.4k</span>
             
             
             
