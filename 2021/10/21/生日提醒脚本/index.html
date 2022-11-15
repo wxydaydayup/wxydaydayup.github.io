@@ -428,14 +428,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    8 分
                 </div>
                 
 
@@ -579,7 +579,8 @@ server <span class="token operator">=</span> smtplib<span class="token punctuati
 </ul>
 <pre class="line-numbers language-none"><code class="language-none">sys.path.append(‘c:&#x2F;Users&#x2F;mshacxiang&#x2F;VScode_project&#x2F;web_ddt‘)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h4 id="5、最稳定的青龙面板2-10-2的安装"><a href="#5、最稳定的青龙面板2-10-2的安装" class="headerlink" title="5、最稳定的青龙面板2.10.2的安装"></a>5、最稳定的青龙面板2.10.2的安装</h4><ul>
+<h4 id="5、最稳定的青龙面板2-10-2的安装"><a href="#5、最稳定的青龙面板2-10-2的安装" class="headerlink" title="5、最稳定的青龙面板2.10.2的安装"></a>5、最稳定的青龙面板2.10.2的安装</h4><p>安装在&#x2F;root&#x2F;ql位置下</p>
+<ul>
 <li>安装Doker</li>
 </ul>
 <pre class="line-numbers language-none"><code class="language-none">yum install docker-io –y
@@ -653,12 +654,57 @@ lxml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span
 <ul>
 <li>拉取KR库</li>
 </ul>
-<pre class="line-numbers language-none"><code class="language-none">ql repo https:&#x2F;&#x2F;gh.fakev.cn&#x2F;KingRan&#x2F;KR.git &quot;jd_|jx_|jdCookie&quot; &quot;activity|backUp&quot; &quot;^jd[^_]|USER|utils|function|sign|sendNotify|ql|JDJR&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">定时规则：0 0 1 * *
+ql repo https:&#x2F;&#x2F;github.com&#x2F;KingRan&#x2F;KR.git &quot;jd_|jx_|jdCookie&quot; &quot;activity|backUp&quot; &quot;^jd[^_]|USER|utils|function|sign|sendNotify|ql|JDJR&quot;
+
+
+定时规则：0 0 1 * *
+ql repo https:&#x2F;&#x2F;github.com&#x2F;feverrun&#x2F;my_scripts.git &quot;jd_|jx_|jddj_|getCookie|getJDCookie&quot; &quot;backUp&#x2F;activity|backUp&#x2F;card|backUp&#x2F;py|backUp&#x2F;utils&#x2F;|backUp&#x2F;test|jd_fruits.js|jd_pet.js|jd_factory.js|jd_health.js|jd_sgmh.js|jd_dreamFactory.js|jd_plantBean.js&quot; &quot;^(jd|JD|JS)[^_]|USER|sendNotify|utils&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>青龙面板时间设置</li>
+</ul>
+<p>第1个是秒，第2个是分，第3个是时，第4个是每月的哪日，第5个是哪月，第6个是每周的周几。</p>
+<p>不限制的用 * 号替代，定期的时间用 ? 替代，间隔运行时间用“*&#x2F;数字”替代</p>
+<p>同一个时间位多个选项用”,”连接，同一个时间位一个区间用“-”连接。</p>
+<p>每天执行，在天位或者周位用”?”都行，一般设置每天执行一次就行0 0 1 * * ?</p>
+<p>具体示例如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token number">0</span> <span class="token number">0</span> <span class="token number">1</span> <span class="token operator">*</span> <span class="token operator">*</span> ? <span class="token comment">#每天 1 点触发</span>
+<span class="token number">0</span> <span class="token number">10</span> <span class="token number">1</span> ? <span class="token operator">*</span> <span class="token operator">*</span> <span class="token comment">#每天 1:10 触发</span>
+<span class="token operator">*</span><span class="token operator">/</span><span class="token number">5</span> <span class="token operator">*</span> <span class="token operator">*</span> <span class="token operator">*</span> <span class="token operator">*</span> ? <span class="token comment">#每隔 5 秒执行一次</span>
+<span class="token number">0</span> <span class="token operator">*</span><span class="token operator">/</span><span class="token number">1</span> <span class="token operator">*</span> <span class="token operator">*</span> <span class="token operator">*</span> ? <span class="token comment">#每隔 1 分钟执行一次</span>
+<span class="token number">0</span> <span class="token number">0</span> <span class="token number">2</span> <span class="token number">1</span> <span class="token operator">*</span> ? <span class="token operator">*</span> <span class="token comment">#每月 1 日的凌晨 2 点执行一次</span>
+<span class="token number">0</span> <span class="token number">0</span> <span class="token number">1</span> <span class="token operator">*</span> <span class="token operator">*</span> ? <span class="token comment">#每天 23 点执行一次</span>
+<span class="token number">0</span> <span class="token number">0</span> <span class="token number">1</span> <span class="token operator">*</span> <span class="token operator">*</span> ? <span class="token comment">#每天凌晨 1 点执行一次</span>
+<span class="token number">0</span> <span class="token number">0</span> <span class="token number">1</span> <span class="token number">1</span> ? <span class="token operator">*</span> <span class="token comment">#每月 1 日凌晨 1 点执行一次</span>
+<span class="token number">0</span> <span class="token number">26</span><span class="token punctuation">,</span><span class="token number">29</span><span class="token punctuation">,</span><span class="token number">33</span> <span class="token operator">*</span> <span class="token operator">*</span> <span class="token operator">*</span> ? <span class="token comment">#在 26 分、29 分、33 分执行一次</span>
+<span class="token number">0</span> <span class="token number">0</span> <span class="token number">0</span><span class="token punctuation">,</span><span class="token number">13</span><span class="token punctuation">,</span><span class="token number">18</span><span class="token punctuation">,</span><span class="token number">21</span> <span class="token operator">*</span> <span class="token operator">*</span> ? <span class="token comment">#每天的 0 点、13 点、18 点、21 点都执行一次</span>
+<span class="token number">0</span> <span class="token number">0</span> <span class="token number">10</span><span class="token punctuation">,</span><span class="token number">14</span><span class="token punctuation">,</span><span class="token number">16</span> <span class="token operator">*</span> <span class="token operator">*</span> ? <span class="token comment">#每天上午 10 点，下午 2 点，4 点执行一次</span>
+<span class="token number">0</span> <span class="token number">0</span><span class="token operator">/</span><span class="token number">30</span> <span class="token number">9</span><span class="token operator">-</span><span class="token number">17</span> <span class="token operator">*</span> <span class="token operator">*</span> ? <span class="token comment">#每天朝九晚五工作时间内每半小时执行一次</span>
+<span class="token number">0</span> <span class="token operator">*</span> <span class="token number">14</span> <span class="token operator">*</span> <span class="token operator">*</span> ? <span class="token comment">#每天下午 2 点到 2:59 期间的每 1 分钟触发</span>
+<span class="token number">0</span> <span class="token operator">*</span><span class="token operator">/</span><span class="token number">5</span> <span class="token number">14</span> <span class="token operator">*</span> <span class="token operator">*</span> ? <span class="token comment">#每天下午 2 点到 2:55 期间的每 5 分钟触发</span>
+<span class="token number">0</span> <span class="token operator">*</span><span class="token operator">/</span><span class="token number">5</span> <span class="token number">14</span><span class="token punctuation">,</span><span class="token number">18</span> <span class="token operator">*</span> <span class="token operator">*</span> ? <span class="token comment">#每天下午 2 点到 2:55 期间和下午 6 点到 6:55 期间的每 5 分钟触发</span>
+<span class="token number">0</span> <span class="token number">0</span><span class="token operator">-</span><span class="token number">5</span> <span class="token number">14</span> <span class="token operator">*</span> <span class="token operator">*</span> ? <span class="token comment">#每天下午 2 点到 2:05 期间的每 1 分钟触发</span>
+<span class="token number">0</span> <span class="token number">15</span> <span class="token number">10</span> <span class="token number">15</span> ? <span class="token operator">*</span> <span class="token comment">#每月 15 日上午 10:15 触发</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>京东cookie</li>
+</ul>
+<p>JD_COOKIE</p>
+<pre class="line-numbers language-none"><code class="language-none">pt_key&#x3D;AAJjX6I4ADCr8__hC0_F4amLsszsntV4t0tmDpz6EgWPSp9bObjYxbTGjm7e-Zilyk5VNjaiLHo;pt_pin&#x3D;wdYJUpexZFHdIj;
+&amp;pt_key&#x3D;AAJjX59IADCr0OXGq373zxrmR6hF655yn3y8zz46XqGkaKYrG1axe1YlFbgwKz6f9z5LF3JIvws;pt_pin&#x3D;jd_yhglkXVBLAKe;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
 
 <h4 id="6、删除Docker里的容器"><a href="#6、删除Docker里的容器" class="headerlink" title="6、删除Docker里的容器"></a>6、删除Docker里的容器</h4><ul>
 <li>重启docker</li>
 </ul>
 <pre class="line-numbers language-none"><code class="language-none">systemctl restart docker<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>重启容器</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">docker restart 4b1361a68543<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ul>
 <li>列出所有容器ID</li>
@@ -700,12 +746,6 @@ lxml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span
 
 <p>关闭5200PID</p>
 <pre class="line-numbers language-none"><code class="language-none">taskkill &#x2F;pid 5200 -t -f<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-
-
-<p>SpiderClub&#x2F;haipproxy</p>
 
                 
             </div>
@@ -854,30 +894,30 @@ lxml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/11/08/Mysql%E5%9F%BA%E7%A1%80/">
+                <a href="/2021/11/01/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">
                     <div class="card-image">
                         
-                        <img src="https://pic1.imgdb.cn/item/636a191c16f2c2beb1ff1982.png" class="responsive-img" alt="Mysql基础">
+                        <img src="https://pic.imgdb.cn/item/6371f3eb16f2c2beb16eb131.jpg" class="responsive-img" alt="前端基础">
                         
-                        <span class="card-title">Mysql基础</span>
+                        <span class="card-title">前端基础</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Mysql基础
+                            HTML、CSS、JavaScript
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-08
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-01
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Mysql/" class="post-category">
-                                    Mysql
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
@@ -887,8 +927,8 @@ lxml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Mysql/">
-                        <span class="chip bg-color">Mysql</span>
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
                     </a>
                     
                 </div>
@@ -1089,7 +1129,7 @@ lxml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">40.4k</span>
+                        class="white-color">42.5k</span>
             
             
             
