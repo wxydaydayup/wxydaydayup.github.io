@@ -428,14 +428,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    8 分
                 </div>
                 
 
@@ -682,7 +682,7 @@ arr<span class="token punctuation">.</span><span class="token function">splice</
     <span class="token keyword">return</span> a<span class="token operator">+</span>b
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="二、dom节点"><a href="#二、dom节点" class="headerlink" title="二、dom节点"></a>二、dom节点</h3><h4 id="1、JavaScript-中获取HTML标签"><a href="#1、JavaScript-中获取HTML标签" class="headerlink" title="1、JavaScript 中获取HTML标签"></a>1、JavaScript 中获取HTML标签</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token punctuation">)</span>：根据id获取节点，传入id值，获取节点对象
+<h3 id="二、DOM节点"><a href="#二、DOM节点" class="headerlink" title="二、DOM节点"></a>二、DOM节点</h3><h4 id="1、JavaScript-中获取HTML标签"><a href="#1、JavaScript-中获取HTML标签" class="headerlink" title="1、JavaScript 中获取HTML标签"></a>1、JavaScript 中获取HTML标签</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token punctuation">)</span>：根据id获取节点，传入id值，获取节点对象
 document<span class="token punctuation">.</span><span class="token function">getElementsByName</span><span class="token punctuation">(</span><span class="token punctuation">)</span>：根据name属性获取节点，传入name属性，获取节点集合、数组
 document<span class="token punctuation">.</span><span class="token function">getElementsByClassName</span><span class="token punctuation">(</span><span class="token punctuation">)</span>：根据<span class="token keyword">class</span>获取节点，传入<span class="token keyword">class</span>的值，获取节点集合、数组
 document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token punctuation">)</span>：根据标签名获取节点，传入标签名的值，获取节点集合、数组
@@ -701,11 +701,11 @@ elementById<span class="token punctuation">.</span><span class="token function">
 <p>dom节点的删除</p>
 <pre class="line-numbers language-none"><code class="language-none">elementById.remove()<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h4 id="3、JavaScript键盘事件"><a href="#3、JavaScript键盘事件" class="headerlink" title="3、JavaScript键盘事件"></a>3、JavaScript键盘事件</h4><p>按键按下时执行函数</p>
+<h4 id="3、JavaScript键盘事件"><a href="#3、JavaScript键盘事件" class="headerlink" title="3、JavaScript键盘事件"></a>3、JavaScript键盘事件</h4><p>按键按下事件</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">elementById<span class="token punctuation">.</span><span class="token function-variable function">onkeydown</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token comment">//按键按下时执行函数</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<p>按键抬起时执行函数</p>
+<p>按键抬起事件</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">elementById<span class="token punctuation">.</span><span class="token function-variable function">onkeyup</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token comment">//按键抬起时执行函数 </span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
@@ -736,8 +736,56 @@ elementById<span class="token punctuation">.</span><span class="token function-v
 <span class="token punctuation">&#125;</span>
 elementById<span class="token punctuation">.</span><span class="token function-variable function">onmouseleave</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token comment">//鼠标离开的事件（放到子元素不算离开）</span>
 <span class="token punctuation">&#125;</span>
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+elementById<span class="token punctuation">.</span><span class="token function-variable function">onmouseover</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token comment">////发生在鼠标指针移动到元素或它的子元素上时</span>
+<span class="token punctuation">&#125;</span>
 elementById<span class="token punctuation">.</span><span class="token function-variable function">onmouseout</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token comment">//鼠标离开的事件（放到子元素算离开）</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="三、BOM对象"><a href="#三、BOM对象" class="headerlink" title="三、BOM对象"></a>三、BOM对象</h3><h4 id="1、弹窗"><a href="#1、弹窗" class="headerlink" title="1、弹窗"></a>1、弹窗</h4><p>普通弹窗</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">alert</span><span class="token punctuation">(</span>“只能提醒简单信息”<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>确认框弹窗</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> f <span class="token operator">=</span> <span class="token function">confirm</span><span class="token punctuation">(</span>“确认框”<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>带输入框的弹窗</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> f <span class="token operator">=</span> <span class="token function">prompt</span><span class="token punctuation">(</span>“带输入框的弹窗”<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="2、定时器"><a href="#2、定时器" class="headerlink" title="2、定时器"></a>2、定时器</h4><p>一次性定时器</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>重复定时器</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> num <span class="token operator">=</span> <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span>
+
+<span class="token function">clearInterval</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="四、数据存储的对象"><a href="#四、数据存储的对象" class="headerlink" title="四、数据存储的对象"></a>四、数据存储的对象</h3><h4 id="1、localStorage-本地存储"><a href="#1、localStorage-本地存储" class="headerlink" title="1、localStorage 本地存储"></a>1、localStorage 本地存储</h4><p>存储到硬盘上，只要不手动删除，数据一致存在</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//3种设置的方式</span>
+<span class="token comment">//第 1 种</span>
+localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"key1"</span><span class="token punctuation">,</span><span class="token string">"value1"</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"key1"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">//第 2 种</span>
+localStorage<span class="token punctuation">.</span>key2 <span class="token operator">=</span> <span class="token string">"value2"</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>localStorage<span class="token punctuation">.</span>key2<span class="token punctuation">)</span>
+<span class="token comment">//第 3 种</span>
+localStorage<span class="token punctuation">[</span><span class="token string">"key3"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"values3"</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>localStorage<span class="token punctuation">[</span><span class="token string">"key3"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2、SessionStorage存储"><a href="#2、SessionStorage存储" class="headerlink" title="2、SessionStorage存储"></a>2、SessionStorage存储</h4><p>存储在内存中，临时存储，只要浏览器关闭，数据就会被清理</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//3种设置的方式</span>
+<span class="token comment">//第 1 种</span>
+sessionStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"key1"</span><span class="token punctuation">,</span><span class="token string">"value1"</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>sessionStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"key1"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">//第 2 种</span>
+sessionStorage<span class="token punctuation">.</span>key2 <span class="token operator">=</span> <span class="token string">"value2"</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>sessionStorage<span class="token punctuation">.</span>key2<span class="token punctuation">)</span>
+<span class="token comment">//第 3 种</span>
+sessionStorage<span class="token punctuation">[</span><span class="token string">"key3"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"values3"</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>sessionStorage<span class="token punctuation">[</span><span class="token string">"key3"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 
@@ -815,7 +863,7 @@ elementById<span class="token punctuation">.</span><span class="token function-v
 <div id="article-share">
 
     
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <div class="social-share" data-sites="qq,qzone,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
     <script src="/libs/share/js/social-share.min.js"></script>
     
 
@@ -1106,7 +1154,7 @@ elementById<span class="token punctuation">.</span><span class="token function-v
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">42.5k</span>
+                        class="white-color">43.1k</span>
             
             
             
