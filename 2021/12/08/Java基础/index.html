@@ -428,14 +428,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    8.3k
+                    9.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    31 分
+                    37 分
                 </div>
                 
 
@@ -458,7 +458,14 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h1><h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="一、基础语法"><a href="#一、基础语法" class="headerlink" title="一、基础语法"></a>一、基础语法</h3><h4 id="1、标识符"><a href="#1、标识符" class="headerlink" title="1、标识符"></a>1、标识符</h4><p>Java中 的标识符由字母（包括汉字在内的各个国家的文字），下划线，数字，美元符号（$）组成<br>规则：</p>
+                <h1 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h1><h2 id="语言基础"><a href="#语言基础" class="headerlink" title="语言基础"></a>语言基础</h2><h3 id="一、跨平台原理"><a href="#一、跨平台原理" class="headerlink" title="一、跨平台原理"></a>一、跨平台原理</h3><p>Java要在不同的操作系统上运行，需要在操作系统上安装对应的Java虚拟机</p>
+<h4 id="1、JRE（Java-Runtime-Environment）"><a href="#1、JRE（Java-Runtime-Environment）" class="headerlink" title="1、JRE（Java Runtime Environment）:"></a>1、JRE（Java Runtime Environment）:</h4><p>Java<strong>程序运行时的环境</strong>，包含jvm和需要的核心类库，要运行一个<strong>已有</strong>的java程序，只需安装JRE即可</p>
+<h4 id="2、JDK（Java-Development-Kit"><a href="#2、JDK（Java-Development-Kit" class="headerlink" title="2、JDK（Java Development Kit)"></a>2、JDK（Java Development Kit)</h4><p>Java程序开发工具包，<strong>包含JRE和开发人员使用的工具</strong></p>
+<p>开发工具：编译工具javac.exe和运行工具java.exe</p>
+<p>想要开发一个java程序，必须安装jdk</p>
+<h4 id="3、包含关系"><a href="#3、包含关系" class="headerlink" title="3、包含关系"></a>3、包含关系</h4><img src="/images/Java%E5%9F%BA%E7%A1%80/image-20221117193413007.png" alt="包含关系" style="zoom:20%;box-shadow:rgba(0,0,0,0) 0 1px 5px 0px;" />
+
+<h3 id="一、基础语法"><a href="#一、基础语法" class="headerlink" title="一、基础语法"></a>一、基础语法</h3><h4 id="1、标识符"><a href="#1、标识符" class="headerlink" title="1、标识符"></a>1、标识符</h4><p>Java中 的标识符由字母（包括汉字在内的各个国家的文字），下划线，数字，美元符号（$）组成<br>规则：</p>
 <ol>
 <li>标识符首字母不能是数字</li>
 <li>关键字不能作为标识符</li>
@@ -589,9 +596,10 @@ else<span class="token punctuation">&#123;</span>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">for<span class="token punctuation">(</span>循环变量初始化<span class="token punctuation">;</span>循环条件<span class="token punctuation">;</span>循环变量更新<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>　　
 //循环操作
 <span class="token punctuation">&#125;</span>
-//例如 <span class="token keyword">for</span> <span class="token punctuation">(</span>int <span class="token assign-left variable">i</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">;</span>i++<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+//例如 
+<span class="token keyword">for</span> <span class="token punctuation">(</span>int <span class="token assign-left variable">i</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">;</span>i++<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
 
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>跳转语句</strong></p>
 <p><strong>需要特别注意的是java中不支持goto语句！</strong></p>
@@ -629,12 +637,35 @@ else<span class="token punctuation">&#123;</span>
 	<span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><h3 id="一、方法"><a href="#一、方法" class="headerlink" title="一、方法"></a>一、方法</h3><h4 id="方法重载"><a href="#方法重载" class="headerlink" title="方法重载"></a>方法重载</h4><p>同一个类中</p>
+<h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><h3 id="一、方法"><a href="#一、方法" class="headerlink" title="一、方法"></a>一、方法</h3><h4 id="1、参数的注意事项："><a href="#1、参数的注意事项：" class="headerlink" title="1、参数的注意事项："></a>1、参数的注意事项：</h4><ul>
+<li><p>定义形参时，必须带上类型</p>
+</li>
+<li><p>调用时，实参的类型，数量必须与形参一致</p>
+</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">getMax</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h4 id="2、带返回值的方式定义"><a href="#2、带返回值的方式定义" class="headerlink" title="2、带返回值的方式定义"></a>2、带返回值的方式定义</h4><p>public static 后面的类型要与返回值一致</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">getMax</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">return</span> a<span class="token operator">+</span>b<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><p>方法不能嵌套</p>
+</li>
+<li><p>void表示无返回值，可省略return，但是写了return不能跟数据</p>
+</li>
+</ul>
+<h4 id="3、方法重载"><a href="#3、方法重载" class="headerlink" title="3、方法重载"></a>3、方法重载</h4><p>同一个类中，具有以下特征</p>
 <ul>
 <li>相同的方法名；</li>
 <li>参数数量或类型不同；</li>
 <li>与返回值无关；</li>
 </ul>
+<p><strong>方法参数类型问题</strong></p>
+<p>1、给方法传入基本类型，在方法中改变基本类型值，对原值无影响</p>
+<p>2、给方法传入引用类型，方法中修改引用类型值，原值受到影响，原因是引用类型实际上是一个地址</p>
 <h3 id="二、类"><a href="#二、类" class="headerlink" title="二、类"></a>二、类</h3><h4 id="1、类的概念"><a href="#1、类的概念" class="headerlink" title="1、类的概念"></a>1、类的概念</h4><p>概念：类是对现实生活中一类具有共同属性和行为的抽象，用来确定对象将会有的属性和行为，类是对象的抽象，对象是类的实体</p>
 <p>类的重要性：类是Java程序的基本组成单位</p>
 <p>类的组成：类有属性和行为</p>
@@ -917,8 +948,9 @@ arr<span class="token punctuation">.</span><span class="token function">add</spa
 
 <img src="/images/Java%E5%9F%BA%E7%A1%80/image-20221117153411035.png" alt="ArrayList 常用方法" style="zoom:50%;box-shadow:rgba(0,0,0,0) 0 1px 5px 0px;" />
 
-<h3 id="五、LinkedList"><a href="#五、LinkedList" class="headerlink" title="五、LinkedList"></a>五、LinkedList</h3><h3 id="六、HashSet"><a href="#六、HashSet" class="headerlink" title="六、HashSet"></a>六、HashSet</h3><p>是set的实现类，基本方法与set一致，底层结构是哈希表，</p>
-<p>HashSet保证唯一：添加元素的时候底层先比较hash值是否相同，如果相同再调用equals比较内容是否相同，都相同则不会添加相同元素，有一个不同会直接添加该元素</p>
+<h3 id="五、LinkedList"><a href="#五、LinkedList" class="headerlink" title="五、LinkedList"></a>五、LinkedList</h3><p>LinkedList:底层结构是链表，查询慢，增删快</p>
+<h3 id="六、HashSet"><a href="#六、HashSet" class="headerlink" title="六、HashSet"></a>六、HashSet</h3><p>概述：HashSet是Set的实现类，基本方法与Set一致，底层结构是哈希表</p>
+<p>HashSet保证唯一原理：添加元素的时候底层先比较Hash值是否相同，如果相同再调用equals比较内容是否相同，都相同则不会添加相同元素，有一个不同会直接添加该元素</p>
 <h3 id="七、TreeSet"><a href="#七、TreeSet" class="headerlink" title="七、TreeSet"></a>七、TreeSet</h3><p>概述：TreeSet 是一个有序的集合，提供有序的Set集合</p>
 <p>TreeSet中的元素支持两种排序方式</p>
 <ul>
@@ -927,8 +959,27 @@ arr<span class="token punctuation">.</span><span class="token function">add</spa
 <li><p>创建TreeSet 时提供的 Comparator(比较器排序接口) 进行排序</p>
 </li>
 </ul>
-<h3 id="八、LinkedHashSet"><a href="#八、LinkedHashSet" class="headerlink" title="八、LinkedHashSet"></a>八、LinkedHashSet</h3><p>哈希表和链表实现的Set接口，有可预测的迭代次序，链表保证了次序，hash表保证了唯一</p>
-<h3 id="九、HashMap"><a href="#九、HashMap" class="headerlink" title="九、HashMap"></a>九、HashMap</h3><h3 id="十、TreeMap"><a href="#十、TreeMap" class="headerlink" title="十、TreeMap"></a>十、TreeMap</h3><h3 id="十一、泛型"><a href="#十一、泛型" class="headerlink" title="十一、泛型"></a>十一、泛型</h3><h4 id="1、泛型类"><a href="#1、泛型类" class="headerlink" title="1、泛型类"></a>1、泛型类</h4><p>泛型：提供了编译时类型安全检测机制</p>
+<h3 id="八、LinkedHashSet"><a href="#八、LinkedHashSet" class="headerlink" title="八、LinkedHashSet"></a>八、LinkedHashSet</h3><p>哈希表和链表实现的Set接口，有可预测的迭代次序，链表保证了次序，Hash表保证了唯一</p>
+<h3 id="九、HashMap"><a href="#九、HashMap" class="headerlink" title="九、HashMap"></a>九、HashMap</h3><p>键映射到值的对象，不能有重复的键，一个键映射一个值</p>
+<p>3 种 遍历方式</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span><span class="token class-name">String</span><span class="token punctuation">></span></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"1"</span><span class="token punctuation">,</span><span class="token string">"一"</span><span class="token punctuation">)</span>
+<span class="token comment">//第 1 种遍历方式</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token class-name">String</span> key <span class="token operator">:</span> map<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//第 2 种遍历方式,只能拿到 value</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token class-name">String</span> value <span class="token operator">:</span> map<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//第 3 种遍历方式</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token class-name">Map<span class="token punctuation">.</span>Entry</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span><span class="token class-name">String</span><span class="token punctuation">></span></span> entry<span class="token operator">:</span> map<span class="token punctuation">.</span><span class="token function">entryKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>entry<span class="token punctuation">.</span><span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>entry<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="十、TreeMap"><a href="#十、TreeMap" class="headerlink" title="十、TreeMap"></a>十、TreeMap</h3><h3 id="十一、泛型"><a href="#十一、泛型" class="headerlink" title="十一、泛型"></a>十一、泛型</h3><h4 id="1、泛型类"><a href="#1、泛型类" class="headerlink" title="1、泛型类"></a>1、泛型类</h4><p>泛型：提供了编译时类型安全检测机制</p>
 <p>本质是参数化类型，操作的数据类型被指定为一个参数</p>
 <p>参数化理解：</p>
 <ul>
@@ -999,17 +1050,140 @@ file<span class="token punctuation">.</span><span class="token function">mkdir</
     os<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="4、"><a href="#4、" class="headerlink" title="4、"></a>4、</h4><h2 id="Java-线程"><a href="#Java-线程" class="headerlink" title="Java 线程"></a>Java 线程</h2><h3 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h3><h4 id="1、进程和线程"><a href="#1、进程和线程" class="headerlink" title="1、进程和线程"></a>1、进程和线程</h4><p><strong>进程</strong>：进程是程序的一次动态执行过程，它对应了从代码加载、执行到执行完毕的一个完整过程<br><strong>线程</strong>：线程是比进程更小的执行单位<br>举列子：当你打开一个App可以看成一个实现进程，当打开一个App里的一个功能，比如播放音乐，病毒扫描就是实现一个线程。<br><strong>线程调度</strong>：计算机操作系统为了提高程序的运行效率，当一个线程空闲时就会撤下这个线程，而会让其他线程执行！</p>
+<h4 id="4、IO流概述"><a href="#4、IO流概述" class="headerlink" title="4、IO流概述"></a>4、IO流概述</h4><p><strong>前提知识</strong></p>
+<p>字节：计算机中一切皆字节（视频，图片和文本），本质就是二进制码。<br>字符：是指计算机中使用的文字和符号，比如1、2、A、B、~！*#￥%等等。</p>
+<p>I 就是input的首字母：输入，把硬盘中的数据，读取到内存使用。</p>
+<p>o就是output的首字母：输出，<br>把内存中的数据，写入到硬盘中保存。</p>
+<p>内存的概念：临时储存数据<br>这里主要记住<strong>内存是中心，进内存就是输入，出内存就是输出。</strong></p>
+<p><strong>字节流与字符流</strong></p>
+<table>
+<thead>
+<tr>
+<th>字节流</th>
+<th align="center"></th>
+<th>字符流</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>字节输入流 InputStream</td>
+<td align="center">输入流</td>
+<td>字符输入流 Reader</td>
+</tr>
+<tr>
+<td>字节输出流 OutputStream</td>
+<td align="center">输出流</td>
+<td>字符输出流 Writer</td>
+</tr>
+</tbody></table>
+<p><strong>节点流与处理流</strong></p>
+<table>
+<thead>
+<tr>
+<th>节点流</th>
+<th>处理流</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>流的一端是程序，另一端是节点</td>
+<td>以其他已经存在的流作为一个端点的流</td>
+</tr>
+<tr>
+<td>构造方法的参数是节点</td>
+<td>构造方法总有一个其他流对象作为参数</td>
+</tr>
+</tbody></table>
+<h4 id="5、字节流"><a href="#5、字节流" class="headerlink" title="5、字节流"></a>5、字节流</h4><p> <strong>(1) 字节输入流</strong><br> 先在D盘下创建一个hello.txt,里面内容写上hello baby</p>
+<p><strong>步骤</strong></p>
+<ul>
+<li>定义一个文件流</li>
+<li>定义一个字节数组</li>
+<li>将输入流的数据读入到字节数组中</li>
+<li>通过UTF-8编码表将字节转换为字符</li>
+</ul>
+<p><strong>代码实践：</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">InputStream</span>  <span class="token punctuation">&#123;</span>	
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span><span class="token punctuation">&#123;</span>
+		<span class="token class-name">File</span> file<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"D://hello.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//显示具体路径</span>
+		<span class="token class-name">FileInputStream</span> fs <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//定义一个文件流</span>
+		<span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> b<span class="token operator">=</span><span class="token keyword">new</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//定义一个字节数组</span>
+	 	fs<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//将输入流的数据读入到字节数组中</span>
+ 		<span class="token class-name">String</span> str<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span><span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//通过UTF-8编码表将字节转换为字符</span>
+ 		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//输出到控制台</span>
+   	<span class="token punctuation">&#125;</span>
+ <span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>注意：如果在那个txt文件里，输入的是中文：我好帅。控制台显示的是？？？<br>不是它质疑你的帅气，而是不支持中文，编码问题。</strong></p>
+<p> <strong>(2) 字节输出流</strong></p>
+<p><strong>步骤：</strong></p>
+<ul>
+<li>创建一个输出流</li>
+<li>将字符转换成字节</li>
+<li>字节写出文件</li>
+<li>保存文件</li>
+</ul>
+<p><strong>代码实践：</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">OutputStream</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">&#123;</span>
+  		<span class="token class-name">String</span> file<span class="token operator">=</span><span class="token string">"D://test.txt"</span><span class="token punctuation">;</span>
+  		<span class="token class-name">FileOutputStream</span> out<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//创建输出流</span>
+  		<span class="token class-name">String</span> str<span class="token operator">=</span><span class="token string">"hello baby"</span><span class="token punctuation">;</span>
+  		<span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> b<span class="token operator">=</span>str<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//字符转换为字节</span>
+  		out<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//字节写出到文件</span>
+  		out<span class="token punctuation">.</span><span class="token function">flush</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//保存文件</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这段代码执行后，你会发现D盘创建一个test.txt文件，里面写着hello baby</p>
+<h4 id="6、字符流"><a href="#6、字符流" class="headerlink" title="6、字符流"></a>6、字符流</h4><p>字符流和字节流步骤相似，不再累述！</p>
+<p><strong>(1) 字符输入流</strong><br>  先在D盘下创建一个hello.txt<br> 里面内容写上hello baby</p>
+<p> <strong>代码实践：</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Reader</span> <span class="token punctuation">&#123;</span>	
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token keyword">throws</span> <span class="token class-name">IOException</span>	
+		<span class="token class-name">String</span> file<span class="token operator">=</span><span class="token string">"D://hello.txt"</span><span class="token punctuation">;</span><span class="token comment">//显示具体路径</span>
+	  	<span class="token class-name">FileReader</span> fr <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//定义一个文件流</span>
+  	 	<span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> b<span class="token operator">=</span><span class="token keyword">new</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//定义一个字节数组</span>
+  	 	fr<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//将输入流中的数据读入到字节数组中</span>
+  	 	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">)</span><span class="token comment">//输出到控制台</span>
+  	 	fr<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//关闭输入流</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>当你执行完这段代码后发现，输出hello baby的同时，还有1014个空格</p>
+<p>为了解决打印多余空格问题，查阅API帮助文档，reader方法是将字符流中的数据读入到字符数组中，如果读取到文件末尾则返回-1，否则返回读取到的长度，所以只要遇到-1就终止好了。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> file <span class="token operator">=</span> <span class="token string">"D://hello.txt"</span><span class="token punctuation">;</span>
+<span class="token class-name">FileReader</span> fr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//定义一个文件流</span>
+<span class="token keyword">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span> cbuf <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">char</span><span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//定义一个字节数组</span>
+<span class="token keyword">int</span> len <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// 每次读取的长度</span>
+<span class="token class-name">StringBuilder</span> builder <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>len <span class="token operator">=</span> fr<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>cbuf<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> 
+	<span class="token comment">//将数据读入到cbuf中并返回读取到的数据长度，不等于-1就继续</span>
+		builder<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>cbuf<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>len<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+		<span class="token comment">//将cbuf 0 到len长度的数据添加到builder </span>
+ 	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>builder<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//输出到控制台</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p> <strong>(2) 字符输出流</strong></p>
+<p><strong>代码实践：</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Writer</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token keyword">throws</span> <span class="token class-name">IOException</span>
+		<span class="token class-name">File</span> file<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"D://hello.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token class-name">FileWriter</span> fw<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">FileWriter</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//定义一个文件流</span>
+		fw<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"hello baby"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//写出到文件</span>
+		fw<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//关闭流</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这段代码执行后，你会发现D盘创建一个test.txt文件，里面写着hello baby</p>
+<h2 id="Java-线程"><a href="#Java-线程" class="headerlink" title="Java 线程"></a>Java 线程</h2><h3 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h3><h4 id="1、进程和线程"><a href="#1、进程和线程" class="headerlink" title="1、进程和线程"></a>1、进程和线程</h4><p><strong>进程</strong>：进程是程序的一次动态执行过程，它对应了从代码加载、执行到执行完毕的一个完整过程<br><strong>线程</strong>：线程是比进程更小的执行单位<br>举列子：当你打开一个App可以看成一个实现进程，当打开一个App里的一个功能，比如播放音乐，病毒扫描就是实现一个线程。<br><strong>线程调度</strong>：计算机操作系统为了提高程序的运行效率，当一个线程空闲时就会撤下这个线程，而会让其他线程执行！</p>
 <h4 id="2、并行和并发"><a href="#2、并行和并发" class="headerlink" title="2、并行和并发"></a>2、并行和并发</h4><p>并行：针对进程的，同一个时刻发生多个事件，比如你用酷狗音乐播放音乐的同时，打开浏览器看这篇博客。<br>并发：针对线程的，在一段时间内发生多个事件</p>
 <h4 id="3、Java多线程的实现"><a href="#3、Java多线程的实现" class="headerlink" title="3、Java多线程的实现"></a>3、Java多线程的实现</h4><p>有两类方法</p>
-<ol>
-<li>继承Thread方法，重写run() 方法</li>
-<li>实现Runnable接口，重写run（）方法</li>
-</ol>
+<p>（1）继承Thread方法，重写run() 方法</p>
+<p>（2）实现Runnable接口，重写run() 方法</p>
 <p><strong>继承Thread，重写run()方法</strong></p>
-<p>Thread是java.lang包下的一个类，当用户操作Thread类时，Thread类创建一个线程并交付给操作系统进行调度。<br>步骤：<br>（1）创建一个类继承（extend）Thread 类，定义线程的构造函数；<br>（2）用需在此线程中执行的代码覆盖 Thread 类的 run()方法；<br>（3）用关键字 new 创建所定义的线程类的一个实例化对象；<br>（4）调用该对象的 start()方法启动线程。 </p>
+<p>Thread是java.lang包下的一个类，当用户操作Thread类时，Thread类创建一个线程并交付给操作系统进行调度。</p>
+<p>步骤：</p>
+<p>（1）创建一个类继承（extend）Thread 类，定义线程的构造函数； </p>
+<p>（2）用需在此线程中执行的代码覆盖 Thread 类的 run()方法； </p>
+<p>（3）用关键字 new 创建所定义的线程类的一个实例化对象； </p>
+<p>（4）调用该对象的 start()方法启动线程。 </p>
 <p><strong>实现Runnable接口，重写run（）方法</strong></p>
-<p>很多情况下，一个类已经继承了其他类，由于java单继承的限制，该类无法继承Thread类，java语言便提供了Runnable接口，从而使得不继承Thread的情况下也能创建新的线程！<br><strong>这个方式常用！因为可以避免java中单继承的限制，可以将并行 运行任务和运行机制   解耦</strong><br>步骤：<br>（1）创建一个类实现（implements）Runnable 接口；<br>（2）用需在此线程中执行的代码覆盖 Thread 类的 run()方法；<br>（3）在类中定义一个 Thread 类对象；<br>（4）利用public Thread(Runnable target) 实例化定义对象</p>
+<p>很多情况下，一个类已经继承了其他类，由于java单继承的限制，该类无法继承Thread类，java语言便提供了Runnable接口，从而使得不继承Thread的情况下也能创建新的线程！<br><strong>这个方式常用！因为可以避免java中单继承的限制，可以将并行 运行任务和运行机制   解耦</strong><br>步骤：</p>
+<p>（1）创建一个类实现（implements）Runnable 接口； </p>
+<p>（2）用需在此线程中执行的代码覆盖 Thread 类的 run()方法； </p>
+<p>（3）在类中定义一个 Thread 类对象；</p>
+<p>（4）利用public Thread(Runnable target) 实例化定义对象</p>
 <p>【public Thread(Runnable target)】 —–利用一个实现了 Runnable 接口参数对象 Target中所定义的 run（）方法，来初始化或覆盖新创建的线程对象的 run（）方法。</p>
 <p>（5）调用该对象的 start()方法启动线程。</p>
 <p><strong>敲黑板画细节：</strong><br>关于run()方法和start()的正确理解<br>run（）:仅仅是封装被线程执行的代码<br>start（）：首先启动了线程，然后再用jvm去调用该线程的run（）方法</p>
@@ -1033,29 +1207,32 @@ file<span class="token punctuation">.</span><span class="token function">mkdir</
 <p><strong>结束线程</strong></p>
 <p>stop（）方法：程序中需要强制终止某线程的生命周期时可以使用stop（）方法。<br>stop方法可以由线程在自己的run（）方法中调用，也可以其他线程在执行方法中调用。<br>stop()方法将会使线程由其他状态进入死亡状态。<br>但不推荐 使用stop（）方法来强制终止线程，因为它将会导致错误发生。例如，如果一个线程正在操作共享数据段，操作过程没有完成即被执行stop（）方法，将会导致数据的不完整！</p>
 <p>destroy（）方法：程序可以使用destroy（）方法来强制结束线程，但是这个方法在结束线程后，将不会释放锁，因此也不推荐使用！</p>
-<p>参数控制法：由于stop（）和的 destroy（）方法在java新版本中已不建议使用，可以使用一个指示run（）方法必须退出的标志来停止一个线程。具体步骤如下：</p>
-<ol>
-<li>编写一个类继承Thread类</li>
-<li>在这个类中增加一个布尔变量，并将其值初始化为false。</li>
-<li>覆盖start（）方法，首先将布尔变量的值置为true，然后调用super（）方法，start（）方法。</li>
-<li>提供一个public方法 halt（），它将变量置为false。</li>
-<li>在run（）方法中使用类似下面的while循环：<br>public void run ( ){<br>while(布尔参数){<br>线程要执行的代码<br>}<br>如果这个线程的halt（）方法被调用，则会将布尔参数的值置为假，从而引起run（）方法终止执行，从而结束该线程！</li>
-</ol>
-<h4 id="6、线程的同步"><a href="#6、线程的同步" class="headerlink" title="6、线程的同步"></a>6、线程的同步</h4><p>锁机制<br>synchronized（同步）锁：<br>synchronized就是一个关键字，它能将代码块锁起来<br>synchronized是一种互斥锁，一次只能允许一个线程进入被锁住的代码块（方法）</p>
-<p>lock显式锁<br>lock显式锁就是一个接口<br>lock显式锁比synchronized锁的优点就是灵活性高，缺点是需要手动释放锁。</p>
-<p>公平锁：线程按照它们发出的请求顺序来获取锁<br>非公平锁：synchronizated锁和lock显式锁都是非公平锁，线程发出请求时可以插队来获取锁。</p>
-<p>死锁：</p>
-<ol>
-<li>当前线程拥有其他线程需要的资源</li>
-<li>当前线程等待其他线程已拥有的资源</li>
-<li>都不放弃拥有的资源</li>
-</ol>
-<p>原因及解决的办法</p>
-<ol>
-<li>线程间交错执行   解决方法：以固定的顺序加锁</li>
-<li>执行某方法时就需要持有锁且不释放<br>解决：缩减同步代码块的范围，最好仅操作共享变量时才加锁</li>
-<li>永久等待   解决：使用定时锁</li>
-</ol>
+<p>参数控制法：由于stop（）和的 destroy（）方法在java新版本中已不建议使用，可以使用一个指示run（）方法必须退出的标志来停止一个线程。</p>
+<p>具体步骤如下：</p>
+<p>（1）编写一个类继承Thread类</p>
+<p>（2）在这个类中增加一个布尔变量，并将其值初始化为false。</p>
+<p>（3）覆盖start（）方法，首先将布尔变量的值置为true，然后调用super（）方法，start（）方法。</p>
+<p>（4）提供一个public方法 halt（），它将变量置为false。</p>
+<p>（5）在run（）方法中使用类似下面的while循环：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> run <span class="token punctuation">(</span> <span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>布尔参数<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    线程要执行的代码
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>如果这个线程的halt（）方法被调用，则会将布尔参数的值置为假，从而引起run（）方法终止执行，从而结束该线程！</p>
+<h4 id="6、线程的同步"><a href="#6、线程的同步" class="headerlink" title="6、线程的同步"></a>6、线程的同步</h4><p>锁机制</p>
+<p><strong>Synchronized（同步）锁</strong>：<br>synchronized就是一个关键字，它能将代码块锁起来<br>synchronized是一种互斥锁，一次只能允许一个线程进入被锁住的代码块（方法）</p>
+<p><strong>Lock显式锁</strong><br>lock显式锁就是一个接口<br>lock显式锁比synchronized锁的优点就是灵活性高，缺点是需要手动释放锁。</p>
+<p><strong>公平锁</strong>：线程按照它们发出的请求顺序来获取锁<br>非公平锁：synchronizated锁和lock显式锁都是非公平锁，线程发出请求时可以插队来获取锁。</p>
+<p><strong>死锁</strong>：</p>
+<p>（1）当前线程拥有其他线程需要的资源</p>
+<p>（2）当前线程等待其他线程已拥有的资源</p>
+<p>（3）都不放弃拥有的资源</p>
+<p><strong>原因及解决的办法</strong></p>
+<p>（1）线程间交错执行   解决方法：以固定的顺序加锁</p>
+<p>（2）执行某方法时就需要持有锁且不释放<br>解决：缩减同步代码块的范围，最好仅操作共享变量时才加锁</p>
+<p>（3）永久等待   解决：使用定时锁</p>
 <h4 id="7、常用的线程方法"><a href="#7、常用的线程方法" class="headerlink" title="7、常用的线程方法"></a>7、常用的线程方法</h4><p>不需要特别记忆，需要用的时候查询即可</p>
 <table>
 <thead>
@@ -1547,7 +1724,7 @@ conn<span class="token punctuation">.</span><span class="token function">close</
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">56.8k</span>
+                        class="white-color">58.3k</span>
             
             
             
