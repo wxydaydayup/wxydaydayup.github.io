@@ -423,21 +423,21 @@
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
 <div class="statis">
-    <span class="count"><a href="/">18</a></span>
+    <span class="count"><a href="/">20</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">18</a></span>
+    <span class="count"><a href="/categories">19</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">17</a></span>
+    <span class="count"><a href="/tags">18</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -453,21 +453,21 @@
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
 <div class="statis">
-    <span class="count"><a href="/">18</a></span>
+    <span class="count"><a href="/">20</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">18</a></span>
+    <span class="count"><a href="/categories">19</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">17</a></span>
+    <span class="count"><a href="/tags">18</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -603,7 +603,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [2,1,1,0,0,0,0,0,0,0,0,10,2],
+                data: [2,2,1,0,0,0,0,0,0,0,0,11,2],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -645,7 +645,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"Python","value":2},{"name":"Git","value":1},{"name":"爬虫","value":1},{"name":"前端","value":1},{"name":"算法","value":2},{"name":"生活","value":2},{"name":"机器学习","value":6},{"name":"Github","value":1},{"name":"八爪鱼","value":1},{"name":"C++","value":2},{"name":"数据分析","value":6},{"name":"树","value":1},{"name":"Java","value":1},{"name":"Mysql","value":1},{"name":"数据分析","value":1},{"name":"NumPy","value":1},{"name":"Pandas","value":1},{"name":"图形学","value":1}],
+                data: [{"name":"Git","value":1},{"name":"Golang","value":1},{"name":"Python","value":2},{"name":"Java","value":2},{"name":"Github","value":1},{"name":"生活","value":2},{"name":"前端","value":1},{"name":"机器学习","value":6},{"name":"算法","value":2},{"name":"图形学","value":1},{"name":"爬虫","value":1},{"name":"数据分析","value":6},{"name":"C++","value":2},{"name":"八爪鱼","value":1},{"name":"树","value":1},{"name":"Mysql","value":1},{"name":"数据分析","value":1},{"name":"NumPy","value":1},{"name":"Pandas","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -669,7 +669,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["数据分析","机器学习","Python","算法","C++","生活","Git","Github","爬虫","八爪鱼"]
+                data: ["数据分析","机器学习","Python","Java","生活","算法","C++","Git","Github","Golang"]
             }
         ],
         yAxis: [
@@ -682,7 +682,7 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [7,6,2,2,2,2,1,1,1,1],
+                data: [7,6,2,2,2,2,2,1,1,1],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -852,8 +852,6 @@
         <div class="tag-chips center-align">
             
             
-            
-            
             <a href="/tags/Git/">
                 <span class="chip center-align waves-effect waves-light chip-default">Git</span>
             </a>
@@ -863,6 +861,16 @@
             <a href="/tags/Github/">
                 <span class="chip center-align waves-effect waves-light chip-default">Github</span>
             </a>
+            
+            
+            
+            <a href="/tags/Golang/">
+                <span class="chip center-align waves-effect waves-light chip-default">Golang</span>
+            </a>
+            
+            
+            
+            
             
             
             
@@ -878,22 +886,14 @@
             
             
             
-            <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                <span class="chip center-align waves-effect waves-light chip-default">前端</span>
-            </a>
-            
-            
-            
-            <a href="/tags/%E7%AE%97%E6%B3%95/">
-                <span class="chip center-align waves-effect waves-light chip-default">算法</span>
-            </a>
-            
-            
-            
-            
-            
             <a href="/tags/%E7%94%9F%E6%B4%BB/">
                 <span class="chip center-align waves-effect waves-light chip-default">生活</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                <span class="chip center-align waves-effect waves-light chip-default">前端</span>
             </a>
             
             
@@ -910,11 +910,23 @@
             
             
             
+            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                <span class="chip center-align waves-effect waves-light chip-default">算法</span>
+            </a>
+            
+            
+            
+            
+            
             <a href="/tags/%E6%A0%91/">
                 <span class="chip center-align waves-effect waves-light chip-default">树</span>
             </a>
             
             
+            
+            <a href="/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/">
+                <span class="chip center-align waves-effect waves-light chip-default">图形学</span>
+            </a>
             
             
             
@@ -932,12 +944,6 @@
             
             <a href="/tags/Pandas/">
                 <span class="chip center-align waves-effect waves-light chip-default">Pandas</span>
-            </a>
-            
-            
-            
-            <a href="/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/">
-                <span class="chip center-align waves-effect waves-light chip-default">图形学</span>
             </a>
             
             
@@ -1017,7 +1023,7 @@
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">58.3k</span>
+                        class="white-color">58.6k</span>
             
             
             
