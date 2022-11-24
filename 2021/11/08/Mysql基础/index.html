@@ -582,7 +582,7 @@
 <h4 id="2、查看数据库"><a href="#2、查看数据库" class="headerlink" title="2、查看数据库"></a>2、查看数据库</h4><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 查询所有数据库</span>
 <span class="token keyword">show</span> <span class="token keyword">databases</span><span class="token punctuation">;</span> 
 <span class="token comment">-- 查询当前数据库</span>
-<span class="token keyword">select</span> <span class="token keyword">database</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">select</span> <span class="token keyword">database</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="3、使用数据库"><a href="#3、使用数据库" class="headerlink" title="3、使用数据库"></a>3、使用数据库</h4><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">use</span> t1<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -878,7 +878,7 @@ rollback;<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 <p>设置事务隔离级别：<br><code>SET [ SESSION | GLOBAL ] TRANSACTION ISOLATION LEVEL &#123;READ UNCOMMITTED | READ COMMITTED | REPEATABLE READ | SERIALIZABLE &#125;;</code><br>SESSION 是会话级别，表示只针对当前会话有效，GLOBAL 表示对所有会话有效</p>
 <h2 id="Mysql-视图"><a href="#Mysql-视图" class="headerlink" title="Mysql 视图"></a>Mysql 视图</h2><h3 id="一、Mysql视图"><a href="#一、Mysql视图" class="headerlink" title="一、Mysql视图"></a>一、Mysql视图</h3><p>1、不能在视图中删除、添加、修改</p>
 <p>2、视图基于表存在，若表中数据被清理，则视图不能打开。若添加数据满足连接条件，则视图中也会进行展示。</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">view</span> <span class="token operator">&lt;</span>视图名<span class="token operator">></span> <span class="token keyword">as</span> <span class="token keyword">select</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">(</span>查询的结果<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">view</span> <span class="token operator">&lt;</span>视图名<span class="token operator">></span> <span class="token keyword">as</span> <span class="token punctuation">(</span><span class="token keyword">select</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">(</span>查询的结果<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h2 id="Mysql-索引"><a href="#Mysql-索引" class="headerlink" title="Mysql 索引"></a>Mysql 索引</h2><h3 id="一、索引创建"><a href="#一、索引创建" class="headerlink" title="一、索引创建"></a>一、索引创建</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">index</span> <span class="token operator">&lt;</span>索引名<span class="token operator">></span> <span class="token keyword">on</span> <span class="token operator">&lt;</span>表名<span class="token operator">></span><span class="token punctuation">(</span><span class="token operator">&lt;</span>字段名<span class="token operator">></span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -1586,7 +1586,7 @@ select * from tb_sku as s, (select id from tb_sku order by id limit 9000000, 10)
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">58.6k</span>
+                        class="white-color">60.3k</span>
             
             
             

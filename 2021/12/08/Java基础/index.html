@@ -472,16 +472,19 @@
 <li>布尔常量true和false不能作为标识符</li>
 <li>null不能作为标识符</li>
 </ol>
-<p>规范：<br>类名和接口名：首字母大写，后面每个单词的首字母大写<br>变量名和方法名：首字母小写，后面每个单词的首字母大写<br>常量名：全部大写，并且单词和单词之间用下划线衔接</p>
-<h4 id="2、关键字"><a href="#2、关键字" class="headerlink" title="2、关键字"></a>2、关键字</h4><p>在Java中被赋予特殊含义的单词符号！<br>如new，abstract，switch，if，do 等等。。这部分不用特殊记忆，以后会慢慢记住！</p>
+<p><strong>规范：</strong></p>
+<ul>
+<li>类名和接口名：首字母大写，后面每个单词的首字母大写</li>
+<li>变量名和方法名：首字母小写，后面每个单词的首字母大写</li>
+<li>常量名：全部大写，并且单词和单词之间用下划线衔接</li>
+</ul>
+<h4 id="2、关键字"><a href="#2、关键字" class="headerlink" title="2、关键字"></a>2、关键字</h4><p>在Java中被赋予特殊含义的单词符号！<br>如new，abstract，switch，if，do </p>
 <h4 id="3、注释"><a href="#3、注释" class="headerlink" title="3、注释"></a>3、注释</h4><p>（1）单行注释：写在一行的开始    格式：&#x2F;&#x2F;</p>
 <p>（2）多行注释：多行注释可以写多行也能写一行     格式：  &#x2F;*   …* &#x2F;</p>
 <p>（3）文档注释：Java的文档生成器可以扫描Java的语言程序，提取文档注释，生成Java的帮助文档。     格式： &#x2F;**……*&#x2F;</p>
 <h4 id="4、常量与变量"><a href="#4、常量与变量" class="headerlink" title="4、常量与变量"></a>4、常量与变量</h4><p>Java语言的变量在编译时确定其类型，变量分为两种：一是常用数据类型变量，二是引用类型变量。引用类型变量实质上是一个对象，有其属性和方法！根据声明变量的位置不同,又可以将变量分为类属性变量和布局变量，类属性变量在类中申明，而局部变量在程序块中声明！<br><strong>各个易混变量的区分：</strong></p>
-<ol>
-<li>区分全局变量和局部变量<br>全局变量：描述对象有什么（在类中定义），类中所有方法都可以使用。<br>局部变量：临时保存数据（在类的方法中定义），只能在当前方法中使用。</li>
-<li>区分成员变量和局部变量<br>成员变量：对象的属性称为成员变量，在成员方法中定义一个变量，那么这个变量就被称为局部变量。<br>局部变量仅在方法中有效，而成员变量在整个类中都有效，成员变量比局部变量的范围大，简记为成（橙）大局（橘）小！</li>
-</ol>
+<p>（1）区分全局变量和局部变量<br>全局变量：描述对象有什么（在类中定义），类中所有方法都可以使用。<br>局部变量：临时保存数据（在类的方法中定义），只能在当前方法中使用。</p>
+<p>（2）区分成员变量和局部变量<br>成员变量：对象的属性称为成员变量，在成员方法中定义一个变量，那么这个变量就被称为局部变量。<br>局部变量仅在方法中有效，而成员变量在整个类中都有效，成员变量比局部变量的范围大，简记为成（橙）大局（橘）小！</p>
 <p>在方法中如果局部变量和成员变量名字相同，则成员方法在这个方法中暂时失效，如果需要引用成员变量，则需要引用this关键字 。</p>
 <p>引用变量：实质就是一个对象，有其对应的属性和方法。</p>
 <p>实例变量：不使用修饰词static的类变量。</p>
@@ -597,12 +600,12 @@ else<span class="token punctuation">&#123;</span>
 //循环操作
 <span class="token punctuation">&#125;</span>
 //例如 
-<span class="token keyword">for</span> <span class="token punctuation">(</span>int <span class="token assign-left variable">i</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">;</span>i++<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span>int i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i++<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
 
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>跳转语句</strong></p>
-<p><strong>需要特别注意的是java中不支持goto语句！</strong></p>
+<p><strong>需要特别注意的是Java中不支持goto语句！</strong></p>
 <p>（1）break：它可以和while循环和do-while循环或for循环一起使用，break语句可以强迫程序终止循环，当程序执行到break语句时，即终止循环，继续执行循环外的下一条语句，如果break语句出现在嵌套循环中的内层循环中，则break只会终止其所在当前层的循环，如果break语句位于一个循环内的switch语句中，那么break语句只会终止switch语句而不会终止循环。</p>
 <p>（2）continue：可以强迫程序跳到循环的起始处，当程序运行到continue语句时，即会停止运行剩下的循环主体，而是会回到循环的开始出继续运行。</p>
 <p>break和continue的区别在于，continue仅仅是结束本次循环，而break直接退出了这个循环体。</p>
@@ -710,7 +713,7 @@ else<span class="token punctuation">&#123;</span>
 <li><p>作用是保护成员不被别的类直接使用，被private修饰的成员只能在本类中使用</p>
 </li>
 </ul>
-<pre class="line-numbers language-none"><code class="language-none">private String name;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ul>
 <li>如果要在其他类中使用private修饰的变量，可提供set  get方法，这些方法不用static</li>
@@ -832,7 +835,7 @@ else<span class="token punctuation">&#123;</span>
 <li><p>有父引用指向子对象</p>
 </li>
 </ul>
-<h4 id="2、多态的特点"><a href="#2、多态的特点" class="headerlink" title="2、多态的特点"></a>2、多态的特点</h4><pre class="line-numbers language-none"><code class="language-none">Animal a &#x3D; new Cat();<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="2、多态的特点"><a href="#2、多态的特点" class="headerlink" title="2、多态的特点"></a>2、多态的特点</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Animal</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>二者不同是因为成员方法有方法重写，而成员变量没有</p>
 <ul>
@@ -1728,7 +1731,7 @@ conn<span class="token punctuation">.</span><span class="token function">close</
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">58.6k</span>
+                        class="white-color">60.3k</span>
             
             
             
