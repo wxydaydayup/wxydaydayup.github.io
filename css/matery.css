@@ -1205,6 +1205,7 @@ article .article-tags .chip {
     display: block;
     padding-left: 2em !important;
     word-spacing: 0.05rem;
+    /*margin-top: 25px;*/
 }
 
 #articleContent ul li,
