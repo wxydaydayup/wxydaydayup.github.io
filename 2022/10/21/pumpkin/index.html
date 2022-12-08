@@ -428,14 +428,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.9k
+                    3.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    11 分
+                    15 分
                 </div>
                 
 
@@ -475,11 +475,9 @@
 
 <h3 id="三、快速排序"><a href="#三、快速排序" class="headerlink" title="三、快速排序"></a>三、快速排序</h3><p>例子：8 4 2 6 14 12 10</p>
 <pre class="line-numbers language-none"><code class="language-none">一次划分：
-​	6 4 2 8 14 12 10
+	6 4 2 8 14 12 10
 二次划分：
-​	2 4 6 8 10 12 14<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-
+	2 4 6 8 10 12 14<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><h3 id="一、硬链接和软链接"><a href="#一、硬链接和软链接" class="headerlink" title="一、硬链接和软链接"></a>一、硬链接和软链接</h3><h4 id="1、硬链接和软链接引用区别"><a href="#1、硬链接和软链接引用区别" class="headerlink" title="1、硬链接和软链接引用区别"></a>1、硬链接和软链接引用区别</h4><p><strong>问题</strong>	</p>
 <p>​	设文件F1当前引用计数值为1，先建立F1的符号链接文件F2，再建立F1的硬链接文件F3，然后删除F1。此时，F2和F3的引用计数值分别是() 。</p>
@@ -503,7 +501,95 @@
   <span class="token operator">=</span> k <span class="token operator">+</span> <span class="token number">16</span>j <span class="token operator">+</span> <span class="token number">128</span>i <span class="token operator">+</span> <span class="token number">1</span> <span class="token comment">// 而本题扇区是从0开始所以要加1 </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>参考链接：<a target="_blank" rel="noopener" href="https://www.pudn.com/news/63590b16a4b7e43a5ebfed7c.html">OS | 磁盘地址结构 、柱面号 盘面号 扇区号的计算</a></p>
-<h4 id="3、逻辑记录和-柱面号、磁头号、扇区号-的关系"><a href="#3、逻辑记录和-柱面号、磁头号、扇区号-的关系" class="headerlink" title="3、逻辑记录和 柱面号、磁头号、扇区号 的关系"></a>3、逻辑记录和 柱面号、磁头号、扇区号 的关系</h4><h2 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h2><h3 id="一、数据传输率"><a href="#一、数据传输率" class="headerlink" title="一、数据传输率"></a>一、数据传输率</h3><h4 id="1、给定带宽求数据传输率"><a href="#1、给定带宽求数据传输率" class="headerlink" title="1、给定带宽求数据传输率"></a>1、给定带宽求数据传输率</h4><p><strong>问题</strong></p>
+<h4 id="3、逻辑记录和-柱面号、磁头号、扇区号-的关系"><a href="#3、逻辑记录和-柱面号、磁头号、扇区号-的关系" class="headerlink" title="3、逻辑记录和 柱面号、磁头号、扇区号 的关系"></a>3、逻辑记录和 柱面号、磁头号、扇区号 的关系</h4><h3 id="五、PV操作"><a href="#五、PV操作" class="headerlink" title="五、PV操作"></a>五、PV操作</h3><h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>系统运行有三个进程：输入进程、计算进程和打印进程，它们协同完成工作。输入进程和计算进程之间共用缓冲区buffer1,计算进程和打印进程之间共用缓冲区buffer2。输入进程接收外部数据放入buffer1中；计算进程从buffer1中取出数据进行计算，然后将结果放入buffer2；打印进程从buffer2取出数据打印输出。用算法描述这三个进程的工作情况，并用wait和signal原语实现其同步操作。</p>
+<h4 id="问题解析"><a href="#问题解析" class="headerlink" title="问题解析"></a>问题解析</h4><p>解PV操作算法题目时，我们总结出了一套方便掌握的“五步曲”，本部分的每一个题目，我们都可用这套方法来解答。</p>
+<p><strong>第一步：找进程</strong></p>
+<p>输入进程 计算进程 打印进程</p>
+<p><strong>第二步：找动作</strong></p>
+<p>1、输入进程</p>
+<ul>
+<li>从外部接收数据; </li>
+<li>把数据放入buffer1中。</li>
+</ul>
+<p>2、计算进程</p>
+<ul>
+<li>从buffer1中取出数据；</li>
+<li>计算；</li>
+<li>把结果放入buffer2中。</li>
+</ul>
+<p>3、输出进程</p>
+<ul>
+<li>从buffer2中取出数据；</li>
+<li>打印输出。</li>
+</ul>
+<p><strong>第三步：找关系</strong></p>
+<ul>
+<li>输入进程与计算进程访问buffer1，是互斥关系。</li>
+<li>输入进程把数据放入buffer1，计算进程才能取数据进行计算，是同步关系。</li>
+<li>打印进程把计算后的数据放入buffer2,输出进程才能取走数据输出打印，是同步关系。</li>
+<li>输出进程和打印进程访问buffer2，是互斥关系。</li>
+</ul>
+<p><strong>第四步：找初值</strong></p>
+<ul>
+<li><p>输入进程与计算进程互斥使用buffer1，设置互斥信号量mutex1，初值为1。</p>
+</li>
+<li><p>计算进程与输出进程互斥使用buffer2，设置互斥信号量mutex2，初值为2。</p>
+</li>
+<li><p>为同步输入进程和计算进程使用buffer1，设置信号量empty1表示buffer1为空，初始值为1。设置full1，表示buffer1为满，初始值为0。输入进程从外部接收数据之后，把数据放入空的缓冲区，full1&#x3D;1，等待计算进程读取。同时，计算进程把buffer1中的数据取去计算，buffer2为空，empty&#x3D;1，输入进程可以继续从外部接收数据放入buffer2。</p>
+</li>
+<li><p>为同步计算进程和输出进程使用buffer2，设置信号量empty2表示buffer2为空，初始值为1。设置full2，表示buffer2为满，初始值为0。计算进程从计算数据完毕之后，把数据放入空的缓冲区buffer2，full2&#x3D;1，等待输出进程读取输出打印。同时，输出进程把buffer2中的数据取去计算，buffer2为空，empty2&#x3D;1，计算进程可以将新的计算后的数据放入buffer2。</p>
+</li>
+</ul>
+<p><strong>第五步：写PV算法</strong></p>
+<p>输入进程、计算进程和打印进程之间的同步问题描述如下：</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">var<span class="token operator">:</span> mutex1，mutex2，empty1，empty2，full1，full2 <span class="token operator">=</span><span class="token number">1</span>，<span class="token number">1</span>，<span class="token number">1</span>，<span class="token number">1</span>，<span class="token number">0</span>，<span class="token number">0</span><span class="token punctuation">;</span>
+Input_p<span class="token operator">:</span>
+    begin
+        repeat
+        <span class="token function">wait</span><span class="token punctuation">(</span>empty1<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">//等待缓冲区buffer1空</span>
+        <span class="token function">wait</span><span class="token punctuation">(</span>mutex1<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">//互斥访问buffer1</span>
+        从外部接收数据<span class="token punctuation">;</span>
+        把数据放入buffer1中<span class="token punctuation">;</span>
+        <span class="token function">signal</span><span class="token punctuation">(</span>mutex1<span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">//释放互斥信号量</span>
+        <span class="token function">signal</span><span class="token punctuation">(</span>full1<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">//缓冲区buffer1满</span>
+        until false
+    end
+
+Cal_P<span class="token operator">:</span>
+    begin
+        repeat
+        <span class="token function">wait</span><span class="token punctuation">(</span>full1<span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">//等待缓冲区buffer1为满</span>
+        <span class="token function">wait</span><span class="token punctuation">(</span>mutex1<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">//与输入进程互斥访问buffer1</span>
+        从 buffer1 取出数据<span class="token punctuation">;</span>
+        <span class="token function">signal</span><span class="token punctuation">(</span>mutex1<span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">//释放互斥信号量</span>
+        <span class="token function">signal</span><span class="token punctuation">(</span>empty1<span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">//从buffer1取走数据，置empty1=1</span>
+        用取到的数据进行计算<span class="token punctuation">;</span>
+        <span class="token function">wait</span><span class="token punctuation">(</span>empty2<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">//等待缓冲区buffer2为空，放入数据</span>
+        <span class="token function">wait</span><span class="token punctuation">(</span>mutex2<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">//与输出进程互斥访问buffer2</span>
+        把计算后的数据放入buffer2<span class="token punctuation">;</span>
+        <span class="token function">signal</span><span class="token punctuation">(</span>mutex2<span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">//释放互斥信号量</span>
+        <span class="token function">signal</span><span class="token punctuation">(</span>full2<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">//计算进程向buffer2写入数据，full2=1</span>
+        until false
+    end
+
+Output_p<span class="token operator">:</span>
+    begin
+       repeat
+        <span class="token function">wait</span><span class="token punctuation">(</span>full2<span class="token punctuation">)</span><span class="token punctuation">;</span>           <span class="token comment">//等待缓冲区2为满</span>
+        <span class="token function">wait</span><span class="token punctuation">(</span>mutex2<span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token comment">//与计算进程互斥访问buffer2</span>
+        从buffer2取出数据<span class="token punctuation">;</span>
+        <span class="token function">signal</span><span class="token punctuation">(</span>mutex2<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">//释放互斥信号</span>
+        <span class="token function">signal</span><span class="token punctuation">(</span>empty2<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">//数据被输出进程输出打印，empty2=1</span>
+        打印输出<span class="token punctuation">;</span>
+        until false
+    end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>参考链接：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/dreamshareteam/article/details/35681853">操作系统进程管理 PV算法</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44152807/article/details/111401246">操作系统大题作业整理</a></li>
+</ul>
+<h2 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h2><h3 id="一、数据传输率"><a href="#一、数据传输率" class="headerlink" title="一、数据传输率"></a>一、数据传输率</h3><h4 id="1、给定带宽求数据传输率"><a href="#1、给定带宽求数据传输率" class="headerlink" title="1、给定带宽求数据传输率"></a>1、给定带宽求数据传输率</h4><p><strong>问题</strong></p>
 <p>​	一个带宽为4 KHz 的理想低通通道，其允许的最高码元传输速率为多少？</p>
 <p>​	采用8个相位，每相位取2种幅度值的调制技术，可以获得的数据传输率是多少？</p>
 <p><strong>解答</strong></p>
@@ -1138,7 +1224,7 @@ using namespace std<span class="token punctuation">;</span>
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">78.4k</span>
+                        class="white-color">81.3k</span>
             
             
             
