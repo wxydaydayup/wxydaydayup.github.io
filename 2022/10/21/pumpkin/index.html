@@ -428,14 +428,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.7k
+                    2.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    11 分
                 </div>
                 
 
@@ -475,12 +475,9 @@
 
 <h3 id="三、快速排序"><a href="#三、快速排序" class="headerlink" title="三、快速排序"></a>三、快速排序</h3><p>例子：8 4 2 6 14 12 10</p>
 <pre class="line-numbers language-none"><code class="language-none">一次划分：
-
 ​	6 4 2 8 14 12 10
-
 二次划分：
-
-​	2 4 6 8 10 12 14<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+​	2 4 6 8 10 12 14<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -497,7 +494,16 @@
 <li>一种是直接用程序创建RAID，称为软RAID</li>
 </ul>
 <h3 id="三、缓冲技术"><a href="#三、缓冲技术" class="headerlink" title="三、缓冲技术"></a>三、缓冲技术</h3><h4 id="1、操作系统如何实现缓冲技术"><a href="#1、操作系统如何实现缓冲技术" class="headerlink" title="1、操作系统如何实现缓冲技术"></a>1、操作系统如何实现缓冲技术</h4><p>参考链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44096670/article/details/121632471">操作系统如何实现缓冲技术</a></p>
-<h2 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h2><h3 id="一、数据传输率"><a href="#一、数据传输率" class="headerlink" title="一、数据传输率"></a>一、数据传输率</h3><h4 id="1、给定带宽求数据传输率"><a href="#1、给定带宽求数据传输率" class="headerlink" title="1、给定带宽求数据传输率"></a>1、给定带宽求数据传输率</h4><p><strong>问题</strong></p>
+<h3 id="四、磁盘问题"><a href="#四、磁盘问题" class="headerlink" title="四、磁盘问题"></a>四、磁盘问题</h3><h4 id="1、如何计算磁盘系统容量？"><a href="#1、如何计算磁盘系统容量？" class="headerlink" title="1、如何计算磁盘系统容量？"></a>1、如何计算磁盘系统容量？</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">存储容量 <span class="token operator">=</span> n × t × s × b<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>其中 n 为保存数据的总盘面数（柱面数）；t 为每面磁道数；s 为每道的扇区数；b 为每个扇区存储的字节数。</p>
+<h4 id="2、盘块号和-柱面号、磁头号、扇区号-的关系"><a href="#2、盘块号和-柱面号、磁头号、扇区号-的关系" class="headerlink" title="2、盘块号和 柱面号、磁头号、扇区号 的关系"></a>2、盘块号和 柱面号、磁头号、扇区号 的关系</h4><p>磁盘存储器中用<strong>t表示每个柱面上的磁道数</strong>，用<strong>s表示每个磁道上的扇区数</strong>，则<strong>第i 柱面号</strong>、<strong>j磁头号</strong>、<strong>k扇区号</strong>所对应的<strong>块号N</strong>可用如下公式确定：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">N <span class="token operator">=</span> k <span class="token operator">+</span> s × <span class="token punctuation">(</span> j <span class="token operator">+</span> i × t <span class="token punctuation">)</span>  <span class="token comment">//固定计算公式，扇区号从1开始</span>
+  <span class="token operator">=</span> k <span class="token operator">+</span> <span class="token number">16</span> × <span class="token punctuation">(</span> j <span class="token operator">+</span> i × <span class="token number">8</span> <span class="token punctuation">)</span> <span class="token comment">//将题目信息带入公式</span>
+  <span class="token operator">=</span> k <span class="token operator">+</span> <span class="token number">16</span>j <span class="token operator">+</span> <span class="token number">128</span>i <span class="token operator">+</span> <span class="token number">1</span> <span class="token comment">// 而本题扇区是从0开始所以要加1 </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>参考链接：<a target="_blank" rel="noopener" href="https://www.pudn.com/news/63590b16a4b7e43a5ebfed7c.html">OS | 磁盘地址结构 、柱面号 盘面号 扇区号的计算</a></p>
+<h4 id="3、逻辑记录和-柱面号、磁头号、扇区号-的关系"><a href="#3、逻辑记录和-柱面号、磁头号、扇区号-的关系" class="headerlink" title="3、逻辑记录和 柱面号、磁头号、扇区号 的关系"></a>3、逻辑记录和 柱面号、磁头号、扇区号 的关系</h4><h2 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h2><h3 id="一、数据传输率"><a href="#一、数据传输率" class="headerlink" title="一、数据传输率"></a>一、数据传输率</h3><h4 id="1、给定带宽求数据传输率"><a href="#1、给定带宽求数据传输率" class="headerlink" title="1、给定带宽求数据传输率"></a>1、给定带宽求数据传输率</h4><p><strong>问题</strong></p>
 <p>​	一个带宽为4 KHz 的理想低通通道，其允许的最高码元传输速率为多少？</p>
 <p>​	采用8个相位，每相位取2种幅度值的调制技术，可以获得的数据传输率是多少？</p>
 <p><strong>解答</strong></p>
@@ -1132,7 +1138,7 @@ using namespace std<span class="token punctuation">;</span>
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">77k</span>
+                        class="white-color">78.4k</span>
             
             
             
