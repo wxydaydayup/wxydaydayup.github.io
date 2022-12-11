@@ -436,7 +436,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    941
+                    871
                 </div>
                 
 
@@ -471,7 +471,7 @@
 <p>为了表示给定链表中的环，我们使用整数 <code>pos</code> 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 <code>pos</code> 是 <code>-1</code>，则在该链表中没有环。<strong>注意，<code>pos</code> 仅仅是用于标识环的情况，并不会作为参数传递到函数中。</strong></p>
 <p><strong>说明：</strong>不允许修改给定的链表。</p>
 <p><strong>示例 1：</strong></p>
-<img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist.png" alt="示例1" style="zoom:50%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
+<img src="/images/%E5%89%91%E6%8C%87offer/image-20221211113515090.png" alt="示例1" style="zoom:50%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
 
 <pre class="line-numbers language-none"><code class="language-none">输入：head &#x3D; [3,2,0,-4], pos &#x3D; 1
 输出：返回索引为 1 的链表节点
@@ -499,7 +499,7 @@ public<span class="token operator">:</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>证明如下：</strong></p>
-<img src="https://assets.leetcode-cn.com/solution-static/jianzhi_II_022/jianzhi_II_022_fig1.png" alt="证明图" style="zoom: 23%;box-shadow:rgba(0,0,0,0) 0 1px 5px 0px;"  />
+<img src="/images/%E7%AE%97%E6%B3%95-%E9%93%BE%E8%A1%A8%E4%B8%93%E9%A2%98/image-20221211113330346.png" alt="证明图" style="zoom: 80%;box-shadow:rgba(0,0,0,0) 0 1px 5px 0px;" />
 
 
 
@@ -513,24 +513,20 @@ public<span class="token operator">:</span>
 <h2 id="剑指Offer-两个链表的第一个重合节点"><a href="#剑指Offer-两个链表的第一个重合节点" class="headerlink" title="剑指Offer_两个链表的第一个重合节点"></a>剑指Offer_两个链表的第一个重合节点</h2><h3 id="相关链接-1"><a href="#相关链接-1" class="headerlink" title="相关链接"></a>相关链接</h3><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/3u1WK4/description/">剑指 Offer II 023. 两个链表的第一个重合节点 </a></li>
 </ul>
-<h3 id="相关题目-1"><a href="#相关题目-1" class="headerlink" title="相关题目"></a>相关题目</h3><p>给定两个单链表的头节点 <code>headA</code> 和 <code>headB</code> ，请找出并返回两个单链表相交的起始节点。如果两个链表没有交点，返回 <code>null</code> 。图示两个链表在节点 <code>c1</code> 开始相交<strong>：</strong></p>
-<p><a target="_blank" rel="noopener" href="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/160_statement.png"><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/160_statement.png"  style="zoom: 45%; box-shadow: rgba(0, 0, 0, 0) 0px 1px 5px 0px;" /></a></p>
-<p>题目数据保证整个链式结构中不存在环。注意，函数返回结果后，链表必须保持其原始结构 。 </p>
+<h3 id="相关题目-1"><a href="#相关题目-1" class="headerlink" title="相关题目"></a>相关题目</h3><p>给定两个单链表的头节点 <code>headA</code> 和 <code>headB</code> ，请找出并返回两个单链表相交的起始节点。如果两个链表没有交点，返回 <code>null</code> 。</p>
+<p>图示两个链表在节点 <code>c1</code> 开始相交<strong>：</strong></p>
+<img src="/images/%E7%AE%97%E6%B3%95-%E9%93%BE%E8%A1%A8%E4%B8%93%E9%A2%98/image-20221211113011498.png" alt="示例1" style="zoom: 33%; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;" />
+
+<p>题目数据 <strong>保证</strong> 整个链式结构中不存在环。</p>
+<p><strong>注意</strong>，函数返回结果后，链表必须 <strong>保持其原始结构</strong> 。</p>
 <p><strong>示例 1：</strong></p>
-<p><a target="_blank" rel="noopener" href="https://assets.leetcode.com/uploads/2018/12/13/160_example_1.png"><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/160_example_1.png"  style="zoom:40%;box-shadow:rgba(0,0,0,0) 0 1px 5px 0px;" /></a></p>
+<img src="/images/%E7%AE%97%E6%B3%95-%E9%93%BE%E8%A1%A8%E4%B8%93%E9%A2%98/image-20221211113102248.png" alt="示例1" style="zoom: 33%; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;" />
+
 <pre class="line-numbers language-C" data-language="C"><code class="language-C">输入：listA &#x3D; [4,1,8,4,5], listB &#x3D; [5,0,1,8,4,5]
 输出：Intersected at &#39;8&#39;
 解释：相交节点的值为 8 （注意，如果两个链表相交则不能为 0）。
 从各自的表头开始算起，链表 A 为 [4,1,8,4,5]，链表 B 为 [5,0,1,8,4,5]。
 在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>示例 3：</strong></p>
-<p><a target="_blank" rel="noopener" href="https://assets.leetcode.com/uploads/2018/12/13/160_example_3.png"><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/160_example_3.png" style="zoom:45%;box-shadow:rgba(0,0,0,0) 0 1px 5px 0px;" /></a></p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c">输入：listA <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span> listB <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
-输出：null
-解释：从各自的表头开始算起，链表 A 为 <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span>，链表 B 为 <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>。
-由于这两个链表不相交，所以 intersectVal 必须为 <span class="token number">0</span>
-这两个链表不相交，因此返回 null 。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a>解题思路</h3><p>经典环的入口类问题，从A出发再走B的路程，和从B出发再走A的路程是距离是一样。可以根据这个特性求出链表重合的节点。</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c">class Solution <span class="token punctuation">&#123;</span>
@@ -917,7 +913,7 @@ public<span class="token operator">:</span>
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">91.4k</span>
+                        class="white-color">91.3k</span>
             
             
             

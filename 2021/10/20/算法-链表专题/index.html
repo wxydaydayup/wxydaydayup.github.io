@@ -692,7 +692,7 @@ linkedList.get(1);            &#x2F;&#x2F;返回3<span aria-hidden="true" class=
 <h4 id="相关题目-3"><a href="#相关题目-3" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定一个链表的 <strong>头节点</strong> <code>head</code> <strong>，</strong>请判断其是否为回文链表。</p>
 <p>如果一个链表是回文，那么链表节点序列从前往后看和从后往前看是相同的。</p>
 <p><strong>示例 1：</strong></p>
-<img src="https://pic.leetcode-cn.com/1626421737-LjXceN-image.png" alt="示例1" style="zoom:50%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
+<img src="/images/%E7%AE%97%E6%B3%95-%E9%93%BE%E8%A1%A8%E4%B8%93%E9%A2%98/image-20221211112820854.png" alt="示例1" style="zoom:100%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;"  />
 
 <pre class="line-numbers language-none"><code class="language-none">输入: head &#x3D; [1,2,3,3,2,1]
 输出: true<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -858,11 +858,13 @@ linkedList.get(1);            &#x2F;&#x2F;返回3<span aria-hidden="true" class=
 </ul>
 <h4 id="相关题目-7"><a href="#相关题目-7" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定两个单链表的头节点 <code>headA</code> 和 <code>headB</code> ，请找出并返回两个单链表相交的起始节点。如果两个链表没有交点，返回 <code>null</code> 。</p>
 <p>图示两个链表在节点 <code>c1</code> 开始相交<strong>：</strong></p>
-<p><a target="_blank" rel="noopener" href="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/160_statement.png"><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/160_statement.png" alt="示例1" style="zoom: 33%; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;"/></a></p>
+<img src="/images/%E7%AE%97%E6%B3%95-%E9%93%BE%E8%A1%A8%E4%B8%93%E9%A2%98/image-20221211113011498.png" alt="示例1" style="zoom: 33%; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;" />
+
 <p>题目数据 <strong>保证</strong> 整个链式结构中不存在环。</p>
 <p><strong>注意</strong>，函数返回结果后，链表必须 <strong>保持其原始结构</strong> 。</p>
 <p><strong>示例 1：</strong></p>
-<p><a target="_blank" rel="noopener" href="https://assets.leetcode.com/uploads/2018/12/13/160_example_1.png"><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/160_example_1.png" alt="示例1" style="zoom: 33%; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;" /></a></p>
+<img src="/images/%E7%AE%97%E6%B3%95-%E9%93%BE%E8%A1%A8%E4%B8%93%E9%A2%98/image-20221211113102248.png" alt="示例1" style="zoom: 33%; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;" />
+
 <pre class="line-numbers language-none"><code class="language-none">输入：intersectVal &#x3D; 8, listA &#x3D; [4,1,8,4,5], listB &#x3D; [5,0,1,8,4,5], skipA &#x3D; 2, skipB &#x3D; 3
 输出：Intersected at &#39;8&#39;
 解释：相交节点的值为 8 （注意，如果两个链表相交则不能为 0）。
@@ -889,7 +891,9 @@ linkedList.get(1);            &#x2F;&#x2F;返回3<span aria-hidden="true" class=
 <h4 id="相关题目-8"><a href="#相关题目-8" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定两个 <strong>非空链表</strong> <code>l1</code>和 <code>l2</code> 来代表两个非负整数。数字最高位位于链表开始位置。它们的每个节点只存储一位数字。将这两数相加会返回一个新的链表。</p>
 <p>可以假设除了数字 0 之外，这两个数字都不会以零开头。</p>
 <p><strong>示例1：</strong></p>
-<img src="https://pic.leetcode-cn.com/1626420025-fZfzMX-image.png" alt="示例1" style="zoom:50%;box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;" />
+<img src="/images/%E7%AE%97%E6%B3%95-%E9%93%BE%E8%A1%A8%E4%B8%93%E9%A2%98/image-20221211113202918.png" alt="示例1" style="zoom:40%;box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;" />
+
+
 
 <pre class="line-numbers language-none"><code class="language-none">输入：l1 &#x3D; [7,2,4,3], l2 &#x3D; [5,6,4]
 输出：[7,8,0,7]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -938,7 +942,7 @@ linkedList.get(1);            &#x2F;&#x2F;返回3<span aria-hidden="true" class=
 <p>为了表示给定链表中的环，我们使用整数 <code>pos</code> 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 <code>pos</code> 是 <code>-1</code>，则在该链表中没有环。<strong>注意，<code>pos</code> 仅仅是用于标识环的情况，并不会作为参数传递到函数中。</strong></p>
 <p><strong>说明：</strong>不允许修改给定的链表。</p>
 <p><strong>示例 1：</strong></p>
-<img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist.png" alt="示例1" style="zoom:50%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
+<img src="/images/%E7%AE%97%E6%B3%95-%E9%93%BE%E8%A1%A8%E4%B8%93%E9%A2%98/image-20221211113248425.png" alt="示例1" style="zoom:50%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
 
 <pre class="line-numbers language-none"><code class="language-none">输入：head &#x3D; [3,2,0,-4], pos &#x3D; 1
 输出：返回索引为 1 的链表节点
@@ -966,7 +970,7 @@ linkedList.get(1);            &#x2F;&#x2F;返回3<span aria-hidden="true" class=
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>证明如下：</strong></p>
-<img src="https://assets.leetcode-cn.com/solution-static/jianzhi_II_022/jianzhi_II_022_fig1.png" alt="证明图" style="zoom: 23%;box-shadow:rgba(0,0,0,0) 0 1px 5px 0px;"  />
+<img src="/images/%E7%AE%97%E6%B3%95-%E9%93%BE%E8%A1%A8%E4%B8%93%E9%A2%98/image-20221211113330346.png" alt="证明图" style="zoom: 80%;box-shadow:rgba(0,0,0,0) 0 1px 5px 0px;" />
 
 
 
@@ -1368,7 +1372,7 @@ linkedList.get(1);            &#x2F;&#x2F;返回3<span aria-hidden="true" class=
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">91.4k</span>
+                        class="white-color">91.3k</span>
             
             
             
