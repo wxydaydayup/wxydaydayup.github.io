@@ -436,7 +436,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    986
+                    941
                 </div>
                 
 
@@ -467,22 +467,15 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="剑指Offer-链表中环的入口节点"><a href="#剑指Offer-链表中环的入口节点" class="headerlink" title="剑指Offer_链表中环的入口节点"></a>剑指Offer_链表中环的入口节点</h2><h3 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/c32eOV/description/">剑指 Offer II 022. 链表中环的入口节点</a></p>
-<h3 id="相关题目"><a href="#相关题目" class="headerlink" title="相关题目"></a>相关题目</h3><p>给定一个链表，返回链表开始入环的第一个节点。 从链表的头节点开始沿着 next 指针进入环的第一个节点为环的入口节点。如果链表无环，则返回 null。为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。注意，pos 仅仅是用于标识环的情况，并不会作为参数传递到函数中。</p>
-<p>说明：不允许修改给定的链表。</p>
+<h3 id="相关题目"><a href="#相关题目" class="headerlink" title="相关题目"></a>相关题目</h3><p>给定一个链表，返回链表开始入环的第一个节点。 从链表的头节点开始沿着 <code>next</code> 指针进入环的第一个节点为环的入口节点。如果链表无环，则返回 <code>null</code>。</p>
+<p>为了表示给定链表中的环，我们使用整数 <code>pos</code> 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 <code>pos</code> 是 <code>-1</code>，则在该链表中没有环。<strong>注意，<code>pos</code> 仅仅是用于标识环的情况，并不会作为参数传递到函数中。</strong></p>
+<p><strong>说明：</strong>不允许修改给定的链表。</p>
 <p><strong>示例 1：</strong></p>
-<img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist.png" style="zoom: 45%; box-shadow: rgba(0, 0, 0, 0) 0px 1px 5px 0px;" />
+<img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist.png" alt="示例1" style="zoom:50%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
 
 <pre class="line-numbers language-none"><code class="language-none">输入：head &#x3D; [3,2,0,-4], pos &#x3D; 1
 输出：返回索引为 1 的链表节点
 解释：链表中有一个环，其尾部连接到第二个节点。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>示例 2：</strong></p>
-<img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist_test2.png" style="zoom: 67%; box-shadow: rgba(0, 0, 0, 0) 0px 1px 5px 0px;"/>
-
-<pre class="line-numbers language-none"><code class="language-none">输入：head &#x3D; [1,2], pos &#x3D; 0
-输出：返回索引为 0 的链表节点
-解释：链表中有一个环，其尾部连接到第一个节点。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>此题使用快慢指针，如果存在环，快慢指针一定会相遇，而此时<code>快慢指针相遇的位置</code> &#x3D; <code>从相遇点到入环点的距离加上 n-1 圈的环长</code>。之后可以使慢指针与表头同时出发，相遇的位置就是环的入口。</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c">class Solution <span class="token punctuation">&#123;</span>
 public<span class="token operator">:</span>
@@ -924,7 +917,7 @@ public<span class="token operator">:</span>
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">89.9k</span>
+                        class="white-color">91.4k</span>
             
             
             

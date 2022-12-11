@@ -444,14 +444,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    11.9k
+                    13.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    51 分
+                    57 分
                 </div>
                 
 
@@ -1179,8 +1179,8 @@ dp[0] = 0;<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 <li><p>确定遍历顺序</p>
 <p>因为纯完全背包求得装满背包的最大价值是多少，和凑成总和的元素有没有顺序没关系，即：有顺序也行，没有顺序也行！</p>
 <p>本题是求凑出来的方案个数，且每个方案个数是为组合数。那么本题，两个for循环的先后顺序可就有说法了。</p>
-<p><strong>！！！如果求组合数就是外层for循环遍历物品，内层for遍历背包！！！</strong>。</p>
-<p><strong>！！！如果求排列数就是外层for遍历背包，内层for循环遍历物品！！！</strong>。</p>
+<p><strong>！！！如果求组合数就是外层for循环遍历物品，内层for遍历背包！！！</strong></p>
+<p><strong>！！！如果求排列数就是外层for遍历背包，内层for循环遍历物品！！！</strong></p>
 <p>外层for循环遍历物品（钱币），内层for遍历背包（金钱总额）的情况。代码如下：</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> coins<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// 遍历物品</span>
     <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> coins<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> amount<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// 遍历背包容量</span>
@@ -1208,7 +1208,81 @@ dp[0] = 0;<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="多重背包"><a href="#多重背包" class="headerlink" title="多重背包"></a>多重背包</h2><h3 id="多重背包理论"><a href="#多重背包理论" class="headerlink" title="多重背包理论"></a>多重背包理论</h3><h4 id="相关链接-7"><a href="#相关链接-7" class="headerlink" title="相关链接"></a>相关链接</h4><h4 id="相关题目-7"><a href="#相关题目-7" class="headerlink" title="相关题目"></a>相关题目</h4><h4 id="解题思路-7"><a href="#解题思路-7" class="headerlink" title="解题思路"></a>解题思路</h4><h2 id="分组背包"><a href="#分组背包" class="headerlink" title="分组背包"></a>分组背包</h2><h3 id="分组背包理论"><a href="#分组背包理论" class="headerlink" title="分组背包理论"></a>分组背包理论</h3><h4 id="相关链接-8"><a href="#相关链接-8" class="headerlink" title="相关链接"></a>相关链接</h4><h4 id="相关题目-8"><a href="#相关题目-8" class="headerlink" title="相关题目"></a>相关题目</h4><h4 id="解题思路-8"><a href="#解题思路-8" class="headerlink" title="解题思路"></a>解题思路</h4><h1 id="线性DP"><a href="#线性DP" class="headerlink" title="线性DP"></a>线性DP</h1><h2 id="基础DP问题"><a href="#基础DP问题" class="headerlink" title="基础DP问题"></a>基础DP问题</h2><h3 id="数字三角形"><a href="#数字三角形" class="headerlink" title="数字三角形"></a>数字三角形</h3><h4 id="相关链接-9"><a href="#相关链接-9" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="组合总和"><a href="#组合总和" class="headerlink" title="组合总和"></a>组合总和</h3><h4 id="相关链接-7"><a href="#相关链接-7" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<li><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/combination-sum/">39. 组合总和 </a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/combination-sum-ii/">40. 组合总和 II </a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/combination-sum-iii/">216. 组合总和 III </a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/combination-sum-iv/">377. 组合总和 Ⅳ </a></p>
+</li>
+</ul>
+<h4 id="相关题目-7"><a href="#相关题目-7" class="headerlink" title="相关题目"></a>相关题目</h4><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/combination-sum-iv/">377. 组合总和 Ⅳ </a></p>
+<p>给你一个由 <strong>不同</strong> 整数组成的数组 <code>nums</code> ，和一个目标整数 <code>target</code> 。请你从 <code>nums</code> 中找出并返回总和为 <code>target</code> 的元素组合的个数。</p>
+<p>题目数据保证答案符合 32 位整数范围。</p>
+<p><strong>示例 1：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">输入：nums &#x3D; [1,2,3], target &#x3D; 4
+输出：7
+解释：
+所有可能的组合为：
+(1, 1, 1, 1)
+(1, 1, 2)
+(1, 2, 1)
+(1, 3)
+(2, 1, 1)
+(2, 2)
+(3, 1)
+请注意，顺序不同的序列被视作不同的组合。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="解题思路-7"><a href="#解题思路-7" class="headerlink" title="解题思路"></a>解题思路</h4><p>弄清什么是组合，什么是排列很重要。</p>
+<p>组合不强调顺序，(1,5)和(5,1)是同一个组合。</p>
+<p>排列强调顺序，(1,5)和(5,1)是两个不同的排列。</p>
+<p>但其本质是本题求的是排列总和，而且仅仅是求排列总和的个数，并不是把所有的排列都列出来。</p>
+<p><strong>如果本题要把排列都列出来的话，只能使用回溯算法爆搜</strong>。</p>
+<ol>
+<li><p>确定dp数组以及下标的含义</p>
+<p><strong>dp[i]: 凑成目标正整数为i的排列个数为dp[i]</strong></p>
+</li>
+<li><p>确定递推公式</p>
+<p>dp[i]（考虑nums[j]）可以由 dp[i - nums[j]]（不考虑nums[j]） 推导出来。</p>
+<p>因为只要得到nums[j]，排列个数dp[i - nums[j]]，就是dp[i]的一部分。</p>
+</li>
+<li><p>dp数组如何初始化</p>
+<p>因为递推公式dp[i] +&#x3D; dp[i - nums[j]]的缘故，dp[0]要初始化为1，这样递归其他dp[i]的时候才会有数值基础。</p>
+<p>至于dp[0] &#x3D; 1 有没有意义呢？其实没有意义，所以我也不去强行解释它的意义了，因为题目中也说了：给定目标值是正整数！ 所以dp[0] &#x3D; 1是没有意义的，仅仅是为了推导递推公式。</p>
+<p>至于非0下标的dp[i]应该初始为多少呢？初始化为0，这样才不会影响dp[i]累加所有的dp[i - nums[j]]。</p>
+</li>
+<li><p>确定遍历顺序</p>
+<p>个数可以不限使用，说明这是一个完全背包。得到的集合是排列，说明需要考虑元素之间的顺序。本题要求的是排列，那么这个for循环嵌套的顺序可以有说法了。<br>在518.零钱兑换II 中就已经讲过了。</p>
+<p><strong>！！！如果求组合数就是外层for循环遍历物品，内层for遍历背包！！！</strong></p>
+</li>
+</ol>
+<p><strong>！！！如果求排列数就是外层for遍历背包，内层for循环遍历物品！！！</strong></p>
+<p>如果把遍历nums（物品）放在外循环，遍历target的作为内循环的话，举一个例子：计算dp[4]的时候，结果集只有 {1,3} 这样的集合，不会有{3,1}这样的集合，因为nums遍历放在外层，3只能出现在1后面！</p>
+<p>   所以本题遍历顺序最终遍历顺序：<strong>target（背包）放在外循环，将nums（物品）放在内循环，内循环从前到后遍历</strong>。</p>
+<ol start="5">
+<li>举例来推导dp数组</li>
+</ol>
+<p>以上分析完毕，C++代码如下：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">combinationSum4</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">dp</span><span class="token punctuation">(</span>target <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> target<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// 遍历背包</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// 遍历物品</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">-</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">>=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> INT_MAX <span class="token operator">-</span> dp<span class="token punctuation">[</span>i <span class="token operator">-</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                    dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+=</span> dp<span class="token punctuation">[</span>i <span class="token operator">-</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> dp<span class="token punctuation">[</span>target<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>C++测试用例有两个数相加超过int的数据，所以需要在if里加上<code>dp[i] &lt; INT_MAX - dp[i - num]</code>。</p>
+<h2 id="多重背包"><a href="#多重背包" class="headerlink" title="多重背包"></a>多重背包</h2><h3 id="多重背包理论"><a href="#多重背包理论" class="headerlink" title="多重背包理论"></a>多重背包理论</h3><h4 id="相关链接-8"><a href="#相关链接-8" class="headerlink" title="相关链接"></a>相关链接</h4><h4 id="相关题目-8"><a href="#相关题目-8" class="headerlink" title="相关题目"></a>相关题目</h4><h4 id="解题思路-8"><a href="#解题思路-8" class="headerlink" title="解题思路"></a>解题思路</h4><h2 id="分组背包"><a href="#分组背包" class="headerlink" title="分组背包"></a>分组背包</h2><h3 id="分组背包理论"><a href="#分组背包理论" class="headerlink" title="分组背包理论"></a>分组背包理论</h3><h4 id="相关链接-9"><a href="#相关链接-9" class="headerlink" title="相关链接"></a>相关链接</h4><h4 id="相关题目-9"><a href="#相关题目-9" class="headerlink" title="相关题目"></a>相关题目</h4><h4 id="解题思路-9"><a href="#解题思路-9" class="headerlink" title="解题思路"></a>解题思路</h4><h1 id="线性DP"><a href="#线性DP" class="headerlink" title="线性DP"></a>线性DP</h1><h2 id="基础DP问题"><a href="#基础DP问题" class="headerlink" title="基础DP问题"></a>基础DP问题</h2><h3 id="数字三角形"><a href="#数字三角形" class="headerlink" title="数字三角形"></a>数字三角形</h3><h4 id="相关链接-10"><a href="#相关链接-10" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/900/">898. 数字三角形 - AcWing</a></p>
 </li>
 <li><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/3307/">3304. 数字三角形 - AcWing</a></p>
@@ -1220,7 +1294,7 @@ dp[0] = 0;<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 <li><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/IlPe0q/?favorite=e8X3pBZi">剑指 Offer II  三角形中最小路径之和</a></p>
 </li>
 </ul>
-<h4 id="相关题目-9"><a href="#相关题目-9" class="headerlink" title="相关题目"></a>相关题目</h4><h4 id="解题思路-9"><a href="#解题思路-9" class="headerlink" title="解题思路"></a>解题思路</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+<h4 id="相关题目-10"><a href="#相关题目-10" class="headerlink" title="相关题目"></a>相关题目</h4><h4 id="解题思路-10"><a href="#解题思路-10" class="headerlink" title="解题思路"></a>解题思路</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">const</span> <span class="token keyword">int</span> N<span class="token operator">=</span><span class="token number">510</span><span class="token punctuation">,</span>INF<span class="token operator">=</span><span class="token number">1e9</span><span class="token punctuation">;</span>
 <span class="token keyword">int</span> n<span class="token punctuation">;</span>
@@ -1248,10 +1322,10 @@ dp[0] = 0;<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 
 
 
-<h3 id="斐波那契数"><a href="#斐波那契数" class="headerlink" title="斐波那契数"></a>斐波那契数</h3><h4 id="相关链接-10"><a href="#相关链接-10" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="斐波那契数"><a href="#斐波那契数" class="headerlink" title="斐波那契数"></a>斐波那契数</h3><h4 id="相关链接-11"><a href="#相关链接-11" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/fibonacci-number/description/">509. 斐波那契数 </a></li>
 </ul>
-<h4 id="相关题目-10"><a href="#相关题目-10" class="headerlink" title="相关题目"></a>相关题目</h4><p><strong>斐波那契数</strong> （通常用 <code>F(n)</code> 表示）形成的序列称为 <strong>斐波那契数列</strong> 。该数列由 <code>0</code> 和 <code>1</code> 开始，后面的每一项数字都是前面两项数字的和。也就是：</p>
+<h4 id="相关题目-11"><a href="#相关题目-11" class="headerlink" title="相关题目"></a>相关题目</h4><p><strong>斐波那契数</strong> （通常用 <code>F(n)</code> 表示）形成的序列称为 <strong>斐波那契数列</strong> 。该数列由 <code>0</code> 和 <code>1</code> 开始，后面的每一项数字都是前面两项数字的和。也就是：</p>
 <pre class="line-numbers language-none"><code class="language-none">F(0) &#x3D; 0，F(1) &#x3D; 1
 F(n) &#x3D; F(n - 1) + F(n - 2)，其中 n &gt; 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
@@ -1261,7 +1335,7 @@ F(n) &#x3D; F(n - 1) + F(n - 2)，其中 n &gt; 1<span aria-hidden="true" class=
 输出：1
 解释：F(2) &#x3D; F(1) + F(0) &#x3D; 1 + 0 &#x3D; 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-10"><a href="#解题思路-10" class="headerlink" title="解题思路"></a>解题思路</h4><ol>
+<h4 id="解题思路-11"><a href="#解题思路-11" class="headerlink" title="解题思路"></a>解题思路</h4><ol>
 <li><p>确定dp数组以及下标的含义</p>
 <p><strong><code>dp[i]</code> 的定义为：第 i 个数的斐波那契数值是<code>dp[i]</code></strong></p>
 </li>
@@ -1309,10 +1383,10 @@ dp[1] = 1;<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="爬楼梯"><a href="#爬楼梯" class="headerlink" title="爬楼梯"></a>爬楼梯</h3><h4 id="相关链接-11"><a href="#相关链接-11" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="爬楼梯"><a href="#爬楼梯" class="headerlink" title="爬楼梯"></a>爬楼梯</h3><h4 id="相关链接-12"><a href="#相关链接-12" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/climbing-stairs/description/">70. 爬楼梯</a></li>
 </ul>
-<h4 id="相关题目-11"><a href="#相关题目-11" class="headerlink" title="相关题目"></a>相关题目</h4><p>假设你正在爬楼梯。需要 <code>n</code> 阶你才能到达楼顶。</p>
+<h4 id="相关题目-12"><a href="#相关题目-12" class="headerlink" title="相关题目"></a>相关题目</h4><p>假设你正在爬楼梯。需要 <code>n</code> 阶你才能到达楼顶。</p>
 <p>每次你可以爬 <code>1</code> 或 <code>2</code> 个台阶。你有多少种不同的方法可以爬到楼顶呢？</p>
 <p><strong>示例 1：</strong></p>
 <pre class="line-numbers language-none"><code class="language-none">输入：n &#x3D; 2
@@ -1321,7 +1395,7 @@ dp[1] = 1;<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 1. 1 阶 + 1 阶
 2. 2 阶<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-11"><a href="#解题思路-11" class="headerlink" title="解题思路"></a>解题思路</h4><ol>
+<h4 id="解题思路-12"><a href="#解题思路-12" class="headerlink" title="解题思路"></a>解题思路</h4><ol>
 <li><p>确定dp数组以及下标的含义</p>
 <p><code>dp[i]</code>： 爬到第i层楼梯，有<code>dp[i]</code>种方法</p>
 </li>
@@ -1378,12 +1452,48 @@ dp[1] = 1;<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<p><strong>爬楼梯进阶版</strong></p>
+<p><strong>面试题改为：一步可以一个台阶，两个台阶，三个台阶，…….，最多到 m个台阶。问有多少种不同的方法可以爬到楼顶呢？</strong></p>
+<ol>
+<li><p>确定dp数组以及下标的含义</p>
+<p><strong>dp[i]：爬到有i个台阶的楼顶，有dp[i]种方法</strong>。</p>
+</li>
+<li><p>确定递推公式</p>
+<p>求装满背包有几种方法，递推公式一般都是dp[i] +&#x3D; dp[i - nums[j]];</p>
+<p>本题呢，dp[i]有几种来源，dp[i - 1]，dp[i - 2]，dp[i - 3] 等等，即：dp[i - j]</p>
+<p>那么递推公式为：dp[i] +&#x3D; dp[i - j]</p>
+</li>
+<li><p>dp数组如何初始化</p>
+<p>既然递归公式是 dp[i] +&#x3D; dp[i - j]，那么dp[0] 一定为1，dp[0]是递归中一切数值的基础所在，如果dp[0]是0的话，其他数值都是0了。</p>
+<p>下标非0的dp[i]初始化为0，因为dp[i]是靠dp[i-j]累计上来的，dp[i]本身为0这样才不会影响结果</p>
+</li>
+<li><p>确定遍历顺序</p>
+<p>这是背包里求排列问题，即：<strong>1、2 步 和 2、1 步都是上三个台阶，但是这两种方法不一样！</strong></p>
+<p>所以需将target放在外循环，将nums放在内循环。</p>
+<p>每一步可以走多次，这是完全背包，内循环需要从前向后遍历。</p>
+</li>
+<li><p>举例来推导dp数组</p>
+</li>
+</ol>
+<p>以上分析完毕，代码中m表示最多可以爬m个台阶，普通爬楼梯题目为2，C++代码如下：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">climbStairs</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">dp</span><span class="token punctuation">(</span>n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// 遍历背包</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> m<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// 遍历物品</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">-</span> j <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">)</span> dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+=</span> dp<span class="token punctuation">[</span>i <span class="token operator">-</span> j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> dp<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-
-<h3 id="使用最小花费爬楼梯"><a href="#使用最小花费爬楼梯" class="headerlink" title="使用最小花费爬楼梯"></a>使用最小花费爬楼梯</h3><h4 id="相关链接-12"><a href="#相关链接-12" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="使用最小花费爬楼梯"><a href="#使用最小花费爬楼梯" class="headerlink" title="使用最小花费爬楼梯"></a>使用最小花费爬楼梯</h3><h4 id="相关链接-13"><a href="#相关链接-13" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/min-cost-climbing-stairs/">746. 使用最小花费爬楼梯 </a></li>
 </ul>
-<h4 id="相关题目-12"><a href="#相关题目-12" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你一个整数数组 <code>cost</code> ，其中 <code>cost[i]</code> 是从楼梯第 <code>i</code> 个台阶向上爬需要支付的费用。一旦你支付此费用，即可选择向上爬一个或者两个台阶。你可以选择从下标为 <code>0</code> 或下标为 <code>1</code> 的台阶开始爬楼梯。请你计算并返回达到楼梯顶部的最低花费。</p>
+<h4 id="相关题目-13"><a href="#相关题目-13" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你一个整数数组 <code>cost</code> ，其中 <code>cost[i]</code> 是从楼梯第 <code>i</code> 个台阶向上爬需要支付的费用。一旦你支付此费用，即可选择向上爬一个或者两个台阶。你可以选择从下标为 <code>0</code> 或下标为 <code>1</code> 的台阶开始爬楼梯。请你计算并返回达到楼梯顶部的最低花费。</p>
 <p><strong>示例 1：</strong></p>
 <pre class="line-numbers language-none"><code class="language-none">输入：cost &#x3D; [10,15,20]
 输出：15
@@ -1391,7 +1501,7 @@ dp[1] = 1;<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 - 支付 15 ，向上爬两个台阶，到达楼梯顶部。
 总花费为 15 。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-12"><a href="#解题思路-12" class="headerlink" title="解题思路"></a>解题思路</h4><ol>
+<h4 id="解题思路-13"><a href="#解题思路-13" class="headerlink" title="解题思路"></a>解题思路</h4><ol>
 <li><p>确定dp数组以及下标的含义</p>
 <p><strong>dp[i]的定义：到达第i台阶所花费的最少体力为dp[i]。</strong></p>
 </li>
@@ -1425,10 +1535,10 @@ dp[1] = 1;<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="不同路径"><a href="#不同路径" class="headerlink" title="不同路径"></a>不同路径</h3><h4 id="相关链接-13"><a href="#相关链接-13" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="不同路径"><a href="#不同路径" class="headerlink" title="不同路径"></a>不同路径</h3><h4 id="相关链接-14"><a href="#相关链接-14" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/unique-paths/">62. 不同路径 </a></li>
 </ul>
-<h4 id="相关题目-13"><a href="#相关题目-13" class="headerlink" title="相关题目"></a>相关题目</h4><p>一个机器人位于一个 <code>m x n</code> 网格的左上角 （起始点在下图中标记为 “Start” ）。</p>
+<h4 id="相关题目-14"><a href="#相关题目-14" class="headerlink" title="相关题目"></a>相关题目</h4><p>一个机器人位于一个 <code>m x n</code> 网格的左上角 （起始点在下图中标记为 “Start” ）。</p>
 <p>机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为 “Finish” ）。</p>
 <p>问总共有多少条不同的路径？</p>
 <p><strong>示例 1：</strong></p>
@@ -1437,7 +1547,7 @@ dp[1] = 1;<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 <pre class="line-numbers language-none"><code class="language-none">输入：m &#x3D; 3, n &#x3D; 7
 输出：28<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-13"><a href="#解题思路-13" class="headerlink" title="解题思路"></a>解题思路</h4><p>机器人从(0 , 0) 位置出发，到(m - 1, n - 1)终点。</p>
+<h4 id="解题思路-14"><a href="#解题思路-14" class="headerlink" title="解题思路"></a>解题思路</h4><p>机器人从(0 , 0) 位置出发，到(m - 1, n - 1)终点。</p>
 <ol>
 <li><p>确定dp数组（dp table）以及下标的含义</p>
 <p><code>dp[i][j]</code> ：表示从(0 ,0)出发，到(i, j) 有 <code>dp[i][j]</code> 条不同的路径。</p>
@@ -1478,10 +1588,10 @@ dp[1] = 1;<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="不同路径-II"><a href="#不同路径-II" class="headerlink" title="不同路径 II"></a>不同路径 II</h3><h4 id="相关链接-14"><a href="#相关链接-14" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="不同路径-II"><a href="#不同路径-II" class="headerlink" title="不同路径 II"></a>不同路径 II</h3><h4 id="相关链接-15"><a href="#相关链接-15" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/unique-paths-ii/">63. 不同路径 II </a></li>
 </ul>
-<h4 id="相关题目-14"><a href="#相关题目-14" class="headerlink" title="相关题目"></a>相关题目</h4><p>一个机器人位于一个 <code>m x n</code> 网格的左上角 （起始点在下图中标记为 “Start” ）。</p>
+<h4 id="相关题目-15"><a href="#相关题目-15" class="headerlink" title="相关题目"></a>相关题目</h4><p>一个机器人位于一个 <code>m x n</code> 网格的左上角 （起始点在下图中标记为 “Start” ）。</p>
 <p>机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为 “Finish”）。</p>
 <p>现在考虑网格中有障碍物。那么从左上角到右下角将会有多少条不同的路径？</p>
 <p>网格中的障碍物和空位置分别用 <code>1</code> 和 <code>0</code> 来表示。</p>
@@ -1495,7 +1605,7 @@ dp[1] = 1;<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 1. 向右 -&gt; 向右 -&gt; 向下 -&gt; 向下
 2. 向下 -&gt; 向下 -&gt; 向右 -&gt; 向右<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-14"><a href="#解题思路-14" class="headerlink" title="解题思路"></a>解题思路</h4><ol>
+<h4 id="解题思路-15"><a href="#解题思路-15" class="headerlink" title="解题思路"></a>解题思路</h4><ol>
 <li>确定dp数组（dp table）以及下标的含义</li>
 </ol>
 <p><code>dp[i][j]</code> ：表示从（0 ，0）出发，到(i, j) 有<code>dp[i][j]</code>条不同的路径。</p>
@@ -1551,17 +1661,17 @@ dp[1] = 1;<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="不同的二叉搜索树"><a href="#不同的二叉搜索树" class="headerlink" title="不同的二叉搜索树"></a>不同的二叉搜索树</h3><h4 id="相关链接-15"><a href="#相关链接-15" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="不同的二叉搜索树"><a href="#不同的二叉搜索树" class="headerlink" title="不同的二叉搜索树"></a>不同的二叉搜索树</h3><h4 id="相关链接-16"><a href="#相关链接-16" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/unique-binary-search-trees/description/">96. 不同的二叉搜索树</a></li>
 </ul>
-<h4 id="相关题目-15"><a href="#相关题目-15" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你一个整数 <code>n</code> ，求恰由 <code>n</code> 个节点组成且节点值从 <code>1</code> 到 <code>n</code> 互不相同的 <strong>二叉搜索树</strong> 有多少种？返回满足题意的二叉搜索树的种数。</p>
+<h4 id="相关题目-16"><a href="#相关题目-16" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你一个整数 <code>n</code> ，求恰由 <code>n</code> 个节点组成且节点值从 <code>1</code> 到 <code>n</code> 互不相同的 <strong>二叉搜索树</strong> 有多少种？返回满足题意的二叉搜索树的种数。</p>
 <p><strong>示例 1：</strong></p>
 <img src="https://assets.leetcode.com/uploads/2021/01/18/uniquebstn3.jpg" alt="示例1" style="zoom:50%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
 
 <pre class="line-numbers language-none"><code class="language-none">输入：n &#x3D; 3
 输出：5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-15"><a href="#解题思路-15" class="headerlink" title="解题思路"></a>解题思路</h4><ol>
+<h4 id="解题思路-16"><a href="#解题思路-16" class="headerlink" title="解题思路"></a>解题思路</h4><ol>
 <li><p>确定dp数组（dp table）以及下标的含义</p>
 <p><strong>dp[i] : 1 到 i 为节点组成的二叉搜索树的个数为dp[i] 。</strong></p>
 </li>
@@ -1621,7 +1731,7 @@ dp[1] = 1;<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 
 
 
-<h2 id="连续子序列问题"><a href="#连续子序列问题" class="headerlink" title="连续子序列问题"></a>连续子序列问题</h2><h4 id="相关链接-16"><a href="#相关链接-16" class="headerlink" title="相关链接"></a>相关链接</h4><h4 id="相关题目-16"><a href="#相关题目-16" class="headerlink" title="相关题目"></a>相关题目</h4><h4 id="解题思路-16"><a href="#解题思路-16" class="headerlink" title="解题思路"></a>解题思路</h4><h2 id="不连续子序列问题"><a href="#不连续子序列问题" class="headerlink" title="不连续子序列问题"></a>不连续子序列问题</h2><h4 id="相关链接-17"><a href="#相关链接-17" class="headerlink" title="相关链接"></a>相关链接</h4><h4 id="相关题目-17"><a href="#相关题目-17" class="headerlink" title="相关题目"></a>相关题目</h4><h4 id="解题思路-17"><a href="#解题思路-17" class="headerlink" title="解题思路"></a>解题思路</h4><h1 id="状态压缩DP"><a href="#状态压缩DP" class="headerlink" title="状态压缩DP"></a>状态压缩DP</h1><ul>
+<h2 id="连续子序列问题"><a href="#连续子序列问题" class="headerlink" title="连续子序列问题"></a>连续子序列问题</h2><h4 id="相关链接-17"><a href="#相关链接-17" class="headerlink" title="相关链接"></a>相关链接</h4><h4 id="相关题目-17"><a href="#相关题目-17" class="headerlink" title="相关题目"></a>相关题目</h4><h4 id="解题思路-17"><a href="#解题思路-17" class="headerlink" title="解题思路"></a>解题思路</h4><h2 id="不连续子序列问题"><a href="#不连续子序列问题" class="headerlink" title="不连续子序列问题"></a>不连续子序列问题</h2><h4 id="相关链接-18"><a href="#相关链接-18" class="headerlink" title="相关链接"></a>相关链接</h4><h4 id="相关题目-18"><a href="#相关题目-18" class="headerlink" title="相关题目"></a>相关题目</h4><h4 id="解题思路-18"><a href="#解题思路-18" class="headerlink" title="解题思路"></a>解题思路</h4><h1 id="状态压缩DP"><a href="#状态压缩DP" class="headerlink" title="状态压缩DP"></a>状态压缩DP</h1><ul>
 <li><p>快速排序</p>
 </li>
 <li><p>归并排序</p>
@@ -1811,54 +1921,6 @@ dp[1] = 1;<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/10/21/%E7%94%9F%E6%97%A5%E6%8F%90%E9%86%92%E8%84%9A%E6%9C%AC/">
-                    <div class="card-image">
-                        
-                        <img src="https://pic.imgdb.cn/item/638410d916f2c2beb1f1c2ff.png" class="responsive-img" alt="">
-                        
-                        <span class="card-title"></span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            生日提醒脚本
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-21
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="post-category">
-                                    生活
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%94%9F%E6%B4%BB/">
-                        <span class="chip bg-color">生活</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/2021/10/20/%E7%AE%97%E6%B3%95-%E9%93%BE%E8%A1%A8%E4%B8%93%E9%A2%98/">
                     <div class="card-image">
                         
@@ -1874,9 +1936,9 @@ dp[1] = 1;<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-20
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-20
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1910,6 +1972,70 @@ dp[1] = 1;<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
                     
                     <a href="/tags/%E9%93%BE%E8%A1%A8/">
                         <span class="chip bg-color">链表</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/10/20/%E7%AE%97%E6%B3%95-%E6%A0%91%E4%B8%93%E9%A2%98/">
+                    <div class="card-image">
+                        
+                        <img src="https://pic.imgdb.cn/item/63896f2c16f2c2beb1713b10.png" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            算法-树专题
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
+                                </a>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95/C/" class="post-category">
+                                    C++
+                                </a>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95/C/%E6%A0%91/" class="post-category">
+                                    树
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%A0%91/">
+                        <span class="chip bg-color">树</span>
                     </a>
                     
                 </div>
@@ -2046,7 +2172,7 @@ dp[1] = 1;<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">89.9k</span>
+                        class="white-color">91.4k</span>
             
             
             
