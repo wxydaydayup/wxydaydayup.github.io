@@ -444,14 +444,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    16.4k
+                    18.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    71 分
+                    81 分
                 </div>
                 
 
@@ -1219,13 +1219,108 @@ TreeNode<span class="token operator">*</span> <span class="token function">const
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h3 id="填充每个节点的下一个右侧节点指针"><a href="#填充每个节点的下一个右侧节点指针" class="headerlink" title="填充每个节点的下一个右侧节点指针"></a>填充每个节点的下一个右侧节点指针</h3><h4 id="相关链接-7"><a href="#相关链接-7" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/populating-next-right-pointers-in-each-node/description/">116. 填充每个节点的下一个右侧节点指针</a></li>
+</ul>
+<h4 id="相关题目-7"><a href="#相关题目-7" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定一个 <strong>完美二叉树</strong> ，其所有叶子节点都在同一层，每个父节点都有两个子节点。二叉树定义如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">struct Node &#123;
+  int val;
+  Node *left;
+  Node *right;
+  Node *next;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>填充它的每个 next 指针，让这个指针指向其下一个右侧节点。如果找不到下一个右侧节点，则将 next 指针设置为 <code>NULL</code>。</p>
+<p>初始状态下，所有 next 指针都被设置为 <code>NULL</code>。</p>
+<p><strong>示例 1：</strong></p>
+<img src="https://assets.leetcode.com/uploads/2019/02/14/116_sample.png" alt="img" style="zoom: 50%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
+
+<pre class="line-numbers language-none"><code class="language-none">输入：root &#x3D; [1,2,3,4,5,6,7]
+输出：[1,#,2,3,#,4,5,6,7,#]
+解释：给定二叉树如图 A 所示，你的函数应该填充它的每个 next 指针，以指向其下一个右侧节点，如图 B 所示。序列化的输出按层序遍历排列，同一层节点由 next 指针连接，&#39;#&#39; 标志着每一层的结束。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="解题思路-6"><a href="#解题思路-6" class="headerlink" title="解题思路"></a>解题思路</h4><p><strong>层次遍历-易理解版本</strong></p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    Node<span class="token operator">*</span> <span class="token function">connect</span><span class="token punctuation">(</span>Node<span class="token operator">*</span> root<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        queue<span class="token operator">&lt;</span>Node<span class="token operator">*</span><span class="token operator">></span> q<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span> q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">!</span>q<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">int</span> size <span class="token operator">=</span> q<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Node<span class="token operator">*</span> node<span class="token punctuation">;</span>
+            Node<span class="token operator">*</span> nodePre<span class="token punctuation">;</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                nodePre <span class="token operator">=</span> q<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                q<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                    nodePre <span class="token operator">=</span> q<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    q<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    node <span class="token operator">=</span> nodePre<span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+                    node <span class="token operator">=</span> q<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    q<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    nodePre<span class="token operator">-></span>next <span class="token operator">=</span> node<span class="token punctuation">;</span>
+                    nodePre <span class="token operator">=</span> nodePre<span class="token operator">-></span>next<span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token operator">-></span>left<span class="token punctuation">)</span> q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>node<span class="token operator">-></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token operator">-></span>right<span class="token punctuation">)</span> q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>node<span class="token operator">-></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            nodePre<span class="token operator">-></span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> 
+        <span class="token keyword">return</span> root<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>层次遍历-简易版本</strong></p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    Node<span class="token operator">*</span> <span class="token function">connect</span><span class="token punctuation">(</span>Node<span class="token operator">*</span> root<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        queue<span class="token operator">&lt;</span>Node<span class="token operator">*</span><span class="token operator">></span> q<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span> q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">!</span>q<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">int</span> size <span class="token operator">=</span> q<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                Node<span class="token operator">*</span> node <span class="token operator">=</span> q<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                q<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">&lt;</span> size <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> node<span class="token operator">-></span>next <span class="token operator">=</span> q<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token operator">-></span>left<span class="token punctuation">)</span> q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>node<span class="token operator">-></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token operator">-></span>right<span class="token punctuation">)</span> q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>node<span class="token operator">-></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span> 
+        <span class="token keyword">return</span> root<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>递归版本</strong></p>
+<img src="/images/%E7%AE%97%E6%B3%95-%E6%A0%91%E4%B8%93%E9%A2%98/image-20221223104515488.png" alt="image-20221223104515488" style="zoom: 67%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
+
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+    <span class="token keyword">void</span> <span class="token function">traversal</span><span class="token punctuation">(</span>Node<span class="token operator">*</span> cur<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>cur <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+                                <span class="token comment">// 中</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>cur<span class="token operator">-></span>left<span class="token punctuation">)</span> cur<span class="token operator">-></span>left<span class="token operator">-></span>next <span class="token operator">=</span> cur<span class="token operator">-></span>right<span class="token punctuation">;</span> <span class="token comment">// 操作1</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>cur<span class="token operator">-></span>right<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>cur<span class="token operator">-></span>next<span class="token punctuation">)</span> cur<span class="token operator">-></span>right<span class="token operator">-></span>next <span class="token operator">=</span> cur<span class="token operator">-></span>next<span class="token operator">-></span>left<span class="token punctuation">;</span> <span class="token comment">// 操作2</span>
+            <span class="token keyword">else</span> cur<span class="token operator">-></span>right<span class="token operator">-></span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token function">traversal</span><span class="token punctuation">(</span>cur<span class="token operator">-></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// 左</span>
+        <span class="token function">traversal</span><span class="token punctuation">(</span>cur<span class="token operator">-></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 右</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    Node<span class="token operator">*</span> <span class="token function">connect</span><span class="token punctuation">(</span>Node<span class="token operator">*</span> root<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">traversal</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> root<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
-<h2 id="补充：二叉树如何确定递归返回值"><a href="#补充：二叉树如何确定递归返回值" class="headerlink" title="补充：二叉树如何确定递归返回值"></a>补充：二叉树如何确定递归返回值</h2><h3 id="路径之和"><a href="#路径之和" class="headerlink" title="路径之和"></a>路径之和</h3><h4 id="相关链接-7"><a href="#相关链接-7" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+
+<h2 id="补充：二叉树如何确定递归返回值"><a href="#补充：二叉树如何确定递归返回值" class="headerlink" title="补充：二叉树如何确定递归返回值"></a>补充：二叉树如何确定递归返回值</h2><h3 id="路径之和"><a href="#路径之和" class="headerlink" title="路径之和"></a>路径之和</h3><h4 id="相关链接-8"><a href="#相关链接-8" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/path-sum/">112. 路径总和</a></li>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/path-sum-ii/description/">113. 路径总和 II </a></li>
 </ul>
-<h4 id="相关题目-7"><a href="#相关题目-7" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你二叉树的根节点 <code>root</code> 和一个表示目标和的整数 <code>targetSum</code> 。判断该树中是否存在 <strong>根节点到叶子节点</strong> 的路径，这条路径上所有节点值相加等于目标和 <code>targetSum</code> 。如果存在，返回 <code>true</code> ；否则，返回 <code>false</code> 。</p>
+<h4 id="相关题目-8"><a href="#相关题目-8" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你二叉树的根节点 <code>root</code> 和一个表示目标和的整数 <code>targetSum</code> 。判断该树中是否存在 <strong>根节点到叶子节点</strong> 的路径，这条路径上所有节点值相加等于目标和 <code>targetSum</code> 。如果存在，返回 <code>true</code> ；否则，返回 <code>false</code> 。</p>
 <p><strong>叶子节点</strong> 是指没有子节点的节点。</p>
 <p><strong>示例 1：</strong></p>
 <img src="https://assets.leetcode.com/uploads/2021/01/18/pathsum1.jpg" alt="示例1" style="zoom:50%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
@@ -1234,7 +1329,7 @@ TreeNode<span class="token operator">*</span> <span class="token function">const
 输出：true
 解释：等于目标和的根节点到叶节点路径如上图所示。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-6"><a href="#解题思路-6" class="headerlink" title="解题思路"></a>解题思路</h4><p>递归函数什么时候需要返回值？什么时候不需要返回值？这里总结如下三点：</p>
+<h4 id="解题思路-7"><a href="#解题思路-7" class="headerlink" title="解题思路"></a>解题思路</h4><p>递归函数什么时候需要返回值？什么时候不需要返回值？这里总结如下三点：</p>
 <ul>
 <li><p>如果需要搜索整棵二叉树且不用处理递归返回值，递归函数就不要返回值。（这种情况在<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/path-sum-ii/description/">113. 路径总和 II </a>介绍）</p>
 </li>
@@ -1243,13 +1338,12 @@ TreeNode<span class="token operator">*</span> <span class="token function">const
 <li><p>如果要搜索其中一条符合条件的路径，那么递归一定需要返回值，因为遇到符合条件的路径了就要及时返回。（本题的情况）</p>
 <p>搜索一条路径的写法：</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">if</span> <span class="token punctuation">(</span>递归函数<span class="token punctuation">(</span>root<span class="token operator">-></span>left<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token punctuation">;</span>
-
-<span class="token keyword">if</span> <span class="token punctuation">(</span>递归函数<span class="token punctuation">(</span>root<span class="token operator">-></span>right<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
+<span class="token keyword">if</span> <span class="token punctuation">(</span>递归函数<span class="token punctuation">(</span>root<span class="token operator">-></span>right<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+</ul>
 <p>搜索整个树写法：</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">left <span class="token operator">=</span> 递归函数<span class="token punctuation">(</span>root<span class="token operator">-></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>  
-right <span class="token operator">=</span> 递归函数<span class="token punctuation">(</span>root<span class="token operator">-></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-</ul>
+right <span class="token operator">=</span> 递归函数<span class="token punctuation">(</span>root<span class="token operator">-></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p><strong>写法1-普通递归</strong></p>
 <ol>
 <li><p>确定递归函数的参数和返回类型</p>
@@ -1328,10 +1422,10 @@ right <span class="token operator">=</span> 递归函数<span class="token punct
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="二叉树的最近公共祖先"><a href="#二叉树的最近公共祖先" class="headerlink" title="二叉树的最近公共祖先"></a>二叉树的最近公共祖先</h3><h4 id="相关链接-8"><a href="#相关链接-8" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="二叉树的最近公共祖先"><a href="#二叉树的最近公共祖先" class="headerlink" title="二叉树的最近公共祖先"></a>二叉树的最近公共祖先</h3><h4 id="相关链接-9"><a href="#相关链接-9" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/">236. 二叉树的最近公共祖先</a></li>
 </ul>
-<h4 id="相关题目-8"><a href="#相关题目-8" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。</p>
+<h4 id="相关题目-9"><a href="#相关题目-9" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。</p>
 <p>百度百科中最近公共祖先的定义为：“对于有根树 T 的两个节点 p、q，最近公共祖先表示为一个节点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（<strong>一个节点也可以是它自己的祖先</strong>）。”</p>
 <p><strong>示例 1：</strong></p>
 <img src="https://assets.leetcode.com/uploads/2018/12/14/binarytree.png" alt="示例1" style="zoom: 80%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
@@ -1340,7 +1434,7 @@ right <span class="token operator">=</span> 递归函数<span class="token punct
 输出：3
 解释：节点 5 和节点 1 的最近公共祖先是节点 3 。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-7"><a href="#解题思路-7" class="headerlink" title="解题思路"></a>解题思路</h4><p><strong>本题三个难点</strong></p>
+<h4 id="解题思路-8"><a href="#解题思路-8" class="headerlink" title="解题思路"></a>解题思路</h4><p><strong>本题三个难点</strong></p>
 <ul>
 <li>那么二叉树，只能通过后序遍历（即：回溯）实现从低向上的遍历方式。</li>
 <li>在回溯的过程中，必然要遍历整棵二叉树，即使已经找到结果了，依然要把其他节点遍历完，因为要使用递归函数的返回值（也就是代码中的left和right）做逻辑判断。</li>
@@ -1377,17 +1471,124 @@ TreeNode<span class="token operator">*</span> right <span class="token operator"
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="构造二叉树问题"><a href="#构造二叉树问题" class="headerlink" title="构造二叉树问题"></a>构造二叉树问题</h2><h3 id="前序与中序遍历构造二叉树"><a href="#前序与中序遍历构造二叉树" class="headerlink" title="前序与中序遍历构造二叉树"></a>前序与中序遍历构造二叉树</h3><h4 id="相关链接-9"><a href="#相关链接-9" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="求根节点到叶节点数字之和"><a href="#求根节点到叶节点数字之和" class="headerlink" title="求根节点到叶节点数字之和"></a>求根节点到叶节点数字之和</h3><h4 id="相关链接-10"><a href="#相关链接-10" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/sum-root-to-leaf-numbers/description/">129. 求根节点到叶节点数字之和</a></li>
+</ul>
+<h4 id="相关题目-10"><a href="#相关题目-10" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你一个二叉树的根节点 <code>root</code> ，树中每个节点都存放有一个 <code>0</code> 到 <code>9</code> 之间的数字。</p>
+<p>每条从根节点到叶节点的路径都代表一个数字：</p>
+<ul>
+<li>例如，从根节点到叶节点的路径 <code>1 -&gt; 2 -&gt; 3</code> 表示数字 <code>123</code> 。</li>
+</ul>
+<p>计算从根节点到叶节点生成的 <strong>所有数字之和</strong> 。</p>
+<p><strong>叶节点</strong> 是指没有子节点的节点。</p>
+<p><strong>示例 1：</strong></p>
+<img src="https://assets.leetcode.com/uploads/2021/02/19/num1tree.jpg" alt="示例1" style="zoom:67%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
+
+<pre class="line-numbers language-none"><code class="language-none">输入：root &#x3D; [1,2,3]
+输出：25
+解释：
+从根到叶子节点路径 1-&gt;2 代表数字 12
+从根到叶子节点路径 1-&gt;3 代表数字 13
+因此，数字总和 &#x3D; 12 + 13 &#x3D; 25<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="解题思路-9"><a href="#解题思路-9" class="headerlink" title="解题思路"></a>解题思路</h4><ol>
+<li><p>确定递归函数返回值以及参数</p>
+<p>这里我们要遍历整个二叉树，且需要要返回值做逻辑处理，所以返回值为void，</p>
+<p>参数只需要把根节点传入，此时还需要定义两个全局遍历，一个是result，记录最终结果，一个是vector path。</p>
+<p><strong>为什么用vector类型（就是数组）呢？ 因为用vector方便我们做回溯！</strong></p>
+<p>所以代码如下：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">int result;
+vector&lt;int> path;
+void traversal(TreeNode* cur) <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>确定终止条件</p>
+<p>递归什么时候终止呢？</p>
+<p>当然是遇到叶子节点，此时要收集结果了，通知返回本层递归，因为单条路径的结果使用vector，我们需要一个函数vectorToInt把vector转成int。终止条件代码如下：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">if (!cur->left &amp;&amp; !cur->right) &#123; // 遇到了叶子节点
+    result += vectorToInt(path);
+    return;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这里vectorToInt函数就是把数组转成int，代码如下：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">int</span> <span class="token function">vectorToInt</span><span class="token punctuation">(</span><span class="token keyword">const</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> vec<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> vec<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        sum <span class="token operator">=</span> sum <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> vec<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> sum<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>确定递归单层逻辑</p>
+<p>本题其实采用前中后序都不无所谓， 因为也没有中间几点的处理逻辑。</p>
+<p>这里主要是当左节点不为空，path收集路径，并递归左孩子，右节点同理。<strong>但别忘了回溯</strong></p>
+<p>代码如下：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">                 <span class="token comment">// 中</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>cur<span class="token operator">-></span>left<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// 左 （空节点不遍历）</span>
+    path<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>cur<span class="token operator">-></span>left<span class="token operator">-></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">traversal</span><span class="token punctuation">(</span>cur<span class="token operator">-></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// 递归</span>
+    path<span class="token punctuation">.</span><span class="token function">pop_back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">// 回溯</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>cur<span class="token operator">-></span>right<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// 右 （空节点不遍历）</span>
+    path<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>cur<span class="token operator">-></span>right<span class="token operator">-></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">traversal</span><span class="token punctuation">(</span>cur<span class="token operator">-></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// 递归</span>
+    path<span class="token punctuation">.</span><span class="token function">pop_back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">// 回溯</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这里要注意回溯和递归要永远在一起，一个递归，对应一个回溯，是一对一的关系</p>
+</li>
+</ol>
+<p>完整代码如下：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> result<span class="token punctuation">;</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> path<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> <span class="token function">vectorToInt</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">&amp;</span>vec<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> vec<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            sum <span class="token operator">=</span> sum <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> vec<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> sum<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">void</span> <span class="token function">traversal</span><span class="token punctuation">(</span>TreeNode<span class="token operator">*</span> cur<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>cur<span class="token operator">-></span>left <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>cur<span class="token operator">-></span>right<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            result <span class="token operator">+=</span> <span class="token function">vectorToInt</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>cur<span class="token operator">-></span>left<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            path<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>cur<span class="token operator">-></span>left<span class="token operator">-></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">traversal</span><span class="token punctuation">(</span>cur<span class="token operator">-></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            path<span class="token punctuation">.</span><span class="token function">pop_back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>cur<span class="token operator">-></span>right<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            path<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>cur<span class="token operator">-></span>right<span class="token operator">-></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">traversal</span><span class="token punctuation">(</span>cur<span class="token operator">-></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            path<span class="token punctuation">.</span><span class="token function">pop_back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">sumNumbers</span><span class="token punctuation">(</span>TreeNode<span class="token operator">*</span> root<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        path<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>root<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        path<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>root<span class="token operator">-></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">traversal</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="构造二叉树问题"><a href="#构造二叉树问题" class="headerlink" title="构造二叉树问题"></a>构造二叉树问题</h2><h3 id="前序与中序遍历构造二叉树"><a href="#前序与中序遍历构造二叉树" class="headerlink" title="前序与中序遍历构造二叉树"></a>前序与中序遍历构造二叉树</h3><h4 id="相关链接-11"><a href="#相关链接-11" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/">105. 从前序与中序遍历序列构造二叉树 </a></li>
 </ul>
-<h4 id="相关题目-9"><a href="#相关题目-9" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定两个整数数组 <code>preorder</code> 和 <code>inorder</code> ，其中 <code>preorder</code> 是二叉树的<strong>先序遍历</strong>， <code>inorder</code> 是同一棵树的<strong>中序遍历</strong>，请构造二叉树并返回其根节点。</p>
+<h4 id="相关题目-11"><a href="#相关题目-11" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定两个整数数组 <code>preorder</code> 和 <code>inorder</code> ，其中 <code>preorder</code> 是二叉树的<strong>先序遍历</strong>， <code>inorder</code> 是同一棵树的<strong>中序遍历</strong>，请构造二叉树并返回其根节点。</p>
 <p><strong>示例 1:</strong></p>
 <img src="https://assets.leetcode.com/uploads/2021/02/19/tree.jpg" alt="示例1" style="zoom:50%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
 
 <pre class="line-numbers language-none"><code class="language-none">输入: preorder &#x3D; [3,9,20,15,7], inorder &#x3D; [9,3,15,20,7]
 输出: [3,9,20,null,null,15,7]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-8"><a href="#解题思路-8" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<h4 id="解题思路-10"><a href="#解题思路-10" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
 <li>第一步：如果数组大小为零的话，说明是空节点了。</li>
 <li>第二步：如果不为空，那么取前序数组第一个元素作为节点元素。</li>
 <li>第三步：找到前序数组第一个元素在中序数组的位置，作为切割点</li>
@@ -1420,17 +1621,17 @@ TreeNode<span class="token operator">*</span> right <span class="token operator"
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="中序与后序遍历构造二叉树"><a href="#中序与后序遍历构造二叉树" class="headerlink" title="中序与后序遍历构造二叉树"></a>中序与后序遍历构造二叉树</h3><h4 id="相关链接-10"><a href="#相关链接-10" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="中序与后序遍历构造二叉树"><a href="#中序与后序遍历构造二叉树" class="headerlink" title="中序与后序遍历构造二叉树"></a>中序与后序遍历构造二叉树</h3><h4 id="相关链接-12"><a href="#相关链接-12" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/construct-binary-tree-from-inorder-and-postorder-traversal/">106. 从中序与后序遍历序列构造二叉树</a></li>
 </ul>
-<h4 id="相关题目-10"><a href="#相关题目-10" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定两个整数数组 <code>inorder</code> 和 <code>postorder</code> ，其中 <code>inorder</code> 是二叉树的中序遍历， <code>postorder</code> 是同一棵树的后序遍历，请你构造并返回这颗 <em>二叉树</em> 。</p>
+<h4 id="相关题目-12"><a href="#相关题目-12" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定两个整数数组 <code>inorder</code> 和 <code>postorder</code> ，其中 <code>inorder</code> 是二叉树的中序遍历， <code>postorder</code> 是同一棵树的后序遍历，请你构造并返回这颗 <em>二叉树</em> 。</p>
 <p><strong>示例 1:</strong></p>
 <img src="https://assets.leetcode.com/uploads/2021/02/19/tree.jpg" alt="示例1" style="zoom:50%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
 
 <pre class="line-numbers language-none"><code class="language-none">输入：inorder &#x3D; [9,3,15,20,7], postorder &#x3D; [9,15,7,20,3]
 输出：[3,9,20,null,null,15,7]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-9"><a href="#解题思路-9" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<h4 id="解题思路-11"><a href="#解题思路-11" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
 <li>第一步：如果数组大小为零的话，说明是空节点了。</li>
 <li>第二步：如果不为空，那么取后序数组最后一个元素作为节点元素。</li>
 <li>第三步：找到后序数组最后一个元素在中序数组的位置，作为切割点</li>
@@ -1467,16 +1668,16 @@ TreeNode<span class="token operator">*</span> right <span class="token operator"
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="最大二叉树"><a href="#最大二叉树" class="headerlink" title="最大二叉树"></a>最大二叉树</h3><h4 id="相关链接-11"><a href="#相关链接-11" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="最大二叉树"><a href="#最大二叉树" class="headerlink" title="最大二叉树"></a>最大二叉树</h3><h4 id="相关链接-13"><a href="#相关链接-13" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-binary-tree/">654. 最大二叉树 </a></li>
 </ul>
-<h4 id="相关题目-11"><a href="#相关题目-11" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定一个不重复的整数数组 <code>nums</code> 。 <strong>最大二叉树</strong> 可以用下面的算法从 <code>nums</code> 递归地构建:</p>
+<h4 id="相关题目-13"><a href="#相关题目-13" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定一个不重复的整数数组 <code>nums</code> 。 <strong>最大二叉树</strong> 可以用下面的算法从 <code>nums</code> 递归地构建:</p>
 <ol>
 <li>创建一个根节点，其值为 <code>nums</code> 中的最大值。</li>
 <li>递归地在最大值 <strong>左边</strong> 的 <strong>子数组前缀上</strong> 构建左子树。</li>
 <li>递归地在最大值 <strong>右边</strong> 的 <strong>子数组后缀上</strong> 构建右子树。</li>
 </ol>
-<p>返回 <em><code>nums</code> 构建的</em> *<strong>最大二叉树*</strong> 。</p>
+<p>返回 <em><code>nums</code> 构建的</em> 最大二叉树 。</p>
 <p><strong>示例 1：</strong></p>
 <img src="https://assets.leetcode.com/uploads/2020/12/24/tree1.jpg" alt="示例1" style="zoom:50%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
 
@@ -1493,7 +1694,7 @@ TreeNode<span class="token operator">*</span> right <span class="token operator"
         - 只有一个元素，所以子节点是一个值为 0 的节点。
         - 空数组，无子节点。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-10"><a href="#解题思路-10" class="headerlink" title="解题思路"></a>解题思路</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+<h4 id="解题思路-12"><a href="#解题思路-12" class="headerlink" title="解题思路"></a>解题思路</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
     TreeNode<span class="token operator">*</span> <span class="token function">traversal</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">&amp;</span>nums<span class="token punctuation">,</span> <span class="token keyword">int</span> l<span class="token punctuation">,</span> <span class="token keyword">int</span> r<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
         <span class="token keyword">if</span><span class="token punctuation">(</span>l <span class="token operator">>=</span> r<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
@@ -1516,10 +1717,10 @@ TreeNode<span class="token operator">*</span> right <span class="token operator"
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="合并二叉树"><a href="#合并二叉树" class="headerlink" title="合并二叉树"></a>合并二叉树</h3><h4 id="相关链接-12"><a href="#相关链接-12" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="合并二叉树"><a href="#合并二叉树" class="headerlink" title="合并二叉树"></a>合并二叉树</h3><h4 id="相关链接-14"><a href="#相关链接-14" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/merge-two-binary-trees/description/">617. 合并二叉树 </a></li>
 </ul>
-<h4 id="相关题目-12"><a href="#相关题目-12" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你两棵二叉树： <code>root1</code> 和 <code>root2</code> 。</p>
+<h4 id="相关题目-14"><a href="#相关题目-14" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你两棵二叉树： <code>root1</code> 和 <code>root2</code> 。</p>
 <p>想象一下，当你将其中一棵覆盖到另一棵之上时，两棵树上的一些节点将会重叠（而另一些不会）。你需要将这两棵树合并成一棵新二叉树。合并的规则是：如果两个节点重叠，那么将这两个节点的值相加作为合并后节点的新值；否则，<strong>不为</strong> null 的节点将直接作为新二叉树的节点。</p>
 <p>返回合并后的二叉树。</p>
 <p><strong>注意:</strong> 合并过程必须从两个树的根节点开始。</p>
@@ -1529,7 +1730,7 @@ TreeNode<span class="token operator">*</span> right <span class="token operator"
 <pre class="line-numbers language-none"><code class="language-none">输入：root1 &#x3D; [1,3,2,5], root2 &#x3D; [2,1,3,null,4,null,7]
 输出：[3,4,5,5,4,null,7]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-11"><a href="#解题思路-11" class="headerlink" title="解题思路"></a>解题思路</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+<h4 id="解题思路-13"><a href="#解题思路-13" class="headerlink" title="解题思路"></a>解题思路</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
     TreeNode<span class="token operator">*</span> <span class="token function">mergeTrees</span><span class="token punctuation">(</span>TreeNode<span class="token operator">*</span> root1<span class="token punctuation">,</span> TreeNode<span class="token operator">*</span> root2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
         <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>root1<span class="token punctuation">)</span> <span class="token keyword">return</span> root2<span class="token punctuation">;</span>
@@ -1541,17 +1742,17 @@ TreeNode<span class="token operator">*</span> right <span class="token operator"
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="翻转二叉树"><a href="#翻转二叉树" class="headerlink" title="翻转二叉树"></a>翻转二叉树</h3><h4 id="相关链接-13"><a href="#相关链接-13" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="翻转二叉树"><a href="#翻转二叉树" class="headerlink" title="翻转二叉树"></a>翻转二叉树</h3><h4 id="相关链接-15"><a href="#相关链接-15" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/invert-binary-tree/submissions/374169926/">226. 翻转二叉树</a></li>
 </ul>
-<h4 id="相关题目-13"><a href="#相关题目-13" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你一棵二叉树的根节点 <code>root</code> ，翻转这棵二叉树，并返回其根节点。</p>
+<h4 id="相关题目-15"><a href="#相关题目-15" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你一棵二叉树的根节点 <code>root</code> ，翻转这棵二叉树，并返回其根节点。</p>
 <p><strong>示例 1：</strong></p>
 <img src="https://assets.leetcode.com/uploads/2021/03/14/invert1-tree.jpg" alt="示例1" style="zoom:50%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
 
 <pre class="line-numbers language-none"><code class="language-none">输入：root &#x3D; [4,2,7,1,3,6,9]
 输出：[4,7,2,9,6,3,1]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-12"><a href="#解题思路-12" class="headerlink" title="解题思路"></a>解题思路</h4><p>这道题目使用前序遍历和后序遍历都可以，唯独<strong>中序遍历不方便，因为中序遍历会把某些节点的左右孩子翻转了两次</strong></p>
+<h4 id="解题思路-14"><a href="#解题思路-14" class="headerlink" title="解题思路"></a>解题思路</h4><p>这道题目使用前序遍历和后序遍历都可以，唯独<strong>中序遍历不方便，因为中序遍历会把某些节点的左右孩子翻转了两次</strong></p>
 <p>那么层序遍历依然可以！只要把每一个节点的左右孩子翻转一下的遍历方式都是可以的</p>
 <p><strong>前序遍历-递归形式</strong></p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
@@ -1672,13 +1873,13 @@ TreeNode<span class="token operator">*</span> right <span class="token operator"
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>为什么这个中序就是可以的呢，因为这是用栈来遍历，而不是靠指针来遍历，避免了递归法中翻转了两次的情况</p>
-<h2 id="二叉树的比较问题"><a href="#二叉树的比较问题" class="headerlink" title="二叉树的比较问题"></a>二叉树的比较问题</h2><h3 id="另一树的子树"><a href="#另一树的子树" class="headerlink" title="另一树的子树"></a>另一树的子树</h3><h4 id="相关链接-14"><a href="#相关链接-14" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h2 id="二叉树的比较问题"><a href="#二叉树的比较问题" class="headerlink" title="二叉树的比较问题"></a>二叉树的比较问题</h2><h3 id="另一树的子树"><a href="#另一树的子树" class="headerlink" title="另一树的子树"></a>另一树的子树</h3><h4 id="相关链接-16"><a href="#相关链接-16" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/same-tree/description/">100. 相同的树</a></p>
 </li>
 <li><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/subtree-of-another-tree/description/">572. 另一棵树的子树</a></p>
 </li>
 </ul>
-<h4 id="相关题目-14"><a href="#相关题目-14" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你两棵二叉树 <code>root</code> 和 <code>subRoot</code> 。检验 <code>root</code> 中是否包含和 <code>subRoot</code> 具有相同结构和节点值的子树。如果存在，返回 <code>true</code> ；否则，返回 <code>false</code> 。</p>
+<h4 id="相关题目-16"><a href="#相关题目-16" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你两棵二叉树 <code>root</code> 和 <code>subRoot</code> 。检验 <code>root</code> 中是否包含和 <code>subRoot</code> 具有相同结构和节点值的子树。如果存在，返回 <code>true</code> ；否则，返回 <code>false</code> 。</p>
 <p>二叉树 <code>tree</code> 的一棵子树包括 <code>tree</code> 的某个节点和这个节点的所有后代节点。<code>tree</code> 也可以看做它自身的一棵子树。</p>
 <p><strong>示例 1：</strong></p>
 <img src="https://assets.leetcode.com/uploads/2021/04/28/subtree1-tree.jpg" alt="示例1" style="zoom:50%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
@@ -1716,10 +1917,10 @@ TreeNode<span class="token operator">*</span> right <span class="token operator"
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="对称二叉树"><a href="#对称二叉树" class="headerlink" title="对称二叉树"></a>对称二叉树</h3><h4 id="相关链接-15"><a href="#相关链接-15" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="对称二叉树"><a href="#对称二叉树" class="headerlink" title="对称二叉树"></a>对称二叉树</h3><h4 id="相关链接-17"><a href="#相关链接-17" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/symmetric-tree/description/">101. 对称二叉树 </a></li>
 </ul>
-<h4 id="相关题目-15"><a href="#相关题目-15" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你一个二叉树的根节点 <code>root</code> ， 检查它是否轴对称。</p>
+<h4 id="相关题目-17"><a href="#相关题目-17" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你一个二叉树的根节点 <code>root</code> ， 检查它是否轴对称。</p>
 <p><strong>示例 1：</strong></p>
 <img src="https://assets.leetcode.com/uploads/2021/02/19/symtree1.jpg" alt="示例1" style="zoom:50%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
 
@@ -1759,10 +1960,100 @@ TreeNode<span class="token operator">*</span> right <span class="token operator"
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="完全二叉树问题"><a href="#完全二叉树问题" class="headerlink" title="完全二叉树问题"></a>完全二叉树问题</h2><h3 id="完全二叉树的个数"><a href="#完全二叉树的个数" class="headerlink" title="完全二叉树的个数"></a>完全二叉树的个数</h3><h4 id="相关链接-16"><a href="#相关链接-16" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="相同的树"><a href="#相同的树" class="headerlink" title="相同的树"></a>相同的树</h3><h4 id="相关链接-18"><a href="#相关链接-18" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/same-tree/description/">100. 相同的树 </a></li>
+</ul>
+<h4 id="相关题目-18"><a href="#相关题目-18" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你两棵二叉树的根节点 <code>p</code> 和 <code>q</code> ，编写一个函数来检验这两棵树是否相同。</p>
+<p>如果两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。</p>
+<p><strong>示例 1：</strong></p>
+<img src="https://assets.leetcode.com/uploads/2020/12/20/ex1.jpg" alt="示例1" style="zoom:50%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
+
+<pre class="line-numbers language-none"><code class="language-none">输入：p &#x3D; [1,2,3], q &#x3D; [1,2,3]
+输出：true<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h4 id="解题思路-15"><a href="#解题思路-15" class="headerlink" title="解题思路"></a>解题思路</h4><ol>
+<li><p>确定递归函数的参数和返回值</p>
+<p>我们要比较的是两个树是否是相互相同的，参数也就是两个树的根节点。</p>
+<p>返回值自然是bool类型。</p>
+<p>代码如下：</p>
+</li>
+</ol>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">bool compare(TreeNode* tree1, TreeNode* tree2)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ol start="2">
+<li><p>确定终止条件</p>
+<p><strong>要比较两个节点数值相不相同，首先要把两个节点为空的情况弄清楚！否则后面比较数值的时候就会操作空指针了。</strong></p>
+<p>节点为空的情况有：</p>
+</li>
+</ol>
+<ul>
+<li><p>tree1为空，tree2不为空，不对称，return false</p>
+</li>
+<li><p>tree1不为空，tree2为空，不对称 return false</p>
+</li>
+<li><p>tree1，tree2都为空，对称，返回true</p>
+<p>此时已经排除掉了节点为空的情况，那么剩下的就是tree1和tree2不为空的时候：</p>
+</li>
+<li><p>tree1、tree2都不为空，比较节点数值，不相同就return false</p>
+<p>此时tree1、tree2节点不为空，且数值也不相同的情况我们也处理了。</p>
+<p>代码如下：</p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">if</span> <span class="token punctuation">(</span>tree1 <span class="token operator">==</span> <span class="token constant">NULL</span> <span class="token operator">&amp;&amp;</span> tree2 <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>tree1 <span class="token operator">!=</span> <span class="token constant">NULL</span> <span class="token operator">&amp;&amp;</span> tree2 <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>tree1 <span class="token operator">==</span> <span class="token constant">NULL</span> <span class="token operator">&amp;&amp;</span> tree2 <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>tree1<span class="token operator">-></span>val <span class="token operator">!=</span> tree2<span class="token operator">-></span>val<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span> <span class="token comment">// 注意这里我没有使用else</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="3">
+<li>确定单层递归的逻辑</li>
+</ol>
+<ul>
+<li>比较二叉树是否相同 ：传入的是tree1的左孩子，tree2的右孩子。</li>
+<li>如果左右都相同就返回true ，有一侧不相同就返回false 。</li>
+</ul>
+<p>代码如下：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">bool</span> left <span class="token operator">=</span> <span class="token function">compare</span><span class="token punctuation">(</span>tree1<span class="token operator">-></span>left<span class="token punctuation">,</span> tree2<span class="token operator">-></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// 左子树：左、 右子树：左</span>
+<span class="token keyword">bool</span> right <span class="token operator">=</span> <span class="token function">compare</span><span class="token punctuation">(</span>tree1<span class="token operator">-></span>right<span class="token punctuation">,</span> tree2<span class="token operator">-></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 左子树：右、 右子树：右</span>
+<span class="token keyword">bool</span> isSame <span class="token operator">=</span> left <span class="token operator">&amp;&amp;</span> right<span class="token punctuation">;</span>                    <span class="token comment">// 左子树：中、 右子树：中（逻辑处理）</span>
+<span class="token keyword">return</span> isSame<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>最后递归的C++整体代码如下：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">bool</span> <span class="token function">compare</span><span class="token punctuation">(</span>TreeNode<span class="token operator">*</span> tree1<span class="token punctuation">,</span> TreeNode<span class="token operator">*</span> tree2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>tree1 <span class="token operator">==</span> <span class="token constant">NULL</span> <span class="token operator">&amp;&amp;</span> tree2 <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>tree1 <span class="token operator">!=</span> <span class="token constant">NULL</span> <span class="token operator">&amp;&amp;</span> tree2 <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>tree1 <span class="token operator">==</span> <span class="token constant">NULL</span> <span class="token operator">&amp;&amp;</span> tree2 <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>tree1<span class="token operator">-></span>val <span class="token operator">!=</span> tree2<span class="token operator">-></span>val<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span> <span class="token comment">// 注意这里我没有使用else</span>
+
+        <span class="token keyword">bool</span> left <span class="token operator">=</span> <span class="token function">compare</span><span class="token punctuation">(</span>tree1<span class="token operator">-></span>left<span class="token punctuation">,</span> tree2<span class="token operator">-></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// 左子树：左、 右子树：左</span>
+        <span class="token keyword">bool</span> right <span class="token operator">=</span> <span class="token function">compare</span><span class="token punctuation">(</span>tree1<span class="token operator">-></span>right<span class="token punctuation">,</span> tree2<span class="token operator">-></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 左子树：右、 右子树：右</span>
+        <span class="token keyword">bool</span> isSame <span class="token operator">=</span> left <span class="token operator">&amp;&amp;</span> right<span class="token punctuation">;</span>                    <span class="token comment">// 左子树：中、 右子树：中（逻辑处理）</span>
+        <span class="token keyword">return</span> isSame<span class="token punctuation">;</span>
+
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">bool</span> <span class="token function">isSameTree</span><span class="token punctuation">(</span>TreeNode<span class="token operator">*</span> p<span class="token punctuation">,</span> TreeNode<span class="token operator">*</span> q<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token function">compare</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span> q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>精简代码如下：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">bool</span> <span class="token function">isSameTree</span><span class="token punctuation">(</span>TreeNode<span class="token operator">*</span> p<span class="token punctuation">,</span> TreeNode<span class="token operator">*</span> q<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>p <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>q<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>p <span class="token operator">||</span> <span class="token operator">!</span>q<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>p<span class="token operator">-></span>val <span class="token operator">!=</span> q<span class="token operator">-></span>val<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span>  <span class="token keyword">return</span> <span class="token function">isSameTree</span><span class="token punctuation">(</span>p<span class="token operator">-></span>left<span class="token punctuation">,</span>q<span class="token operator">-></span>left<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">isSameTree</span><span class="token punctuation">(</span>p<span class="token operator">-></span>right<span class="token punctuation">,</span>q<span class="token operator">-></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="完全二叉树问题"><a href="#完全二叉树问题" class="headerlink" title="完全二叉树问题"></a>完全二叉树问题</h2><h3 id="？？判断完全二叉树"><a href="#？？判断完全二叉树" class="headerlink" title="？？判断完全二叉树"></a>？？判断完全二叉树</h3><h3 id="完全二叉树的节点个数"><a href="#完全二叉树的节点个数" class="headerlink" title="完全二叉树的节点个数"></a>完全二叉树的节点个数</h3><h4 id="相关链接-19"><a href="#相关链接-19" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-complete-tree-nodes/description/">222. 完全二叉树的节点个数</a></li>
 </ul>
-<h4 id="相关题目-16"><a href="#相关题目-16" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你一棵 <strong>完全二叉树</strong> 的根节点 <code>root</code> ，求出该树的节点个数。</p>
+<h4 id="相关题目-19"><a href="#相关题目-19" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你一棵 <strong>完全二叉树</strong> 的根节点 <code>root</code> ，求出该树的节点个数。</p>
 <p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91/7773232?fr=aladdin">完全二叉树</a> 的定义如下：在完全二叉树中，除了最底层节点可能没填满外，其余每层节点数都达到最大值，并且最下面一层的节点都集中在该层最左边的若干位置。若最底层为第 <code>h</code> 层，则该层包含 <code>1~ 2h</code> 个节点。</p>
 <p><strong>示例 1：</strong></p>
 <img src="https://assets.leetcode.com/uploads/2021/01/14/complete.jpg" alt="示例1" style="zoom:40%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
@@ -1770,7 +2061,7 @@ TreeNode<span class="token operator">*</span> right <span class="token operator"
 <pre class="line-numbers language-none"><code class="language-none">输入：root &#x3D; [1,2,3,4,5,6]
 输出：6<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-13"><a href="#解题思路-13" class="headerlink" title="解题思路"></a>解题思路</h4><p>这道题 普通二叉树的递归，层次遍历的模板，以及利用完全二叉树的性质都可以做</p>
+<h4 id="解题思路-16"><a href="#解题思路-16" class="headerlink" title="解题思路"></a>解题思路</h4><p>这道题 普通二叉树的递归，层次遍历的模板，以及利用完全二叉树的性质都可以做</p>
 <p><strong>普通二叉树的递归</strong></p>
 <p>这是极简写法，和二叉树的深度遍历思路是一样的，不过多解释</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
@@ -1807,10 +2098,10 @@ TreeNode<span class="token operator">*</span> right <span class="token operator"
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="平衡二叉树问题"><a href="#平衡二叉树问题" class="headerlink" title="平衡二叉树问题"></a>平衡二叉树问题</h2><h3 id="平衡二叉树-求二叉树高度"><a href="#平衡二叉树-求二叉树高度" class="headerlink" title="平衡二叉树(求二叉树高度)"></a>平衡二叉树(求二叉树高度)</h3><h4 id="相关链接-17"><a href="#相关链接-17" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h2 id="平衡二叉树问题"><a href="#平衡二叉树问题" class="headerlink" title="平衡二叉树问题"></a>平衡二叉树问题</h2><h3 id="平衡二叉树-求二叉树高度"><a href="#平衡二叉树-求二叉树高度" class="headerlink" title="平衡二叉树(求二叉树高度)"></a>平衡二叉树(求二叉树高度)</h3><h4 id="相关链接-20"><a href="#相关链接-20" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/balanced-binary-tree/description/">110. 平衡二叉树</a></li>
 </ul>
-<h4 id="相关题目-17"><a href="#相关题目-17" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定一个二叉树，判断它是否是高度平衡的二叉树。</p>
+<h4 id="相关题目-20"><a href="#相关题目-20" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定一个二叉树，判断它是否是高度平衡的二叉树。</p>
 <p>本题中，一棵高度平衡二叉树定义为：</p>
 <blockquote>
 <p>一个二叉树<em>每个节点</em> 的左右两个子树的高度差的绝对值不超过 1 。</p>
@@ -1821,7 +2112,7 @@ TreeNode<span class="token operator">*</span> right <span class="token operator"
 <pre class="line-numbers language-none"><code class="language-none">输入：root &#x3D; [3,9,20,null,null,15,7]
 输出：true<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-14"><a href="#解题思路-14" class="headerlink" title="解题思路"></a>解题思路</h4><p>通过本题可以了解求二叉树深度 和 二叉树高度的差异，求深度适合用前序遍历，而求高度适合用后序遍历。</p>
+<h4 id="解题思路-17"><a href="#解题思路-17" class="headerlink" title="解题思路"></a>解题思路</h4><p>通过本题可以了解求二叉树深度 和 二叉树高度的差异，求深度适合用前序遍历，而求高度适合用后序遍历。</p>
 <p>二叉树中高度和深度是不同的，下面图片和思路 来自 <a target="_blank" rel="noopener" href="https://www.programmercarl.com/0110.%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91.html#%E9%A2%98%E5%A4%96%E8%AF%9D">代码随想录</a></p>
 <img src="/images/%E6%A0%91-%E7%AE%97%E6%B3%95%E4%B8%93%E9%A2%98/image-20221125194641246.png" alt="深度和高度的不同" style="zoom:80%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
 
@@ -1976,10 +2267,10 @@ TreeNode<span class="token operator">*</span> right <span class="token operator"
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="二叉搜索树问题"><a href="#二叉搜索树问题" class="headerlink" title="二叉搜索树问题"></a>二叉搜索树问题</h2><h3 id="二叉搜索树的搜索"><a href="#二叉搜索树的搜索" class="headerlink" title="二叉搜索树的搜索"></a>二叉搜索树的搜索</h3><h4 id="相关链接-18"><a href="#相关链接-18" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h2 id="二叉搜索树问题"><a href="#二叉搜索树问题" class="headerlink" title="二叉搜索树问题"></a>二叉搜索树问题</h2><h3 id="二叉搜索树的搜索"><a href="#二叉搜索树的搜索" class="headerlink" title="二叉搜索树的搜索"></a>二叉搜索树的搜索</h3><h4 id="相关链接-21"><a href="#相关链接-21" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/search-in-a-binary-search-tree/description/">700. 二叉搜索树中的搜索 </a></li>
 </ul>
-<h4 id="相关题目-18"><a href="#相关题目-18" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定二叉搜索树（BST）的根节点 <code>root</code> 和一个整数值 <code>val</code>。</p>
+<h4 id="相关题目-21"><a href="#相关题目-21" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定二叉搜索树（BST）的根节点 <code>root</code> 和一个整数值 <code>val</code>。</p>
 <p>你需要在 BST 中找到节点值等于 <code>val</code> 的节点。 返回以该节点为根的子树。 如果节点不存在，则返回 <code>null</code> 。</p>
 <p><strong>示例 1:</strong></p>
 <img src="https://assets.leetcode.com/uploads/2021/01/12/tree1.jpg" alt="示例1" style="zoom:40%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
@@ -1987,7 +2278,7 @@ TreeNode<span class="token operator">*</span> right <span class="token operator"
 <pre class="line-numbers language-none"><code class="language-none">输入：root &#x3D; [4,2,7,1,3], val &#x3D; 2
 输出：[2,1,3]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-15"><a href="#解题思路-15" class="headerlink" title="解题思路"></a>解题思路</h4><p>二叉搜索树是一个有序树：</p>
+<h4 id="解题思路-18"><a href="#解题思路-18" class="headerlink" title="解题思路"></a>解题思路</h4><p>二叉搜索树是一个有序树：</p>
 <ul>
 <li>若它的左子树不空，则左子树上所有结点的值均小于它的根结点的值；</li>
 <li>若它的右子树不空，则右子树上所有结点的值均大于它的根结点的值；</li>
@@ -2036,10 +2327,10 @@ TreeNode<span class="token operator">*</span> right <span class="token operator"
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="二叉搜索树的验证"><a href="#二叉搜索树的验证" class="headerlink" title="二叉搜索树的验证"></a>二叉搜索树的验证</h3><h4 id="相关链接-19"><a href="#相关链接-19" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="二叉搜索树的验证"><a href="#二叉搜索树的验证" class="headerlink" title="二叉搜索树的验证"></a>二叉搜索树的验证</h3><h4 id="相关链接-22"><a href="#相关链接-22" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/validate-binary-search-tree/">98. 验证二叉搜索树 </a></li>
 </ul>
-<h4 id="相关题目-19"><a href="#相关题目-19" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你一个二叉树的根节点 <code>root</code> ，判断其是否是一个有效的二叉搜索树。</p>
+<h4 id="相关题目-22"><a href="#相关题目-22" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你一个二叉树的根节点 <code>root</code> ，判断其是否是一个有效的二叉搜索树。</p>
 <p><strong>有效</strong> 二叉搜索树定义如下：</p>
 <ul>
 <li>节点的左子树只包含 <strong>小于</strong> 当前节点的数。</li>
@@ -2052,7 +2343,7 @@ TreeNode<span class="token operator">*</span> right <span class="token operator"
 <pre class="line-numbers language-none"><code class="language-none">输入：root &#x3D; [2,1,3]
 输出：true<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-16"><a href="#解题思路-16" class="headerlink" title="解题思路"></a>解题思路</h4><p>假设一个二叉搜索树具有如下特征：</p>
+<h4 id="解题思路-19"><a href="#解题思路-19" class="headerlink" title="解题思路"></a>解题思路</h4><p>假设一个二叉搜索树具有如下特征：</p>
 <ul>
 <li>节点的左子树只包含小于当前节点的数。</li>
 <li>节点的右子树只包含大于当前节点的数。</li>
@@ -2097,10 +2388,10 @@ TreeNode<span class="token operator">*</span> right <span class="token operator"
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="二叉搜索树的插入"><a href="#二叉搜索树的插入" class="headerlink" title="二叉搜索树的插入"></a>二叉搜索树的插入</h3><h4 id="相关链接-20"><a href="#相关链接-20" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="二叉搜索树的插入"><a href="#二叉搜索树的插入" class="headerlink" title="二叉搜索树的插入"></a>二叉搜索树的插入</h3><h4 id="相关链接-23"><a href="#相关链接-23" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/insert-into-a-binary-search-tree/">701. 二叉搜索树中的插入操作</a></li>
 </ul>
-<h4 id="相关题目-20"><a href="#相关题目-20" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定二叉搜索树（BST）的根节点 <code>root</code> 和要插入树中的值 <code>value</code> ，将值插入二叉搜索树。 返回插入后二叉搜索树的根节点。 输入数据 <strong>保证</strong> ，新值和原始二叉搜索树中的任意节点值都不同。</p>
+<h4 id="相关题目-23"><a href="#相关题目-23" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定二叉搜索树（BST）的根节点 <code>root</code> 和要插入树中的值 <code>value</code> ，将值插入二叉搜索树。 返回插入后二叉搜索树的根节点。 输入数据 <strong>保证</strong> ，新值和原始二叉搜索树中的任意节点值都不同。</p>
 <p><strong>注意</strong>，可能存在多种有效的插入方式，只要树在插入后仍保持为二叉搜索树即可。 你可以返回 <strong>任意有效的结果</strong> 。</p>
 <p><strong>示例 1：</strong></p>
 <img src="https://assets.leetcode.com/uploads/2020/10/05/insertbst.jpg" alt="示例1" style="zoom:50%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
@@ -2109,7 +2400,7 @@ TreeNode<span class="token operator">*</span> right <span class="token operator"
 输出：[4,2,7,1,3,5]
 解释：另一个满足题目要求可以通过的树是：<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-17"><a href="#解题思路-17" class="headerlink" title="解题思路"></a>解题思路</h4><ol>
+<h4 id="解题思路-20"><a href="#解题思路-20" class="headerlink" title="解题思路"></a>解题思路</h4><ol>
 <li>确定递归函数参数以及返回值，<strong>有返回值的话，可以利用返回值完成新加入的节点与其父节点的赋值操作</strong>。</li>
 </ol>
 <p>代码如下：</p>
@@ -2149,10 +2440,10 @@ TreeNode<span class="token operator">*</span> right <span class="token operator"
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="二叉搜索树的删除"><a href="#二叉搜索树的删除" class="headerlink" title="二叉搜索树的删除"></a>二叉搜索树的删除</h3><h4 id="相关链接-21"><a href="#相关链接-21" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="二叉搜索树的删除"><a href="#二叉搜索树的删除" class="headerlink" title="二叉搜索树的删除"></a>二叉搜索树的删除</h3><h4 id="相关链接-24"><a href="#相关链接-24" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/delete-node-in-a-bst/">450. 删除二叉搜索树中的节点 </a></li>
 </ul>
-<h4 id="相关题目-21"><a href="#相关题目-21" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定一个二叉搜索树的根节点 <strong>root</strong> 和一个值 <strong>key</strong>，删除二叉搜索树中的 <strong>key</strong> 对应的节点，并保证二叉搜索树的性质不变。返回二叉搜索树（有可能被更新）的根节点的引用。</p>
+<h4 id="相关题目-24"><a href="#相关题目-24" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定一个二叉搜索树的根节点 <strong>root</strong> 和一个值 <strong>key</strong>，删除二叉搜索树中的 <strong>key</strong> 对应的节点，并保证二叉搜索树的性质不变。返回二叉搜索树（有可能被更新）的根节点的引用。</p>
 <p>一般来说，删除节点可分为两个步骤：</p>
 <ol>
 <li>首先找到需要删除的节点；</li>
@@ -2167,7 +2458,7 @@ TreeNode<span class="token operator">*</span> right <span class="token operator"
 一个正确的答案是 [5,4,6,2,null,null,7], 如下图所示。
 另一个正确答案是 [5,2,6,null,4,null,7]。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-18"><a href="#解题思路-18" class="headerlink" title="解题思路"></a>解题思路</h4><p>有以下五种情况：</p>
+<h4 id="解题思路-21"><a href="#解题思路-21" class="headerlink" title="解题思路"></a>解题思路</h4><p>有以下五种情况：</p>
 <ul>
 <li>第一种情况：没找到删除的节点，遍历到空节点直接返回了</li>
 <li>找到删除的节点<ul>
@@ -2221,10 +2512,10 @@ TreeNode<span class="token operator">*</span> right <span class="token operator"
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="二叉搜索树的修剪"><a href="#二叉搜索树的修剪" class="headerlink" title="二叉搜索树的修剪"></a>二叉搜索树的修剪</h3><h4 id="相关链接-22"><a href="#相关链接-22" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="二叉搜索树的修剪"><a href="#二叉搜索树的修剪" class="headerlink" title="二叉搜索树的修剪"></a>二叉搜索树的修剪</h3><h4 id="相关链接-25"><a href="#相关链接-25" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/trim-a-binary-search-tree/">669. 修剪二叉搜索树 </a></li>
 </ul>
-<h4 id="相关题目-22"><a href="#相关题目-22" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你二叉搜索树的根节点 <code>root</code> ，同时给定最小边界<code>low</code> 和最大边界 <code>high</code>。通过修剪二叉搜索树，使得所有节点的值在<code>[low, high]</code>中。修剪树 <strong>不应该</strong> 改变保留在树中的元素的相对结构 (即，如果没有被移除，原有的父代子代关系都应当保留)。 可以证明，存在 <strong>唯一的答案</strong> 。</p>
+<h4 id="相关题目-25"><a href="#相关题目-25" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你二叉搜索树的根节点 <code>root</code> ，同时给定最小边界<code>low</code> 和最大边界 <code>high</code>。通过修剪二叉搜索树，使得所有节点的值在<code>[low, high]</code>中。修剪树 <strong>不应该</strong> 改变保留在树中的元素的相对结构 (即，如果没有被移除，原有的父代子代关系都应当保留)。 可以证明，存在 <strong>唯一的答案</strong> 。</p>
 <p>所以结果应当返回修剪好的二叉搜索树的新的根节点。注意，根节点可能会根据给定的边界发生改变。</p>
 <p><strong>示例 1：</strong></p>
 <img src="https://assets.leetcode.com/uploads/2020/09/09/trim1.jpg" alt="示例1" style="zoom:50%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
@@ -2232,7 +2523,7 @@ TreeNode<span class="token operator">*</span> right <span class="token operator"
 <pre class="line-numbers language-none"><code class="language-none">输入：root &#x3D; [1,0,2], low &#x3D; 1, high &#x3D; 2
 输出：[1,null,2]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-19"><a href="#解题思路-19" class="headerlink" title="解题思路"></a>解题思路</h4><ol>
+<h4 id="解题思路-22"><a href="#解题思路-22" class="headerlink" title="解题思路"></a>解题思路</h4><ol>
 <li><p>确定递归函数的参数以及返回值</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">TreeNode<span class="token operator">*</span> <span class="token function">trimBST</span><span class="token punctuation">(</span>TreeNode<span class="token operator">*</span> root<span class="token punctuation">,</span> <span class="token keyword">int</span> low<span class="token punctuation">,</span> <span class="token keyword">int</span> high<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
@@ -2264,10 +2555,10 @@ root<span class="token operator">-></span>right <span class="token operator">=</
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="二叉搜索树的众数"><a href="#二叉搜索树的众数" class="headerlink" title="二叉搜索树的众数"></a>二叉搜索树的众数</h3><h4 id="相关链接-23"><a href="#相关链接-23" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="二叉搜索树的众数"><a href="#二叉搜索树的众数" class="headerlink" title="二叉搜索树的众数"></a>二叉搜索树的众数</h3><h4 id="相关链接-26"><a href="#相关链接-26" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-mode-in-binary-search-tree/">501. 二叉搜索树中的众数 </a></li>
 </ul>
-<h4 id="相关题目-23"><a href="#相关题目-23" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你一个含重复值的二叉搜索树（BST）的根节点 <code>root</code> ，找出并返回 BST 中的所有 众数（即，出现频率最高的元素）。</p>
+<h4 id="相关题目-26"><a href="#相关题目-26" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你一个含重复值的二叉搜索树（BST）的根节点 <code>root</code> ，找出并返回 BST 中的所有 众数（即，出现频率最高的元素）。</p>
 <p>如果树中有不止一个众数，可以按 <strong>任意顺序</strong> 返回。</p>
 <p>假定 BST 满足如下定义：</p>
 <ul>
@@ -2281,7 +2572,7 @@ root<span class="token operator">-></span>right <span class="token operator">=</
 <pre class="line-numbers language-none"><code class="language-none">输入：root &#x3D; [1,null,2,2]
 输出：[2]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-20"><a href="#解题思路-20" class="headerlink" title="解题思路"></a>解题思路</h4><p>如果不是二叉搜索树，最直观的方法一定是把这个树都遍历了，用map统计频率，把频率排个序，最后取前面高频的元素的集合。由于map不能根据value排序，所以要把map转化数组即vector，再进行排序，当然vector里面放的也是<code>pair&lt;int, int&gt;</code>类型的数据，第一个int为元素，第二个int为出现频率。此时数组vector中已经是存放着按照频率排好序的pair，那么把前面高频的元素取出来就可以了。</p>
+<h4 id="解题思路-23"><a href="#解题思路-23" class="headerlink" title="解题思路"></a>解题思路</h4><p>如果不是二叉搜索树，最直观的方法一定是把这个树都遍历了，用map统计频率，把频率排个序，最后取前面高频的元素的集合。由于map不能根据value排序，所以要把map转化数组即vector，再进行排序，当然vector里面放的也是<code>pair&lt;int, int&gt;</code>类型的数据，第一个int为元素，第二个int为出现频率。此时数组vector中已经是存放着按照频率排好序的pair，那么把前面高频的元素取出来就可以了。</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
 <span class="token keyword">private</span><span class="token operator">:</span>
     <span class="token keyword">void</span> <span class="token function">searchBST</span><span class="token punctuation">(</span>TreeNode<span class="token operator">*</span> cur<span class="token punctuation">,</span> unordered_map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> map<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// 前序遍历</span>
@@ -2312,10 +2603,10 @@ root<span class="token operator">-></span>right <span class="token operator">=</
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="二叉搜索树的最小绝对差"><a href="#二叉搜索树的最小绝对差" class="headerlink" title="二叉搜索树的最小绝对差"></a>二叉搜索树的最小绝对差</h3><h4 id="相关链接-24"><a href="#相关链接-24" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="二叉搜索树的最小绝对差"><a href="#二叉搜索树的最小绝对差" class="headerlink" title="二叉搜索树的最小绝对差"></a>二叉搜索树的最小绝对差</h3><h4 id="相关链接-27"><a href="#相关链接-27" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-absolute-difference-in-bst/">530. 二叉搜索树的最小绝对差 </a></li>
 </ul>
-<h4 id="相关题目-24"><a href="#相关题目-24" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你一个二叉搜索树的根节点 <code>root</code> ，返回 <strong>树中任意两不同节点值之间的最小差值</strong> 。</p>
+<h4 id="相关题目-27"><a href="#相关题目-27" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你一个二叉搜索树的根节点 <code>root</code> ，返回 <strong>树中任意两不同节点值之间的最小差值</strong> 。</p>
 <p>差值是一个正数，其数值等于两值之差的绝对值。</p>
 <p><strong>示例 1：</strong></p>
 <img src="https://assets.leetcode.com/uploads/2021/02/05/bst1.jpg" alt="示例1" style="zoom:50%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
@@ -2323,7 +2614,7 @@ root<span class="token operator">-></span>right <span class="token operator">=</
 <pre class="line-numbers language-none"><code class="language-none">输入：root &#x3D; [4,2,6,1,3]
 输出：1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-21"><a href="#解题思路-21" class="headerlink" title="解题思路"></a>解题思路</h4><p><strong>写法1-中序数组计算</strong></p>
+<h4 id="解题思路-24"><a href="#解题思路-24" class="headerlink" title="解题思路"></a>解题思路</h4><p><strong>写法1-中序数组计算</strong></p>
 <p>二叉搜索树采用中序遍历，其实就是一个有序数组。<strong>在一个有序数组上求两个数最小差值。</strong>最直观的想法，就是把二叉搜索树转换成有序数组，然后遍历一遍数组，就统计出来最小差值了。</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
 <span class="token keyword">private</span><span class="token operator">:</span>
@@ -2400,10 +2691,10 @@ root<span class="token operator">-></span>right <span class="token operator">=</
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="二叉搜索树的最近公共祖先"><a href="#二叉搜索树的最近公共祖先" class="headerlink" title="二叉搜索树的最近公共祖先"></a>二叉搜索树的最近公共祖先</h3><h4 id="相关链接-25"><a href="#相关链接-25" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="二叉搜索树的最近公共祖先"><a href="#二叉搜索树的最近公共祖先" class="headerlink" title="二叉搜索树的最近公共祖先"></a>二叉搜索树的最近公共祖先</h3><h4 id="相关链接-28"><a href="#相关链接-28" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/">235. 二叉搜索树的最近公共祖先 </a></li>
 </ul>
-<h4 id="相关题目-25"><a href="#相关题目-25" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（<strong>一个节点也可以是它自己的祖先</strong>）。”</p>
+<h4 id="相关题目-28"><a href="#相关题目-28" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（<strong>一个节点也可以是它自己的祖先</strong>）。”</p>
 <p>例如，给定如下二叉搜索树: root &#x3D; [6,2,8,0,4,7,9,null,null,3,5]</p>
 <img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/binarysearchtree_improved.png" alt="示例1" style="zoom:80%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
 
@@ -2412,7 +2703,7 @@ root<span class="token operator">-></span>right <span class="token operator">=</
 输出: 6 
 解释: 节点 2 和节点 8 的最近公共祖先是 6。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-22"><a href="#解题思路-22" class="headerlink" title="解题思路"></a>解题思路</h4><ol>
+<h4 id="解题思路-25"><a href="#解题思路-25" class="headerlink" title="解题思路"></a>解题思路</h4><ol>
 <li>确定递归函数返回值以及参数</li>
 </ol>
 <p>参数就是当前节点，以及两个结点 p、q。返回值是要返回最近公共祖先，所以是TreeNode * 。代码如下：</p>
@@ -2476,11 +2767,11 @@ root<span class="token operator">-></span>right <span class="token operator">=</
 
 
 
-<h3 id="二叉搜索树转换为累加树"><a href="#二叉搜索树转换为累加树" class="headerlink" title="二叉搜索树转换为累加树"></a>二叉搜索树转换为累加树</h3><h4 id="相关链接-26"><a href="#相关链接-26" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="二叉搜索树转换为累加树"><a href="#二叉搜索树转换为累加树" class="headerlink" title="二叉搜索树转换为累加树"></a>二叉搜索树转换为累加树</h3><h4 id="相关链接-29"><a href="#相关链接-29" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/convert-bst-to-greater-tree/">538. 把二叉搜索树转换为累加树 </a></li>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-search-tree-to-greater-sum-tree/">1038. 从二叉搜索树到更大和树 </a></li>
 </ul>
-<h4 id="相关题目-26"><a href="#相关题目-26" class="headerlink" title="相关题目"></a>相关题目</h4><p>给出二叉 <strong>搜索</strong> 树的根节点，该树的节点值各不相同，请你将其转换为累加树（Greater Sum Tree），使每个节点 <code>node</code> 的新值等于原树中大于或等于 <code>node.val</code> 的值之和。</p>
+<h4 id="相关题目-29"><a href="#相关题目-29" class="headerlink" title="相关题目"></a>相关题目</h4><p>给出二叉 <strong>搜索</strong> 树的根节点，该树的节点值各不相同，请你将其转换为累加树（Greater Sum Tree），使每个节点 <code>node</code> 的新值等于原树中大于或等于 <code>node.val</code> 的值之和。</p>
 <p>提醒一下，二叉搜索树满足下列约束条件：</p>
 <ul>
 <li>节点的左子树仅包含键 <strong>小于</strong> 节点键的节点。</li>
@@ -2493,7 +2784,7 @@ root<span class="token operator">-></span>right <span class="token operator">=</
 <pre class="line-numbers language-none"><code class="language-none">输入：[4,1,6,0,2,5,7,null,null,null,3,null,null,null,8]
 输出：[30,36,21,36,35,26,15,null,null,null,33,null,null,null,8]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-23"><a href="#解题思路-23" class="headerlink" title="解题思路"></a>解题思路</h4><p><strong>换一个角度来看，这就是一个有序数组[2, 5, 13]，求从后到前的累加数组，也就是[20, 18, 13]，</strong></p>
+<h4 id="解题思路-26"><a href="#解题思路-26" class="headerlink" title="解题思路"></a>解题思路</h4><p><strong>换一个角度来看，这就是一个有序数组[2, 5, 13]，求从后到前的累加数组，也就是[20, 18, 13]，</strong></p>
 <p><strong>从树中可以看出累加的顺序是右中左，所以我们需要反中序遍历这个二叉树，然后顺序累加就可以了</strong>。</p>
 <ol>
 <li><p>递归函数参数以及返回值</p>
@@ -2529,10 +2820,10 @@ pre <span class="token operator">=</span> cur<span class="token operator">-></sp
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="有序数组转换为二叉搜索树"><a href="#有序数组转换为二叉搜索树" class="headerlink" title="有序数组转换为二叉搜索树"></a>有序数组转换为二叉搜索树</h3><h4 id="相关链接-27"><a href="#相关链接-27" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="有序数组转换为二叉搜索树"><a href="#有序数组转换为二叉搜索树" class="headerlink" title="有序数组转换为二叉搜索树"></a>有序数组转换为二叉搜索树</h3><h4 id="相关链接-30"><a href="#相关链接-30" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/">108. 将有序数组转换为二叉搜索树 </a></li>
 </ul>
-<h4 id="相关题目-27"><a href="#相关题目-27" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你一个整数数组 <code>nums</code> ，其中元素已经按 <strong>升序</strong> 排列，请你将其转换为一棵 <strong>高度平衡</strong> 二叉搜索树。</p>
+<h4 id="相关题目-30"><a href="#相关题目-30" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你一个整数数组 <code>nums</code> ，其中元素已经按 <strong>升序</strong> 排列，请你将其转换为一棵 <strong>高度平衡</strong> 二叉搜索树。</p>
 <p><strong>高度平衡</strong> 二叉树是一棵满足「每个节点的左右两个子树的高度差的绝对值不超过 1 」的二叉树。</p>
 <p><strong>示例1：</strong></p>
 <img src="https://assets.leetcode.com/uploads/2021/02/18/btree1.jpg" alt="示例1" style="zoom:67%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
@@ -2541,7 +2832,7 @@ pre <span class="token operator">=</span> cur<span class="token operator">-></sp
 输出：[0,-3,9,-10,null,5]
 解释：[0,-10,5,null,-3,null,9] 也将被视为正确答案：<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-24"><a href="#解题思路-24" class="headerlink" title="解题思路"></a>解题思路</h4><ol>
+<h4 id="解题思路-27"><a href="#解题思路-27" class="headerlink" title="解题思路"></a>解题思路</h4><ol>
 <li><p>确定递归函数返回值及其参数</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">TreeNode<span class="token operator">*</span> <span class="token function">traversal</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> left<span class="token punctuation">,</span> <span class="token keyword">int</span> right<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
@@ -2571,6 +2862,46 @@ root<span class="token operator">-></span>right <span class="token operator">=</
         <span class="token keyword">return</span> root<span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="二叉搜索树变平衡"><a href="#二叉搜索树变平衡" class="headerlink" title="二叉搜索树变平衡"></a>二叉搜索树变平衡</h3><h4 id="相关链接-31"><a href="#相关链接-31" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/balance-a-binary-search-tree/description/">1382. 将二叉搜索树变平衡</a></li>
+</ul>
+<h4 id="相关题目-31"><a href="#相关题目-31" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你一棵二叉搜索树，请你返回一棵 <strong>平衡后</strong> 的二叉搜索树，新生成的树应该与原来的树有着相同的节点值。如果有多种构造方法，请你返回任意一种。</p>
+<p>如果一棵二叉搜索树中，每个节点的两棵子树高度差不超过 <code>1</code> ，我们就称这棵二叉搜索树是 <strong>平衡的</strong> 。</p>
+<p><strong>示例 1：</strong></p>
+<img src="https://assets.leetcode.com/uploads/2021/08/10/balance1-tree.jpg" alt="img" style="zoom: 50%; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;" />
+
+<pre class="line-numbers language-none"><code class="language-none">输入：root &#x3D; [1,null,2,null,3,null,4,null,null]
+输出：[2,1,3,null,null,null,4]
+解释：这不是唯一的正确答案，[3,1,4,null,2,null,null] 也是一个可行的构造方案。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="解题思路-28"><a href="#解题思路-28" class="headerlink" title="解题思路"></a>解题思路</h4><p>这道题目，可以中序遍历把二叉树转变为有序数组，然后再根据有序数组构造平衡二叉搜索树。</p>
+<p>实际上是<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/validate-binary-search-tree/">98. 验证二叉搜索树 </a> 和 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/">108. 将有序数组转换为二叉搜索树 </a>的结合</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> vc<span class="token punctuation">;</span>
+    <span class="token keyword">void</span> <span class="token function">traversal</span><span class="token punctuation">(</span>TreeNode<span class="token operator">*</span> root<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>root<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token function">traversal</span><span class="token punctuation">(</span>root<span class="token operator">-></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        vc<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>root<span class="token operator">-></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">traversal</span><span class="token punctuation">(</span>root<span class="token operator">-></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    TreeNode<span class="token operator">*</span> <span class="token function">getTree</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> l<span class="token punctuation">,</span> <span class="token keyword">int</span> r<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>l <span class="token operator">></span> r<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> mid <span class="token operator">=</span> l <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>r <span class="token operator">-</span> l<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        TreeNode<span class="token operator">*</span> root <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">TreeNode</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        root<span class="token operator">-></span>left <span class="token operator">=</span> <span class="token function">getTree</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> l<span class="token punctuation">,</span> mid <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        root<span class="token operator">-></span>right <span class="token operator">=</span> <span class="token function">getTree</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> r<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> root<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    TreeNode<span class="token operator">*</span> <span class="token function">balanceBST</span><span class="token punctuation">(</span>TreeNode<span class="token operator">*</span> root<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">traversal</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token function">getTree</span><span class="token punctuation">(</span>vc<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> vc<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
                 
             </div>
             <hr/>
@@ -2970,7 +3301,7 @@ root<span class="token operator">-></span>right <span class="token operator">=</
         <div class="col s12 m8 l8 copy-right">
             <!-- Copyright&nbsp;&copy; -->
             
-                <span id="year">2021-2022</span>
+                <span id="year">2021-2023</span>
             
             <!-- <a href="/about" target="_blank">WangXinYi</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -2978,7 +3309,7 @@ root<span class="token operator">-></span>right <span class="token operator">=</
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">91.3k</span>
+                        class="white-color">127.7k</span>
             
             
             

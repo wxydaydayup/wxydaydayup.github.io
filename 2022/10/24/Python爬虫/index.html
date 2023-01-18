@@ -474,7 +474,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Python爬虫-采集免费IP代理"><a href="#Python爬虫-采集免费IP代理" class="headerlink" title="Python爬虫-采集免费IP代理"></a>Python爬虫-采集免费IP代理</h1><h3 id="一、网站分析与请求数据"><a href="#一、网站分析与请求数据" class="headerlink" title="一、网站分析与请求数据"></a>一、网站分析与请求数据</h3><pre class="line-numbers language-none"><code class="language-none">dict &#x3D; &#123;&#39;http&#39;: &#39;http:&#x2F;&#x2F;&#39; + IP:端口号&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h1 id="Python爬虫"><a href="#Python爬虫" class="headerlink" title="Python爬虫"></a>Python爬虫</h1><h2 id="Python采集免费IP代理"><a href="#Python采集免费IP代理" class="headerlink" title="Python采集免费IP代理"></a>Python采集免费IP代理</h2><h3 id="一、网站分析与请求数据"><a href="#一、网站分析与请求数据" class="headerlink" title="一、网站分析与请求数据"></a>一、网站分析与请求数据</h3><pre class="line-numbers language-none"><code class="language-none">dict &#x3D; &#123;&#39;http&#39;: &#39;http:&#x2F;&#x2F;&#39; + IP:端口号&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>下载 requests包</p>
 <pre class="line-numbers language-none"><code class="language-none">pip install requests<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -539,11 +539,11 @@ num <span class="token operator">=</span> <span class="token number">0</span>
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="四、保存IP"><a href="#四、保存IP" class="headerlink" title="四、保存IP"></a>四、保存IP</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'target.txt'</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">,</span>encoding <span class="token operator">=</span> <span class="token string">'utf-8'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+<h3 id="四、保存IP"><a href="#四、保存IP" class="headerlink" title="四、保存IP"></a>四、保存IP</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'target.txt'</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">,</span>encoding <span class="token operator">=</span> <span class="token string">'utf-8'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
 	f<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token builtin">str</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> use_list<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"已保存为可用http代理.txt"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h1 id="八爪鱼"><a href="#八爪鱼" class="headerlink" title="八爪鱼"></a>八爪鱼</h1><p><strong>1. 打开网页</strong></p>
+<h2 id="八爪鱼"><a href="#八爪鱼" class="headerlink" title="八爪鱼"></a>八爪鱼</h2><p><strong>1. 打开网页</strong></p>
 <p>所有的采集默认第一项都是打开网页。所以在新建任务之后，系统会提示你输入网址。当你输入之后，八爪鱼就会自动建立一个“打开网页”的流程。</p>
 <p><strong>2. 点击元素</strong></p>
 <p>这里元素的定义比较广泛，它可以是某个按钮，或者某个链接，也或者是某个图片或文字。使用这个步骤是你在搜索或者提交某个请求。当你点击元素后，八爪鱼会提示你想要达到的目的：点击该按钮、采集该元素文本、还是鼠标移到该链接上。然后再选择“点击该按钮”进行确认即可。</p>
@@ -932,7 +932,7 @@ num <span class="token operator">=</span> <span class="token number">0</span>
         <div class="col s12 m8 l8 copy-right">
             <!-- Copyright&nbsp;&copy; -->
             
-                <span id="year">2021-2022</span>
+                <span id="year">2021-2023</span>
             
             <!-- <a href="/about" target="_blank">WangXinYi</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -940,7 +940,7 @@ num <span class="token operator">=</span> <span class="token number">0</span>
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">91.3k</span>
+                        class="white-color">127.7k</span>
             
             
             

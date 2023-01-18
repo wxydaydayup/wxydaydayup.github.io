@@ -428,7 +428,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    1.9k
                 </div>
                 
 
@@ -558,7 +558,14 @@ service crond <span class="token builtin">reload</span> 	<span class="token comm
 <p>生成requirements.txt 文件后，可以根据这个文件下载所有的依赖</p>
 <pre class="line-numbers language-none"><code class="language-none">pip install -r requirements.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h4 id="2、查询自己的公网ip"><a href="#2、查询自己的公网ip" class="headerlink" title="2、查询自己的公网ip"></a>2、查询自己的公网ip</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">curl ifconfig<span class="token punctuation">.</span>me  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="2、查询自己的公网ip及赋予数据库远程连接权限"><a href="#2、查询自己的公网ip及赋予数据库远程连接权限" class="headerlink" title="2、查询自己的公网ip及赋予数据库远程连接权限"></a>2、查询自己的公网ip及赋予数据库远程连接权限</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">curl ifconfig<span class="token punctuation">.</span>me  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>需要注意的是一个是连接权限，一个所有权限是增删改查的权限</strong></p>
+<p>赋予数据库远程连接权限</p>
+<p>赋予连接数据库人员所有权限，在刚进入mysql输入，别在use mysql之后输入</p>
+<pre class="line-numbers language-none"><code class="language-none">grant all privileges on *.* to &#39;root&#39;@&#39;%&#39; identified by &#39;123456&#39; with grant option;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
 
 <h4 id="3、服务器改用465端口发送邮件"><a href="#3、服务器改用465端口发送邮件" class="headerlink" title="3、服务器改用465端口发送邮件"></a>3、服务器改用465端口发送邮件</h4><p>服务器会把25端口封掉，防止发送垃圾邮件，改用465端口发送邮件，可以看一下对比</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># server = smtplib.SMTP('smtp.qq.com')</span>
@@ -692,8 +699,9 @@ ql repo https:&#x2F;&#x2F;github.com&#x2F;feverrun&#x2F;my_scripts.git &quot;jd_
 </ul>
 <p>JD_COOKIE格式</p>
 <pre class="line-numbers language-none"><code class="language-none">pt_key&#x3D;;pt_pin&#x3D;;
+pt_key&#x3D;AAJjsV5lADAs-XCOf3cnb3IoMpRSvHeaUcXC-SZQELn5rKrZHJkD27-5-UaFLYDZ53GSYwlErbQ;pt_pin&#x3D;wdYJUpexZFHdIj;
 &amp;pt_key&#x3D;;pt_pin&#x3D;;
-&amp;pt_key&#x3D;;pt_pin&#x3D;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+&amp;pt_key&#x3D;;pt_pin&#x3D;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -943,10 +951,10 @@ ql repo https:&#x2F;&#x2F;github.com&#x2F;feverrun&#x2F;my_scripts.git &quot;jd_
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/10/20/%E7%AE%97%E6%B3%95-%E9%93%BE%E8%A1%A8%E4%B8%93%E9%A2%98/">
+                <a href="/2021/10/20/%E7%AE%97%E6%B3%95-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
                     <div class="card-image">
                         
-                        <img src="https://pic.imgdb.cn/item/63896f7516f2c2beb171dcd6.png" class="responsive-img" alt="">
+                        <img src="https://pic.imgdb.cn/item/63c7ee6cbe43e0d30ebdbe20.png" class="responsive-img" alt="">
                         
                         <span class="card-title"></span>
                     </div>
@@ -954,7 +962,7 @@ ql repo https:&#x2F;&#x2F;github.com&#x2F;feverrun&#x2F;my_scripts.git &quot;jd_
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            算法-链表专题
+                            基本数据结构
                         
                     </div>
                     <div class="publish-info">
@@ -973,8 +981,8 @@ ql repo https:&#x2F;&#x2F;github.com&#x2F;feverrun&#x2F;my_scripts.git &quot;jd_
                                     C++
                                 </a>
                             
-                            <a href="/categories/%E7%AE%97%E6%B3%95/C/%E9%93%BE%E8%A1%A8/" class="post-category">
-                                    链表
+                            <a href="/categories/%E7%AE%97%E6%B3%95/C/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    数据结构
                                 </a>
                             
                             
@@ -992,8 +1000,8 @@ ql repo https:&#x2F;&#x2F;github.com&#x2F;feverrun&#x2F;my_scripts.git &quot;jd_
                         <span class="chip bg-color">C++</span>
                     </a>
                     
-                    <a href="/tags/%E9%93%BE%E8%A1%A8/">
-                        <span class="chip bg-color">链表</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
                     </a>
                     
                 </div>
@@ -1122,7 +1130,7 @@ ql repo https:&#x2F;&#x2F;github.com&#x2F;feverrun&#x2F;my_scripts.git &quot;jd_
         <div class="col s12 m8 l8 copy-right">
             <!-- Copyright&nbsp;&copy; -->
             
-                <span id="year">2021-2022</span>
+                <span id="year">2021-2023</span>
             
             <!-- <a href="/about" target="_blank">WangXinYi</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -1130,7 +1138,7 @@ ql repo https:&#x2F;&#x2F;github.com&#x2F;feverrun&#x2F;my_scripts.git &quot;jd_
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">91.3k</span>
+                        class="white-color">127.7k</span>
             
             
             
