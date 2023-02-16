@@ -511,7 +511,7 @@
 </tr>
 <tr>
 <td align="center">year</td>
-<td align="center">只进行年份的存储。<br />插入0，实际存储0000<br />插入“0”，实际存储2000<br />插入1-69，实际存储2001-2069<br />插入70-99，实际存储2070-2099</td>
+<td align="center">只进行年份的存储。<br />插入0，实际存储0000<br />插入“0”，实际存储2000<br />插入1-69，实际存储2001-2069<br />插入70-99，实际存储1970-1999</td>
 </tr>
 <tr>
 <td align="center">timestamp</td>
@@ -555,17 +555,18 @@
 	<span class="token comment">-- 下面语句不报错，但查不到任何信息</span>
 	<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> employee <span class="token keyword">where</span> age <span class="token operator">between</span> <span class="token number">30</span> <span class="token operator">and</span> <span class="token number">20</span><span class="token punctuation">;</span>
 离散范围查询:
-	<span class="token keyword">where</span> age <span class="token operator">in</span> <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">)</span>
+	<span class="token keyword">where</span> age <span class="token operator">in</span> <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 模糊查询:
-	<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> cat <span class="token keyword">where</span> name <span class="token operator">like</span> <span class="token string">'t%'</span><span class="token punctuation">(</span>第一个字符是t<span class="token punctuation">)</span> 或者 <span class="token operator">like</span> <span class="token string">'_t%'</span><span class="token punctuation">(</span>第二个字符是t<span class="token punctuation">)</span>
+	<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> cat <span class="token keyword">where</span> name <span class="token operator">like</span> <span class="token string">'t%'</span><span class="token punctuation">(</span>第一个字符是t<span class="token punctuation">)</span> 或者 <span class="token operator">like</span> <span class="token string">'_t%'</span><span class="token punctuation">(</span>第二个字符是t<span class="token punctuation">)</span><span class="token punctuation">;</span>
 排序:
-    <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> cat <span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token keyword">asc</span>  默认升序<span class="token punctuation">(</span>是个子句，前面可以不加<span class="token keyword">where</span><span class="token punctuation">)</span>
-    <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> cat <span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token keyword">desc</span>   降序
+    <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> cat <span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token keyword">asc</span><span class="token punctuation">;</span>  默认升序<span class="token punctuation">(</span>是个子句，前面可以不加<span class="token keyword">where</span><span class="token punctuation">)</span>
+    <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> cat <span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token keyword">desc</span><span class="token punctuation">;</span>   降序
+    <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> cat <span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token keyword">asc</span><span class="token punctuation">,</span>dept <span class="token keyword">desc</span><span class="token punctuation">;</span>
 显示指定的条数<span class="token punctuation">(</span>修改、删除只能<span class="token number">1</span>个参数<span class="token punctuation">)</span>:
 	<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> cat <span class="token keyword">limit</span> <span class="token number">3</span> <span class="token punctuation">(</span><span class="token keyword">limit</span>需要在后面<span class="token punctuation">)</span>
 	<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> cat <span class="token keyword">where</span> age <span class="token operator">>=</span><span class="token number">18</span> <span class="token keyword">limit</span> <span class="token number">3</span> 
 	<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> cat <span class="token keyword">where</span> age <span class="token operator">>=</span><span class="token number">18</span> <span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token keyword">desc</span> <span class="token keyword">limit</span> <span class="token number">3</span> 
-	<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> cat <span class="token keyword">where</span> age <span class="token operator">>=</span><span class="token number">18</span> <span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token keyword">desc</span> <span class="token keyword">limit</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">(</span>从索引<span class="token number">1</span>开始，取<span class="token number">2</span>条<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> cat <span class="token keyword">where</span> age <span class="token operator">>=</span><span class="token number">18</span> <span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token keyword">desc</span> <span class="token keyword">limit</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">(</span>从索引<span class="token number">1</span>开始，取<span class="token number">2</span>条<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="Mysql-语法及分类"><a href="#Mysql-语法及分类" class="headerlink" title="Mysql 语法及分类"></a>Mysql 语法及分类</h2><ul>
 <li>DDL: 数据定义语言，用来定义数据库对象（数据库、表、字段）</li>
@@ -1584,7 +1585,7 @@ select * from tb_sku as s, (select id from tb_sku order by id limit 9000000, 10)
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">145.1k</span>
+                        class="white-color">145.5k</span>
             
             
             
