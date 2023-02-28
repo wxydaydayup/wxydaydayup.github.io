@@ -444,14 +444,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    13.1k
+                    14k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    57 分
+                    61 分
                 </div>
                 
 
@@ -1508,13 +1508,13 @@ s<span class="token punctuation">[</span>i<span class="token punctuation">]</spa
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h2><p><strong>对于大顶堆来说，所有父节点的值要大于其子节点的值，即大顶堆的第一个结点是最大值</strong></p>
-<p><strong>对于小顶堆来说，所有父节点的值要小于其子节点的值，即小顶堆的第一个结点是最小值</strong></p>
-<p><strong>而他们的兄弟节点之间并无任何大小上的关联。</strong></p>
-<p><strong>二叉搜索树才是左孩子小于父亲，右孩子大于父亲</strong></p>
-<p><strong>堆兄弟结点都除以2是同一个值</strong></p>
-<p><strong>建堆要从1开始</strong></p>
-<p><strong>堆的父节点索引&#x3D;&#x3D;子结点索引&#x2F;2</strong></p>
+<h2 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h2><h3 id="理论部分"><a href="#理论部分" class="headerlink" title="理论部分"></a>理论部分</h3><p>对于大顶堆来说，所有父节点的值要大于其子节点的值，即大顶堆的第一个结点是最大值</p>
+<p>对于小顶堆来说，所有父节点的值要小于其子节点的值，即小顶堆的第一个结点是最小值</p>
+<p>而他们的兄弟节点之间并无任何大小上的关联。</p>
+<p>二叉搜索树才是左孩子小于父亲，右孩子大于父亲</p>
+<p>堆兄弟结点都除以2是同一个值</p>
+<p>建堆要从1开始</p>
+<p>堆的父节点索引&#x3D;&#x3D;子结点索引&#x2F;2</p>
 <h3 id="前-K-个高频元素"><a href="#前-K-个高频元素" class="headerlink" title="前 K 个高频元素"></a>前 K 个高频元素</h3><h4 id="相关链接-18"><a href="#相关链接-18" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/top-k-frequent-elements/">347. 前 K 个高频元素 </a></li>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/top-k-frequent-words/">692. 前K个高频单词 </a></li>
@@ -1583,7 +1583,7 @@ s<span class="token punctuation">[</span>i<span class="token punctuation">]</spa
         <span class="token comment">// 定义一个小顶堆，大小为k</span>
         priority_queue<span class="token operator">&lt;</span>pair<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">,</span> vector<span class="token operator">&lt;</span>pair<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">>></span><span class="token punctuation">,</span> mycomparison<span class="token operator">></span> pri_que<span class="token punctuation">;</span>
 
-        <span class="token comment">// 用固定大小为k的小顶堆，扫面所有频率的数值</span>
+        <span class="token comment">// 用固定大小为k的小顶堆，扫所有频率的数值</span>
         <span class="token keyword">for</span> <span class="token punctuation">(</span>unordered_map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">></span><span class="token double-colon punctuation">::</span>iterator it <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it <span class="token operator">!=</span> map<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
             pri_que<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">*</span>it<span class="token punctuation">)</span><span class="token punctuation">;</span>
             <span class="token keyword">if</span> <span class="token punctuation">(</span>pri_que<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">></span> k<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// 如果堆的大小大于了K，则队列弹出，保证堆的大小一直为k</span>
@@ -2030,6 +2030,120 @@ s<span class="token punctuation">[</span>i<span class="token punctuation">]</spa
 <p><strong>写法3-单调栈</strong></p>
 <pre class="line-numbers language-none"><code class="language-none"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<h2 id="LRU缓存-高频"><a href="#LRU缓存-高频" class="headerlink" title="LRU缓存-高频"></a>LRU缓存-高频</h2><h4 id="相关链接-25"><a href="#相关链接-25" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<li><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/lru-cache/">146. LRU 缓存 </a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/OrIXps/description/">剑指 Offer II 031. 最近最少使用缓存</a></p>
+</li>
+</ul>
+<h4 id="相关题目-25"><a href="#相关题目-25" class="headerlink" title="相关题目"></a>相关题目</h4><p>运用所掌握的数据结构，设计和实现一个 LRU (Least Recently Used，最近最少使用) 缓存机制。</p>
+<p>实现 <code>LRUCache</code> 类：</p>
+<ul>
+<li><code>LRUCache(int capacity)</code> 以正整数作为容量 <code>capacity</code> 初始化 LRU 缓存</li>
+<li><code>int get(int key)</code> 如果关键字 <code>key</code> 存在于缓存中，则返回关键字的值，否则返回 <code>-1</code> 。</li>
+<li><code>void put(int key, int value)</code> 如果关键字已经存在，则变更其数据值；如果关键字不存在，则插入该组「关键字-值」。当缓存容量达到上限时，它应该在写入新数据之前删除最久未使用的数据值，从而为新的数据值留出空间。</li>
+</ul>
+<h4 id="解题思路-25"><a href="#解题思路-25" class="headerlink" title="解题思路"></a>解题思路</h4><p>自己定义哈希双向链表</p>
+<p>1、如果我们每次默认从<strong>链表头部添加元素</strong>，那么显然越靠头部的元素就是最近使用的，越靠尾部的元素就是最久未使用的。</p>
+<p>2、对于某一个 <code>key</code>，我们可以通过哈希表快速定位到链表中的节点，从而取得对应 <code>val</code>。</p>
+<p>3、链表显然是支持在任意位置快速插入和删除的，改改指针就行。只不过传统的链表无法按照索引快速访问某一个位置的元素，而这里借助哈希表，可以通过 <code>key</code> 快速映射到任意一个链表节点，然后进行插入和删除。</p>
+<img src="https://labuladong.gitee.io/algo/images/LRU%e7%ae%97%e6%b3%95/4.jpg" alt="img" style="zoom:50%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
+
+<p>对于 get 操作，首先判断 key 是否存在：</p>
+<ul>
+<li><p>如果 key 不存在，则返回 −1；</p>
+</li>
+<li><p>如果 key 存在，则 key 对应的节点是最近被使用的节点。</p>
+<p>（1）通过哈希表定位到该节点在双向链表中的位置</p>
+<p>（2）将其移动到双向链表的头部，</p>
+<p>（3）最后返回该节点的值。</p>
+</li>
+</ul>
+<p>对于 put 操作，首先判断 key 是否存在：</p>
+<ul>
+<li><p>如果 key 不存在</p>
+<p>（1）使用 key 和 value 创建一个新的节点</p>
+<p>（2）在双向链表的头部添加该节点</p>
+<p>（3）并将 key 和该节点添加进哈希表中</p>
+<p>（4）判断双向链表的节点数是否超出容量</p>
+<p>（5）如果超出容量则删除双向链表的尾部节点，并删除哈希表中对应的项；</p>
+</li>
+<li><p>如果 key 存在，则与 get 操作类似</p>
+<p>（1）通过哈希表定位</p>
+<p>（2）将对应的节点的值更新为 value</p>
+<p>（3）并将该节点移到双向链表的头部。</p>
+</li>
+</ul>
+<p>上述各项操作中，访问哈希表的时间复杂度为 O(1)，在双向链表的头部添加节点、在双向链表的尾部删除节点的复杂度也为 O(1)。</p>
+<p>而将一个节点移到双向链表的头部，可以分成「删除该节点」和「在双向链表的头部添加节点」两步操作，都可以在 O(1) 时间内完成。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">struct</span> <span class="token class-name">DLinkedNode</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> key<span class="token punctuation">,</span> value<span class="token punctuation">;</span>
+    DLinkedNode<span class="token operator">*</span> prev<span class="token punctuation">;</span>
+    DLinkedNode<span class="token operator">*</span> next<span class="token punctuation">;</span>
+    <span class="token function">DLinkedNode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token function">key</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">value</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">prev</span><span class="token punctuation">(</span><span class="token keyword">nullptr</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+    <span class="token function">DLinkedNode</span><span class="token punctuation">(</span><span class="token keyword">int</span> _key<span class="token punctuation">,</span> <span class="token keyword">int</span> _value<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token function">key</span><span class="token punctuation">(</span>_key<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">value</span><span class="token punctuation">(</span>_value<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">prev</span><span class="token punctuation">(</span><span class="token keyword">nullptr</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">LRUCache</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+    unordered_map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> DLinkedNode<span class="token operator">*</span><span class="token operator">></span> cache<span class="token punctuation">;</span>
+    DLinkedNode<span class="token operator">*</span> head<span class="token punctuation">;</span>
+    DLinkedNode<span class="token operator">*</span> tail<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> size<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> capacity<span class="token punctuation">;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">LRUCache</span><span class="token punctuation">(</span><span class="token keyword">int</span> _capacity<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token function">capacity</span><span class="token punctuation">(</span>_capacity<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">size</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        head <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">DLinkedNode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        tail <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">DLinkedNode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        head<span class="token operator">-></span>next <span class="token operator">=</span> tail<span class="token punctuation">;</span>
+        tail<span class="token operator">-></span>prev <span class="token operator">=</span> head<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">int</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token keyword">int</span> key<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>cache<span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+        DLinkedNode<span class="token operator">*</span> node <span class="token operator">=</span> cache<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token function">moveToHead</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> node<span class="token operator">-></span>value<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">void</span> <span class="token function">put</span><span class="token punctuation">(</span><span class="token keyword">int</span> key<span class="token punctuation">,</span> <span class="token keyword">int</span> value<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>cache<span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            DLinkedNode<span class="token operator">*</span> node <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">DLinkedNode</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            cache<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> node<span class="token punctuation">;</span>
+            <span class="token function">addToHead</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token operator">++</span>size<span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>size <span class="token operator">></span> capacity<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                DLinkedNode<span class="token operator">*</span> removed <span class="token operator">=</span> <span class="token function">removeTail</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                cache<span class="token punctuation">.</span><span class="token function">erase</span><span class="token punctuation">(</span>removed<span class="token operator">-></span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">delete</span> removed<span class="token punctuation">;</span>
+                <span class="token operator">--</span>size<span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+            DLinkedNode<span class="token operator">*</span> node <span class="token operator">=</span> cache<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            node<span class="token operator">-></span>value <span class="token operator">=</span> value<span class="token punctuation">;</span>
+            <span class="token function">moveToHead</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">void</span> <span class="token function">moveToHead</span><span class="token punctuation">(</span>DLinkedNode<span class="token operator">*</span> node<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">removeNode</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">addToHead</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">void</span> <span class="token function">addToHead</span><span class="token punctuation">(</span>DLinkedNode<span class="token operator">*</span> node<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        node<span class="token operator">-></span>prev <span class="token operator">=</span> head<span class="token punctuation">;</span>
+        node<span class="token operator">-></span>next <span class="token operator">=</span> head<span class="token operator">-></span>next<span class="token punctuation">;</span>
+        head<span class="token operator">-></span>next<span class="token operator">-></span>prev <span class="token operator">=</span> node<span class="token punctuation">;</span>
+        head<span class="token operator">-></span>next <span class="token operator">=</span> node<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">void</span> <span class="token function">removeNode</span><span class="token punctuation">(</span>DLinkedNode<span class="token operator">*</span> node<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        node<span class="token operator">-></span>prev<span class="token operator">-></span>next <span class="token operator">=</span> node<span class="token operator">-></span>next<span class="token punctuation">;</span>
+        node<span class="token operator">-></span>next<span class="token operator">-></span>prev <span class="token operator">=</span> node<span class="token operator">-></span>prev<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    DLinkedNode<span class="token operator">*</span> <span class="token function">removeTail</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        DLinkedNode<span class="token operator">*</span> node <span class="token operator">=</span> tail<span class="token operator">-></span>prev<span class="token punctuation">;</span>
+        <span class="token function">removeNode</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> node<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -2186,70 +2300,6 @@ s<span class="token punctuation">[</span>i<span class="token punctuation">]</spa
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/10/20/%E7%AE%97%E6%B3%95-%E5%8F%8C%E6%8C%87%E9%92%88/">
-                    <div class="card-image">
-                        
-                        <img src="https://pic.imgdb.cn/item/63c53c05be43e0d30e154b24.png" class="responsive-img" alt="">
-                        
-                        <span class="card-title"></span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            算法-双指针
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-20
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
-                                </a>
-                            
-                            <a href="/categories/%E7%AE%97%E6%B3%95/C/" class="post-category">
-                                    C++
-                                </a>
-                            
-                            <a href="/categories/%E7%AE%97%E6%B3%95/C/%E5%8F%8C%E6%8C%87%E9%92%88/" class="post-category">
-                                    双指针
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
-                    </a>
-                    
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C++</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">
-                        <span class="chip bg-color">双指针</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/2021/10/20/%E7%AE%97%E6%B3%95-%E6%9A%B4%E6%90%9C%E5%9B%9E%E6%BA%AF/">
                     <div class="card-image">
                         
@@ -2265,9 +2315,9 @@ s<span class="token punctuation">[</span>i<span class="token punctuation">]</spa
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-20
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-20
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -2301,6 +2351,70 @@ s<span class="token punctuation">[</span>i<span class="token punctuation">]</spa
                     
                     <a href="/tags/%E6%9A%B4%E6%90%9C%E5%9B%9E%E6%BA%AF/">
                         <span class="chip bg-color">暴搜回溯</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/10/20/%E7%AE%97%E6%B3%95-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                    <div class="card-image">
+                        
+                        <img src="https://pic.imgdb.cn/item/638c04a416f2c2beb102bebf.png" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            算法-动态规划
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
+                                </a>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95/C/" class="post-category">
+                                    C++
+                                </a>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95/C/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="post-category">
+                                    动态规划
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                        <span class="chip bg-color">动态规划</span>
                     </a>
                     
                 </div>
@@ -2437,7 +2551,7 @@ s<span class="token punctuation">[</span>i<span class="token punctuation">]</spa
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">145.5k</span>
+                        class="white-color">144.9k</span>
             
             
             

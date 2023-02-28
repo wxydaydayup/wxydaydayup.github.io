@@ -428,14 +428,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.7k
+                    4.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    19 分
+                    20 分
                 </div>
                 
 
@@ -591,7 +591,6 @@
 </ul>
 <p><strong>使用线程池技术</strong></p>
 <p>使用线程池，让线程池中的线程去处理连接</p>
-<p>2、</p>
 <h2 id="牛客论坛"><a href="#牛客论坛" class="headerlink" title="牛客论坛"></a>牛客论坛</h2><h3 id="一、搭建开发环境"><a href="#一、搭建开发环境" class="headerlink" title="一、搭建开发环境"></a>一、搭建开发环境</h3><p>1、maven<strong>改镜像仓库为阿里云</strong></p>
 <p>conf–&gt;settings.xml 修改为</p>
 <pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">&lt;mirror>
@@ -624,6 +623,9 @@
 server.servlet.context-path&#x3D;&#x2F;community<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>访问端口就改成了8080，访问路径就改为了 &#x2F;community</p>
+<p>点右键-》Maven-》ReLoad Project 重新加载Maven</p>
+<img src="/images/Java%E8%BF%9B%E9%98%B6/image-20230224184840817.png" alt="image-20230224184840817" style="zoom:67%;" />
+
 <h3 id="二、Spring"><a href="#二、Spring" class="headerlink" title="二、Spring"></a>二、Spring</h3><p>1、@SpringBootApplication 在 CommunityApplication 中，来实现IOC</p>
 <p>其他地方需要注解才能被@SpringBootApplication 扫描</p>
 <p>@Controller，@Service，@Repository， @Component， 这四个都可以，都是用Component 实现的</p>
@@ -913,8 +915,14 @@ studentMapper<span class="token punctuation">.</span><span class="token function
 	<span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="四、FileReader默认编码导致的乱码问题"><a href="#四、FileReader默认编码导致的乱码问题" class="headerlink" title="四、FileReader默认编码导致的乱码问题"></a>四、FileReader默认编码导致的乱码问题</h3><h3 id="五、Interger缓存的问题"><a href="#五、Interger缓存的问题" class="headerlink" title="五、Interger缓存的问题"></a>五、Interger缓存的问题</h3><h3 id="六、Static静态变量依赖Spring实例化变量的问题"><a href="#六、Static静态变量依赖Spring实例化变量的问题" class="headerlink" title="六、Static静态变量依赖Spring实例化变量的问题"></a>六、Static静态变量依赖Spring实例化变量的问题</h3><h3 id="七、使用ThreadLocal-线程重用导致信息错乱的问题"><a href="#七、使用ThreadLocal-线程重用导致信息错乱的问题" class="headerlink" title="七、使用ThreadLocal,线程重用导致信息错乱的问题"></a>七、使用ThreadLocal,线程重用导致信息错乱的问题</h3><h3 id="八、疏忽switch的return和break"><a href="#八、疏忽switch的return和break" class="headerlink" title="八、疏忽switch的return和break"></a>八、疏忽switch的return和break</h3><p>break是直接退出switch语句, break用于结束一个循环，即跳出循环体，执行循环体之后的代码。</p>
-<p>return是退出该函数，也就是switch语句块后面的语句也不执行了。</p>
+<h3 id="四、FileReader默认编码导致的乱码问题"><a href="#四、FileReader默认编码导致的乱码问题" class="headerlink" title="四、FileReader默认编码导致的乱码问题"></a>四、FileReader默认编码导致的乱码问题</h3><h3 id="五、Interger缓存的问题"><a href="#五、Interger缓存的问题" class="headerlink" title="五、Interger缓存的问题"></a>五、Interger缓存的问题</h3><h3 id="六、Static静态变量依赖Spring实例化变量的问题"><a href="#六、Static静态变量依赖Spring实例化变量的问题" class="headerlink" title="六、Static静态变量依赖Spring实例化变量的问题"></a>六、Static静态变量依赖Spring实例化变量的问题</h3><h3 id="七、使用ThreadLocal-线程重用导致信息错乱的问题"><a href="#七、使用ThreadLocal-线程重用导致信息错乱的问题" class="headerlink" title="七、使用ThreadLocal,线程重用导致信息错乱的问题"></a>七、使用ThreadLocal,线程重用导致信息错乱的问题</h3><h3 id="八、疏忽switch的return和break"><a href="#八、疏忽switch的return和break" class="headerlink" title="八、疏忽switch的return和break"></a>八、疏忽switch的return和break</h3><ul>
+<li><p>switch的参数里：能自动转int的都可以，jdk5枚举可以，jdk7以后string也可以</p>
+</li>
+<li><p>break是直接退出switch语句, break用于结束一个循环，即跳出循环体，执行循环体之后的代码。不写break会向下泄露，直到遇到break为止</p>
+</li>
+<li><p>return是退出该函数，也就是switch语句块后面的语句也不执行了。</p>
+</li>
+</ul>
 <h3 id="九、Aarrys-asList的问题"><a href="#九、Aarrys-asList的问题" class="headerlink" title="九、Aarrys.asList的问题"></a>九、Aarrys.asList的问题</h3><p>1、基本类型不能作为Arrays.asList<br>方法的参数，否则会被当成一个参数</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ArrayAsListTest</span><span class="token punctuation">&#123;</span>
 	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
@@ -950,10 +958,15 @@ studentMapper<span class="token punctuation">.</span><span class="token function
 <h3 id="十七、事务未生效的问题"><a href="#十七、事务未生效的问题" class="headerlink" title="十七、事务未生效的问题"></a>十七、事务未生效的问题</h3><h3 id="十八、反射遇到方法重载的问题"><a href="#十八、反射遇到方法重载的问题" class="headerlink" title="十八、反射遇到方法重载的问题"></a>十八、反射遇到方法重载的问题</h3><h3 id="十九、Mysql时间-Timestamp-的问题"><a href="#十九、Mysql时间-Timestamp-的问题" class="headerlink" title="十九、Mysql时间 Timestamp 的问题"></a>十九、Mysql时间 Timestamp 的问题</h3><h3 id="二十、Mysql8数据库的时区问题"><a href="#二十、Mysql8数据库的时区问题" class="headerlink" title="二十、Mysql8数据库的时区问题"></a>二十、Mysql8数据库的时区问题</h3><p>mysql8默认为美国那边的时间，会把北京时间晚 8 小数 ，需要指定时区</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">jdbc<span class="token operator">:</span>mysql<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>localhost<span class="token operator">:</span><span class="token number">3306</span><span class="token operator">/</span>test<span class="token operator">?</span>useUnicode<span class="token operator">=</span><span class="token boolean">true</span><span class="token operator">&amp;</span>characterEncoding<span class="token operator">=</span><span class="token constant">UTF</span><span class="token operator">-</span><span class="token number">8</span><span class="token operator">&amp;</span>serverTimezone<span class="token operator">=</span><span class="token class-name">Asia</span><span class="token operator">/</span><span class="token class-name">Shanghai</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-
-
-<h2 id="小细节"><a href="#小细节" class="headerlink" title="小细节"></a>小细节</h2><p>1、IDEA使用ctrl+alt+v自动生成返回类型和对象。但是当你发现该快捷键时，原因就是我们启动的其他应用占用了该快捷键。其中最有代表的就是<strong>有道词典和qq音乐</strong>。此时我们关闭有道词典或者qq音乐就可以在IDEA上使用，另外一种方法就是修改<strong>有道词典和qq音乐</strong>的热键。</p>
+<h2 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h2><p>1、IDEA使用ctrl+alt+v自动生成返回类型和对象。但是当你发现该快捷键时，原因就是我们启动的其他应用占用了该快捷键。其中最有代表的就是<strong>有道词典和qq音乐</strong>。此时我们关闭有道词典或者qq音乐就可以在IDEA上使用，要么就是修改<strong>有道词典和qq音乐</strong>的热键。</p>
 <p>2、Settings 里面搜Plugins里的MybatisX，可以在xml里面提示</p>
+<p>3、JDK7之后可以在数字之间加_ 例如123_456_789</p>
+<p>4、boolean不可以和其他类型进行转换，char类型能和int类型进行转换</p>
+<p>5、<code>10.fori</code> IDEA快速的生成for 循环命令 <code>for(int i = 0; i &lt; 10; i++)</code></p>
+<p>6、鼠标右键（Alt+Insert）-》generate生成get，set方法，shift+上下键可以上下全选择</p>
+<p>7、lombok注解 @Data 可以自动生成get，set方法</p>
+<p>8、导入jar包， idea右键-》Add as Libraris</p>
+<p>9、maven项目源文件java用包名.包名.包名的方式，resource用包名&#x2F;包名&#x2F;包名</p>
 
                 
             </div>
@@ -1158,10 +1171,10 @@ studentMapper<span class="token punctuation">.</span><span class="token function
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/12/08/Java%E5%9F%BA%E7%A1%80/">
+                <a href="/2021/11/08/C%E7%9B%98%E6%B8%85%E7%90%86%E6%89%A9%E5%AE%B9/">
                     <div class="card-image">
                         
-                        <img src="https://pic.imgdb.cn/item/6383462716f2c2beb1e180bb.png" class="responsive-img" alt="">
+                        <img src="https://pic.imgdb.cn/item/63f6c2e4f144a010078ccf77.png" class="responsive-img" alt="">
                         
                         <span class="card-title"></span>
                     </div>
@@ -1169,19 +1182,19 @@ studentMapper<span class="token punctuation">.</span><span class="token function
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Java基础
+                            C盘清理扩容
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-08
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java/" class="post-category">
-                                    Java
+                            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="post-category">
+                                    生活
                                 </a>
                             
                             
@@ -1191,8 +1204,8 @@ studentMapper<span class="token punctuation">.</span><span class="token function
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/%E7%94%9F%E6%B4%BB/">
+                        <span class="chip bg-color">生活</span>
                     </a>
                     
                 </div>
@@ -1329,7 +1342,7 @@ studentMapper<span class="token punctuation">.</span><span class="token function
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">145.5k</span>
+                        class="white-color">144.9k</span>
             
             
             
