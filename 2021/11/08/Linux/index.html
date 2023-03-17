@@ -428,14 +428,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    7 分
                 </div>
                 
 
@@ -504,6 +504,7 @@
 
 <p><strong>WSL2版本做这个步骤</strong></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45579994/article/details/112381567">WSL2: Linux搭建xfce4桌面和使用xrdp远程连接</a></p>
+<p>每次启动都需要此命令</p>
 <pre class="line-numbers language-none"><code class="language-none">sudo service xrdp start<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="五、深度学习环境的配置"><a href="#五、深度学习环境的配置" class="headerlink" title="五、深度学习环境的配置"></a>五、深度学习环境的配置</h3><h4 id="1、配置cuda"><a href="#1、配置cuda" class="headerlink" title="1、配置cuda"></a><strong>1、配置cuda</strong></h4><p>先安装nvidia-cuda驱动 ，再安装cuda</p>
@@ -534,8 +535,65 @@
 
 <h5 id="5、查看Ubuntu的版本"><a href="#5、查看Ubuntu的版本" class="headerlink" title="5、查看Ubuntu的版本"></a>5、查看Ubuntu的版本</h5><pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">lsb_release -a<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<p><strong>6、查看防护墙</strong></p>
+<p>在Ubuntu中 我们使用<code>sudo ufw status</code>命令查看当前防火墙状态</p>
+<ul>
+<li>inactive状态是防火墙关闭状态 </li>
+<li>active是开启状态。</li>
+</ul>
 <h2 id="Linux命令"><a href="#Linux命令" class="headerlink" title="Linux命令"></a>Linux命令</h2><p><strong>移动一个文件夹到另一个文件夹下</strong></p>
 <pre class="line-numbers language-none"><code class="language-none">sudo mv 文件名 目标文件夹路径<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h2 id="在-Ubuntu-20-04-上安装-Docker"><a href="#在-Ubuntu-20-04-上安装-Docker" class="headerlink" title="在 Ubuntu 20.04 上安装 Docker"></a>在 Ubuntu 20.04 上安装 Docker</h2><p>在 Ubuntu 上安装 Docker 非常直接。我们将会启用 Docker 软件源，导入 GPG key，并且安装软件包。</p>
+<h3 id="一、更新软件包索引"><a href="#一、更新软件包索引" class="headerlink" title="一、更新软件包索引"></a>一、更新软件包索引</h3><p>首先，更新软件包索引，并且安装必要的依赖软件，来添加一个新的 HTTPS 软件源：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">sudo apt update
+sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>使用下面的 <code>curl</code> 导入源仓库的 GPG key：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>将 Docker APT 软件源添加到你的系统：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="二、安装Docker-软件源、"><a href="#二、安装Docker-软件源、" class="headerlink" title="二、安装Docker 软件源、"></a>二、安装Docker 软件源、</h3><p>Docker 软件源被启用了，你可以安装软件源中任何可用的 Docker 版本。</p>
+<ol>
+<li>想要安装 Docker 最新版本，运行下面的命令。如果你想安装指定版本，跳过这个步骤，并且跳到下一步。</li>
+</ol>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">sudo apt update
+sudo apt install docker-ce docker-ce-cli containerd.io<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<ol start="2">
+<li>想要安装指定版本，首先列出 Docker 软件源中所有可用的版本：</li>
+</ol>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">sudo apt update
+apt list -a docker-ce<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>可用的 Docker 版本将会在第二列显示, 例如：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">docker-ce/focal 5:19.03.9~3-0~ubuntu-focal amd64<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>通过在软件包名后面添加版本<code>=&lt;VERSION&gt;</code>来安装指定版本：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">sudo apt install docker-ce=&lt;VERSION> docker-ce-cli=&lt;VERSION> containerd.io<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ol start="3">
+<li>验证是否安装成功</li>
+</ol>
+<p>一旦安装完成，Docker 服务将会自动启动。你可以输入下面的命令，验证它：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">sudo service docker start<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>当一个新的 Docker 发布时，你可以使用标准的<code>sudo apt update &amp;&amp; sudo apt upgrade</code>流程来升级 Docker 软件包。</p>
+<p>如果你想阻止 Docker 自动更新，锁住它的版本：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">sudo apt-mark hold docker-ce<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>进入mysql</p>
+<p>1.docker ps  ——命令用来展示所有运行中的容器（docker ps -a 是命令是用来展示所有所有的容器，包括未运行的容器）</p>
+<p>2.docker exec -it    ***（ID，可以写上全部，也可以写前三个） bash  ——进入容器终端并且的保留为容器终端的输入形式</p>
+<p>3.mysql -u root -p</p>
+<p>4.输入mysql的密码</p>
+<p>显示日志</p>
+<pre class="line-numbers language-none"><code class="language-none">sudo docker-compose logs --tail 30 -f<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 
                 
             </div>
@@ -903,7 +961,7 @@
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">144.9k</span>
+                        class="white-color">157.8k</span>
             
             
             
