@@ -436,14 +436,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.9k
+                    6.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    27 分
+                    24 分
                 </div>
                 
 
@@ -483,7 +483,7 @@
 <pre class="line-numbers language-none"><code class="language-none">streamlit run app.py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>在这里，<code>app.py</code>是您的Streamlit应用程序的文件名。启动应用程序后，您可以访问应用程序的地址，它将在您的Web浏览器中打开。</p>
-<h2 id="构建一个简单的Streamlit应用程序"><a href="#构建一个简单的Streamlit应用程序" class="headerlink" title="构建一个简单的Streamlit应用程序"></a>构建一个简单的Streamlit应用程序</h2><p>以下是一个简单的Streamlit应用程序示例，其中包含一个文本输入框和一个按钮。</p>
+<h2 id="构建入门应用程序"><a href="#构建入门应用程序" class="headerlink" title="构建入门应用程序"></a>构建入门应用程序</h2><p>以下是一个简单的Streamlit应用程序示例，其中包含一个文本输入框和一个按钮。</p>
 <p>在点击按钮后，应用程序将根据输入的文本显示一条消息。</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> streamlit <span class="token keyword">as</span> st
 
@@ -683,7 +683,7 @@ st<span class="token punctuation">.</span>write<span class="token punctuation">(
 </ul>
 <p><strong>缓存。</strong>这个比较关键，尤其是做机器学习的同学。刚刚说了， Streamlit 组件交互后页面代码会重新执行，如果程序中包含一些复杂的数据处理逻辑（如：读取外部数据、训练模型），就会导致每次交互都要重复执行相同数据处理逻辑，进而导致页面加载时间过长，影响体验。</p>
 <p>加入缓存便可以将第一次处理的结果存到内存，当程序重新执行会从内存读，而不需要重新处理。</p>
-<p>使用方法也简单，在需要缓存的函数加上 @st.cache 装饰器即可。前两天我们讲过 <a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MjM5MjcwMjk4OA==&mid=2247485685&idx=1&sn=bb6d2b9c65f9cb0a87a0224679ae424a&chksm=a6a37f9691d4f68036851435853753e5734cefde69392121bcde0736812cf244163e67b55f11&scene=21#wechat_redirect">Python 装饰器</a>。</p>
+<p>使用方法也简单，在需要缓存的函数加上 @st.cache 装饰器即可。</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">DATE_COLUMN <span class="token operator">=</span> <span class="token string">'date/time'</span>
 DATA_URL <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'https://s3-us-west-2.amazonaws.com/'</span>
             <span class="token string">'streamlit-demo-data/uber-raw-data-sep14.csv.gz'</span><span class="token punctuation">)</span>
@@ -696,92 +696,7 @@ DATA_URL <span class="token operator">=</span> <span class="token punctuation">(
     data<span class="token punctuation">[</span>DATE_COLUMN<span class="token punctuation">]</span> <span class="token operator">=</span> pd<span class="token punctuation">.</span>to_datetime<span class="token punctuation">(</span>data<span class="token punctuation">[</span>DATE_COLUMN<span class="token punctuation">]</span><span class="token punctuation">)</span>
     <span class="token keyword">return</span> data<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="八、垃圾分类"><a href="#八、垃圾分类" class="headerlink" title="八、垃圾分类"></a>八、垃圾分类</h3><p>最后讲解垃圾分类APP的代码，前面介绍几大类组件在该 APP 都有涉及。</p>
-<p>垃圾分类模型我用的是天行 API ，大家可以去 <a target="_blank" rel="noopener" href="https://www.tianapi.com/">https://www.tianapi.com/</a> 注册账号，获取 appkey，开通“图像垃圾分类” 接口即可。</p>
-<p>接口的输入如下：</p>
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a0af3b505f694dbd96c480a5953fa0c2~tplv-k3u1fbpfcp-zoom-1.image" alt="img"></p>
-<p>除了key外，其他 3 个参数需要用 Streamlit 组件实现，代码如下：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> base64
-
-<span class="token keyword">import</span> requests
-<span class="token keyword">import</span> streamlit <span class="token keyword">as</span> st
-<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
-<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
-
-add_selectbox <span class="token operator">=</span> st<span class="token punctuation">.</span>sidebar<span class="token punctuation">.</span>selectbox<span class="token punctuation">(</span>
-    <span class="token string">"图片来源"</span><span class="token punctuation">,</span>
-    <span class="token punctuation">(</span><span class="token string">"本地上传"</span><span class="token punctuation">,</span> <span class="token string">"URL"</span><span class="token punctuation">)</span>
-<span class="token punctuation">)</span>
-
-uploaded_file <span class="token operator">=</span> <span class="token boolean">None</span>
-img_url <span class="token operator">=</span> <span class="token boolean">None</span>
-
-<span class="token keyword">if</span> add_selectbox <span class="token operator">==</span> <span class="token string">'本地上传'</span><span class="token punctuation">:</span>
-    uploaded_file <span class="token operator">=</span> st<span class="token punctuation">.</span>sidebar<span class="token punctuation">.</span>file_uploader<span class="token punctuation">(</span>label<span class="token operator">=</span><span class="token string">'上传图片'</span><span class="token punctuation">)</span>
-<span class="token keyword">else</span><span class="token punctuation">:</span>
-    img_url <span class="token operator">=</span> st<span class="token punctuation">.</span>sidebar<span class="token punctuation">.</span>text_input<span class="token punctuation">(</span><span class="token string">'图片url'</span><span class="token punctuation">)</span>
-
-cls_mode <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'严格模式'</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'模糊模式'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">&#125;</span>
-mode_name <span class="token operator">=</span> st<span class="token punctuation">.</span>sidebar<span class="token punctuation">.</span>radio<span class="token punctuation">(</span><span class="token string">'分类模式'</span><span class="token punctuation">,</span> cls_mode<span class="token punctuation">)</span>
-mode <span class="token operator">=</span> cls_mode<span class="token punctuation">[</span>mode_name<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>使用了 3 个输入组件，因为 img 和 imgurl 是二选一，所以我们用下拉单选框控制仅展示一个组件。</p>
-<p>当输入图片后，我们希望在页面上将图片展示出来</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 请求结果</span>
-img_base64 <span class="token operator">=</span> <span class="token boolean">None</span>
-<span class="token keyword">if</span> uploaded_file<span class="token punctuation">:</span>
-    st<span class="token punctuation">.</span>image<span class="token punctuation">(</span>uploaded_file<span class="token punctuation">,</span> caption<span class="token operator">=</span><span class="token string">'本地图片'</span><span class="token punctuation">)</span>
-
-    base64_data <span class="token operator">=</span> base64<span class="token punctuation">.</span>b64encode<span class="token punctuation">(</span>uploaded_file<span class="token punctuation">.</span>getvalue<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    img_base64 <span class="token operator">=</span> base64_data<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-<span class="token keyword">if</span> img_url<span class="token punctuation">:</span>
-    st<span class="token punctuation">.</span>image<span class="token punctuation">(</span>img_url<span class="token punctuation">,</span> caption<span class="token operator">=</span><span class="token string">'网络图片'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>使用 image 多媒体组件即可。如果是本地图片，需要将其转成 base64 编码的字符串。</p>
-<p>最后，请求接口，获取分类结果即可</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">if</span> img_base64 <span class="token keyword">or</span> img_url<span class="token punctuation">:</span>
-    cls_res <span class="token operator">=</span> get_img_cls_res<span class="token punctuation">(</span>img_base64<span class="token punctuation">,</span> img_url<span class="token punctuation">,</span> mode<span class="token punctuation">)</span>
-    lajitype_to_name <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token number">0</span><span class="token punctuation">:</span> <span class="token string">'可回收物'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">:</span> <span class="token string">'有害垃圾'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">:</span> <span class="token string">'厨余垃圾'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">:</span> <span class="token string">'其他垃圾'</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">:</span> <span class="token string">'无法识别'</span><span class="token punctuation">&#125;</span>
-
-    <span class="token keyword">if</span> cls_res<span class="token punctuation">.</span>status_code <span class="token operator">==</span> <span class="token number">200</span><span class="token punctuation">:</span>
-        cls_df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>cls_res<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'newslist'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-        cls_df<span class="token punctuation">[</span><span class="token string">'分类'</span><span class="token punctuation">]</span> <span class="token operator">=</span> cls_df<span class="token punctuation">.</span>index<span class="token punctuation">.</span>astype<span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'-'</span> <span class="token operator">+</span> cls_df<span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">'-'</span> <span class="token operator">+</span> cls_df<span class="token punctuation">[</span><span class="token string">'lajitype'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> lajitype_to_name<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">)</span>
-        cls_df<span class="token punctuation">[</span><span class="token string">'置信度'</span><span class="token punctuation">]</span> <span class="token operator">=</span> cls_df<span class="token punctuation">[</span><span class="token string">'trust'</span><span class="token punctuation">]</span>
-        cls_df<span class="token punctuation">.</span>set_index<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"分类"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> inplace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span>cls_df<span class="token punctuation">)</span>
-        st<span class="token punctuation">.</span>bar_chart<span class="token punctuation">(</span>cls_df<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'置信度'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-    <span class="token keyword">else</span><span class="token punctuation">:</span>
-        st<span class="token punctuation">.</span>write<span class="token punctuation">(</span>cls_res<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>get_img_cls_res 函数是请求接口的函数</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">get_img_cls_res</span><span class="token punctuation">(</span>img_base64<span class="token punctuation">,</span> img_url<span class="token punctuation">,</span> mode<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    url <span class="token operator">=</span> <span class="token string">'https://api.tianapi.com/txapi/imglajifenlei/index'</span>
-    headers <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-        <span class="token string">'Content-Type'</span><span class="token punctuation">:</span> <span class="token string">'application/x-www-form-urlencoded'</span>
-    <span class="token punctuation">&#125;</span>
-    body <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-        <span class="token string">'key'</span><span class="token punctuation">:</span> <span class="token string">'APPKEY'</span><span class="token punctuation">,</span>
-        <span class="token string">'mode'</span><span class="token punctuation">:</span> mode
-    <span class="token punctuation">&#125;</span>
-
-    <span class="token keyword">if</span> img_base64<span class="token punctuation">:</span>
-        body<span class="token punctuation">[</span><span class="token string">"img"</span><span class="token punctuation">]</span> <span class="token operator">=</span> img_base64
-    <span class="token keyword">if</span> img_url<span class="token punctuation">:</span>
-        body<span class="token punctuation">[</span><span class="token string">'imgurl'</span><span class="token punctuation">]</span> <span class="token operator">=</span> img_url
-
-    response <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">,</span> data<span class="token operator">=</span>body<span class="token punctuation">)</span>
-
-    <span class="token keyword">return</span> response<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>根据返回的数据格式，将数据按照置信度（trust）展示成一个柱状图</p>
-<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0d9c1617486e4771b8262b11e95c41aa~tplv-k3u1fbpfcp-zoom-1.image" alt="img" style="zoom: 50%;" />
-
-<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/07135a6d8f264e3f86a0b77aada0f598~tplv-k3u1fbpfcp-zoom-1.image" alt="img" style="zoom:50%;" />
-
-
-
-<h3 id="九、组件扩展"><a href="#九、组件扩展" class="headerlink" title="九、组件扩展"></a>九、组件扩展</h3><table>
+<h3 id="八、组件扩展（非常重要）"><a href="#八、组件扩展（非常重要）" class="headerlink" title="八、组件扩展（非常重要）"></a>八、组件扩展（非常重要）</h3><table>
 <thead>
 <tr>
 <th align="center">相关地址</th>
@@ -845,7 +760,7 @@ img_base64 <span class="token operator">=</span> <span class="token boolean">Non
 <td align="center"><img src="/images/Streamlit/image-20230325154209254.png" alt="image-20230325154209254" style="zoom:67%;" /></td>
 </tr>
 </tbody></table>
-<h3 id="十、多页面侧边栏"><a href="#十、多页面侧边栏" class="headerlink" title="十、多页面侧边栏"></a>十、多页面侧边栏</h3><p>使用 <a target="_blank" rel="noopener" href="https://docs.streamlit.io/en/stable/api.html#add-widgets-to-sidebar"><code>st.sidebar</code></a>可以轻易的将部件组织在左侧侧边栏。每个传到 <a target="_blank" rel="noopener" href="https://docs.streamlit.io/en/stable/api.html#add-widgets-to-sidebar"><code>st.sidebar</code></a> 的元素将被固定到左边侧边栏, 这样可以让用户在使用UI进行控制的时候专注于关注app内容。</p>
+<h3 id="九、多页面侧边栏"><a href="#九、多页面侧边栏" class="headerlink" title="九、多页面侧边栏"></a>九、多页面侧边栏</h3><p>使用 <a target="_blank" rel="noopener" href="https://docs.streamlit.io/en/stable/api.html#add-widgets-to-sidebar"><code>st.sidebar</code></a>可以轻易的将部件组织在左侧侧边栏。每个传到 <a target="_blank" rel="noopener" href="https://docs.streamlit.io/en/stable/api.html#add-widgets-to-sidebar"><code>st.sidebar</code></a> 的元素将被固定到左边侧边栏, 这样可以让用户在使用UI进行控制的时候专注于关注app内容。</p>
 <p>例如，若你想添加一个多选框或者滑块到侧边栏，使用<code>st.sidebar.slider</code> 和<code>st.siderbar.selectbox</code> 替换 <code>st.slider</code> 和 <code>st.selectbox</code>即可。</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> streamlit <span class="token keyword">as</span> st
 
@@ -862,7 +777,7 @@ add_slider <span class="token operator">=</span> st<span class="token punctuatio
 <span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>注意</strong>：<br>边栏当前不支持以下Streamlit命令：<code>st.write</code>（应使用<code>st.sidebar.markdown()</code>代替），<code>st.echo</code>和<code>st.spinner</code>。</p>
-<h2 id="Streamlit中使用HTML语法"><a href="#Streamlit中使用HTML语法" class="headerlink" title="Streamlit中使用HTML语法"></a>Streamlit中使用HTML语法</h2><h3 id="一、st-markdown"><a href="#一、st-markdown" class="headerlink" title="一、st.markdown"></a>一、st.markdown</h3><p>使用 <strong>st.markdown</strong> 撰写前端语言，需要启用它的可选参数 unsafe_allow_html&#x3D;True 。</p>
+<h2 id="使用HTML语法"><a href="#使用HTML语法" class="headerlink" title="使用HTML语法"></a>使用HTML语法</h2><h3 id="一、st-markdown"><a href="#一、st-markdown" class="headerlink" title="一、st.markdown"></a>一、st.markdown</h3><p>使用 <strong>st.markdown</strong> 撰写前端语言，需要启用它的可选参数 unsafe_allow_html&#x3D;True 。</p>
 <p>markdown是一种轻量级标记语言，它很容易转换为HTML。而HTML就是构成网页骨架的语言，所以我们启用st.markdown的 unsafe_allow_html 后，便可以在st.markdown内撰写HTML或CSS。</p>
 <p><strong>上图2演示了用st.markdown撰写CSS来修改st组件的样式（直接复制粘贴应当无效）。</strong></p>
 <p>下图3演示了用st.markdown<strong>撰写HTML</strong>为st添加一个极简的自定义组件：</p>
@@ -878,11 +793,8 @@ st<span class="token punctuation">.</span>button<span class="token punctuation">
 <p>图3 演示被其他st组件包围的st.markdown效果</p>
 <p>所以，用<strong>st.markdown</strong>撰写前端代码的特点如下：</p>
 <ul>
-<li><ul>
 <li><strong>优点</strong>：不用重复导入；如果撰写HTML代码，代码和其他组件都在主页面内；便于添加和修改主页面的CSS样式</li>
 <li><strong>缺点</strong>：不能用于撰写JavaScript；撰写HTML则不方便自由调整宽高；有被Streamlit官方弃用的风险</li>
-</ul>
-</li>
 </ul>
 <h3 id="二、html"><a href="#二、html" class="headerlink" title="二、html()"></a>二、html()</h3><p>为了便于使用<strong>streamlit.compoents.v1.html</strong>，一般需要单独导入。</p>
 <p>html()接受四个参数：html（html代码，str）、width（页面宽度，int）、height（页面高度，int）、scrolling（是否允许滚动，bool）。</p>
@@ -1422,7 +1334,7 @@ html<span class="token punctuation">(</span><span class="token string-interpolat
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">181k</span>
+                        class="white-color">180.4k</span>
             
             
             

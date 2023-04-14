@@ -951,7 +951,7 @@ vector<span class="token operator">&lt;</span><span class="token keyword">int</s
 <p><strong>所以我们要去重的是同一树层上的“使用过”，同一树枝上的都是一个组合里的元素，不用去重</strong>。</p>
 <p>为了理解去重我们来举一个例子，candidates &#x3D; [1, 1, 2], target &#x3D; 3，（方便起见candidates已经排序了）</p>
 <p><strong>强调一下，树层去重的话，需要对数组排序！</strong>选择过程树形结构如图所示：</p>
-<img src="https://img-blog.csdnimg.cn/20201123202736384.png" alt="40.组合总和II" style="zoom: 40%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
+<img src="/images/%E7%AE%97%E6%B3%95-%E6%9A%B4%E6%90%9C%E5%9B%9E%E6%BA%AF/image-20230414184812237.png" alt="树形结构" style="zoom: 67%;box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;" />
 
 <p>可以看到图中，每个节点相对于 39.组合总和 多加了used数组，这个used数组下面会重点介绍。</p>
 <ol>
@@ -994,7 +994,7 @@ vector<span class="token operator">&lt;</span><span class="token keyword">int</s
 <li>而 used[i - 1] &#x3D;&#x3D; true，说明是进入下一层递归，去下一个数，所以是树枝上</li>
 </ul>
 <p>如图所示：</p>
-<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20221021163812.png" alt="img" style="zoom: 40%; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;" />
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20221021163812.png" alt="" style="zoom: 40%; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;" />
 
 <p>完整代码如下，已经剪枝了：</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
@@ -1429,7 +1429,7 @@ vector<span class="token operator">&lt;</span><span class="token keyword">int</s
 <li>确定递归的终止条件</li>
 </ol>
 <p>从图中可以看出：</p>
-<img src="https://img-blog.csdnimg.cn/202011232041348.png" alt="78.子集" style="zoom: 50%; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;" />
+<img src="/images/%E7%AE%97%E6%B3%95-%E6%9A%B4%E6%90%9C%E5%9B%9E%E6%BA%AF/image-20230414185237969.png" style="zoom: 80%; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;" />
 
 <p>剩余集合为空的时候，就是叶子节点。那么什么时候剩余集合为空呢？</p>
 <p>就是startIndex已经大于数组的长度了，就终止了，因为没有元素可取了，代码如下:</p>
@@ -1572,8 +1572,10 @@ vector<span class="token operator">&lt;</span><span class="token keyword">int</s
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ol start="3">
-<li><p>单层搜索逻辑</p>
-<p><img src="https://img-blog.csdnimg.cn/20201124200229824.png" alt="递增子序列" style="zoom:67%;box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;" /> 在图中可以看出，<strong>同一父节点下的同层上使用过的元素就不能再使用了</strong></p>
+<li><p>单层搜索逻辑 </p>
+<img src="/images/%E7%AE%97%E6%B3%95-%E6%9A%B4%E6%90%9C%E5%9B%9E%E6%BA%AF/image-20230414185337352.png" alt="" style="zoom: 80%; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;" />
+
+<p>在图中可以看出，<strong>同一父节点下的同层上使用过的元素就不能再使用了</strong></p>
 <p>那么单层搜索代码如下：</p>
 </li>
 </ol>
@@ -1621,7 +1623,7 @@ vector<span class="token operator">&lt;</span><span class="token keyword">int</s
 <p>给你一个整数 <code>n</code> ，返回所有不同的 <strong>n 皇后问题</strong> 的解决方案。</p>
 <p>每一种解法包含一个不同的 <strong>n 皇后问题</strong> 的棋子放置方案，该方案中 <code>&#39;Q&#39;</code> 和 <code>&#39;.&#39;</code> 分别代表了皇后和空位。</p>
 <p><strong>示例 1：</strong></p>
-<img src="https://assets.leetcode.com/uploads/2020/11/13/queens.jpg" alt="img" style="zoom:50%;box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;" />
+<img src="https://assets.leetcode.com/uploads/2020/11/13/queens.jpg" alt="示例1" style="zoom:50%;box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;" />
 
 <pre class="line-numbers language-none"><code class="language-none">输入：n &#x3D; 4
 输出：[[&quot;.Q..&quot;,&quot;...Q&quot;,&quot;Q...&quot;,&quot;..Q.&quot;],[&quot;..Q.&quot;,&quot;Q...&quot;,&quot;...Q&quot;,&quot;.Q..&quot;]]
@@ -1635,7 +1637,7 @@ vector<span class="token operator">&lt;</span><span class="token keyword">int</s
 </ol>
 <p>确定完约束条件，来看看究竟要怎么去搜索皇后们的位置，其实搜索皇后的位置，可以抽象为一棵树。</p>
 <p>下面我用一个 3 * 3 的棋盘，将搜索过程抽象为一棵树，如图：</p>
-<img src="https://img-blog.csdnimg.cn/20210130182532303.jpg" alt="N皇后" style="zoom:50%;box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;" />
+<img src="/images/%E7%AE%97%E6%B3%95-%E6%9A%B4%E6%90%9C%E5%9B%9E%E6%BA%AF/image-20230414185508792.png" alt="N皇后" style="zoom:50%;box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;" />
 
 
 
@@ -1910,7 +1912,7 @@ vector<span class="token operator">&lt;</span><span class="token keyword">int</s
 </ul>
 <p>假定所有机票至少存在一种合理的行程。且所有的机票 必须都用一次 且 只能用一次。</p>
 <p><strong>示例 1：</strong></p>
-<img src="https://assets.leetcode.com/uploads/2021/03/14/itinerary1-graph.jpg" alt="img" style="zoom:67%;box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;" />
+<img src="https://assets.leetcode.com/uploads/2021/03/14/itinerary1-graph.jpg" alt="示例1" style="zoom:67%;box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;" />
 
 <pre class="line-numbers language-none"><code class="language-none">输入：tickets &#x3D; [[&quot;MUC&quot;,&quot;LHR&quot;],[&quot;JFK&quot;,&quot;MUC&quot;],[&quot;SFO&quot;,&quot;SJC&quot;],[&quot;LHR&quot;,&quot;SFO&quot;]]
 输出：[&quot;JFK&quot;,&quot;MUC&quot;,&quot;LHR&quot;,&quot;SFO&quot;,&quot;SJC&quot;]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -1936,7 +1938,7 @@ unordered_map<span class="token operator">&lt;</span>string<span class="token pu
 <p><strong>注意函数返回值我用的是bool！</strong></p>
 <p>我们之前讲解回溯算法的时候，一般函数返回值都是void，这次为什么是bool呢？</p>
 <p>因为我们只需要找到一个行程，就是在树形结构中唯一的一条通向叶子节点的路线，如图：</p>
-<img src="https://img-blog.csdnimg.cn/2020111518065555.png" alt="332.重新安排行程1" style="zoom: 67%;box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;" />
+<img src="/images/%E7%AE%97%E6%B3%95-%E6%9A%B4%E6%90%9C%E5%9B%9E%E6%BA%AF/image-20230414185555926.png" alt="" style="zoom: 67%;box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;" />
 
 <p>所以找到了这个叶子节点了直接返回，当然本题的targets和result都需要初始化，代码如下：</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> vector<span class="token operator">&lt;</span>string<span class="token operator">></span><span class="token operator">&amp;</span> vec <span class="token operator">:</span> tickets<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -2427,7 +2429,7 @@ result<span class="token punctuation">.</span><span class="token function">push_
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">181k</span>
+                        class="white-color">180.4k</span>
             
             
             
