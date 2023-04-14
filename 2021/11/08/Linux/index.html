@@ -465,8 +465,10 @@
 <li>Ubuntu会默认下载到系统盘，需要移动，切记！！！</li>
 </ul>
 <h3 id="二、WSL的开启或升级"><a href="#二、WSL的开启或升级" class="headerlink" title="二、WSL的开启或升级"></a>二、WSL的开启或升级</h3><p>直接搜索启用或关闭Windows功能</p>
-<p>[总结Windows下安装WSL](<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35333978/article/details/113177819#:~:text=3%EF%BC%8C%E5%8D%87%E7%BA%A7WSL1%E5%88%B0WSL2%E7%9A%84%E6%96%B9%E6%B3%95">https://blog.csdn.net/qq_35333978/article/details/113177819#:~:text=3，升级WSL1到WSL2的方法</a> 1 1，打开win10的设置，搜索windows功能，打开启用或者关闭Windows功能 (win11可能搜不到，需要在控制面板里面搜索) 2,2，勾选以下2个地方，并重启，也有可能是中文名字”虚拟机平台” 3 3，下载WSL2升级包，并点击安装 4 4，以管理打开Powershell，并执行以下命令)</p>
-<p>[总结Windows下安装WSL与升级WSL2的方法_](<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35333978/article/details/113177819#:~:text=3%EF%BC%8C%E5%8D%87%E7%BA%A7WSL1%E5%88%B0WSL2%E7%9A%84%E6%96%B9%E6%B3%95">https://blog.csdn.net/qq_35333978/article/details/113177819#:~:text=3，升级WSL1到WSL2的方法</a> 1 1，打开win10的设置，搜索windows功能，打开启用或者关闭Windows功能 (win11可能搜不到，需要在控制面板里面搜索) 2,2，勾选以下2个地方，并重启，也有可能是中文名字”虚拟机平台” 3 3，下载WSL2升级包，并点击安装 4 4，以管理打开Powershell，并执行以下命令)</p>
+<ul>
+<li>[总结Windows下安装WSL](<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35333978/article/details/113177819#:~:text=3%EF%BC%8C%E5%8D%87%E7%BA%A7WSL1%E5%88%B0WSL2%E7%9A%84%E6%96%B9%E6%B3%95">https://blog.csdn.net/qq_35333978/article/details/113177819#:~:text=3，升级WSL1到WSL2的方法</a> 1 1，打开win10的设置，搜索windows功能，打开启用或者关闭Windows功能 (win11可能搜不到，需要在控制面板里面搜索) 2,2，勾选以下2个地方，并重启，也有可能是中文名字”虚拟机平台” 3 3，下载WSL2升级包，并点击安装 4 4，以管理打开Powershell，并执行以下命令)</li>
+<li>[总结Windows下安装WSL与升级WSL2的方法_](<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35333978/article/details/113177819#:~:text=3%EF%BC%8C%E5%8D%87%E7%BA%A7WSL1%E5%88%B0WSL2%E7%9A%84%E6%96%B9%E6%B3%95">https://blog.csdn.net/qq_35333978/article/details/113177819#:~:text=3，升级WSL1到WSL2的方法</a> 1 1，打开win10的设置，搜索windows功能，打开启用或者关闭Windows功能 (win11可能搜不到，需要在控制面板里面搜索) 2,2，勾选以下2个地方，并重启，也有可能是中文名字”虚拟机平台” 3 3，下载WSL2升级包，并点击安装 4 4，以管理打开Powershell，并执行以下命令)</li>
+</ul>
 <h3 id="三、非系统盘安装Ubuntu"><a href="#三、非系统盘安装Ubuntu" class="headerlink" title="三、非系统盘安装Ubuntu"></a>三、非系统盘安装Ubuntu</h3><p><strong>注意：</strong></p>
 <ol>
 <li><p>如果想使用WSL1，使用管理员权限运行终端，输入wsl –set-default-version 1回车，再打开这个应用;</p>
@@ -526,12 +528,16 @@
 <ul>
 <li><code>\\wsl$</code></li>
 </ul>
-<img src="https://ask.qcloudimg.com/http-save/yehe-8009901/5ocmiyl3g4.png?imageView2/2/w/1620" alt="img" style="zoom: 80%;" />
+<img src="/images/Linux/image-20230414195739477.png" alt="" style="zoom: 80%;" />
 
-<ul>
-<li><code>C:\Users\baimo\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs</code></li>
-</ul>
-<img src="https://ask.qcloudimg.com/http-save/yehe-8009901/xlhbecblzb.png?imageView2/2/w/1620" alt="img" style="zoom:60%;" />
+
+
+
+
+<p>可以在以下路径找</p>
+<p>C:\Users\baimo\AppData\Local\Packages\</p>
+<p>CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs</p>
+<img src="/images/Linux/image-20230414195755827.png" alt="" style="zoom: 80%;" />
 
 <h4 id="5、查看Ubuntu的版本"><a href="#5、查看Ubuntu的版本" class="headerlink" title="5、查看Ubuntu的版本"></a>5、查看Ubuntu的版本</h4><pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">lsb_release -a<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -1040,7 +1046,7 @@ apt list -a docker-ce<span aria-hidden="true" class="line-numbers-rows"><span></
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">177.5k</span>
+                        class="white-color">167.4k</span>
             
             
             
