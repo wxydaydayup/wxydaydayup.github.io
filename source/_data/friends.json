@@ -1,0 +1,80 @@
+[
+{
+    "avatar": "http://image.luokangyuan.com/4027734.jpeg",
+    "name": "闪烁之狐",
+    "introduction": "这个主题就是这个大佬开发",
+    "url": "https://blinkfox.github.io/",
+    "title": "前去学习"
+},
+{
+    "avatar": "https://pic.imgdb.cn/item/63c95688be43e0d30e3f921e.webp",
+    "name": "CS自学指南",
+    "introduction": "北大学长CS自学指南",
+    "url": "https://csdiy.wiki/CS%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/",
+    "title": "前去学习"
+},
+{
+    "avatar": "https://pic1.imgdb.cn/item/636c5ec616f2c2beb18bbf81.png",
+    "name": "代码随想录",
+    "introduction": "循序渐进的刷题计划",
+    "url": "https://www.programmercarl.com/",
+    "title": "前去学习"
+},  
+{
+    "avatar": "https://pic.imgdb.cn/item/63c957d0be43e0d30e41bb8b.png",
+    "name": "labuladong",
+    "introduction": "labuladong力扣题解",
+    "url": "https://labuladong.gitee.io/algo/",
+    "title": "前去学习"
+}, 
+{
+    "avatar": "https://pic.imgdb.cn/item/63fc51e1f144a01007a5ccce.png",
+    "name": "阿秀学习笔记",
+    "introduction": "阿秀学习笔记，基础面试题",
+    "url": "https://interviewguide.cn/",
+    "title": "前去学习"
+}, 
+{
+    "avatar": "https://static.leetcode-cn.com/cn-frontendx-assets/production/_next/static/images/lccn-logo-ce3d56eeedaae618e59e2ec5089e4834.svg",
+    "name": "力扣",
+    "introduction": "力扣刷题，跳转网页",
+    "url": "https://leetcode.cn/",
+    "title": "前去学习"
+}, 
+
+{
+    "avatar": "https://pic.imgdb.cn/item/63e307cc4757feff3391791a.png",
+    "name": "CodeTop",
+    "introduction": "企业面试，算法真题",
+    "url": "https://codetop.cc/home",
+    "title": "前去学习"
+}, 
+{
+    "avatar": "https://pic.imgdb.cn/item/63e3088b4757feff339277f1.jpg",
+    "name": "InterviewTop",
+    "introduction": "企业面试，八股文真题",
+    "url": "http://interviewtop.top/#/index",
+    "title": "前去学习"
+}, 
+{
+    "avatar": "https://pic.imgdb.cn/item/63e305734757feff338da381.png",
+    "name": "东软资料",
+    "introduction": "东软资料，语雀文档",
+    "url": "https://www.yuque.com/books/share/c49f80dd-cc64-43d2-862f-cd4aa2a339a1/fkigca",
+    "title": "前去学习"
+}, 
+{
+    "avatar": "https://pic1.imgdb.cn/item/636c5f7a16f2c2beb18c6dd9.png",
+    "name": "How2J",
+    "introduction": "手把手完成完整项目",
+    "url": "https://how2j.cn/stage/12.html",
+    "title": "前去学习"
+}, 
+{
+    "avatar": "https://pic.imgdb.cn/item/63c91235be43e0d30eb57045.png",
+    "name": "Git游戏",
+    "introduction": "Git可视化游戏",
+    "url": "https://learngitbranching.js.org/?locale=zh_CN",
+    "title": "前去学习"
+}
+]
