@@ -1,0 +1,1946 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Wxy&#39;s blogs">
+    <meta name="description" content="Mysql基础">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Wxy&#39;s blogs</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <style>
+        body{
+            background-image: url(/background.webp);
+            background-repeat:no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+        }
+    </style>
+
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Wxy&#39;s blogs</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-sitemap" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-street-view" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/about">
+          
+          <i class="fas fa-user-circle" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>作者简历</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/contact">
+          
+          <i class="fas fa-dragon" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>宠物之家</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/archives">
+          
+          <i class="fas fa-calendar-days" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>文章日历</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-handshake" style="zoom: 0.6;"></i>
+      
+      <span>工具</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Wxy&#39;s blogs</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-sitemap"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-street-view"></i>
+			
+			关于
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/about " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-user-circle" style="position: absolute;left:50px" ></i>
+			      
+		          <span>作者简历</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/contact " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-dragon" style="position: absolute;left:50px" ></i>
+			      
+		          <span>宠物之家</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/archives " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-calendar-days" style="position: absolute;left:50px" ></i>
+			      
+		          <span>文章日历</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-handshake"></i>
+			
+			工具
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/wxydaydayup/wxydaydayup.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #2193b0;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/wxydaydayup/wxydaydayup.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/homePage/mysql.webp')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title"></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Mysql/">
+                                <span class="chip bg-color">Mysql</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Mysql/" class="post-category">
+                                Mysql
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-11-08
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    8.5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    32 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Mysql基础"><a href="#Mysql基础" class="headerlink" title="Mysql基础"></a>Mysql基础</h1><img src="/images/Mysql%E5%9F%BA%E7%A1%80/image-20221116111013145.png" alt="黑马程序员-Mysql路线" style="zoom: 40%;box-shadow:rgba(0,0,0,0) 0 1px 5px 0px;" />
+
+
+
+<h2 id="Mysql-概述"><a href="#Mysql-概述" class="headerlink" title="Mysql 概述"></a>Mysql 概述</h2><pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">net start mysql //启动命令<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="一、Mysql-数据类型"><a href="#一、Mysql-数据类型" class="headerlink" title="一、Mysql 数据类型"></a>一、Mysql 数据类型</h3><table>
+<thead>
+<tr>
+<th align="center">数据类型</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">boolean</td>
+<td align="center">在mysql中是以 tinyint 存储的</td>
+</tr>
+<tr>
+<td align="center">int</td>
+<td align="center">最大存储数据约为2亿</td>
+</tr>
+<tr>
+<td align="center">bigint</td>
+<td align="center">和Java中的 long意义相同</td>
+</tr>
+<tr>
+<td align="center">float</td>
+<td align="center">不精确小数运算</td>
+</tr>
+<tr>
+<td align="center">double</td>
+<td align="center">不精确小数运算，<br />可以使用decimal(6,2)精确小数运算,最多6位，小数位2位</td>
+</tr>
+<tr>
+<td align="center">char</td>
+<td align="center">定长字符串，不够用空格补齐，<strong>最大长度为255</strong></td>
+</tr>
+<tr>
+<td align="center">varchar</td>
+<td align="center">变长字符串，可以进行图片路径的存储</td>
+</tr>
+<tr>
+<td align="center">date</td>
+<td align="center">年月日的存储，“2022-8-5”或者20220805都可以</td>
+</tr>
+<tr>
+<td align="center">time</td>
+<td align="center">时分秒的存储</td>
+</tr>
+<tr>
+<td align="center">datetime</td>
+<td align="center">年月日时分秒的存储</td>
+</tr>
+<tr>
+<td align="center">year</td>
+<td align="center">只进行年份的存储。<br />插入0，实际存储0000<br />插入“0”，实际存储2000<br />插入1-69，实际存储2001-2069<br />插入70-99，实际存储1970-1999</td>
+</tr>
+<tr>
+<td align="center">timestamp</td>
+<td align="center">输入9999年份会报错，数据范围比较小</td>
+</tr>
+</tbody></table>
+<h3 id="二、Mysql运算符"><a href="#二、Mysql运算符" class="headerlink" title="二、Mysql运算符"></a>二、Mysql运算符</h3><h4 id="1、算术运算符"><a href="#1、算术运算符" class="headerlink" title="1、算术运算符"></a>1、算术运算符</h4><p>Mysql中有 <code>+ - * /</code> 运算符，注意点：</p>
+<ul>
+<li><p><code>+</code>  会把字符串中的数字提取出来 eg： <code>select 1 + &quot;23abc&quot;</code> , 结果为 24</p>
+</li>
+<li><p>日期按指定位计算，eg：日期类型 - 1000 , 实际上会在 倒数第四位减去1，并不是减去1000毫秒</p>
+</li>
+<li><p>Mysql中没有 <code>+=  -=  *=  /=  ++  --</code> 等相关方法进行字符串拼接</p>
+</li>
+</ul>
+<h4 id="2、关系运算符"><a href="#2、关系运算符" class="headerlink" title="2、关系运算符"></a>2、关系运算符</h4><p>Mysql中有 <code>&gt; &lt; &lt;= &gt;= != &lt;&gt;</code>  等运算符，其中 数字，字符，时间等类型都可以进行比较</p>
+<h4 id="3、逻辑运算符"><a href="#3、逻辑运算符" class="headerlink" title="3、逻辑运算符"></a>3、逻辑运算符</h4><table>
+<thead>
+<tr>
+<th>逻辑运算符</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>and 或 &amp;&amp;</td>
+<td>并且（多个条件同时成立）</td>
+</tr>
+<tr>
+<td>or 或 | |</td>
+<td>或者（多个条件任意一个成立）</td>
+</tr>
+<tr>
+<td>not 或 !</td>
+<td>非，不是</td>
+</tr>
+</tbody></table>
+<h3 id="三、Mysql-关键词"><a href="#三、Mysql-关键词" class="headerlink" title="三、Mysql 关键词"></a>三、Mysql 关键词</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">空的判断:
+	<span class="token operator">is</span> <span class="token boolean">null</span> 或者 <span class="token operator">is</span> <span class="token operator">not</span> <span class="token boolean">null</span>
+连续范围查询:
+	<span class="token keyword">where</span> age <span class="token operator">between</span> <span class="token operator">&lt;</span>小的值<span class="token operator">></span> <span class="token operator">and</span> <span class="token operator">&lt;</span>大的值<span class="token operator">></span>
+	<span class="token comment">-- 下面语句不报错，但查不到任何信息</span>
+	<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> employee <span class="token keyword">where</span> age <span class="token operator">between</span> <span class="token number">30</span> <span class="token operator">and</span> <span class="token number">20</span><span class="token punctuation">;</span>
+离散范围查询:
+	<span class="token keyword">where</span> age <span class="token operator">in</span> <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+模糊查询:
+	<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> cat <span class="token keyword">where</span> name <span class="token operator">like</span> <span class="token string">'t%'</span><span class="token punctuation">(</span>第一个字符是t<span class="token punctuation">)</span> 或者 <span class="token operator">like</span> <span class="token string">'_t%'</span><span class="token punctuation">(</span>第二个字符是t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+排序:
+    <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> cat <span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token keyword">asc</span><span class="token punctuation">;</span>  默认升序<span class="token punctuation">(</span>是个子句，前面可以不加<span class="token keyword">where</span><span class="token punctuation">)</span>
+    <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> cat <span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token keyword">desc</span><span class="token punctuation">;</span>   降序
+    <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> cat <span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token keyword">asc</span><span class="token punctuation">,</span>dept <span class="token keyword">desc</span><span class="token punctuation">;</span>
+显示指定的条数<span class="token punctuation">(</span>修改、删除只能<span class="token number">1</span>个参数<span class="token punctuation">)</span>:
+	<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> cat <span class="token keyword">limit</span> <span class="token number">3</span> <span class="token punctuation">(</span><span class="token keyword">limit</span>需要在后面<span class="token punctuation">)</span>
+	<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> cat <span class="token keyword">where</span> age <span class="token operator">>=</span><span class="token number">18</span> <span class="token keyword">limit</span> <span class="token number">3</span> 
+	<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> cat <span class="token keyword">where</span> age <span class="token operator">>=</span><span class="token number">18</span> <span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token keyword">desc</span> <span class="token keyword">limit</span> <span class="token number">3</span> 
+	<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> cat <span class="token keyword">where</span> age <span class="token operator">>=</span><span class="token number">18</span> <span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token keyword">desc</span> <span class="token keyword">limit</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">(</span>从索引<span class="token number">1</span>开始，取<span class="token number">2</span>条<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Mysql-语法及分类"><a href="#Mysql-语法及分类" class="headerlink" title="Mysql 语法及分类"></a>Mysql 语法及分类</h2><ul>
+<li>DDL: 数据定义语言，用来定义数据库对象（数据库、表、字段）</li>
+<li>DML: 数据操作语言，用来对数据库表中的数据进行增删改</li>
+<li>DQL: 数据查询语言，用来查询数据库中表的记录</li>
+<li>DCL: 数据控制语言，用来创建数据库用户、控制数据库的控制权限</li>
+</ul>
+<h3 id="一、DDL"><a href="#一、DDL" class="headerlink" title="一、DDL"></a>一、DDL</h3><h4 id="1、创建数据库"><a href="#1、创建数据库" class="headerlink" title="1、创建数据库"></a>1、创建数据库</h4><blockquote>
+<p>UTF8字符集长度为3字节，有些符号占4字节，所以推荐用utf8mb4字符集</p>
+</blockquote>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">database</span> t1<span class="token punctuation">;</span>
+<span class="token keyword">create</span> <span class="token keyword">database</span> t1 <span class="token keyword">charset</span><span class="token operator">=</span><span class="token string">"utf8mb4"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h4 id="2、查看数据库"><a href="#2、查看数据库" class="headerlink" title="2、查看数据库"></a>2、查看数据库</h4><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 查询所有数据库</span>
+<span class="token keyword">show</span> <span class="token keyword">databases</span><span class="token punctuation">;</span> 
+<span class="token comment">-- 查询当前数据库</span>
+<span class="token keyword">select</span> <span class="token keyword">database</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="3、使用数据库"><a href="#3、使用数据库" class="headerlink" title="3、使用数据库"></a>3、使用数据库</h4><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">use</span> t1<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="4、删除数据库"><a href="#4、删除数据库" class="headerlink" title="4、删除数据库"></a>4、删除数据库</h4><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">drop</span> <span class="token keyword">database</span> <span class="token punctuation">[</span><span class="token keyword">if</span> <span class="token keyword">exists</span><span class="token punctuation">]</span> t1<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="5、查看表"><a href="#5、查看表" class="headerlink" title="5、查看表"></a>5、查看表</h4><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">show</span> <span class="token keyword">tables</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="6、创建表"><a href="#6、创建表" class="headerlink" title="6、创建表"></a>6、创建表</h4><pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">create table cat(name varchar(20),age int,type varchar(20));<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>最后一个字段后面没有逗号</li>
+</ul>
+<h4 id="7、查询表结构"><a href="#7、查询表结构" class="headerlink" title="7、查询表结构"></a>7、查询表结构</h4><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">desc</span> <span class="token operator">&lt;</span>表名<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="二、DML"><a href="#二、DML" class="headerlink" title="二、DML"></a>二、DML</h3><h4 id="1、插入数据"><a href="#1、插入数据" class="headerlink" title="1、插入数据"></a>1、插入数据</h4><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">insert</span> <span class="token keyword">into</span> cat <span class="token keyword">values</span><span class="token punctuation">(</span>“tomcat”<span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span>”test”<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">insert</span> <span class="token keyword">into</span> cat<span class="token punctuation">(</span>name<span class="token punctuation">,</span>age<span class="token punctuation">,</span><span class="token keyword">type</span><span class="token punctuation">)</span> <span class="token keyword">values</span><span class="token punctuation">(</span>“tomcat”<span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span>”string”<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token boolean">null</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">"int"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>注意点：</p>
+<ul>
+<li>顺序保存一致</li>
+<li>类型保持一致</li>
+<li>个数保存一致</li>
+<li>字符串和日期类型数据应该包含在引号中</li>
+<li>插入的数据大小应该在字段的规定范围内</li>
+</ul>
+<h4 id="2、修改数据"><a href="#2、修改数据" class="headerlink" title="2、修改数据"></a>2、修改数据</h4><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">update</span> cat <span class="token keyword">set</span> age <span class="token operator">=</span> <span class="token number">3</span> <span class="token keyword">where</span> name <span class="token operator">=</span> <span class="token string">"1"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="3、删除数据"><a href="#3、删除数据" class="headerlink" title="3、删除数据"></a>3、删除数据</h4><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">delete</span> <span class="token keyword">from</span> cat <span class="token keyword">where</span> name <span class="token operator">=</span> “<span class="token number">1</span>”
+<span class="token keyword">delete</span> <span class="token keyword">from</span> Dept <span class="token keyword">where</span> dptno<span class="token operator">=</span><span class="token string">'Z01'</span> <span class="token operator">and</span> <span class="token keyword">update</span> Pe <span class="token keyword">set</span> age <span class="token operator">=</span> <span class="token number">3</span> <span class="token keyword">where</span> name <span class="token operator">=</span> <span class="token string">"1"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+
+
+
+
+<pre class="line-numbers language-none"><code class="language-none">create trigger TRI_dp on Pe for update 
+as if 
+updata(wage) begin update set wage&#x3D;4000 where exists
+(select wage&lt;4000 from Pe where job&#x3D;&quot;经理”）
+update set wage&#x3D;3500 where exists(select wage&lt;3500 from Pe where job&#x3D;&quot;副经理”） 
+end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="三、DQL"><a href="#三、DQL" class="headerlink" title="三、DQL"></a>三、DQL</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span>
+	字段列表
+<span class="token keyword">from</span>
+	表名字段
+<span class="token keyword">where</span>
+	条件列表
+<span class="token keyword">group</span> <span class="token keyword">by</span>
+	分组字段列表
+<span class="token keyword">having</span>
+	分组后的条件列表
+<span class="token keyword">order</span> <span class="token keyword">by</span>
+	排序字段列表
+<span class="token keyword">limit</span>
+	分页参数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="四、DCL"><a href="#四、DCL" class="headerlink" title="四、DCL"></a>四、DCL</h3><h4 id="管理用户"><a href="#管理用户" class="headerlink" title="管理用户"></a>管理用户</h4><p>查询用户：</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">use mysql;
+select * from user;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>创建用户:<br><code>create user &#39;用户名&#39;@&#39;主机名&#39; identified by &#39;密码&#39;;</code></p>
+<p>修改用户密码：<br><code>alter user &#39;用户名&#39;@&#39;主机名&#39; identified with mysql_native_password by &#39;新密码&#39;;</code></p>
+<p>删除用户：<br><code>drop user &#39;用户名&#39;@&#39;主机名&#39;;</code></p>
+<p>例子：</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">-- 创建用户test，只能在当前主机localhost访问
+create user &#39;test&#39;@&#39;localhost&#39; identified by &#39;123456&#39;;
+-- 创建用户test，能在任意主机访问
+create user &#39;test&#39;@&#39;%&#39; identified by &#39;123456&#39;;
+create user &#39;test&#39; identified by &#39;123456&#39;;
+-- 修改密码
+alter user &#39;test&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;1234&#39;;
+-- 删除用户
+drop user &#39;test&#39;@&#39;localhost&#39;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h5><ul>
+<li>主机名可以使用 % 通配</li>
+</ul>
+<h4 id="权限控制"><a href="#权限控制" class="headerlink" title="权限控制"></a>权限控制</h4><p>常用权限：</p>
+<table>
+<thead>
+<tr>
+<th>权限</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>all,all privileges</td>
+<td>所有权限</td>
+</tr>
+<tr>
+<td>select</td>
+<td>查询数据</td>
+</tr>
+<tr>
+<td>insert</td>
+<td>插入数据</td>
+</tr>
+<tr>
+<td>update</td>
+<td>修改数据</td>
+</tr>
+<tr>
+<td>delete</td>
+<td>删除数据</td>
+</tr>
+<tr>
+<td>alter</td>
+<td>修改表</td>
+</tr>
+<tr>
+<td>dpop</td>
+<td>删除数据库&#x2F;表&#x2F;视图</td>
+</tr>
+<tr>
+<td>create</td>
+<td>创建数据库&#x2F;表</td>
+</tr>
+</tbody></table>
+<p>查询权限：<br><code>show grants for&#39;用户名&#39;@&#39;主机名&#39;;</code></p>
+<p>授予权限：<br><code>grant 权限列表 on 数据库名.表名 to &#39;用户名&#39;@&#39;主机名&#39;;</code></p>
+<p>撤销权限：<br><code>revoke 权限列表 on 数据库名.表名 from &#39;用户名&#39;@&#39;主机名&#39;;</code></p>
+<h5 id="注意事项-1"><a href="#注意事项-1" class="headerlink" title="注意事项"></a>注意事项</h5><ul>
+<li>多个权限用逗号分隔</li>
+<li>授权时，数据库名和表名可以用 * 进行通配，代表所有</li>
+</ul>
+<h2 id="Mysql-函数"><a href="#Mysql-函数" class="headerlink" title="Mysql 函数"></a>Mysql 函数</h2><h3 id="一、Mysql-方法"><a href="#一、Mysql-方法" class="headerlink" title="一、Mysql 方法"></a>一、Mysql 方法</h3><h4 id="1、数值类型方法"><a href="#1、数值类型方法" class="headerlink" title="1、数值类型方法"></a>1、数值类型方法</h4><ul>
+<li>pow()</li>
+<li>pi()</li>
+<li>floor()</li>
+<li>ceil()</li>
+<li>rand() 0-1之间</li>
+</ul>
+<h4 id="2、字符串类型方法"><a href="#2、字符串类型方法" class="headerlink" title="2、字符串类型方法"></a>2、字符串类型方法</h4><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 拼接,字符串拼接，将s1, s2, ..., sn拼接成一个字符串</span>
+<span class="token keyword">select</span> concat<span class="token punctuation">(</span><span class="token string">'Hello'</span><span class="token punctuation">,</span> <span class="token string">'World'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">-- 小写,将字符串全部转为小写</span>
+<span class="token keyword">select</span> lower<span class="token punctuation">(</span><span class="token string">'Hello'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">-- 大写,将字符串全部转为大写</span>
+<span class="token keyword">select</span> upper<span class="token punctuation">(</span><span class="token string">'Hello'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">-- 左填充,用字符串pad对str的左边进行填充，达到n个字符串长度</span>
+<span class="token keyword">select</span> lpad<span class="token punctuation">(</span><span class="token string">'01'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">'-'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">-- 右填充，用字符串pad对str的右边进行填充，达到n个字符串长度</span>
+<span class="token keyword">select</span> rpad<span class="token punctuation">(</span><span class="token string">'01'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">'-'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">-- 去除空格,去掉字符串头部和尾部的空格</span>
+<span class="token keyword">select</span> trim<span class="token punctuation">(</span><span class="token string">' Hello World '</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">-- 切片（起始索引为1）,返回从字符串str从start位置起的len个长度的字符串</span>
+<span class="token keyword">select</span> substring<span class="token punctuation">(</span><span class="token string">'Hello World'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="3、日期类型方法"><a href="#3、日期类型方法" class="headerlink" title="3、日期类型方法"></a>3、日期类型方法</h4><ul>
+<li>now()</li>
+<li>curdate()</li>
+<li>curtime()</li>
+</ul>
+<h3 id="二、Mysql聚合函数"><a href="#二、Mysql聚合函数" class="headerlink" title="二、Mysql聚合函数"></a>二、Mysql聚合函数</h3><ul>
+<li>min(&lt;列名&gt;)</li>
+<li>max(&lt;列名&gt;)</li>
+<li>sum(&lt;列名&gt;)</li>
+<li>avg(&lt;列名&gt;)        空值不计入运算</li>
+<li>count(&lt;列名&gt;)    空值不计入运算</li>
+<li>if(10&gt;2,1,2)		 如果true为1,false为2</li>
+</ul>
+<h3 id="三、Mysql分组查询"><a href="#三、Mysql分组查询" class="headerlink" title="三、Mysql分组查询"></a>三、Mysql分组查询</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">group</span> <span class="token keyword">by</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token keyword">having</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">select</span> <span class="token keyword">type</span><span class="token punctuation">,</span><span class="token function">avg</span><span class="token punctuation">(</span>age<span class="token punctuation">)</span> <span class="token keyword">from</span> cat <span class="token keyword">group</span> <span class="token keyword">by</span> <span class="token keyword">type</span> <span class="token keyword">having</span> <span class="token function">avg</span><span class="token punctuation">(</span>age<span class="token punctuation">)</span><span class="token operator">>=</span><span class="token number">5</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>Mysql关键字的顺序如下</p>
+<p>依次为<code>where,group by...having...,order by,limit</code></p>
+<h2 id="Mysql-约束"><a href="#Mysql-约束" class="headerlink" title="Mysql 约束"></a>Mysql 约束</h2><h3 id="一、Mysql约束"><a href="#一、Mysql约束" class="headerlink" title="一、Mysql约束"></a>一、Mysql约束</h3><table>
+<thead>
+<tr>
+<th>约束</th>
+<th>描述</th>
+<th>关键字</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>非空约束</td>
+<td>限制该字段的数据不能为null</td>
+<td>not null</td>
+</tr>
+<tr>
+<td>唯一约束</td>
+<td>保证该字段的所有数据都是唯一、不重复的</td>
+<td>unique</td>
+</tr>
+<tr>
+<td>主键约束</td>
+<td>主键是一行数据的唯一标识，要求非空且唯一</td>
+<td>primary key</td>
+</tr>
+<tr>
+<td>默认约束</td>
+<td>保存数据时，如果未指定该字段的值，则采用默认值</td>
+<td>default</td>
+</tr>
+<tr>
+<td>外键约束</td>
+<td>用来让两张图的数据之间建立连接，保证数据的一致性和完整性</td>
+<td>foreign key</td>
+</tr>
+<tr>
+<td>检查约束（8.0.1版本后）</td>
+<td>保证字段值满足某一个条件</td>
+<td>check</td>
+</tr>
+</tbody></table>
+<p>约束是作用于表中字段上的，可以再创建表&#x2F;修改表的时候添加约束。</p>
+<h3 id="二、Mysql的三范式"><a href="#二、Mysql的三范式" class="headerlink" title="二、Mysql的三范式"></a>二、Mysql的三范式</h3><h4 id="1、第一范式"><a href="#1、第一范式" class="headerlink" title="1、第一范式"></a>1、第一范式</h4><p>数据库表中的所有字段值都是不可分解的原子值</p>
+<h4 id="2、第二范式"><a href="#2、第二范式" class="headerlink" title="2、第二范式"></a>2、第二范式</h4><p>一个表只具有相同特征和行为的一类事物的值，保证一张表只描述一件事情</p>
+<h4 id="3、第三范式"><a href="#3、第三范式" class="headerlink" title="3、第三范式"></a>3、第三范式</h4><p>表中的字段和主键直接对应不依靠其他中间字段，不存在依赖传递，决定某字段值的必须是主键</p>
+<h2 id="Mysql-多表查询"><a href="#Mysql-多表查询" class="headerlink" title="Mysql 多表查询"></a>Mysql 多表查询</h2><h3 id="一、Mysql表连接"><a href="#一、Mysql表连接" class="headerlink" title="一、Mysql表连接"></a>一、Mysql表连接</h3><h4 id="1、内连接"><a href="#1、内连接" class="headerlink" title="1、内连接"></a>1、内连接</h4><p>两个表中满足条件的数据进行展示，不满足条件的不进行展示，两种写法</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token number">1</span>、<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> a<span class="token punctuation">,</span>b <span class="token keyword">where</span> a<span class="token punctuation">.</span>name <span class="token operator">=</span> b<span class="token punctuation">.</span>name
+<span class="token number">2</span>、<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> a <span class="token keyword">inner</span> <span class="token keyword">join</span> b <span class="token keyword">on</span> a<span class="token punctuation">.</span>name <span class="token operator">=</span> b<span class="token punctuation">.</span>name<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h4 id="2、外连接"><a href="#2、外连接" class="headerlink" title="2、外连接"></a>2、外连接</h4><p>(1) 左外连接 主表 left 从表 </p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> a <span class="token keyword">left</span> <span class="token keyword">outer</span> <span class="token keyword">join</span> b <span class="token keyword">on</span> a<span class="token punctuation">.</span>name <span class="token operator">=</span> b<span class="token punctuation">.</span>name<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(2)右外连接 从表 right 主表</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> b <span class="token keyword">right</span> <span class="token keyword">outer</span> <span class="token keyword">join</span> a <span class="token keyword">on</span> a<span class="token punctuation">.</span>name <span class="token operator">=</span> b<span class="token punctuation">.</span>name<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="3、自连接"><a href="#3、自连接" class="headerlink" title="3、自连接"></a>3、自连接</h4><p>当前表与自身的连接查询，自连接必须使用表别名</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 查询员工及其所属领导的名字</span>
+<span class="token keyword">select</span> a<span class="token punctuation">.</span>name<span class="token punctuation">,</span> b<span class="token punctuation">.</span>name <span class="token keyword">from</span> employee a<span class="token punctuation">,</span> employee b <span class="token keyword">where</span> a<span class="token punctuation">.</span>manager <span class="token operator">=</span> b<span class="token punctuation">.</span>id<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="Mysql-事务"><a href="#Mysql-事务" class="headerlink" title="Mysql 事务"></a>Mysql 事务</h2><h3 id="一、Mysql事务"><a href="#一、Mysql事务" class="headerlink" title="一、Mysql事务"></a>一、Mysql事务</h3><h4 id="1、事务语法"><a href="#1、事务语法" class="headerlink" title="1、事务语法"></a>1、事务语法</h4><pre class="line-numbers language-none"><code class="language-none">begin;
+...
+commit;
+rollback;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2、事务的特性ACID"><a href="#2、事务的特性ACID" class="headerlink" title="2、事务的特性ACID"></a>2、事务的特性ACID</h4><ul>
+<li>原子性(Atomicity)：事务是不可分割的最小操作单元，要么全部成功，要么全部失败</li>
+<li>一致性(Consistency)：事务完成时，必须使所有数据都保持一致状态</li>
+<li>隔离性(Isolation)：数据库系统提供的隔离机制，保证事务在不受外部并发操作影响的独立环境下运行</li>
+<li>持久性(Durability)：事务一旦提交或回滚，它对数据库中的数据的改变就是永久的</li>
+</ul>
+<h4 id="3、事务的隔离级别"><a href="#3、事务的隔离级别" class="headerlink" title="3、事务的隔离级别"></a>3、事务的隔离级别</h4><p>Mysql的默认的隔离级别为可重复读，InnoDB已经消除了幻读</p>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>脏读</td>
+<td>一个事务读到另一个事务还没提交的数据</td>
+</tr>
+<tr>
+<td>不可重复读</td>
+<td>一个事务先后读取同一条记录，但两次读取的数据不同</td>
+</tr>
+<tr>
+<td>幻读</td>
+<td>一个事务按照条件查询数据时，没有对应的数据行，但是再插入数据时，又发现这行数据已经存在</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>这三个问题的详细演示：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Kr4y1i7ru?p=55cd">https://www.bilibili.com/video/BV1Kr4y1i7ru?p=55cd</a> </p>
+</blockquote>
+<p>并发事务隔离级别：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>隔离级别</th>
+<th>脏读</th>
+<th>不可重复读</th>
+<th>幻读</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>读未提交</td>
+<td>Read uncommitted</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>读已提交</td>
+<td>Read committed</td>
+<td>×</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>可重复读</td>
+<td>Repeatable Read(默认)</td>
+<td>×</td>
+<td>×</td>
+<td>√</td>
+</tr>
+<tr>
+<td>串行化</td>
+<td>Serializable</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+</tr>
+</tbody></table>
+<ul>
+<li>√表示在当前隔离级别下该问题会出现</li>
+<li>Serializable 性能最低；Read uncommitted 性能最高，数据安全性最差</li>
+</ul>
+<p>查看事务隔离级别：<br><code>SELECT @@TRANSACTION_ISOLATION;</code></p>
+<p>设置事务隔离级别：<br><code>SET [ SESSION | GLOBAL ] TRANSACTION ISOLATION LEVEL &#123;READ UNCOMMITTED | READ COMMITTED | REPEATABLE READ | SERIALIZABLE &#125;;</code><br>SESSION 是会话级别，表示只针对当前会话有效，GLOBAL 表示对所有会话有效</p>
+<h2 id="Mysql-视图"><a href="#Mysql-视图" class="headerlink" title="Mysql 视图"></a>Mysql 视图</h2><h3 id="一、Mysql视图"><a href="#一、Mysql视图" class="headerlink" title="一、Mysql视图"></a>一、Mysql视图</h3><p>1、不能在视图中删除、添加、修改</p>
+<p>2、视图基于表存在，若表中数据被清理，则视图不能打开。若添加数据满足连接条件，则视图中也会进行展示。</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">view</span> <span class="token operator">&lt;</span>视图名<span class="token operator">></span> <span class="token keyword">as</span> <span class="token punctuation">(</span><span class="token keyword">select</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">(</span>查询的结果<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="Mysql-索引"><a href="#Mysql-索引" class="headerlink" title="Mysql 索引"></a>Mysql 索引</h2><h3 id="一、索引创建"><a href="#一、索引创建" class="headerlink" title="一、索引创建"></a>一、索引创建</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">index</span> <span class="token operator">&lt;</span>索引名<span class="token operator">></span> <span class="token keyword">on</span> <span class="token operator">&lt;</span>表名<span class="token operator">></span><span class="token punctuation">(</span><span class="token operator">&lt;</span>字段名<span class="token operator">></span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>查看效率</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">explain</span> <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> <span class="token operator">&lt;</span>表名<span class="token operator">></span> <span class="token keyword">where</span> id <span class="token operator">=</span> <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>索引字段表格含义</p>
+<table>
+<thead>
+<tr>
+<th>select_type</th>
+<th>type</th>
+<th>possible_keys</th>
+<th>key</th>
+<th>key_len</th>
+<th>rows</th>
+<th>Extra</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>查询的类型</td>
+<td>获取方式</td>
+<td>可能索引</td>
+<td>真正索引</td>
+<td>索引所占空间</td>
+<td>搜索条数</td>
+<td>其他</td>
+</tr>
+</tbody></table>
+<p>详细索引字段表格含义</p>
+<ul>
+<li><strong>id 执行编号</strong> 标识select所属的行。如果在语句中没子查询或关联查询，只有唯一的select，每行都将显示1。否则，内层的select语句一般会顺序编号，对应于其在原始语句中的位置</li>
+<li><strong>select_type</strong>  显示本行是简单或复杂查询。<ul>
+<li>如果查询有任何复杂的子查询，则最外层标记为PRIMARY(DERIVED、UNION、UNION RESUlT)</li>
+</ul>
+</li>
+<li><strong>table</strong> 访问哪个表</li>
+<li><strong>type</strong> 数据访问&#x2F;读取操作类型<ul>
+<li>(ALL、index、range、ref、eq_ref、const&#x2F;system、NULL)</li>
+</ul>
+</li>
+<li><strong>possible_keys</strong> 揭示哪一些索引可能有利于高效的查找</li>
+<li><strong>key</strong> 显示Mysql最终采用哪个索引来优化查询</li>
+<li><strong>key_len</strong> 显示mysql在索引里使用的字节数</li>
+<li><strong>ref</strong> 显示了之前的表在key列记录的索引中查找值所用的列或常量</li>
+<li><strong>rows</strong> 为了找到所需的行而需要读取的行数，估算值，不精确。通过把所有rows列值相乘，可粗略估算整个查询会检查的行数</li>
+<li><strong>Extra</strong> 额外信息，如using index、filesort等</li>
+</ul>
+<h3 id="二、使用规则"><a href="#二、使用规则" class="headerlink" title="二、使用规则"></a>二、使用规则</h3><h4 id="1、最左前缀法则"><a href="#1、最左前缀法则" class="headerlink" title="1、最左前缀法则"></a>1、最左前缀法则</h4><p>如果索引关联了多列（联合索引），要遵守最左前缀法则，最左前缀法则指的是查询从索引的最左列开始，并且不跳过索引中的列。<br>如果跳跃某一列，索引将部分失效（后面的字段索引失效）。</p>
+<p>联合索引中，出现范围查询（&lt;, &gt;），范围查询右侧的列索引失效。可以用&gt;&#x3D;或者&lt;&#x3D;来规避索引失效问题。</p>
+<h4 id="2、索引失效情况"><a href="#2、索引失效情况" class="headerlink" title="2、索引失效情况"></a>2、索引失效情况</h4><ol>
+<li>在索引列上进行运算操作，索引将失效。如：<code>explain select * from tb_user where substring(phone, 10, 2) = &#39;15&#39;;</code></li>
+<li>字符串类型字段使用时，不加引号，索引将失效。如：<code>explain select * from tb_user where phone = 17799990015;</code>，此处phone的值没有加引号</li>
+<li>模糊查询中，如果仅仅是尾部模糊匹配，索引不会是失效；如果是头部模糊匹配，索引失效。如：<code>explain select * from tb_user where profession like &#39;%工程&#39;;</code>，前后都有 % 也会失效。</li>
+<li>用 or 分割开的条件，如果 or 其中一个条件的列没有索引，那么涉及的索引都不会被用到。</li>
+<li>如果 MySQL 评估使用索引比全表更慢，则不使用索引。</li>
+</ol>
+<h4 id="3、SQL-提示"><a href="#3、SQL-提示" class="headerlink" title="3、SQL 提示"></a>3、SQL 提示</h4><p>是优化数据库的一个重要手段，简单来说，就是在SQL语句中加入一些人为的提示来达到优化操作的目的。</p>
+<p>例如，使用索引：<br><code>explain select * from tb_user use index(idx_user_pro) where profession=&quot;软件工程&quot;;</code><br>不使用哪个索引：<br><code>explain select * from tb_user ignore index(idx_user_pro) where profession=&quot;软件工程&quot;;</code><br>必须使用哪个索引：<br><code>explain select * from tb_user force index(idx_user_pro) where profession=&quot;软件工程&quot;;</code></p>
+<p>use 是建议，实际使用哪个索引 MySQL 还会自己权衡运行速度去更改，force就是无论如何都强制使用该索引。</p>
+<h4 id="4、覆盖索引-amp-回表查询"><a href="#4、覆盖索引-amp-回表查询" class="headerlink" title="4、覆盖索引&amp;回表查询"></a>4、覆盖索引&amp;回表查询</h4><p>尽量使用覆盖索引（查询使用了索引，并且需要返回的列，在该索引中已经全部能找到），减少 select *。</p>
+<p>explain 中 extra 字段含义：<br><code>using index condition</code>：查找使用了索引，但是需要回表查询数据<br><code>using where; using index;</code>：查找使用了索引，但是需要的数据都在索引列中能找到，所以不需要回表查询</p>
+<p>如果在聚集索引中直接能找到对应的行，则直接返回行数据，只需要一次查询，哪怕是select *；如果在辅助索引中找聚集索引，如<code>select id, name from xxx where name=&#39;xxx&#39;;</code>，也只需要通过辅助索引(name)查找到对应的id，返回name和name索引对应的id即可，只需要一次查询；如果是通过辅助索引查找其他字段，则需要回表查询，如<code>select id, name, gender from xxx where name=&#39;xxx&#39;;</code></p>
+<p>所以尽量不要用<code>select *</code>，容易出现回表查询，降低效率，除非有联合索引包含了所有字段</p>
+<p>面试题：一张表，有四个字段（id, username, password, status），由于数据量大，需要对以下SQL语句进行优化，该如何进行才是最优方案：<br><code>select id, username, password from tb_user where username=&#39;itcast&#39;;</code></p>
+<p>解：给username和password字段建立联合索引，则不需要回表查询，直接覆盖索引</p>
+<h4 id="5、前缀索引"><a href="#5、前缀索引" class="headerlink" title="5、前缀索引"></a>5、前缀索引</h4><p>当字段类型为字符串（varchar, text等）时，有时候需要索引很长的字符串，这会让索引变得很大，查询时，浪费大量的磁盘IO，影响查询效率，此时可以只降字符串的一部分前缀，建立索引，这样可以大大节约索引空间，从而提高索引效率。</p>
+<p>语法：<code>create index idx_xxxx on table_name(columnn(n));</code><br>前缀长度：可以根据索引的选择性来决定，而选择性是指不重复的索引值（基数）和数据表的记录总数的比值，索引选择性越高则查询效率越高，唯一索引的选择性是1，这是最好的索引选择性，性能也是最好的。<br>求选择性公式：</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select count(distinct email) &#x2F; count(*) from tb_user;
+select count(distinct substring(email, 1, 5)) &#x2F; count(*) from tb_user;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>show index 里面的sub_part可以看到接取的长度</p>
+<h4 id="6、单列索引-amp-联合索引"><a href="#6、单列索引-amp-联合索引" class="headerlink" title="6、单列索引&amp;联合索引"></a>6、单列索引&amp;联合索引</h4><p>单列索引：即一个索引只包含单个列<br>联合索引：即一个索引包含了多个列<br>在业务场景中，如果存在多个查询条件，考虑针对于查询字段建立索引时，建议建立联合索引，而非单列索引。</p>
+<p>单列索引情况：<br><code>explain select id, phone, name from tb_user where phone = &#39;17799990010&#39; and name = &#39;韩信&#39;;</code><br>这句只会用到phone索引字段</p>
+<h5 id="注意事项-2"><a href="#注意事项-2" class="headerlink" title="注意事项"></a>注意事项</h5><ul>
+<li>多条件联合查询时，MySQL优化器会评估哪个字段的索引效率更高，会选择该索引完成本次查询</li>
+</ul>
+<h3 id="三、设计原则"><a href="#三、设计原则" class="headerlink" title="三、设计原则"></a>三、设计原则</h3><ol>
+<li>针对于数据量较大，且查询比较频繁的表建立索引</li>
+<li>针对于常作为查询条件（where）、排序（order by）、分组（group by）操作的字段建立索引</li>
+<li>尽量选择区分度高的列作为索引，尽量建立唯一索引，区分度越高，使用索引的效率越高</li>
+<li>如果是字符串类型的字段，字段长度较长，可以针对于字段的特点，建立前缀索引</li>
+<li>尽量使用联合索引，减少单列索引，查询时，联合索引很多时候可以覆盖索引，节省存储空间，避免回表，提高查询效率</li>
+<li>要控制索引的数量，索引并不是多多益善，索引越多，维护索引结构的代价就越大，会影响增删改的效率</li>
+<li>如果索引列不能存储NULL值，请在创建表时使用NOT NULL约束它。当优化器知道每列是否包含NULL值时，它可以更好地确定哪个索引最有效地用于查询</li>
+</ol>
+<h3 id="四、索引结构"><a href="#四、索引结构" class="headerlink" title="四、索引结构"></a>四、索引结构</h3><table>
+<thead>
+<tr>
+<th>索引结构</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>B+Tree</td>
+<td>最常见的索引类型，大部分引擎都支持B+树索引</td>
+</tr>
+<tr>
+<td>Hash</td>
+<td>底层数据结构是用哈希表实现，只有精确匹配索引列的查询才有效，不支持范围查询</td>
+</tr>
+<tr>
+<td>R-Tree(空间索引)</td>
+<td>空间索引是 MyISAM 引擎的一个特殊索引类型，主要用于地理空间数据类型，通常使用较少</td>
+</tr>
+<tr>
+<td>Full-Text(全文索引)</td>
+<td>是一种通过建立倒排索引，快速匹配文档的方式，类似于 Lucene, Solr, ES</td>
+</tr>
+</tbody></table>
+<hr>
+<table>
+<thead>
+<tr>
+<th>索引</th>
+<th>InnoDB</th>
+<th>MyISAM</th>
+<th>Memory</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>B+Tree索引</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>Hash索引</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>R-Tree索引</td>
+<td>不支持</td>
+<td>支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>Full-text</td>
+<td>5.6版本后支持</td>
+<td>支持</td>
+<td>不支持</td>
+</tr>
+</tbody></table>
+<h4 id="1、B-Tree"><a href="#1、B-Tree" class="headerlink" title="1、B-Tree"></a>1、B-Tree</h4><img src="https://dhc.pythonanywhere.com/media/editor/二叉树_20220316153214227108.png" alt="二叉树" title="二叉树" style="zoom:50%;box-shadow:rgba(0,0,0,0) 0 1px 5px 0px;" />
+
+<p>二叉树的缺点可以用红黑树来解决：</p>
+<img src="https://dhc.pythonanywhere.com/media/editor/红黑树_20220316163142686602.png" alt="红黑树" title="红黑树" style="zoom:50%;box-shadow:rgba(0,0,0,0) 0 1px 5px 0px;" />
+
+<p>红黑树也存在大数据量情况下，层级较深，检索速度慢的问题。</p>
+<p>为了解决上述问题，可以使用 B-Tree 结构。<br>B-Tree (多路平衡查找树) 以一棵最大度数（max-degree，指一个节点的子节点个数）为5（5阶）的 b-tree 为例（每个节点最多存储4个key，5个指针）</p>
+<img src="https://dhc.pythonanywhere.com/media/editor/B-Tree结构_20220316163813441163.png" alt="B-Tree结构" style="zoom:67%;box-shadow:rgba(0,0,0,0) 0 1px 5px 0px;" />
+
+<blockquote>
+<p>B-Tree 的数据插入过程动画参照：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Kr4y1i7ru?p=68">https://www.bilibili.com/video/BV1Kr4y1i7ru?p=68</a><br>演示地址：<a target="_blank" rel="noopener" href="https://www.cs.usfca.edu/~galles/visualization/BTree.html">https://www.cs.usfca.edu/~galles/visualization/BTree.html</a></p>
+</blockquote>
+<h4 id="2、B-Tree"><a href="#2、B-Tree" class="headerlink" title="2、B+Tree"></a>2、B+Tree</h4><p>结构图：</p>
+<img src="https://dhc.pythonanywhere.com/media/editor/B+Tree结构图_20220316170700591277.png" alt="B+Tree结构图" style="zoom:67%;box-shadow:rgba(0,0,0,0) 0 1px 5px 0px;" />
+
+<blockquote>
+<p>演示地址：<a target="_blank" rel="noopener" href="https://www.cs.usfca.edu/~galles/visualization/BPlusTree.html">https://www.cs.usfca.edu/~galles/visualization/BPlusTree.html</a></p>
+</blockquote>
+<p>与 B-Tree 的区别：</p>
+<ul>
+<li>所有的数据都会出现在叶子节点</li>
+<li>叶子节点形成一个单向链表</li>
+</ul>
+<p>MySQL 索引数据结构对经典的 B+Tree 进行了优化。在原 B+Tree 的基础上，增加一个指向相邻叶子节点的链表指针，就形成了带有顺序指针的 B+Tree，提高区间访问的性能。</p>
+<img src="https://dhc.pythonanywhere.com/media/editor/结构图_20220316171730865611.png" alt="MySQL B+Tree 结构图" style="zoom:67%;box-shadow:rgba(0,0,0,0) 0 1px 5px 0px;" />
+
+<h4 id="3、Hash"><a href="#3、Hash" class="headerlink" title="3、Hash"></a>3、Hash</h4><p>哈希索引就是采用一定的hash算法，将键值换算成新的hash值，映射到对应的槽位上，然后存储在hash表中。<br>如果两个（或多个）键值，映射到一个相同的槽位上，他们就产生了hash冲突（也称为hash碰撞），可以通过链表来解决。</p>
+<img src="https://dhc.pythonanywhere.com/media/editor/Hash索引原理图_20220317143226150679.png" alt="Hash索引原理图" style="zoom: 50%; box-shadow: rgba(0, 0, 0, 0) 0px 1px 5px 0px;" />
+
+<p>特点：</p>
+<ul>
+<li>Hash索引只能用于对等比较（&#x3D;、in），不支持范围查询（betwwn、&gt;、&lt;、…）</li>
+<li>无法利用索引完成排序操作</li>
+<li>查询效率高，通常只需要一次检索就可以了，效率通常要高于 B+Tree 索引</li>
+</ul>
+<p>存储引擎支持：</p>
+<ul>
+<li>Memory</li>
+<li>InnoDB: 具有自适应hash功能，hash索引是存储引擎根据 B+Tree 索引在指定条件下自动构建的</li>
+</ul>
+<h4 id="4、面试题"><a href="#4、面试题" class="headerlink" title="4、面试题"></a>4、面试题</h4><ol>
+<li>为什么 InnoDB 存储引擎选择使用 B+Tree 索引结构？</li>
+</ol>
+<ul>
+<li>相对于二叉树，层级更少，搜索效率高</li>
+<li>对于 B-Tree，无论是叶子节点还是非叶子节点，都会保存数据，这样导致一页中存储的键值减少，指针也跟着减少，要同样保存大量数据，只能增加树的高度，导致性能降低</li>
+<li>相对于 Hash 索引，B+Tree 支持范围匹配及排序操作</li>
+</ul>
+<h3 id="五、索引分类"><a href="#五、索引分类" class="headerlink" title="五、索引分类"></a>五、索引分类</h3><table>
+<thead>
+<tr>
+<th>分类</th>
+<th>含义</th>
+<th>特点</th>
+<th>关键字</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>主键索引</td>
+<td>针对于表中主键创建的索引</td>
+<td>默认自动创建，只能有一个</td>
+<td>PRIMARY</td>
+</tr>
+<tr>
+<td>唯一索引</td>
+<td>避免同一个表中某数据列中的值重复</td>
+<td>可以有多个</td>
+<td>UNIQUE</td>
+</tr>
+<tr>
+<td>常规索引</td>
+<td>快速定位特定数据</td>
+<td>可以有多个</td>
+<td></td>
+</tr>
+<tr>
+<td>全文索引</td>
+<td>全文索引查找的是文本中的关键词，而不是比较索引中的值</td>
+<td>可以有多个</td>
+<td>FULLTEXT</td>
+</tr>
+</tbody></table>
+<p>在 InnoDB 存储引擎中，根据索引的存储形式，又可以分为以下两种：</p>
+<table>
+<thead>
+<tr>
+<th>分类</th>
+<th>含义</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>聚集索引(Clustered Index)</td>
+<td>将数据存储与索引放一块，索引结构的叶子节点保存了行数据</td>
+<td>必须有，而且只有一个</td>
+</tr>
+<tr>
+<td>二级索引(Secondary Index)</td>
+<td>将数据与索引分开存储，索引结构的叶子节点关联的是对应的主键</td>
+<td>可以存在多个</td>
+</tr>
+</tbody></table>
+<p>演示图：</p>
+<img src="https://dhc.pythonanywhere.com/media/editor/原理图_20220318194454880073.png" alt="大致原理" style="zoom: 50%; box-shadow: rgba(0, 0, 0, 0) 0px 1px 5px 0px;" />
+<img src="https://dhc.pythonanywhere.com/media/editor/演示图_20220319215403721066.png" alt="演示图" title="演示图" style="zoom: 50%; box-shadow: rgba(0, 0, 0, 0) 0px 1px 5px 0px;" />
+
+<p>聚集索引选取规则：</p>
+<ul>
+<li>如果存在主键，主键索引就是聚集索引</li>
+<li>如果不存在主键，将使用第一个唯一(UNIQUE)索引作为聚集索引</li>
+<li>如果表没有主键或没有合适的唯一索引，则 InnoDB 会自动生成一个 rowid 作为隐藏的聚集索引</li>
+</ul>
+<p><strong>思考题</strong></p>
+<p>1. 以下 SQL 语句，哪个执行效率高？为什么？</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select * from user where id &#x3D; 10;
+select * from user where name &#x3D; &#39;Arm&#39;;
+-- 备注：id为主键，name字段创建的有索引<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>答：第一条语句，因为第二条需要回表查询，相当于两个步骤。</p>
+<p>2. InnoDB 主键索引的 B+Tree 高度为多少？</p>
+<p>答：假设一行数据大小为1k，一页中可以存储16行这样的数据。InnoDB 的指针占用6个字节的空间，主键假设为bigint，占用字节数为8.<br>可得公式：<code>n * 8 + (n + 1) * 6 = 16 * 1024</code>，其中 8 表示 bigint 占用的字节数，n 表示当前节点存储的key的数量，(n + 1) 表示指针数量（比key多一个）。算出n约为1170。</p>
+<p>如果树的高度为2，那么他能存储的数据量大概为：<code>1171 * 16 = 18736</code>；<br>如果树的高度为3，那么他能存储的数据量大概为：<code>1171 * 1171 * 16 = 21939856</code>。</p>
+<h2 id="SQL-优化"><a href="#SQL-优化" class="headerlink" title="SQL 优化"></a>SQL 优化</h2><h3 id="一、插入数据"><a href="#一、插入数据" class="headerlink" title="一、插入数据"></a>一、插入数据</h3><p>普通插入：</p>
+<ol>
+<li>采用批量插入（一次插入的数据不建议超过1000条）</li>
+<li>手动提交事务</li>
+<li>主键顺序插入</li>
+</ol>
+<p>大批量插入：<br>如果一次性需要插入大批量数据，使用insert语句插入性能较低，此时可以使用MySQL数据库提供的load指令插入。</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql"># 客户端连接服务端时，加上参数 --local-infile（这一行在bash&#x2F;cmd界面输入）
+mysql --local-infile -u root -p
+# 设置全局参数local_infile为1，开启从本地加载文件导入数据的开关
+set global local_infile &#x3D; 1;
+select @@local_infile;
+# 执行load指令将准备好的数据，加载到表结构中
+load data local infile &#39;&#x2F;root&#x2F;sql1.log&#39; into table &#39;tb_user&#39; fields terminated by &#39;,&#39; lines terminated by &#39;\n&#39;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="二、主键优化"><a href="#二、主键优化" class="headerlink" title="二、主键优化"></a>二、主键优化</h3><p>数据组织方式：在InnoDB存储引擎中，表数据都是根据主键顺序组织存放的，这种存储方式的表称为索引组织表（Index organized table, IOT）</p>
+<p>页分裂：页可以为空，也可以填充一般，也可以填充100%，每个页包含了2-N行数据（如果一行数据过大，会行溢出），根据主键排列。<br>页合并：当删除一行记录时，实际上记录并没有被物理删除，只是记录被标记（flaged）为删除并且它的空间变得允许被其他记录声明使用。当页中删除的记录到达 MERGE_THRESHOLD（默认为页的50%），InnoDB会开始寻找最靠近的页（前后）看看是否可以将这两个页合并以优化空间使用。</p>
+<p>MERGE_THRESHOLD：合并页的阈值，可以自己设置，在创建表或创建索引时指定</p>
+<blockquote>
+<p>文字说明不够清晰明了，具体可以看视频里的PPT演示过程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Kr4y1i7ru?p=90">https://www.bilibili.com/video/BV1Kr4y1i7ru?p=90</a></p>
+</blockquote>
+<p>主键设计原则：</p>
+<ul>
+<li>满足业务需求的情况下，尽量降低主键的长度</li>
+<li>插入数据时，尽量选择顺序插入，选择使用 AUTO_INCREMENT 自增主键</li>
+<li>尽量不要使用 UUID 做主键或者是其他的自然主键，如身份证号</li>
+<li>业务操作时，避免对主键的修改</li>
+</ul>
+<h3 id="三、order-by优化"><a href="#三、order-by优化" class="headerlink" title="三、order by优化"></a>三、order by优化</h3><ol>
+<li>Using filesort：通过表的索引或全表扫描，读取满足条件的数据行，然后在排序缓冲区 sort buffer 中完成排序操作，所有不是通过索引直接返回排序结果的排序都叫 FileSort 排序</li>
+<li>Using index：通过有序索引顺序扫描直接返回有序数据，这种情况即为 using index，不需要额外排序，操作效率高</li>
+</ol>
+<p>如果order by字段全部使用升序排序或者降序排序，则都会走索引，但是如果一个字段升序排序，另一个字段降序排序，则不会走索引，explain的extra信息显示的是<code>Using index, Using filesort</code>，如果要优化掉Using filesort，则需要另外再创建一个索引，如：<code>create index idx_user_age_phone_ad on tb_user(age asc, phone desc);</code>，此时使用<code>select id, age, phone from tb_user order by age asc, phone desc;</code>会全部走索引</p>
+<p>总结：</p>
+<ul>
+<li>根据排序字段建立合适的索引，多字段排序时，也遵循最左前缀法则</li>
+<li>尽量使用覆盖索引</li>
+<li>多字段排序，一个升序一个降序，此时需要注意联合索引在创建时的规则（ASC&#x2F;DESC）</li>
+<li>如果不可避免出现filesort，大数据量排序时，可以适当增大排序缓冲区大小 sort_buffer_size（默认256k）</li>
+</ul>
+<h3 id="四、group-by优化"><a href="#四、group-by优化" class="headerlink" title="四、group by优化"></a>四、group by优化</h3><ul>
+<li>在分组操作时，可以通过索引来提高效率</li>
+<li>分组操作时，索引的使用也是满足最左前缀法则的</li>
+</ul>
+<p>如索引为<code>idx_user_pro_age_stat</code>，则句式可以是<code>select ... where profession order by age</code>，这样也符合最左前缀法则</p>
+<h3 id="五、limit优化"><a href="#五、limit优化" class="headerlink" title="五、limit优化"></a>五、limit优化</h3><p>常见的问题如<code>limit 2000000, 10</code>，此时需要 MySQL 排序前2000000条记录，但仅仅返回2000000 - 2000010的记录，其他记录丢弃，查询排序的代价非常大。<br>优化方案：一般分页查询时，通过创建覆盖索引能够比较好地提高性能，可以通过覆盖索引加子查询形式进行优化</p>
+<p>例如：</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">-- 此语句耗时很长
+select * from tb_sku limit 9000000, 10;
+-- 通过覆盖索引加快速度，直接通过主键索引进行排序及查询
+select id from tb_sku order by id limit 9000000, 10;
+-- 下面的语句是错误的，因为 MySQL 不支持 in 里面使用 limit
+-- select * from tb_sku where id in (select id from tb_sku order by id limit 9000000, 10);
+-- 通过连表查询即可实现第一句的效果，并且能达到第二句的速度
+select * from tb_sku as s, (select id from tb_sku order by id limit 9000000, 10) as a where s.id &#x3D; a.id;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="六、count优化"><a href="#六、count优化" class="headerlink" title="六、count优化"></a>六、count优化</h3><p>MyISAM 引擎把一个表的总行数存在了磁盘上，因此执行 count(*) 的时候会直接返回这个数，效率很高（前提是不适用where）；<br>InnoDB 在执行 count(*) 时，需要把数据一行一行地从引擎里面读出来，然后累计计数。<br>优化方案：自己计数，如创建key-value表存储在内存或硬盘，或者是用redis</p>
+<p>count的几种用法：</p>
+<ul>
+<li>如果count函数的参数（count里面写的那个字段）不是NULL（字段值不为NULL），累计值就加一，最后返回累计值</li>
+<li>用法：count(*)、count(主键)、count(字段)、count(1)</li>
+<li>count(主键)跟count(*)一样，因为主键不能为空；count(字段)只计算字段值不为NULL的行；count(1)引擎会为每行添加一个1，然后就count这个1，返回结果也跟count(*)一样；count(null)返回0</li>
+</ul>
+<p>各种用法的性能：</p>
+<ul>
+<li>count(主键)：InnoDB引擎会遍历整张表，把每行的主键id值都取出来，返回给服务层，服务层拿到主键后，直接按行进行累加（主键不可能为空）</li>
+<li>count(字段)：没有not null约束的话，InnoDB引擎会遍历整张表把每一行的字段值都取出来，返回给服务层，服务层判断是否为null，不为null，计数累加；有not null约束的话，InnoDB引擎会遍历整张表把每一行的字段值都取出来，返回给服务层，直接按行进行累加</li>
+<li>count(1)：InnoDB 引擎遍历整张表，但不取值。服务层对于返回的每一层，放一个数字 1 进去，直接按行进行累加</li>
+<li>count(*)：InnoDB 引擎并不会把全部字段取出来，而是专门做了优化，不取值，服务层直接按行进行累加</li>
+</ul>
+<p>按效率排序：count(字段) &lt; count(主键) &lt; count(1) &lt; count(*)，所以尽量使用 count(*)</p>
+<h3 id="七、update优化（避免行锁升级为表锁）"><a href="#七、update优化（避免行锁升级为表锁）" class="headerlink" title="七、update优化（避免行锁升级为表锁）"></a>七、update优化（避免行锁升级为表锁）</h3><p>InnoDB 的行锁是针对索引加的锁，不是针对记录加的锁，并且该索引不能失效，否则会从行锁升级为表锁。</p>
+<p>如以下两条语句：<br><code>update student set no = &#39;123&#39; where id = 1;</code>，这句由于id有主键索引，所以只会锁这一行；<br><code>update student set no = &#39;123&#39; where name = &#39;test&#39;;</code>，这句由于name没有索引，所以会把整张表都锁住进行数据更新，解决方法是给name字段添加索引</p>
+<p>1、MySQL 数据库什么情况下索引无效</p>
+<p>1.1、什么情况下有索引，但用不上？<br>如果条件中有 or，即使其中有部分条件带索引也不会使用。<br>注意：要想使用 or，又想让索引生效，只能将 or 条件中的每个列都加上索引。<br>Like 查询以%开头，不使用索引<br>存在索引列的数据类型隐形转换，则用不上索引，比如列类型是字符串，那一定要在条件中将数据<br>使用引号引用起来, 否则不使用索引<br>Where 子句里对索引列上有数学运算，用不上索引<br>Where 子句中对索引列使用函数，用不上索引<br>Mysql 预测使用全表扫描要比用索引快，不使用索引<br>1.2、什么情况下不推荐使用索引？<br>数据唯一性差的字段不要使用索引<br>频繁更新的字段不要使用索引<br>字段不在 where 语句中出现时不要添加索引，如果 where 后含 IS NULL&#x2F;IS NOT NULL&#x2F;LIKE ‘%输<br>入符%’等条件，不要使用索引<br>Where 子句里对索引使用不等于（&lt;&gt;），不建议使用索引</p>
+<p>2、MySQL优化会不会、mycat 分库，垂直分库，水平分库?</p>
+<p>(1) 查询慢查询日志<br>(2) 基于explain 查询 是否走索引<br>(3) 只需要一行数据时使用 limit 1<br>(4) 为搜索字段添加索引<br>(5) 千万不要 ORDER BY RAND()<br>(6) 尽量避免大事务操作，提⾼系统并发能力。<br>(7) 永远为每张表设置一个 ID<br>(8) 使用 ENUM 而不是 VARCHAR<br>(9) 尽可能的让字段 NOT NULL<br>(10) 垂直分库：“垂直分割”是一种把数据库中的表按列变成几张表的方法，这样可以降低表的复杂<br>度和字段的数目，从而达到优化的目的。<br>(11) 水平分库：“水平分割”是一种把数据库中的表按行变成几张表的方法，这样可以降低表的复杂<br>度和字段的数目，从而达到优化的目的。<br>(12) 选择正确的存储引擎<br>(13) Update 语句，如果只更改1、2个字段，不要Update全部字段，否则频繁调用会引起明显的性<br>能消耗，同时带来大量日志。<br>(14) 对于多张大数据量（这里几百条就算大了）的表JOIN，要先分页再JOIN，否则逻辑读会很高，<br>性能很差。</p>
+<p>3、SQL语句优化</p>
+<p>(1) 避免在列上做运算，可能会导致索引失败<br>(2) 使用 join 时应该小结果集驱动大结果集，同时把复杂的 join 查询拆分成多个 query， 不然<br>join(连接) 越多的表，会导致越多的锁定和堵塞。<br>(3) 注意 like 模糊查询的使用，避免使用 ‘%A%’<br>(4) 不要使用 select * 节省内存<br>(5) 使用批量插入语句，节省交互<br>(6) Limit 基数比较大时，使用 between and<br>(7) 不要使用 rand 函数随机获取记录<br>(8) 避免使用 null，建表时，尽量设置 not null，提高查询性能<br>(9) 不要使用 count（id），应该使用 count（*）<br>(10) From 语句中一定不要使用子查询<br>(11) 使用更多的 where 加以限制，缩小查找范围<br>(12) 使用 explain 查看 sql 性能</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">WangXinYi</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://wxydaydayup.github.io/2021/11/08/Mysql%E5%9F%BA%E7%A1%80/">https://wxydaydayup.github.io/2021/11/08/Mysql%E5%9F%BA%E7%A1%80/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">WangXinYi</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Mysql/">
+                                    <span class="chip bg-color">Mysql</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,qzone,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/11/08/Linux/">
+                    <div class="card-image">
+                        
+                        <img src="/images/homePage/wsl%E5%92%8Clinux.webp" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            WSL配置和Linux命令
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-08
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/11/01/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">
+                    <div class="card-image">
+                        
+                        <img src="/images/homePage/%E5%89%8D%E7%AB%AF%E4%B8%89%E4%BB%B6%E5%A5%97.webp" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            HTML、CSS、JavaScript
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+
+<!-- 代码块复制 -->
+
+
+<!-- 代码块收缩 -->
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            <!-- Copyright&nbsp;&copy; -->
+            
+                <span id="year">2021-2023</span>
+            
+            <!-- <a href="/about" target="_blank">WangXinYi</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br> -->
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">167.1k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2021";
+                        var startMonth = "9";
+                        var startDate = "28";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/wxydaydayup" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1766695273@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1766695273" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1766695273" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i["DaoVoiceObject"] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            a.charset = "utf-8";
+            m.parentNode.insertBefore(a, m)
+        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
+        daovoice('init', {
+            app_id: "e55b5a96"
+        });
+        daovoice('update');
+    </script>
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
