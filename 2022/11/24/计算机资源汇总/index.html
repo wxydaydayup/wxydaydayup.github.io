@@ -1,0 +1,2399 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Wxy&#39;s blogs">
+    <meta name="description" content="算法资料、面试资料、国企招聘">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Wxy&#39;s blogs</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <style>
+        body{
+            background-image: url(/background.webp);
+            background-repeat:no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+        }
+    </style>
+
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Wxy&#39;s blogs</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-sitemap" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-street-view" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/about">
+          
+          <i class="fas fa-user-circle" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>作者简历</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/contact">
+          
+          <i class="fas fa-dragon" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>宠物之家</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/archives">
+          
+          <i class="fas fa-calendar-days" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>文章日历</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-handshake" style="zoom: 0.6;"></i>
+      
+      <span>工具</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Wxy&#39;s blogs</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-sitemap"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-street-view"></i>
+			
+			关于
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/about " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-user-circle" style="position: absolute;left:50px" ></i>
+			      
+		          <span>作者简历</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/contact " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-dragon" style="position: absolute;left:50px" ></i>
+			      
+		          <span>宠物之家</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/archives " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-calendar-days" style="position: absolute;left:50px" ></i>
+			      
+		          <span>文章日历</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-handshake"></i>
+			
+			工具
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/wxydaydayup/wxydaydayup.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #2193b0;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/wxydaydayup/wxydaydayup.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/homePage/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90.webp')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title"></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/">
+                                <span class="chip bg-color">计算机资源汇总</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-11-24
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    23.6k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    84 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="计算机资料"><a href="#计算机资料" class="headerlink" title="计算机资料"></a>计算机资料</h2><h3 id="必刷算法"><a href="#必刷算法" class="headerlink" title="必刷算法"></a>必刷算法</h3><ul>
+<li>🔥🔥🔥 牛客网新推出的算法101必刷题库地址：<a target="_blank" rel="noopener" href="https://www.nowcoder.com/link/pc_kol_aaaxiu04">https://www.nowcoder.com/link/pc_kol_aaaxiu04</a></li>
+<li>🔥🔥🔥 代码随想录 <a target="_blank" rel="noopener" href="https://www.programmercarl.com/">https://www.programmercarl.com/</a>    <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&mid=2247506853&idx=1&sn=cf931bb9b59d100024aee8762be98886&key=2b07b9a8c655b8cc7cc8bfd2e66ce152a57e6502e6de11b605b8242e53897798e26e1acf135b03efb108b35f22e4f2be43bcc5f061abbe6aba782731aa39e17ce18cda3c2d78ce4c288bcab001f49220a23aa66c3add5f55ec84088ce8f3ca8ec934c04a21e780f5654a98856ca034b8f90e4d54b02a0ef3979bbe399c338dcd&ascene=0&uin=MzMxNzcxMjg=&devicetype=Windows+10+x64&version=6309001c&lang=zh_CN&exportkey=n_ChQIAhIQ+WVtXrT8TnvFUDutzeEHSBLfAQIE97dBBAEAAAAAADdaB4XOWv4AAAAOpnltbLcz9gKNyK89dVj0vzWK3W+kxk3h1yX9ii+UZlSq0IVTXYOxrWBaAlTRGHMs00nAOQIQlwZZSyDhMe2lj0GT+P1qvjjq5NCUAzgM+IKowdGE4oX6iirdMDQlleOd1jBgnlyq+2NNM1knWI7GEMaTTeoKD93EwfWyVsnR67Fx5gMIOcRNHZLQ5lv5+HEzvo/L3vc7YbfM2bBK9h9VeiVAQ2RvAqMC1iAxSW/CnIJPDCFkNx23TId0SKeaGC2mPQPjq7zagMM=&acctmode=0&pass_ticket=7Yh2uwK/WxGVTwNtRUattNBh799jZxFtvRq7qpcSDVJrfEHjDvJyhvKrrzKca3VfqerGxkhdZaNkkCEzX4fUFA==&wx_header=1&fontgear=2">图论部分</a></li>
+<li>🔥🔥🔥 力扣Hot100 <a target="_blank" rel="noopener" href="https://leetcode.cn/problem-list/2cktkvj/"> LeetCode 热题 HOT 100 - 力扣（LeetCode）</a>（leetcode前350也反复刷）</li>
+<li>🔥🔥🔥 剑指offer V1&#x2F;V2&#x2F;专项突击 <a target="_blank" rel="noopener" href="https://leetcode.cn/problem-list/e8X3pBZi/">剑指 Offer（专项突击版） - 力扣（LeetCode）</a></li>
+<li>labuladong的算法小抄 <a target="_blank" rel="noopener" href="https://labuladong.github.io/algo/">https://labuladong.github.io/algo/</a></li>
+<li>宫水三叶的刷题日记 <a target="_blank" rel="noopener" href="https://github.com/SharingSource/LogicStack-LeetCode">https://github.com/SharingSource/LogicStack-LeetCode</a></li>
+<li>Acwing&#x2F;&#x2F;Y总讲课  <a target="_blank" rel="noopener" href="https://www.acwing.com/problem/">题库 - AcWing</a> &#x2F;&#x2F; <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1lOG-J0C1RntX9BRescxU4A?pwd=ucko">https://pan.baidu.com/s/1lOG-J0C1RntX9BRescxU4A?pwd=ucko</a><br>提取码:ucko</li>
+<li>王道考研复试机考 <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1aobn0hgfrMjmlBpk4aVoEw?pwd=nstw">https://pan.baidu.com/s/1aobn0hgfrMjmlBpk4aVoEw?pwd=nstw</a>  提取码:nstw</li>
+<li>天梯赛 <a target="_blank" rel="noopener" href="https://pintia.cn/problem-sets/994805046380707840/exam/problems/type/7">https://pintia.cn/problem-sets/994805046380707840/exam/problems/type/7</a></li>
+<li>蓝桥杯  <a target="_blank" rel="noopener" href="http://lx.lanqiao.cn/problemset.page?code=PREV-&amp;userid=353619">http://lx.lanqiao.cn/problemset.page?code=PREV-&amp;userid=353619</a></li>
+</ul>
+<h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><h4 id="入门资料"><a href="#入门资料" class="headerlink" title="入门资料"></a>入门资料</h4><ul>
+<li><p>🔥🔥🔥东软全部 Java 课程 <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/18bL-26W9h7wMgsJfckIRXQ?pwd=85vw">https://pan.baidu.com/s/18bL-26W9h7wMgsJfckIRXQ?pwd=85vw</a><br>提取码：85vw</p>
+</li>
+<li><p>牛客C语言题库地址：<a target="_blank" rel="noopener" href="https://www.nowcoder.com/link/pc_kol_aaaxiu01">https://www.nowcoder.com/link/pc_kol_aaaxiu01</a></p>
+</li>
+<li><p>牛客C++题库地址：<a target="_blank" rel="noopener" href="https://www.nowcoder.com/link/pc_kol_aaaxiu03">https://www.nowcoder.com/link/pc_kol_aaaxiu03</a></p>
+</li>
+<li><p>计算机基础知识地址：<a target="_blank" rel="noopener" href="https://www.nowcoder.com/link/pc_kol_aaaxiu02">https://www.nowcoder.com/link/pc_kol_aaaxiu02</a></p>
+</li>
+<li><p>黑马全部 项目+课程 资源  <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1LxIxcHDO7SYB96SE-GZfuQ">https://pan.baidu.com/s/1LxIxcHDO7SYB96SE-GZfuQ</a>  提取码 ：dor4</p>
+</li>
+<li><p>博学谷全部资源 <a target="_blank" rel="noopener" href="https://pan.quark.cn/s/e1c2da28e30a#/list/share/5d1144b8c17a48b2812b61916870d940-%E5%8D%9A%E5%AD%A6%E8%B0%B7*101JavaEE%E5%9C%A8%E7%BA%BF%E5%B0%B1%E4%B8%9A%E7%8F%AD2022%E5%B9%B4+%E4%B8%AD%E7%BA%A7%E8%BF%9B%E4%BF%AE%E8%AF%BE+%E7%B2%BE%E8%8B%B1%E8%BF%9B%E9%98%B6%E4%BB%B7%E5%80%BC14980%E5%85%83">夸克网盘分享 </a></p>
+</li>
+</ul>
+<h4 id="Java面试"><a href="#Java面试" class="headerlink" title="Java面试"></a><strong>Java面试</strong></h4><p><strong>前言</strong></p>
+<p>1、🔥🔥🔥集合模块（超重点）：主要是包括各种常用集合：例如 Set（包括HashSet，TreeSet）, Map（包括 HashMap，HashTable），List(包括ArrayList，LinkedList)等等，最核心的就是 hashMap,concurrenthashMap,ArrayList,LinkedLis 这几个，这几个源码必须看，这部分，主要是看文章 + 自己看 JDK 源码学习。</p>
+<p>2、🔥🔥🔥多线程(超重点)：synchronize，volatile，这两个优先学，比较简单，之后学习线程池，并发包（如lock等等），有点难度，推荐看《Java 并发编程艺术》+《Java并发编程实战》，这两本就够了，《Java并发编程艺术》感觉得看三四遍才行，第一遍看了就忘光了，第二遍会有其他的收获，第三遍就可以吊打面试官了，这本书重点章节 + 如何阅读星球有写了：<a target="_blank" rel="noopener" href="https://www.playoffer.cn/884.html">《Java并发编程艺术》如何阅读+重点章节</a></p>
+<p>3、🔥🔥🔥 虚拟机（超重点）：虚拟机是必须学习的了，重点是GC部分，推荐看《深入理解Java虚拟机：JVM 高级特性与最佳实践》，一本就差不多够了，多看四五遍就行了，这本书如何阅读也已经写了：<a target="_blank" rel="noopener" href="https://www.playoffer.cn/880.html">《深入理解Java 虚拟机》阅读及其重点章节指南</a></p>
+<p>4、各种文件流（不怎么重点）：file，inputStream，outputStream等等，反正就是各种文件流，看书时你们自然会看到，这部分必须多实践，只有时间，才能真的理解不详细介绍。</p>
+<p>5、数据结构与算法: 代码随想录4 刷， 剑指offer1  leetcode 350</p>
+<p>6、计算机网络: 小林coding图解网络 计算机网络自顶向下</p>
+<p>7、操作系统:小林coding图解系统 操作系统导论</p>
+<p>8、Mysql:MySQL必知必会  从根上理解MySQL  小林MySQL图解</p>
+<p>9、Redis: Redis设计与实现  小林coding Redis部分</p>
+<p>10、Go: Go语言圣经 GoWeb编程 Go语言设计与实现 Go专家编程</p>
+<p>11、C++:  《C++ Primer》  《Efficient C++》 《TCP&#x2F;IP网络编程》</p>
+<p><strong>面试PDF和网站</strong></p>
+<ul>
+<li>🔥🔥🔥 500道Java后端必知必会V2  链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1INxgO_b0qPyid4M1EfnDGg?pwd=qybh">https://pan.baidu.com/s/1INxgO_b0qPyid4M1EfnDGg?pwd=qybh</a><br>提取码：qybh</li>
+<li>JavaGuide面试突击 链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/16TllZEiMGdEAxpxpgZYrZw?pwd=jgno">https://pan.baidu.com/s/16TllZEiMGdEAxpxpgZYrZw?pwd=jgno</a><br>提取码：jgno</li>
+<li>JavaInterview-面试小抄</li>
+<li>小林Coding  <a target="_blank" rel="noopener" href="https://xiaolincoding.com/">https://xiaolincoding.com/</a></li>
+<li>阿秀的学习笔记 <a target="_blank" rel="noopener" href="https://interviewguide.cn/">https://interviewguide.cn/</a></li>
+</ul>
+<p><strong>其他的补充</strong></p>
+<ul>
+<li><p>牛客网面试题库  <a target="_blank" rel="noopener" href="https://www.nowcoder.com/exam/interview">牛客网 笔试题库|面试经验</a></p>
+</li>
+<li><p>牛客网Java工程师校招面试题库  链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/18EVdib3rGxb0kuhUZPCm6w?pwd=0g0v">https://pan.baidu.com/s/18EVdib3rGxb0kuhUZPCm6w?pwd=0g0v</a><br>提取码：0g0v</p>
+</li>
+<li><p>Java程序员面试宝典 链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1qBflau52lsuk7B0LgH_YNA?pwd=djm2">https://pan.baidu.com/s/1qBflau52lsuk7B0LgH_YNA?pwd=djm2</a><br>提取码：djm2</p>
+</li>
+<li><p>la0e <a target="_blank" rel="noopener" href="https://www.yuque.com/tulingzhouyu/sfx8p0/xdg1dhur0r33gwgt?singleDoc">https://www.yuque.com/tulingzhouyu/sfx8p0/xdg1dhur0r33gwgt?singleDoc</a></p>
+</li>
+<li><p>tr70 <a target="_blank" rel="noopener" href="https://www.yuque.com/renyong-jmovm/dadudu/qfz8ia761t5eh8i7?singleDoc#">https://www.yuque.com/renyong-jmovm/dadudu/qfz8ia761t5eh8i7?singleDoc#</a></p>
+</li>
+<li><p>scec <a target="_blank" rel="noopener" href="https://www.yuque.com/renyong-jmovm/dadudu/ikh5ozel0n510dg8?singleDoc#">https://www.yuque.com/renyong-jmovm/dadudu/ikh5ozel0n510dg8?singleDoc#</a></p>
+</li>
+</ul>
+<p><strong>前端的八股文</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.nowcoder.com/tutorial/10072/index?ncoursef=dis_mj">前端岗位面试真题宝典_牛客专刊</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/7016593221815910408">前端八股文博客</a></li>
+</ul>
+<h3 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://aistudio.baidu.com/aistudio/education/group/info/25302">飞桨AI Studio - 零基础入门深度学习</a></li>
+</ul>
+<h3 id="好用的软件"><a href="#好用的软件" class="headerlink" title="好用的软件"></a>好用的软件</h3><ul>
+<li>截屏和贴图软件：<strong>Snipaste</strong> </li>
+<li>快速访问Github：<strong>FastGithub</strong></li>
+<li>科学上网：<strong>LetsVPN（github上找）</strong></li>
+<li>网络抓包：<strong>Fiddler</strong></li>
+<li>C盘扩容和清理：<strong>分区助手 9.8.0</strong>(扩容)   <strong>spacesniffer</strong>(清理 )</li>
+<li>多线程下载：<strong>Internet Download Manager</strong></li>
+<li>录屏软件：<strong>EV录屏</strong></li>
+<li>爬虫平替：<strong>八爪鱼采集器 8</strong></li>
+</ul>
+<h2 id="项目经历"><a href="#项目经历" class="headerlink" title="项目经历"></a>项目经历</h2><h3 id="项目工具"><a href="#项目工具" class="headerlink" title="项目工具"></a>项目工具</h3><ul>
+<li>IDEA,Pycharm 破解 <a target="_blank" rel="noopener" href="https://laq8aq5ywv.feishu.cn/docx/MwjvdNVP6odfn4xz0b2cB5xJnzb?from=from_copylink">https://laq8aq5ywv.feishu.cn/docx/MwjvdNVP6odfn4xz0b2cB5xJnzb?from=from_copylink</a></li>
+</ul>
+<h3 id="如何准备项目"><a href="#如何准备项目" class="headerlink" title="如何准备项目"></a>如何准备项目</h3><p>1、多思考方案的设计，如果让你来设计，你会怎么设计？</p>
+<p>2、捋清楚表之间的关系，因为面试官还会问你表的设计，如果你一脸蒙蔽，那么大概率面试官会觉得你是跟着抄写的，印象肯定不好。</p>
+<p>3、捋清楚各个模块之间的关系，不然面试官一问你项目架构，你也是一脸蒙蔽，项目是你做的，结果你什么也没想过？</p>
+<p>最后就是，自己在加一些功能，其实自己加功能这个事，主要目的倒不是为了多一些功能，而是通过添加功能，让你更加熟悉项目多运转逻辑，毕竟你跟着视频做的，简短的几十个小时，肯定有很多不完善的地方。</p>
+<h3 id="如何看开源项目"><a href="#如何看开源项目" class="headerlink" title="如何看开源项目"></a>如何看开源项目</h3><p>看github上的项目，首先要学会用，要把这个项目用起来，跑起来，然后再去看代码，很多录友都反过来了，项目都没运行都没跑起来，然后就开始看代码，那是绝对看不懂的。</p>
+<p>所以看开源项目可以分这么几步：</p>
+<p>1、运行，跑起来，用起来，知道这个项目有什么功能，满足什么需求</p>
+<p>2、找到项目入口 main函数</p>
+<p>3、拆解项目模块，都有哪些功能，哪些模块</p>
+<p>4、一个模块一个模块去看代码，而不是 囫囵吞枣</p>
+<p>5、修改部分代码，重新跑项目，看看有哪些变动</p>
+<p>6、完成这个项目代码的阅读</p>
+<p>你把项目大概框架了解差不多了，重点改其中的一两个模块，不用把整个项目重构，能吃透一个模块就可以，也够和面试官扯一会了。</p>
+<h3 id="业务类"><a href="#业务类" class="headerlink" title="业务类"></a>业务类</h3><ol>
+<li><a target="_blank" rel="noopener" href="https://gitee.com/y_project/RuoYi">RuoYi</a>：基于 SpringBoot 的权限管理系统易读易懂、界面简洁美观。核心技术采用 Spring、MyBatis、Shiro 没有任何其它重度依赖。直接运行即可用</li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV17v411V79c?p=1">闪聚宝</a>：黑马 Spring Cloud Alibaba 大型分布式微服务聚合支付项目</li>
+</ol>
+<h3 id="轮子类"><a href="#轮子类" class="headerlink" title="轮子类"></a>轮子类</h3><ol>
+<li><a target="_blank" rel="noopener" href="https://gitee.com/dromara/sa-token">Sa-Token </a>：一个轻量级 Java 权限认证框架，让鉴权变得简单、优雅！目前已集成——登录认证、权限认证、分布式 Session 会话、微服务网关鉴权、单点登录、OAuth2.0、踢人下线、Redis 集成、前后台分离、记住我模式、模拟他人账号、临时身份切换、账号封禁、多账号认证体系、注解式鉴权、路由拦截式鉴权、花式 token 生成、自动续签、同端互斥登录、会话治理、jwt 集成、Spring 集成、WebFlux 集成……</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/CN-GuoZiyang/MYDB">MYDB</a>：一个 Java 实现的简单的数据库，部分原理参照自 MySQL、PostgreSQL 和 SQLite。实现了以下功能：数据的可靠性和数据恢复；两段锁协议（2PL）实现可串行化调度；MVCC；两种事务隔离级别（读提交和可重复读）；死锁处理；简单的表和字段管理；简陋的 SQL 解析（因为懒得写词法分析和自动机，就弄得比较简陋）；基于 socket 的 server 和 client</li>
+</ol>
+<h3 id="高并发"><a href="#高并发" class="headerlink" title="高并发"></a>高并发</h3><h4 id="技术体系"><a href="#技术体系" class="headerlink" title="技术体系"></a>技术体系</h4><p>目前实施高并发一般有两套技术体系，</p>
+<p>一套是基于spring cloud alibaba组件的，比如用nacos做服务治理，用ribbon做负载均衡，</p>
+<p>另一套姑且称为阿里系，一般是用nginx做负载均衡。这两套体系中有重复的组件，但不同的公司会根据情况使用其中一套体系来应对高并发，在学的过程中，这两套体系其实是相通的，学好一套以后另一套很快能上手。</p>
+<h4 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h4><p>1、需要解决负载均衡问题，比方说把一个业务模块部署到一台服务器，顶了天能应对每秒500个请求，此时可以把相同的模块部署到多个服务器，然后用nginx或gateway等组件把请求分散到多个服务器上，这样就能应对n*500个并发量，当然实际不大可能是500的倍数，但一定能成倍提升高并发的处理能力。当然还可以引入nginx+lvs集群框架。</p>
+<p>2、数据库层面可以用缓存和分库分表组件，缓存的目的是为了让请求不走内存中的缓存，不走数据库，从而能减轻数据库的压力，分库组件，比如mycat，可以根据id取模10的结果，把比如千万级的大表拆分成10个子表，通过减轻数据表的样本数，来提升数据库的查询性能。</p>
+<p>3、用kafka等消息中间件来异步处理。如果是同步处理，一个请求要等到服务器处理好再返回，中间会有空闲等待时间，如果在高并发场景，空闲等待时间积累太多一定会拖垮服务器，那么就可以在请求发送到服务器后立即终止该请求，而服务器处理好以后通过消息中间件异步返回结果，从而能有效减低等待时间。</p>
+<p>4、系统监控问题。比如高并发集群一定包含多个服务器多个组件，如果有服务器宕机，或者出现性能问题，监控组件需要告警，以便让程序员介入，常用的监控组件有zabbix，cat或skywalking。</p>
+<p>5、限流熔断服务降级等保护措施，这块可以用hystrix或sentinel来做。</p>
+<p>6、拓宽视野，不仅要做开发，更要掌握在linux上部署项目和部署高并发组件的技术，因为高并发实现基本都是在linux上做的。这方面需要熟悉linux层面的各种安装程序和处理文件的命令。</p>
+<p>6、当然还包含一些衍生的需求，比如分布式事务，远程调用或数据搜索等，或者是消息分发，这些功能也有对应的组件，比如seata，ES或netty组件，这方面就不一一列举了。</p>
+<h4 id="怎么实践"><a href="#怎么实践" class="headerlink" title="怎么实践"></a>怎么实践</h4><p>1、先在自己电脑上搭建各种分布式组件，然后看熟API。</p>
+<p>2、为每个组件设计一个项目实践要点，即把学到的技能迁入到真实项目中。</p>
+<p>3、再找些高并发组件方面解决过的实际问题，比如Redis或Dubbo方面的OOM，这样在面试中说出来能证明自己用过并解决过实际问题</p>
+<p>4、一开始可以在了解高并发限流熔断缓存等概念的基础上，先会用组件，比如用redis的API来做缓存，应对数据库层的压力，用nginx实现负载均衡，把系统部署在多个服务器上来应对海量请求，总之先得用会组件。</p>
+<h2 id="面试模板"><a href="#面试模板" class="headerlink" title="面试模板"></a>面试模板</h2><h3 id="模拟面试"><a href="#模拟面试" class="headerlink" title="模拟面试"></a>模拟面试</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.nowcoder.com/interview/ai/cover?roomId=263">【模拟面试】企业面试真题 牛客网 </a></li>
+</ul>
+<h3 id="技能模板"><a href="#技能模板" class="headerlink" title="技能模板"></a>技能模板</h3><p><strong>掌握技能</strong></p>
+<p><strong>一、有工作经验</strong></p>
+<ul>
+<li>两年 Java 开发经验， JAVA 基础扎实，理解 IO 、多线程、集合等基础框架，熟悉 JUC 并发包并阅读过 JDK 部分源码；</li>
+<li>熟悉计算机网络常见协议，如 TCP &#x2F; IP 协议簇，熟悉 Java 网络编程，熟练掌握 BIO 、多路复用、 NIO 、 AIO 等网络 IO 模型；</li>
+<li>熟悉常用设计模式（代理、单例、工厂、建造者、适配器、策略等）及基本数据结构与算法等，具备良好的代码编写风格；</li>
+<li>熟悉 JVM 、垃圾回收器与算法、类加载与双亲委派、 JMM 等，具备良好问题分析与定位能力，了解一定 JVM 调优技巧；</li>
+<li>熟练掌握 Spring 、 Mybatis 、 SpringBoot 等开源框架，熟悉 Spring 的 IOC 、 AOP 大概设计原理， Boot 自动装配源码实现等；</li>
+<li>熟悉微服务架构前后端分离接口式开发规范及设计原则，熟悉 SpringCloud 、 Dubbo 框架并具有微服务开发经验；</li>
+<li>熟练掌握微服务常用落地组件： Eureka 注册中心、 Ribbon 负载、 OpenFegin 调用、 Zuul 网关、 Hystrix 服务保护等；</li>
+<li>熟悉分布式搜索、消息、缓存、负载等中间件，掌握分布式锁、分布式事务、分布式 ID 、分布式 Session 等分布式解决方案；</li>
+<li>熟悉搜索引擎 ElasticSearch 、分布式调度 XXL - JOB 、负载 Nginx 、消息 RabbitMQ 、 Kakfa 、协调 Zookeeper 等技术；</li>
+<li>熟悉非关系型数据库 Redis 不同场景下的缓存设计，熟悉 Redis 持久化、高可用机制及缓存雪崩、击穿、穿透等问题解决方案；</li>
+<li>熟练掌握关系型数据库 MySQL ，了解 Oracle ，熟悉数据库索引、事务与锁机制底层实现，具备大概 SQL 调优思维与调优能力；</li>
+<li>熟练掌握 Linux 系统基本常用命令，熟练使用 LVS + Nginx + Keepalived 实现 WEB 服务高可用，具备现实问题排查与定位能力；</li>
+<li>熟练掌握 Eclipse &#x2F; ldea 、 Svn 、 Git 、 Maven 等开发及版本控制工具，熟练掌握 Web 应用系统开发工具，具备的独立开发能力；</li>
+<li>熟悉前端 HTML 、 CSS 、 JavaScript 以及 JQuary 、 Ajax 、 Jsp 基本知识，熟练运用 ElelmentUl 、 Vue 等前端框架常用组件；</li>
+</ul>
+<hr>
+<p><strong>二、校招</strong></p>
+<p>数据结构与算法(92)、计算机系统基础(96)、计算机网络(98)、Web 程序设计(96)、软件工程导论(93)、操作系统(90)</p>
+<ul>
+<li>熟悉Java基础，掌握面向对象编码规范、集合以及Java8特性等内容，了解常见的设计模式(单例模式，策略模式等)；</li>
+<li>熟悉常用的数据结构(链表、栈、队列、二叉树等)，熟练使用排序，二分，贪心等算法；</li>
+<li>熟练使用Spring Boot、Spring、Mybatis等常用框架，熟悉Spring lOC、AOP原理、Boot 自动装配原理等；</li>
+<li>熟悉OSI七层模型和TCP&#x2F;IP网络分层模型，掌握常见网络协议，如HTTP&#x2F;HTTPs , TCP、UDP、DNS 等；</li>
+<li>熟悉操作系统的进程通信、进程调度、页面置换等知识，掌握 Linux 常用命令，如 netstat 、grep 等命令；</li>
+<li>熟练使用ldea 、Git 、 Maven 等开发及版本控制工具，熟练掌握 Web 应用系统开发工具，有Git协同开发经历；</li>
+<li>熟练掌握关系型数据库 MySQL ，熟悉数据库索引、事务与锁机制底层实现，具备一定的 SQL 调优思维与调优能力；</li>
+<li>熟悉前端 HTML 、 CSS 、 JavaScript 基本知识，了解 ElelmentUl 、 Vue 等前端框架常用组件的运用；</li>
+<li>了解Redis 数据类型的使用场景、和内部实现、持久化策略、常见缓存高并发场景，比如哨兵机制、分片集群等；</li>
+<li>了解Java并发编程，对锁机制等有自己的理解，了解JUC中常用的工具类，如ConcurrentHashMap等；</li>
+<li>了解JVM的GC机制、类加载机制及JMM，具备良好问题分析与定位能力，了解一定的 JVM 调优技巧；</li>
+<li>了解Nacos、EureKa、ElasticSearch等常见组件，可以按照需求快速构建项目；</li>
+</ul>
+<p><strong>C++技术栈</strong></p>
+<ul>
+<li>熟悉C&#x2F;C++，熟练使用C的指针应用及内存管理，C++的封装继承多态，STL常用容器，C++11常用特性(智能指针等) ，了解 Python，Gtest等。</li>
+<li>熟悉常用设计模式(单例模式，工厂模式等)</li>
+<li>熟悉Linux下vim开发环境，了解网络编程，IO多路复用，epoll等等。</li>
+<li>熟悉OSI五层网络模型，熟悉TCP三次握手，四次挥手，流量控制，拥塞控制等手段。</li>
+<li>熟悉常用的数据结构(链表、栈、队列、二叉树等)，熟练使用排序，贪心，动态规划等算法。</li>
+<li>熟悉使用Git，vscode工具使用。</li>
+</ul>
+<hr>
+<p><strong>项目介绍</strong>：</p>
+<p><strong>SAAS人力资源管理系统</strong></p>
+<p>项目采用主流的微服务分布式架构，前后端分离技术，使用SpringBoot框架，搭建了一个在线的SAAS人力资源管理系统，包括用户管理、企业管理、权限管理、社保管理、工资管理等功能。</p>
+<p>后端技术 使用 SpringBoot + SpringMVC + MybatisPlus + SpringCloud</p>
+<p>前端技术 使用 Vue.js + ElementUI + Node.js + Npm+ webPack</p>
+<p><strong>项目亮点：</strong></p>
+<ul>
+<li>基于SpringCloud+EureKa+Feign+Zuul实现项目的微服务化，划分为公共、企业、员工、权限等服务，提高可拓展性</li>
+<li>结合SaaS系统设计与RBAC权限设计方案，进行更细粒度的划分和授权，利用Shiro进行系统认证授权，分布式 Session 会话使用ShiroRedis进行统一的会话管理</li>
+<li>使用POI文件上传下载解决企业级POI报表导入导出，采用模板打印的方式并抽象为自定义工具类实现报表生成，使用JasperReport及Jaspersoft Studio文件实现企业级PDF报表生成与导出</li>
+<li>针对百万数据处理时的OOM问题，使用SXSSF对象进行导出，并通过自定义线程池+CompletableFuture并发编程，提高批导入数据库性能，实测导入100万行的时间从15秒缩短至6秒</li>
+<li>使用策略模式对接七牛云第三方对象云存储来集中存取图片，通过限制大小，校验后缀等方式预防文件上传漏洞，通过压缩、数据降冷等方式降低约30%的存储成本</li>
+<li>利用FreeMarker和数据库元数据自定义代码生成，提高开发效率</li>
+<li>使用百度云Al和二维码动态生成方案实现刷脸登录，实现用户、管理员的快速登录，提高用户体验</li>
+<li>Activiti工作流引擎实现请求&#x2F;调休流程管理、离职流程管理、加班流程管理</li>
+</ul>
+<hr>
+<p><strong>Godis</strong></p>
+<p>Godis 是一个用 Golang实现的 Redis 服务器。</p>
+<p><strong>实现功能：</strong></p>
+<ul>
+<li>支持 string, list, hash, set, sorted set, bitmap 数据结构</li>
+<li>自动过期功能(TTL)</li>
+<li>发布订阅与地理位置</li>
+<li>AOF 持久化及 AOF 重写</li>
+<li>加载和导出 RDB 文件</li>
+<li>主从复制</li>
+<li>Multi 命令开启的事务具有原子性和隔离性. 若在执行过程中遇到错误, godis 会回滚已执行的命令</li>
+<li>内置集群模式. 集群对客户端是透明的, 您可以像使用单机版 redis 一样使用 godis 集群<ul>
+<li><code>MSET</code>, <code>MSETNX</code>, <code>DEL</code>, <code>Rename</code>, <code>RenameNX</code> 命令在集群模式下原子性执行, 允许 key 在集群的不同节点上</li>
+<li>在集群模式下支持在同一个 slot 内执行事务</li>
+</ul>
+</li>
+<li>并行引擎, 无需担心您的操作会阻塞整个服务器.</li>
+</ul>
+<hr>
+<p><strong>基于Netty实现的RPC-Framework</strong></p>
+<p>根据Dubbo+Zookeeper的设计理念，通过基于NIO的Netty实现RPC框架</p>
+<ul>
+<li>RPC通信，Netty 重用 Channel 避免重复连接服务端，通过Netty 心跳机制保证客户端和服务端的连接不被断掉，避免重连</li>
+<li>客户端调用远程服务的时候进行负载均衡，实现了随机负载均衡算法与一致性哈希算法</li>
+<li>动态代理的，反射</li>
+<li>Spring 扩展，集成 Spring 通过注解注册服务，服务消费等功能，通过 API 配置，增加可配置的序列化方式、注册中心的实现方式，避免了硬编码</li>
+<li>基于Zookeeper注册中心，管理相关服务地址信息</li>
+<li>基于注解实现服务发布和远程服务引用</li>
+</ul>
+<p>常见的问题：</p>
+<p>自定义的消息序列</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@AllArgsConstructor</span>
+<span class="token annotation punctuation">@Data</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Header</span> <span class="token keyword">implements</span> <span class="token class-name">Serializable</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">/*
+    +----------------------------------------------+
+    | 魔数 2byte | 序列化算法 1byte | 请求类型 1byte  |
+    +----------------------------------------------+
+    | 消息 ID 8byte     |      数据长度 4byte       |
+    +----------------------------------------------+
+    */</span>
+    <span class="token keyword">private</span> <span class="token keyword">short</span> magic<span class="token punctuation">;</span> <span class="token comment">//魔数-用来验证报文的身份（2个字节）</span>
+    <span class="token keyword">private</span> <span class="token keyword">byte</span> serialType<span class="token punctuation">;</span> <span class="token comment">//序列化类型（1个字节）</span>
+    <span class="token keyword">private</span> <span class="token keyword">byte</span> reqType<span class="token punctuation">;</span> <span class="token comment">//操作类型（1个字节）</span>
+    <span class="token keyword">private</span> <span class="token keyword">long</span> requestId<span class="token punctuation">;</span> <span class="token comment">//请求id（8个字节）</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> length<span class="token punctuation">;</span> <span class="token comment">//数据长度（4个字节）</span>
+
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<ul>
+<li><p><strong>注册中心</strong> ：注册中心首先是要有的，推荐使用 Zookeeper。注册中心负责服务地址的注册与查找，相当于目录服务。服务端启动的时候将服务名称及其对应的地址(ip+port)注册到注册中心，服务消费端根据服务名称找到对应的服务地址。有了服务地址之后，服务消费端就可以通过网络请求服务端了。</p>
+</li>
+<li><p><strong>序列化</strong> ：既然涉及到网络传输就一定涉及到序列化，你不可能直接使用 JDK 自带的序列化吧！JDK 自带的序列化效率低并且有安全漏洞。 所以，你还要考虑使用哪种序列化协议，比较常用的有 hession2、kyro、protostuff。</p>
+</li>
+<li><p><strong>动态代理</strong> ： 另外，动态代理也是需要的。因为 RPC 的主要目的就是让我们调用远程方法像调用本地方法一样简单，使用动态代理可以屏蔽远程方法调用的细节比如网络传输。也就是说当你调用远程方法的时候，实际会通过代理对象来传输网络请求，不然的话，怎么可能直接就调用到远程方法呢？</p>
+</li>
+<li><p><strong>负载均衡</strong> ：负载均衡也是需要的。为啥？举个例子我们的系统中的某个服务的访问量特别大，我们将这个服务部署在了多台服务器上，当客户端发起请求的时候，多台服务器都可以处理这个请求。那么，如何正确选择处理该请求的服务器就很关键。假如，你就要一台服务器来处理该服务的请求，那该服务部署在多台服务器的意义就不复存在了。负载均衡就是为了避免单个服务器响应同一请求，容易造成服务器宕机、崩溃等问题，我们从负载均衡的这四个字就能明显感受到它的意义。</p>
+</li>
+<li><p><strong>使用开源的序列化机制 Kyro（也可以用其它的）替代 JDK 自带的序列化机制；</strong></p>
+</li>
+<li><p><strong>处理一个接口有多个类实现的情况</strong> ：对服务分组，发布服务的时候增加一个 group 参数即可。</p>
+</li>
+<li><p><strong>增加服务版本号</strong> ：建议使用两位数字版本，如：1.0，通常在接口不兼容时版本号才需要升级。为什么要增加服务版本号？为后续不兼容升级提供可能，比如服务接口增加方法，或服务模型增加字段，可向后兼容，删除方法或删除字段，将不兼容，枚举类型新增字段也不兼容，需通过变更版本号升级。</p>
+</li>
+<li><p><strong>对 SPI 机制的运用</strong></p>
+</li>
+<li><p><strong>编写测试为重构代码提供信心</strong></p>
+</li>
+<li><p><strong>服务监控中心（类似dubbo admin）</strong></p>
+</li>
+<li><p><strong>设置 gzip 压缩</strong></p>
+</li>
+</ul>
+<hr>
+<p><strong>实习经历</strong></p>
+<p>北京大家保险集团有限责任公司 		Java 工程师实习 		  2021.06-2021.09</p>
+<ul>
+<li><p>项目背景：担任国企大家保险集团 IT 总部寿险小组实习负责人，负责寿险养老渠道销售管理系统-人员管理子系统的后端<br>  开发，以及实习小组任务的协调安排；</p>
+</li>
+<li><p>项目技术：前端使用 Vue2 + Element UI + Axios，后端使用 Springboot + SpringMVC + Mybatis + JWT；</p>
+</li>
+<li><p>工作内容：负责后端部分模块，员工信息录入与变更，团队注册与管理，人员团队异动等模块，以周为单位进行前后端联<br>调，协助进行项目测试，在寿险、财险、信科 3 家子公司技术人员完成实习项目演示和汇报；</p>
+</li>
+<li><p>项目成果：项目被评为“大家保险 IT 研发部 2021 年度优秀实习项目”，本人以出色表现获得了大家保险集团企业奖金<br>与优秀实习生(仅 3 人)</p>
+</li>
+</ul>
+<hr>
+<p>山西鸿顺通科技有限公司 				图像处理实习 			     2022.01-2022.03</p>
+<ul>
+<li>项目背景：针对轨道式巡检机器人指针式仪表检测与智能识别进行研究，在 LabelImg 中标注指针式仪表 5000 余张，结合 YOLOv5 目标检测与计算机视觉技术，进行指针式仪表智能识别方法设计与实现；</li>
+<li>研究创新：改进的 Canny 边缘检测与 CTPN+CRNN 网络增强方法识别的适应性，Mean Shift 与区域选择的 Hough 直<br>线检测提高识别实时性，方法实证检验识别成功率达 98%，最大相对误差低于 0.6%，在自然场景中的指针式仪表检测与<br>示数识别领域具有良好的应用前景；</li>
+<li>工作内容：对无人机回传视频页面中的电力线路缺陷与输变电线路瓷瓶裂缝进行评估与分析，协助进行巡检机器人上位机<br>搭载工作协助完成了指针式仪盘监测系统设计与开发，独立完成指针式仪表智能监测系统相关文档的编写工作；</li>
+</ul>
+<hr>
+<p><strong>自我评价</strong></p>
+<p>1、有较强的的学习和解决问题的能力，善于通过一些系统问题总结分析根本原因，热爱于技术挑战</p>
+<p>2、在工作中可以独立承担相关职责，可以较强承受工作压力并愿意不断的提升自我</p>
+<p>3、性格开朗、积极乐观，可以精神饱满的投入到工作中。有着良好的团队协作能力和责任心，对工作有强烈的使命感。</p>
+<p>4、想要长期从事软件开发行业，希望通过自己不断的努力来提升技术能力，并完成个人的职业发展计划</p>
+<h3 id="面试的问题"><a href="#面试的问题" class="headerlink" title="面试的问题"></a>面试的问题</h3><hr>
+<h4 id="1、SaaS数据库是怎么设计"><a href="#1、SaaS数据库是怎么设计" class="headerlink" title="1、SaaS数据库是怎么设计"></a>1、SaaS数据库是怎么设计</h4><p>​	To B的系统， SAAS就是<strong>在探讨与实现如何于多用户的环境下共用相同的系统或程序组件，并且仍可确保各用户间数据的隔离性</strong></p>
+<p>​	补充：共享数据库、独立 Schema，mysql数据库：mysql数据库中的schema比较特殊，并不是数据库的下一级，而是等同于数据库。比如执行<br>create schema test 和执行create database test效果是一模一样的</p>
+<p>​	<strong>共享数据库、共享数据表</strong></p>
+<p>​	即租户共享同一个Database，同一套数据库表。<strong>在表中增加租户ID等租户标志字段，表明该记录是属于哪个租户的。</strong></p>
+<p>​	优点：所有租户使用同一套数据库，所以成本低廉。</p>
+<p>​	缺点：隔离级别最低，安全性最低，需要在设计开发时加大对安全的开发量，数据备份和恢复最困难。</p>
+<p>这种方案和基于传统应用的数据库设计并没有任何区别，但是由于所有租户使用相同的数据库表，所以需要做好对每个租户数据的隔离安全性处理，这就增加了系统设计和数据管理方面的复杂程度。</p>
+<hr>
+<h4 id="2、RBAC"><a href="#2、RBAC" class="headerlink" title="2、RBAC"></a>2、RBAC</h4><p>​	RBAC（全称：Role-Based Access Control）基于角色的权限访问控制</p>
+<img src="/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/image-20230318145715876.png" alt="image-20230318145715876" style="zoom: 50%;" />
+
+<p>​	用户关联角色，角色关联权限，一共有三种角色</p>
+<p>一个用户可以具有很多的角色，一个角色可以被分配给不同的用户。所以用户和<br>角色之间是多对多关系。</p>
+<pre><code>1. SaaS平台的管理员，拥有全部企业和角色权限，注意的是平台管理员不能对租户的具体业务进行管理
+2. 每个企业的管理员-人事经理，所属企业和用户权限，以及为企业用户授权角色
+3. 企业员工，销售经理、财务经理、市场经理等，人事经理把权限分配给这些角色，再把角色赋予用户。
+</code></pre>
+<p>更细粒度的划分：菜单的权限，按钮的权限，后端API请求的权限</p>
+<img src="/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/image-20230318145943646.png" alt="image-20230318145943646" style="zoom:50%;" />
+
+<p>与传统的RBAC模型对比不难发现此种设计的好处：</p>
+<ol>
+<li>不需要区分哪些是操作，哪些是资源</li>
+<li>方便扩展，当系统要对新的东西进行权限控制时，我只需要建立一个新的资源表，并确定这类权限的权限类型标识即可。</li>
+</ol>
+<hr>
+<h4 id="3、JWT"><a href="#3、JWT" class="headerlink" title="3、JWT"></a>3、JWT</h4><img src="/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/image-20230318155936182.png" alt="image-20230318155936182" style="zoom:50%;" />
+
+<p>自定义claims</p>
+<p>存储指定的内容</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CreateJwtTest3</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">//为了方便测试，我们将过期时间设置为1分钟</span>
+        <span class="token keyword">long</span> now <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//当前时间</span>
+        <span class="token keyword">long</span> exp <span class="token operator">=</span> now <span class="token operator">+</span> <span class="token number">1000</span><span class="token operator">*</span><span class="token number">60</span><span class="token punctuation">;</span><span class="token comment">//过期时间为1分钟</span>
+        <span class="token class-name">JwtBuilder</span> builder<span class="token operator">=</span> <span class="token class-name">Jwts</span><span class="token punctuation">.</span><span class="token function">builder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setId</span><span class="token punctuation">(</span><span class="token string">"888"</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">setSubject</span><span class="token punctuation">(</span><span class="token string">"小白"</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">setIssuedAt</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">signWith</span><span class="token punctuation">(</span><span class="token class-name">SignatureAlgorithm</span><span class="token punctuation">.</span><span class="token constant">HS256</span><span class="token punctuation">,</span><span class="token string">"itcast"</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">setExpiration</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>exp<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">claim</span><span class="token punctuation">(</span><span class="token string">"roles"</span><span class="token punctuation">,</span><span class="token string">"admin"</span><span class="token punctuation">)</span> <span class="token comment">//自定义claims存储数据</span>
+                <span class="token punctuation">.</span><span class="token function">claim</span><span class="token punctuation">(</span><span class="token string">"logo"</span><span class="token punctuation">,</span><span class="token string">"logo.png"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span> builder<span class="token punctuation">.</span><span class="token function">compact</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>获取指定信息</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ParseJwtTest</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">String</span>
+compactJws<span class="token operator">=</span>"eyJhbGciOiJIUzI1NiJ9<span class="token punctuation">.</span>eyJqdGkiOiI4ODgiLCJzdWIiOiLlsI_nmb0iLCJpYXQiOjE1MjM0MT
+czMjMsImV4cCI6MTUyMzQxNzM4Mywicm9sZXMiOiJhZG1pbiIsImxvZ28iOiJsb2dvLnBuZyJ9<span class="token punctuation">.</span>b11p4g4rE94r
+qFhcfzdJTPCORikqP_1zJ1MP8KihYTQ"<span class="token punctuation">;</span>
+        <span class="token class-name">Claims</span> claims <span class="token operator">=</span>
+<span class="token class-name">Jwts</span><span class="token punctuation">.</span><span class="token function">parser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setSigningKey</span><span class="token punctuation">(</span><span class="token string">"itcast"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">parseClaimsJws</span><span class="token punctuation">(</span>compactJws<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getBody</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"id:"</span><span class="token operator">+</span>claims<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"subject:"</span><span class="token operator">+</span>claims<span class="token punctuation">.</span><span class="token function">getSubject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"roles:"</span><span class="token operator">+</span>claims<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"roles"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"logo:"</span><span class="token operator">+</span>claims<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"logo"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">SimpleDateFormat</span> sdf<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">SimpleDateFormat</span><span class="token punctuation">(</span><span class="token string">"yyyy-MM-dd hh:mm:ss"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"签发时间:"</span><span class="token operator">+</span>sdf<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>claims<span class="token punctuation">.</span><span class="token function">getIssuedAt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"过期时间:"</span><span class="token operator">+</span>sdf<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>claims<span class="token punctuation">.</span><span class="token function">getExpiration</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"当前时间:"</span><span class="token operator">+</span>sdf<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+        <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>需求：用户登录成功之后，会发送一个新的请求到服务端，获取用户的详细信息。获取用户信息的过程中必须登录才能，否则不能获取。</p>
+<p>前后端约定：前端请求微服务时需要添加头信息Authorization ,内容为Bearer+空格+token</p>
+<p>添加响应值对象</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Getter</span>
+<span class="token annotation punctuation">@Setter</span>
+<span class="token annotation punctuation">@NoArgsConstructor</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ProfileResult</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> mobile<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> username<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> company<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">Map</span> roles<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token class-name">ProfileResult</span><span class="token punctuation">(</span><span class="token class-name">User</span> user<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>mobile <span class="token operator">=</span> user<span class="token punctuation">.</span><span class="token function">getMobile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>username <span class="token operator">=</span> user<span class="token punctuation">.</span><span class="token function">getUsername</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>company <span class="token operator">=</span> user<span class="token punctuation">.</span><span class="token function">getCompanyName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//角色数据</span>
+    <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> menus <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> points <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> apis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">Map</span> rolesMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Role</span> role <span class="token operator">:</span> user<span class="token punctuation">.</span><span class="token function">getRoles</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Permission</span> perm <span class="token operator">:</span> role<span class="token punctuation">.</span><span class="token function">getPermissions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">String</span> code <span class="token operator">=</span> perm<span class="token punctuation">.</span><span class="token function">getCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>perm<span class="token punctuation">.</span><span class="token function">getType</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+          menus<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>code<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>perm<span class="token punctuation">.</span><span class="token function">getType</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+          points<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>code<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+          apis<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>code<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token punctuation">&#125;</span>
+     <span class="token punctuation">&#125;</span>
+   <span class="token punctuation">&#125;</span>
+    rolesMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"menus"</span><span class="token punctuation">,</span>menus<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    rolesMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"points"</span><span class="token punctuation">,</span>points<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    rolesMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"apis"</span><span class="token punctuation">,</span>points<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>roles <span class="token operator">=</span> rolesMap<span class="token punctuation">;</span>
+ <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<hr>
+<h4 id="4、自定义异常类"><a href="#4、自定义异常类" class="headerlink" title="4、自定义异常类"></a>4、自定义异常类</h4><h4 id="5、shiro"><a href="#5、shiro" class="headerlink" title="5、shiro"></a>5、shiro</h4><p>前端的权限控制<br>主要围绕在菜单是否可见，以及菜单中按钮是否可见两方面展开的。</p>
+<img src="/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/image-20230318154429622.png" alt="image-20230318154429622" style="zoom:50%;" />
+
+<ol>
+<li><p>应用代码通过Subject来进行认证和授权，而Subject又委托给SecurityManager；</p>
+</li>
+<li><p>我们需要给Shiro的SecurityManager注入Realm，从而让SecurityManager能得到合法的用户及其权限进行判断。</p>
+</li>
+</ol>
+<p>从以上也可以看出，Shiro不提供维护用户&#x2F;权限，而是通过Realm让开发人员自己注入。</p>
+<h4 id="6、分布式seession"><a href="#6、分布式seession" class="headerlink" title="6、分布式seession"></a>6、分布式seession</h4><img src="/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/image-20230318161228068.png" alt="image-20230318161228068" style="zoom:50%;" />
+
+<h4 id="7、POI"><a href="#7、POI" class="headerlink" title="7、POI"></a>7、POI</h4><h4 id="8、Jasper与JasperReport-Studio怎么使用"><a href="#8、Jasper与JasperReport-Studio怎么使用" class="headerlink" title="8、Jasper与JasperReport Studio怎么使用"></a>8、Jasper与JasperReport Studio怎么使用</h4><ul>
+<li><p>设计阶段（Design）：定义模板</p>
+<p>所谓的报表设计就是创建一些模板，模板包含了报表的布局与设计，包括执行计算的复杂公式、可选的从数据源获取数据的查询语句、以及其它的一些信息。模板设计完成之后，我们将模板保存为JRXML文件（JR代表JasperReports）,其实就是一个XML文件。</p>
+</li>
+<li><p>执行阶段（Execution）：模板 + 数据</p>
+<p>使用以JRXML文件编译为可执行的二进制文件（即.Jasper文件）结合数据进行执行，填充报表数据</p>
+<p> Jaspersoft Studio 是一个可视化的报表设计工具,使用该软件可以方便地对报表进行可视化的设计，设计结果为格式.jrxml 的 XML 文件，并且可以把.jrxml 文件编译成.jasper 格式文件方便 JasperReport 报表引擎解析、显示。</p>
+</li>
+<li><p>输出阶段（Export）：展示。 将模板和数据一起展示。</p>
+<p>数据填充结束，可以指定输出为多种形式的报表</p>
+</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/exportPdf"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">exportPdf</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span><span class="token punctuation">&#123;</span>
+    <span class="token comment">//1.读取.japser文件，构建输入流</span>
+    <span class="token class-name">InputStream</span> in <span class="token operator">=</span> session<span class="token punctuation">.</span><span class="token function">getServletContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getResourceAsStream</span><span class="token punctuation">(</span><span class="token string">"/jasper/test02_param.jasper"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//2.构建Print对象，用于让模块结合数据</span>
+    <span class="token comment">//第二个参数就是用来填充模板中的parameters</span>
+    <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">></span></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"userName"</span><span class="token punctuation">,</span><span class="token string">"小泽"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"email"</span><span class="token punctuation">,</span><span class="token string">"ze@qq.com"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"companyName"</span><span class="token punctuation">,</span><span class="token string">"小泽科技"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"deptName"</span><span class="token punctuation">,</span><span class="token string">"视频组"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">JasperPrint</span> print <span class="token operator">=</span> <span class="token class-name">JasperFillManager</span><span class="token punctuation">.</span><span class="token function">fillReport</span><span class="token punctuation">(</span>in<span class="token punctuation">,</span>map<span class="token punctuation">,</span><span class="token keyword">new</span> <span class="token class-name">JREmptyDataSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//3.使用Exporter导出PDF</span>
+    <span class="token class-name">JasperExportManager</span><span class="token punctuation">.</span><span class="token function">exportReportToPdfStream</span><span class="token punctuation">(</span>print<span class="token punctuation">,</span>response<span class="token punctuation">.</span><span class="token function">getOutputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="9、SXSSF，自定义线程池-CompletableFuture"><a href="#9、SXSSF，自定义线程池-CompletableFuture" class="headerlink" title="9、SXSSF，自定义线程池+CompletableFuture"></a>9、SXSSF，自定义线程池+CompletableFuture</h4><h4 id="10、怎么进行测试的"><a href="#10、怎么进行测试的" class="headerlink" title="10、怎么进行测试的"></a>10、怎么进行测试的</h4><h4 id="11、FreeMarker和数据库元数据"><a href="#11、FreeMarker和数据库元数据" class="headerlink" title="11、FreeMarker和数据库元数据"></a>11、FreeMarker和数据库元数据</h4><ul>
+<li>创建数据库表</li>
+<li>根据表字段设计实体类</li>
+<li>编写增删改查dao</li>
+<li>根据业务写service层</li>
+<li>web层代码和前台页面</li>
+</ul>
+<p>元数据：是由Connection对象通过getMetaData方法获取而来，主要封装了是对<br>数据库本身的一些整体综合信息，例如数据库的产品名称，数据库的版本号，数据库的URL，是否支持事务等</p>
+<ol>
+<li>用户填写的数据库信息，工程搭建信息需要构造到实体类对象中方便操作</li>
+<li>数据库表信息，数据库字段信息需要构造到实体类中</li>
+<li>构造Freemarker数据模型，将数据库表对象和基本配置存入到Map集合中</li>
+<li>借助Freemarker完成代码生成</li>
+<li>自定义公共代码模板</li>
+</ol>
+<p>UI界面统一调用的入口类：GeneratorFacade<br>方便多种界面调用，主要完成数据模型获取，调用核心代码处理类完成代码生成<br>代码生成核心处理类：Generator<br>根据数据模型和模板文件路径，统一生成文件到指定的输出路径</p>
+<h4 id="12、百度云Al和二维码动态生成"><a href="#12、百度云Al和二维码动态生成" class="headerlink" title="12、百度云Al和二维码动态生成"></a>12、百度云Al和二维码动态生成</h4><ul>
+<li><p>百度的SDK</p>
+</li>
+<li><p>基于Google开发工具包ZXing生成二维码，建立二维码处理工具类</p>
+</li>
+</ul>
+<h4 id="13、Activiti工作流引擎"><a href="#13、Activiti工作流引擎" class="headerlink" title="13、Activiti工作流引擎"></a>13、Activiti工作流引擎</h4><h4 id="14、微服务"><a href="#14、微服务" class="headerlink" title="14、微服务"></a>14、微服务</h4><p>spring cloud Zuul包含了对请求的路由和过滤2个功能。路由功能负责将请求转发到具体的微服务上，<br>而过滤器负责对请求的处理过程进行干预，是实现权限校验、服务聚合等功能的基础。</p>
+<p>什么是策略模式</p>
+<p>七牛云怎么对接</p>
+<p>预防文件上传漏洞：限制大小、校验后缀怎么做</p>
+<p>怎么进行压缩和数据降冷</p>
+<p>redis的底层</p>
+<ul>
+<li><p>本科：211（减分项，今年23所以下皆为减分项，后附23所）</p>
+</li>
+<li><p>硕士：985（减分项，本校不在23所中，所以属于普通985）</p>
+</li>
+<li><p>专业：本硕软件工程科班（平分项，英雄不问出身，科班反而没有转码老哥们能“奋斗”）</p>
+</li>
+<li><p>技能：</p>
+</li>
+<li><ul>
+<li>java（熟练，主角了）</li>
+<li>go（项目用到，八股熟悉）</li>
+<li>c++（项目用到，八股没背）</li>
+<li>k8s（两段实习均用到，八股一般）</li>
+<li>git（熟练rebase回退merge）</li>
+<li>vim（熟，字节实习用过一段时间在BOE上敲代码）</li>
+<li>shell（一般，sed，awk用很少）</li>
+</ul>
+</li>
+<li><p>成绩：本科20%，研究生不知道（平分项，无人关心）</p>
+</li>
+<li><p>实习经历：</p>
+<ul>
+<li>互联网大厂基础架构岗一段（正分项，面试重点）</li>
+<li>外企一段（平分项，面试官能问的问题太少）</li>
+<li>小厂一段（平分项，无人关心）</li>
+</ul>
+</li>
+<li><p>项目经历：</p>
+</li>
+<li><ul>
+<li>PingCap TinyKV（正分项，一半人问的这个项目）</li>
+<li>手写rpc-framework（平分项，未写上简历，不过有一个面试官问了rpc，答了项目）</li>
+<li>秒杀系统+谷粒商城（正分项，未写上简历，但是对问的业务问题，电商问题都能从这个项目得到答案）</li>
+<li>安卓JavaWeb各种客户端项目私活等小项目10个左右（正分项，对业务问题比较熟悉）</li>
+</ul>
+</li>
+<li><p>比赛经历：蚂蚁Oceanbase数据库大赛miniob项目（正分项，另一半的问项目问的这个），ACM校赛（平分项，可忽略，无人关心）</p>
+</li>
+<li><p>源码阅读：GoLeveldb（正分项，基架容易问LSM相关内容）</p>
+</li>
+<li><p>力扣刷题：1300题（正分项，笔试容易过，面试手撕算法很少有不会的）</p>
+</li>
+<li><p>力扣周赛：最好200+名（最好一次91名，rejudge的时候第二题一个样例没过，成300+了，气半死）（正分项，熟悉笔试流程）</p>
+</li>
+<li><p>八股准备：坚持看牛客面经看了三年（正分项，很少遇到没见过的题）</p>
+</li>
+<li><p>奖学金：国励，校友奖学金，综合奖学金（减分项，人手国奖，没有就是five，不过无人在乎）</p>
+</li>
+<li><p>英语水平：6级572（平分项，无人关心）</p>
+</li>
+<li><p>论文：无（减分项，人有我无）</p>
+</li>
+<li><p>专利：无（平分项，无人在乎）</p>
+</li>
+<li><p>社会活动：无人关心</p>
+</li>
+<li><p>校园任职：无人关心</p>
+</li>
+<li><p>个人平台：无人关心</p>
+</li>
+<li><p>附：阿里23所名单<br>清华、北大、北邮、上海交大、浙江大学、国科大、华科、南京大学、西安电子科大、北航、武汉大学、中科大、哈工大、复旦、成电、东南、华工、中山、西安交大、四川大学、大连理工、同济、北理</p>
+</li>
+</ul>
+<h3 id="秋招复盘"><a href="#秋招复盘" class="headerlink" title="秋招复盘"></a><strong>秋招复盘</strong></h3><p><strong>蔚来（Java后端开发，二面挂）</strong></p>
+<p>7.18投 7.27笔试 8.6一面 8.6二面 8.30挂</p>
+<p>蔚来的笔试是三道简单题，ak的。一面介绍了下两段实习经历，二面讨论了一下索引相关的问题。</p>
+<p>总结：蔚来是第一个面的公司，讲个道理蔚来的面试不难，基本属于白给级别。但是很奇怪的是，我们8月6号面的无人通过……8月30号统一感谢信，这个时候我发现今年的秋招真的有点问题。这告诉我们后面的秋招一定要趁早投递，真不要等。7月最早开始</p>
+<p><strong>猿辅导（服务器端开发，二面挂）</strong></p>
+<p>8.1投 8.7笔试 8.13一面 8月19二面 9月挂</p>
+<p>猿辅导笔试挺难的，得分1.2&#x2F;3.0。一面挺简单的，问了问数据库和raft，二面一男一女两个面试官问了74min，问了26个问题，写了两段代码，从raft聊到cs架构的系统调用。女面试官带点hr面的性质，手撕算法的时候没写完，感觉聊的还挺好的。</p>
+<p>总结：这个要说挂在哪了，应该是挂在手撕上面了？猿辅导说在探索和官方合作，比如学校业务啥的。这边的base开的很高，还是很想去的。</p>
+<p><strong>滴滴（Java后端开发，唯一offer，大白菜）</strong></p>
+<p>8.1投 8.14一面 8.14二面 8.14三面 11.21 offer</p>
+<p>滴滴好像没有笔试，直接开面的。三面一天搞定，基本就是问实习经历。做了两个场景设计题，后面都没有再遇到做场景设计的。</p>
+<p>总结：滴滴的面试感觉还挺好的，很快啊。那个时候也没想到，滴滴就成了唯一offer。8.14面的，10月底才开始陆续开奖，俩月了。然后滴滴知道海康，科大讯飞这样的教训，没有超发，一个个沟通offer，拒了再发下一个，很好。不过开到今天，ssp和sp基本无了，剩下的都是烂白菜没人去的，0 offer选手没有其他选择。</p>
+<p><strong>百度（数据库内核研发，一面挂）</strong></p>
+<p>7.24投 8.19一面 9.13正式批笔试 挂</p>
+<p>提前批无笔试，正式批笔试1.53&#x2F;3.0。</p>
+<p>百度这边一面就知道是懂哥，问的都是工业界的东西，老哥应该是对etcd和braft很熟悉。</p>
+<p>总结：百度的这个很搞，问我想做什么方向，我说之前做的管控面，现在想做做数据面，反问的时候我问您是什么部门的，他说我是管控面的负责人。我：……那没了</p>
+<p><strong>美团（分布式存储，三面挂）</strong></p>
+<p>8.1投 8.13笔试 8.20一面 8.25二面 9.27三面 没挂但也不会有人捞了</p>
+<p>美团笔试很简单5&#x2F;5。基本一半的人都ak了。</p>
+<p>一二面都是存储的人，三面被美团到家还是到店捞起来了，都面完了才问您不是存储的吧，老哥自我介绍的时候没听清楚……委婉表达了不想去。三面之后直接g。</p>
+<p>总结：美团的二面和主管聊挂的，为啥呢，我问了下美团作息是什么老哥说1095，为啥聊这个就挂了呢？因为这说明你不能加班……说1095就是客气客气，多半还是10105 10115往上拉。</p>
+<p><strong>StarRocks（数据库内核研发，一面挂）</strong></p>
+<p>9.6投 9.10一面 9月19挂</p>
+<p>无笔试，被吊打的一场，从raft大论文，到paxos，到实习经历。老哥问的raft细节都能在大论文找到，都是面完了才想起问的是什么。</p>
+<p>总结：start-up确实还是有东西的，适合想被吊打的老哥们投</p>
+<p><strong>华为（2012实验室高斯数据库，三面池子）</strong></p>
+<p>7.18投 8.31笔试 9.19一面 9.19二面 9.24三面 池子能泡到明年入职</p>
+<p>华为有要求保密，笔试面试就不讨论了</p>
+<p>总结：华为今年秋招的情况和海康，科大讯飞差不多，简称没有b数，不清楚今年的秋招的行情，还以为像以前一样，大家把华为当保底，最后鸽子满天飞。面完两个月了，还在养鱼，不发offer。留学生倒是offer不限量。企业形象确实不要了。可惜了，还挺想去搞搞pg</p>
+<p><strong>米哈游（后端开发，一面挂）</strong></p>
+<p>7.18投 8.7笔试 9.20一面 10月挂</p>
+<p>笔试1.11&#x2F;3.00</p>
+<p>面试就是正常八股，问了下做啥的，是做米哈游社区的，可能问多了，老哥觉得我不想去，这个最搞的是，有个场景题，设计一个限流器，吐槽你还行，知道这是啥，说大多数人都不知道啥是限流器，还要解释一下。反手就给挂了</p>
+<p>总结：业务部门不要一副我不想去的样子，今年能进业务部门不错了，别老想着基架</p>
+<p><strong>蚂蚁（Oceanbase内核开发，hr面挂）</strong></p>
+<p>9.8投 9.13笔试 9.20一面 9.21二面 10.11三面 10月19日挂</p>
+<p>笔试1.90&#x2F;3.00</p>
+<p>ob非常对口了，也非常想去。两轮技术面谈的很好，hr面的时候，直接问了一手到底有无hc，我校是否有机会，hr说有的。下来和上海高斯池子群里校友，交流，原来一点机会都没有。ob办了一个官方数据库大赛，我们是第一届嘛，然后华师大和华科基本就包揽了前50，当然，第一名是民大的懒懒他们队。我和室友只是进了复赛，没进决赛。不过华师大是有第二名的。华师大实验室还和ob有合作关系。但是</p>
+<ul>
+<li>华师大ob大赛决赛 第二名 挂</li>
+<li>华师大ob大赛决赛 华为软挑季军 挂</li>
+<li>华师大ob春招实习没去 直通秋招终面 挂</li>
+<li>我这个普通的 ob大赛复赛入围 那必挂</li>
+</ul>
+<p>老哥说基本只要清北，脉脉看了下，有个美硕老哥也拿了offer。10月19看了眼，应该是排序的时候给挂了，你有这么多清北美硕备胎，还面啥啊？</p>
+<p>总结：ob大赛学了一手源代码，学习了ob的框架，这个还是有好处的。但是一个是复赛就是个笑话，大家都是通过hack代码的方式进行的优化，然后后面秋招，你自己也不承认这个比赛成绩，只要清北，直通终面的也不要，这就很没意思了，这波我觉得企业做的真的影响形象。</p>
+<p><strong>微软（跨组转正，lead面挂）</strong></p>
+<p>9.30lead面</p>
+<p>微软遇到了秋招最有意思的一道题，其实也不是很难，只是当时没想到最优解</p>
+<ul>
+<li>Linux系统 intel CPU只能写代码不能写脚本，测试出L1 L2 L3大小</li>
+</ul>
+<p>18年面网易实习的时候遇到过矩阵乘法加速问题，知道这种题要考虑局部性相关等。所以遇到这个题马上想到CSAPP的局部性这一章。我自己想的是通过定义不同大小的矩阵，进行矩阵乘法，统计时间，绘制二维的折线图，查看三个拐点处的矩阵大小，求出各层缓存的大小。</p>
+<ul>
+<li>可是这种不够简单，后面看了CSAPP和Stack Overflow上面，直接用一个数组就行，不用矩阵乘法这么麻烦</li>
+<li>忘了需要预热，后面有个follow-up提醒我，想到缓存污染，但是没想到怎么解决</li>
+</ul>
+<p>总结：后面还是看到应该是美硕老哥拿到了这个hc……很可惜了，我觉得在字节的实习经历和这个岗很匹配了，但是单一个产品的话，感觉这个部门估计就10个人，所以hc不多，我挂了情有可原，今年的微软实习转正，本组算是很多的了，其他组看了下，很少，挂了正常只能说。可惜不能和实习的小伙伴们一起游戏房投篮了，未来社招见</p>
+<p><strong>其他</strong></p>
+<ul>
+<li>hulu：笔试60min 3hard 0.65&#x2F;3.00 基本只要清北爷 acm爷 自不量力了</li>
+<li>亚马逊：基本a了，投的上海直接岗位撤销了，转投北京，无面试</li>
+<li>小米：投的分布式存储，无面试，神仙打架</li>
+<li>无笔试&#x2F;笔试没过&#x2F;简历没过：虾皮，小红书，英伟达，b站，dolphindb，阿里云，翼支付，天翼云</li>
+</ul>
+<h3 id="量化总结"><a href="#量化总结" class="headerlink" title="量化总结"></a><strong>量化总结</strong></h3><ul>
+<li>公司：投递公司21个，面试10个公司，通过公司1个。投递面试比0.476，投递通过比0.0476，面试通过比0.1</li>
+<li>笔试题目：一共27题，全部完成14题，部分完成9题，没做4题。笔试题目完成率0.519</li>
+<li>面试：一共19面，通过11面，挂8面。面试通过率0.579</li>
+<li>面试题目：一共问题225个，回答没问题209题，回答有一些问题10题，不会的问题6题。面试问题完成率0.929</li>
+<li>面试手撕算法：一共17题，全部完成15题，没写完2题。手撕完成率0.88</li>
+</ul>
+<h3 id="经验总结"><a href="#经验总结" class="headerlink" title="经验总结"></a><strong>经验总结</strong></h3><ul>
+<li><p>今年的秋招难度我觉得是这样的，大多数人：</p>
+</li>
+<li><ul>
+<li>211本及以下，0 offer</li>
+<li>985本及211硕，0-1 offer</li>
+<li>985硕， 0-3 offer</li>
+<li>C9硕，2-5 offer</li>
+<li>清北，2-7 offer</li>
+</ul>
+</li>
+<li><p>清北也有很多0 offer，我身边也有很多0 offer，在11月21日之前，我也是0 offer。0 offer将成为未来秋招常态，集邮一去不复返</p>
+</li>
+<li><p>海投成了未来标配，今年是人均100,200,300投递，我是纯纯懒得投了，就这样吧，不建议学习</p>
+</li>
+<li><p>我这边已经算投递面试比很高的了，简历应该没啥问题，面试情况具体分析，学校这次真拉了后腿了，以往不这样。投递offer比，面试offer比相比往年实在太低了</p>
+</li>
+<li><p>Tplink和比亚迪这样的保底需要有，保证自己在中途失去信心，不管这些企业怎么样吧，先感谢人家接收应届</p>
+</li>
+<li><p>面试笔试做的好简历好，远不如学校好。学历今年基本大于一切，清北复交浙会大于一切这些花里胡哨的，23所成了大厂的硬门槛，所以高考决定了一些事情，考研也决定了一些事情，找工作逆天改命变得困难</p>
+</li>
+<li><p>美硕留学生抢着要，有些企业是脸都不要了</p>
+</li>
+<li><p>企业对就业市场其实也没有预期，微软一开始宣传的很好，结果就hire freeze了，说明上面决策和下面执行脱节，同理海康，科大讯飞。腾讯就搞得很好，一开始就摆明了，我就162个hc，所以大家最后压根就懒得笔试了</p>
+</li>
+<li><p>先投先面的有优势，一定要在第一时间投递约面</p>
+</li>
+<li><p>春招不会有大厂补录hc，光从池子里捞人就够了</p>
+</li>
+<li><p>基础架构成华五专场了，基本只要清北浙华科，此方向学历不好慎重，其他学校建议走业务</p>
+</li>
+<li><p>读研性价比最高的是，复旦计算机专硕，科软，其他学校要么太难进，要么找工作拖后腿</p>
+</li>
+<li><p>云计算不错，hc不少，缺点是基本做管控面，加班严重，必oncall</p>
+</li>
+<li><p>不管是从企业，经济，毕业生情况等方面看来，今年将是未来x年最好的一年，情况只会更差</p>
+</li>
+</ul>
+<h2 id="实习招聘"><a href="#实习招聘" class="headerlink" title="实习招聘"></a>实习招聘</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://flowus.cn/veal/share/55ab5752-3455-491d-b2f9-2ba2ea94a967">互联网 2024 实习汇总</a></li>
+</ul>
+<h3 id="关于复习时间安排"><a href="#关于复习时间安排" class="headerlink" title="关于复习时间安排"></a>关于复习时间安排</h3><p>找工作所需要准备的知识不是线性排列的。</p>
+<p>例如 一个月 搞定编程语言，一个月搞定算法，一个月搞定操作系统，如果这么学的话，那就凉凉。</p>
+<p>编程语言 算法 + 计算机基础（操作系统，数据库，网络，设计模式） + 项目 都可以一起搞的，一天都要分配点时间，知识错开点来学，效率高一些。</p>
+<p>每天投入一点，例如你发现 操作系统比你想象中的难，你就 下周调整计划，操作系统每天多分配时间。</p>
+<p>正常的学习节奏是这样根据自己的掌握程度动态调整的。</p>
+<p>例如 每两个小时算一块，用来学习一个方面的知识。</p>
+<p>每天 上午 一块，下午两块，晚上一块。一块是 编程语言，一块是算法，一块是计算机基础，一块是项目。</p>
+<p>如果你还有时间，你可以每天 五块，或者六块，都可以。多出来的块，去加强你的弱项。</p>
+<p>在整体进度上，可以先保证都过一遍，然后在关注细节，第一遍看的时候，不要死扣细节，会非常耽误时间，先过一遍有整体性的把控 更重要。</p>
+<h3 id="关于读研"><a href="#关于读研" class="headerlink" title="关于读研"></a>关于读研</h3><p>1、读研究生确实大概率来说 就是多自学了一两年 同时给你一个学历，大部分导师教不了啥，甚至还拖你的后腿，多少研究生学习都得偷摸学，和导师斗智斗勇的。<br>但为什么认可研究生呢，毕竟多自学了一两年，还是个研究生，如果能力和本科生一样的话，就要研究生呗。<br>所以研究生是有用的。如果要考研的话建议直接二战，不要边工作边考。<br>你是考过研究生的，你知道其过程的难度，边工作边考基本没戏，而且随着年龄的增长，哪些基础性的东西学的会越来越慢。</p>
+<p>2、 这个目的是正常的，大家都有名校情结，都要有一个好的出身。<br>至于30岁往上走卡学历，有这种现象， 但随着年龄的阅历的增加，学历的重要性 慢慢没那么重要了。</p>
+<p>3、你现在准备春招去大厂的可能性非常小，你可以看看星球置顶3里的面经，基本大家都是准备了一年才冲大厂的。<br>一般来说，去211读书2年去大厂 要比 小厂工作2年 去大厂更容易。但 小厂工作2年 去大厂 性价比（赚钱和成长）更高，同时不确定因素大，因为要看你的工作内容，看你的领导，看你的项目组如何。<br>去211读书2年去大厂 更稳，确定性因素更大。<br>从结果来说，如果在小厂工作两三年 一旦去了大厂， 职级会比你 同龄研究生高出两级左右，薪资也会比他们高很多，他们后面 很难赶上来。<br>我也刚刚在知识星球里也回答了一个考研的问题，要不要二战，这个还得问你自己。<br>两条路，没有公式的，谁都预测不出来你未来的发展。<br>如果二战就要做好失败的准备，拿出逆袭的姿态。<br>不二战，适当降低offer预期，不要降低努力的程度，好好学技术，依然可期。</p>
+<h3 id="关于面试"><a href="#关于面试" class="headerlink" title="关于面试"></a>关于面试</h3><p>1、就拿投简历来说</p>
+<p>利用好boss直聘，实习僧，牛客网等各大平台，尤其是牛客，可以看到很多一起同甘共苦的朋友们分享的最新资讯，也有很多内推信息。</p>
+<p>再一个就是boss直聘一定要利用好，因为上面有很多大厂“隐藏”的部门在招人，在官网不一定能看到，但是在这投简历，说不定就瞎猫碰上死耗子，就中了。我之前好几次面试都是这样begin的。</p>
+<p>2、面某个公司的时候，最好找到一个靠谱的内推人，可以随时帮你push进度的那种</p>
+<p>不要找那种牛客上随便发个帖子，然后把内推码发出来就不管的那种，到了后面如果想要转岗或者查询面试结果，联系不上人，你说烦不烦？</p>
+<p>3、先面小公司或者不太想去的公司涨经验</p>
+<p>这个真的也很重要。尤其是一些八股，在经历过十几场甚至几十场面试之后，真的张嘴就来。不管是锻炼面试心态还是技术水平都很重要‘</p>
+<h3 id="关于租房"><a href="#关于租房" class="headerlink" title="关于租房"></a>关于租房</h3><p>来源：在抖音上找的（搜索 某市某区租房），不需要交中介费用</p>
+<p>1、首先一点自己钱的底线如果是 1500，就说最大接收的范围是 1300 或者 1400，给自己留有余地，千万不要告诉他你的真正底线，因为可能看到一个适合的正好需要 1500，如果觉得可以就可以拿下啦</p>
+<p>2、事事有回应，不喜欢就是不喜欢，不想要就是不想要，直接跟他回绝就可以不需要不好意思，他是服务你的（你是老大），因为以后可能还需要联系找他，所以在外大家和气生财，不要去争吵啥的。</p>
+<p>3、千万不要说自己第一次来这啥的（表现出自己是个新手），这样中介特别会花言巧语然后给你施压（例如：这个价位的房子真的没有了，正好被你碰到啦或者先付押金不然明天就没啦这个房子等等），所以这时候就不要着急，根据自己实际情况再做决定</p>
+<p>4、绝招就是卖惨，哈哈哈哈哈，我说的是目前实习没啥钱，和父母吵架出来的，父母不给金钱支付等等（家人们可以自己想），这样容易还价钱！</p>
+<h2 id="国企招聘"><a href="#国企招聘" class="headerlink" title="国企招聘"></a>国企招聘</h2><p><strong>以下信息来源于网络</strong></p>
+<h3 id="1-金融类"><a href="#1-金融类" class="headerlink" title="1.金融类"></a>1.金融类</h3><p>1.1 首选证券公司</p>
+<p>各省基本都有一所证券公司，沿海省份一般在30万左右，少数top在税前35-40万。</p>
+<p>内地省份集中在20-30万。</p>
+<p>很少加班，多数为国企，一般要求硕士，有的要求提前暑假实习。</p>
+<img src="/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/image-20230228145016775.png"  style="zoom:67%;" />
+
+
+
+<blockquote>
+<p>券商it分为两类。第一类总部维护，这个是职能部门，不忙。第二类科技子公司，这个负责给总部搞信息化建设的，也是要研发的，也会加班</p>
+</blockquote>
+<h4 id="1-2-公募-amp-私募基金"><a href="#1-2-公募-amp-私募基金" class="headerlink" title="1.2 公募&amp;私募基金"></a>1.2 公募&amp;私募基金</h4><p>公募和私募基金也有技术岗，比如：</p>
+<ul>
+<li>易方达基金（两年后50-55万），</li>
+<li>天弘基金（42万）、</li>
+<li>广发基金（35万）、</li>
+<li>博时基金（40万+）、华安基金、汇添富基金</li>
+</ul>
+<p>比较看中学历，待遇比券商更高。差异较大，一般排名越前，待遇越高，公募有一百多家，直接百度“公募基金排名”。</p>
+<p>私募不是国企，待遇差异较大，网上信息更少。</p>
+<h4 id="1-3-交易所"><a href="#1-3-交易所" class="headerlink" title="1.3 交易所"></a>1.3 交易所</h4><p>上海证券交易所（27-30万）   深圳证券交易所   大连商品交易所   郑州商品交易所（18万）   上海期货交易所   中国金融期货交易所（中金所，上海）   北京证券交易所   广州期货交易所</p>
+<h4 id="1-4-保险公司"><a href="#1-4-保险公司" class="headerlink" title="1.4 保险公司"></a>1.4 保险公司</h4><p>岗位主要是<strong>财险、寿险、科技子公司、省级分公司。</strong>比如：中国太平洋保险集团（中国太保）</p>
+<blockquote>
+<p>中国太平洋财产保险（财险）、    中国太平洋人寿保险（寿险）、    太保科技有限公司（科技子公司，可能有末尾淘汰）、    中国太平洋保险集团四川分公司</p>
+</blockquote>
+<ul>
+<li><p>中国人寿保险集团：人寿财险，第一年20万、第二年27万、第三年34万、第四年40万</p>
+</li>
+<li><p>中国人民保险集团：人保财险，25-30万</p>
+</li>
+<li><p>中国太平保险集团（中国太平）</p>
+</li>
+</ul>
+<h4 id="1-5-其他金融类"><a href="#1-5-其他金融类" class="headerlink" title="1.5 其他金融类"></a>1.5 其他金融类</h4><p>比如：</p>
+<ul>
+<li><p>中国证券登记结算有限责任公司（北京、上海、深圳）</p>
+</li>
+<li><p>成方金融科技有限公司（人行子公司，北京、西安、成都，22-35万）</p>
+</li>
+<li><p>成方金融信息技术服务有限公司</p>
+</li>
+</ul>
+<p>中国印钞造币集团有限公司（各省）：</p>
+<blockquote>
+<p>成都印钞有限公司    西安印钞有限公司    南昌印钞有限公司    石家庄印钞有限公司    南京造币有限公司    沈阳造币有限公司</p>
+</blockquote>
+<h3 id="2-各大银行"><a href="#2-各大银行" class="headerlink" title="2.各大银行"></a>2.各大银行</h3><blockquote>
+<p>总结一下就是3点：稳定+薪资还行+没有营销压力。</p>
+<p>整体上大银行的待遇＞中小银行</p>
+<p>地方性银行总行的待遇＞国有行省级分行</p>
+</blockquote>
+<p>银行是招收计算机的大户，请百度搜索“**省有哪些银行”</p>
+<p>银行是个比较大的话题，银行多，部门多，岗位多，所以待遇千差万别。</p>
+<h4 id="银行"><a href="#银行" class="headerlink" title="银行"></a>银行</h4><p>一般来说银行，国企都是 Java居多 （但也不是说就没有C++），所以如果想去银行的话，最好是学Java，走Java技术路线。</p>
+<p>其实编程基础知识就是那些，编程语言 + 计算机基础 + 算法题 + 项目，无论面试哪里，都是这样，没有什么特别的路线。</p>
+<p>如果说银行，国企哪里特别一些，就是面试简单一些。</p>
+<h4 id="2-1-银行多"><a href="#2-1-银行多" class="headerlink" title="2.1 银行多"></a>2.1 银行多</h4><p>3家政策行（<strong>最稳定</strong>）：国开行、农发行、进出口银行</p>
+<p>6大国有行：中农工建交+邮储</p>
+<p>12家全国股份行：</p>
+<blockquote>
+<p>招商银行、中信银行、光大银行、民生银行、兴业银行、浦发银行、广发银行、浙商银行、华夏银行、平安银行、恒丰银行、渤海银行</p>
+</blockquote>
+<p>地方性城市银行128家，地方性农商行1596家，未改制的省联社25家</p>
+<p>比如四川省的地方性银行13家：</p>
+<blockquote>
+<p>四川银行、成都银行、泸州银行、自贡银行、宜宾市商业银行、绵阳市商业银行、乐山市商业银行、南充市商业银行、德阳银行、雅安市商业银行、遂宁银行、达州银行、成都农村商业银行    外资银行41家，民营银行19家。</p>
+</blockquote>
+<p>还有银行的理财子公司（25家）+金融租赁子公司（44家）</p>
+<h4 id="2-2-内部岗位多"><a href="#2-2-内部岗位多" class="headerlink" title="2.2 内部岗位多"></a>2.2 内部岗位多</h4><p>总行部门：科技信息部、研发中心、信用卡中心、数据中心、运维中心（15-30万）</p>
+<p>科技子公司（20-30万）</p>
+<p>省级分行（10-20万）</p>
+<p>2022年银行业100强(下图为前50名)：</p>
+<img src="/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/image-20230228145144358.png"  style="zoom: 100%;" />
+
+<p><strong>银行科技岗</strong>可以说是程序员就业的一个很好的选择了。</p>
+<h3 id="3-烟草-国家电网-中石油-铁路集团"><a href="#3-烟草-国家电网-中石油-铁路集团" class="headerlink" title="3.烟草+国家电网+中石油+铁路集团"></a>3.烟草+国家电网+中石油+铁路集团</h3><h4 id="3-1-烟草公司"><a href="#3-1-烟草公司" class="headerlink" title="3.1 烟草公司"></a>3.1 烟草公司</h4><p>烟草公司：分为各省<strong>烟草专卖局</strong>和各省<strong>中烟工业</strong>（卷烟厂），属于闷声发大财的代表，懂的都懂。</p>
+<h4 id="3-2电网"><a href="#3-2电网" class="headerlink" title="3.2电网"></a>3.2电网</h4><p>是个很大的话题，首选是输电卖电的<strong>国家电网</strong>、<strong>南方电网</strong>。</p>
+<p>其次是<strong>发电</strong>的央企（煤电、水电、风电、核电、光伏）：</p>
+<blockquote>
+<p>国家能源、大唐集团、中国华能、华电集团、国家电投、三峡集团、华润集团、国投集团、中广核集团、中核集团</p>
+</blockquote>
+<p>最后是<strong>电力装备制造</strong>的央企：</p>
+<blockquote>
+<p>中国东方电气集团    哈尔滨电气集团、    中国电气装备集团</p>
+</blockquote>
+<h4 id="3-3-石油天然气系统"><a href="#3-3-石油天然气系统" class="headerlink" title="3.3 石油天然气系统"></a>3.3 石油天然气系统</h4><p>油气田，比如：</p>
+<blockquote>
+<p>中石油西南油气田分公司（闷声发大财）    陕西延长石油(集团)有限责任公司    中石油长庆油田分公司</p>
+</blockquote>
+<p>每个省都有<strong>中石油分公司</strong>。</p>
+<h4 id="3-4-各省三大运营商-铁塔"><a href="#3-4-各省三大运营商-铁塔" class="headerlink" title="3.4 各省三大运营商+铁塔"></a>3.4 各省三大运营商+铁塔</h4><p>本硕都可以进，工作氛围褒贬不一，看部门和岗位，适合家境好无赚钱压力的。</p>
+<p>以移动为例，岗位类型为：</p>
+<blockquote>
+<p>各省分公司（一般税前10-20w之间）中移(苏州)软件技术有限公司（苏小研，25w）中移信息系统集成有限公司（中移系统集成）中移物联网有限公司（中移物联网，12-15万）中移互联网有限公司（中移互联网，主要在广州）中国移动通信集团设计院有限公司（通信设计院，各省都有）中移铁通有限公司（中移铁通，各省都有）咪咕文化科技有限公司（咪咕文化）</p>
+</blockquote>
+<p>电信、联通架构同理。</p>
+<p><strong>中国铁塔</strong>股份有限公司，通信设施建设与维护。</p>
+<blockquote>
+<p>岗位<strong>各省都有</strong>，八险两金（补充医疗保险、重疾险、人身意外险+企业年金），但是薪资低，税前8-10万</p>
+</blockquote>
+<p>同理还有各大<strong>航空公司</strong>、</p>
+<p>各省的<strong>机场</strong>，</p>
+<p>各省<strong>高速路集团</strong>，</p>
+<p>各省<strong>公共交通集团</strong>，</p>
+<p>各省<strong>地铁公司</strong>。</p>
+<h4 id="3-5各省铁路局"><a href="#3-5各省铁路局" class="headerlink" title="3.5各省铁路局"></a>3.5各省铁路局</h4><p>轨道交通信息化，旱涝保收，各省都有。</p>
+<p>计算机+软件工程拔剑四顾心茫然。每个省大概都有自己的省级铁路公司，招人相对18个铁路局较少。</p>
+<h3 id="4-军工相关的四家央企：航天科技-航天科工-电子科技集团-中国船舶"><a href="#4-军工相关的四家央企：航天科技-航天科工-电子科技集团-中国船舶" class="headerlink" title="4.军工相关的四家央企：航天科技+航天科工+电子科技集团+中国船舶"></a>4.军工相关的四家央企：航天科技+航天科工+电子科技集团+中国船舶</h3><p>岗位多集中在北京、上海、西安、成都。在很多省也有分部、分公司。中国船舶也是世界500强，同理，下属的所和子公司遍布全国各地，待遇一般较差。不同所差别很大，待遇看盈利情况，加班情况看部门，一般要求硕士。直接百度“<strong>省&#x2F;市有哪些国企”、“</strong>省&#x2F;市有哪些央企”</p>
+<h3 id="5-军队"><a href="#5-军队" class="headerlink" title="5.军队"></a>5.军队</h3><p>军队文职和直招军官（偏题了）。</p>
+<p>直招军官＞军队文职</p>
+<p>沿海城市性价比低，在中西部地区性价比很高。</p>
+<p>军队文职：本科到手9千，硕士到手9500，博士到手11000。13薪，包三餐，免费医保。</p>
+<p>在地级市基本人上人。</p>
+<p>直招军官待遇不了解，应该只高不低。</p>
+<h3 id="6-医院信息科"><a href="#6-医院信息科" class="headerlink" title="6.医院信息科"></a>6.医院信息科</h3><p>医疗信息化，当甲方，不写代码，很爽的好吧（不过也有人说三甲大医院很忙，专科医院较轻松）。</p>
+<h3 id="7、本省车企（乘用车-货车-工程车）"><a href="#7、本省车企（乘用车-货车-工程车）" class="headerlink" title="7、本省车企（乘用车+货车+工程车）"></a>7、本省车企（乘用车+货车+工程车）</h3><p>以长安为例，岗位类型为：</p>
+<blockquote>
+<p>长安汽车前瞻技术研究院（18-20k，硕士，非子公司）、长安汽车智能化研究院（本科，非子公司）、长安汽车软件科技有限公司（长安子公司，16-17k）、长安新能源（长安子公司，17-21k）</p>
+</blockquote>
+<p>校招一般211本科起步，或者重邮硕士。汽车智能化，车载智能化，招计算机的可能比车辆工程、机械工程还多。</p>
+<h3 id="8-药企-酒企"><a href="#8-药企-酒企" class="headerlink" title="8.药企+酒企"></a>8.药企+酒企</h3><p>喝酒吃药这两个行业，利润比较高，待遇都比较好，百度搜索药企、酒企市值排行榜，去了解哪个公司比较好，以药企为例：</p>
+<img src="/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/image-20230228145338472.png" style="zoom: 80%;" />
+
+
+
+<p>酒企一般在地级市，福利待遇好，房价不高。</p>
+<h3 id="9-地方政府的平台公司"><a href="#9-地方政府的平台公司" class="headerlink" title="9.地方政府的平台公司"></a>9.地方政府的平台公司</h3><p>这个懂的都懂，比较小众，招聘要求比较高，待遇很好，也很稳定，城投公司之间<strong>差异较大</strong>。</p>
+<p>大公司一般都有技术岗，登陆本省或本市的国资委官网查询。或者搜索 “<strong>省有哪些央企”、“省有哪些国企”，“市有哪些国企”</strong>，大公司基本都有信息岗。</p>
+<p>信息化是大潮流，各行各业都需要，毕竟”宇宙机”。</p>
+<p>待遇好的国企基本只校招，很少社招，<strong>把握好应届生身份，仅此一次</strong>。</p>
+<h2 id="外企招聘"><a href="#外企招聘" class="headerlink" title="外企招聘"></a>外企招聘</h2><p><strong>以下信息来源于网络</strong></p>
+<h3 id="亚马逊面试经验分享"><a href="#亚马逊面试经验分享" class="headerlink" title="亚马逊面试经验分享"></a>亚马逊面试经验分享</h3><p>5.20 投的简历，5.24 收到 OA 笔试邮件。</p>
+<p>SDE2 OA包含</p>
+<ul>
+<li>1）coding， 90分钟，两道题；</li>
+<li>2）工作模拟， 15分钟；</li>
+<li>3）工作风格调查。邮件还包含个人信息完善部分。</li>
+</ul>
+<p>OA 在 7 天内完成都行。我是在 5.29 做的笔试题。后来了解这个笔试题是 HR 随机选的，一般都是中等难度。但我遇到了一个 hard，LeetCode 2281 题，第一题过了，这个 hard 只过了一部分测试用例。担心 OA 都过不了，那几天还是有点失落的。</p>
+<p>同时，在网站上看到这样的信息，以为 OA 挂了。不过 6.14，过了半个月，通知我面试。惊喜。后来认识的亚马逊 HR 帮我查了，说我 OA 结果还不错。后来又了解到很多人都没有全部 case 都过，也拿到了面试邀请。</p>
+<p>不过从 OA 结束到面试邀请时间不一定，有的两三天，有的半个月。做 OA coding 时， 还是要注意代码风格，变量命名，不要写过多无用冗余的注释，代码要简洁。</p>
+<p>我六月初面试就基本结束了，所以把面试推到六月底开始，好有时间准备下，总共 4 轮，我选的是连续 4 天每天一轮。这期间又把算法，系统设计好好准备了下。</p>
+<p>亚马逊面试不问八股文。就项目，coding，系统设计。总的来说，亚马逊的面试可以说是很专业，有水准，让人尊敬。</p>
+<p><strong>一面</strong></p>
+<p>前半个小时问项目，后半个小时做题，加 follow up。</p>
+<p><strong>二面</strong></p>
+<p>是系统设计。前半个小时问项目，很有水平，问道了核心难点，别的公司面试的时候问道都比较浅。后半个小时系统设计，亚马逊的系统设计用的画图网站很难用，可以用自己的本地或者在线画图网站，屏幕共享即可。</p>
+<p><strong>三面</strong></p>
+<p>是 BQ 考察。前半个小时 BQ 问题。后半个小时做一个题。两次 coding 都是中等难度。</p>
+<p><strong>四面</strong></p>
+<p>也是先聊半个小时项目。后半个小时做了一个简单的系统设计。建议换个不同的项目聊，可以更全方面的展示自己能力。</p>
+<p>面试官都会做记录，四轮面试结束后，他们要一起讨论是否给候选人过。</p>
+<p>亚马逊面试流程前面会很慢，尤其是投简历后到 OA，OA 后到面试邀请。面试后就很快了，一般两三天 HR 会联系你，告诉你面试结果。然后收集薪资，问你期望薪资。亚马逊 Offer 薪资是不可以 compete 的，申请下来是多少就定了。</p>
+<p>哈哈，面试完拿到 offer 后，我还去卧佛寺了一趟，去还愿，不过周一去的，没有开门。</p>
+<p>前面记录了面试流程，下面准备从以下 5 个方面做个总结：</p>
+<ul>
+<li>算法刷题</li>
+<li>简历</li>
+<li>系统设计</li>
+<li>面试技巧</li>
+<li>offer 沟通</li>
+</ul>
+<h4 id="一-算法刷题"><a href="#一-算法刷题" class="headerlink" title="一.算法刷题"></a>一.算法刷题</h4><p>我是今年四月底开始准备换工作，准备到五月中旬开始投简历。作为程序员，面试必须是要做题的，我从今年年初断断续续开始刷题，之前总共 LeetCode 刷了有 300 道，今年面试前又进行总结复习，总共刷了 470 道，算是刷的数量少的。不过够用了。</p>
+<p>刷够 300 多道，多总结，保持熟练度，大厂面试基本都没问题了。况且，我从去年换工作，大小厂面试也有二三十家了，基本没遇到过 hard，细心，保持镇定，基本都能做出来。</p>
+<p>做题量来说，300 可以出去面试了，500 多比较稳，不慌。我认识很多去面外企的都刷了六七百道了。平时刷题，超过 10 分钟还没有思路直接看 LeetCode 上面的优质答案，刷的题少不会做题很正常，关键是自己一定弄明白，然后自己写写出来。</p>
+<p>自己写出来是重点。而且经典问题要用自己的话总结一遍。比如二分查找，一般二分查找怎么写，改变一下，如果问题是在有重复的数组中找到最后一个 target，或者找到第一个 target，那判断条件怎么写？</p>
+<p>一定要参考优质答案，然后自己总结并实践。</p>
+<p>还有一点是，要细心，一定要处理好边界条件。初级阶段是，很多题指导思路，但对于细节把握不牢，因为没有仔细去思考细节这样写的原因。虽然大部分面试不用上机运行出来，但我遇到的大部分面试管还是能注意到关键细节问题的。</p>
+<p>比如，快速排序，原理很简单，但不好好准备，没几个人能写出来无 bug 的代码。刷的题多了，思路基本都有了，就需要在做题的时候，把细节问题想清楚了再写。负责很难让面试官满意。</p>
+<p>常见算法题有：数组、字符串、链表。LRU 被问过 4 次，后来可以 bugfree 直接写出来了。图，最小生成树，prim，Kruskal，Dijkstra，朋友圈算法等， 二叉树，DP，我都有好好准备，但是面试都没有遇到过。</p>
+<p>所以准备算法题的时候，可以先把 HotTop100 刷的明明白白，然后再逐步将不常见的算法类型也攻克。labaladong 和 宫水三叶的题解都不错。算法题是不能有失误的，这也是最基本的。而且一般面试都不会出 hard，基本都是 mid。</p>
+<h4 id="二-简历"><a href="#二-简历" class="headerlink" title="二.简历"></a>二.简历</h4><p>之前帮公司招人收集简历的时候，基本都是社招简历，真是见识了各种风格的简历。不是 hr，有些简历我也是一眼就像 Pass 掉的，主要项目不清晰，简历写的很乱，花样很多，这一看就不专业。</p>
+<p>程序员的简历，要干净，重点突出，才显得专业。一般都不放照片，民族，籍贯这些也都是多余信息，电话，邮箱即可。教育背景，专业技能，工作经历，个人评价这四部分即可。</p>
+<p>重点在工作经历里面，社招的不局限与简历是一页还是两页，把重点项目按照 STAR 原则写就好。我写简历前，会按照 STAR 原则，将项目好好梳理一下，尤其是我做了什么，难点是什么，以及成就。最后还要加一点反思，之前方案有什么问题，这个很多公司都要问的。项目整理好了后，再往简历上写。之后面试的时候，介绍时，也比较有条理。</p>
+<p>我的简历问过一些猎头，以及大厂公司的 HR，说算是还不错的。当然，我也见过更漂亮的简历，用的是 LaTeX 写的，很简洁。</p>
+<p>外企一般要准备英文简历，不过我投的是北京的亚马逊，只有中文简历也可以。</p>
+<h4 id="三-系统设计"><a href="#三-系统设计" class="headerlink" title="三.系统设计"></a>三.系统设计</h4><p>社招三年以上都要考系统设计的。</p>
+<p>我买了 grokking the system design interview z 这个门课程，挺不错的。国内价格 599，开 VPN 后，海外价格会不同，香港最便宜，好像是三四百。</p>
+<p>上面这门课程将基本的系统设计要考虑到的点，常见系统设计的核心问题思路都有很好的讲解，且全都是英文的，不过并不难，也能锻炼阅读英语的能力。</p>
+<p>看过三四个章节后，建议 YouTube 上面搜一下 System design 视频，面试时候的表达，条理也很重要。之前我面试没有条理，只将核心问题给了解决办法，看过视频后，会更有条理。</p>
+<h4 id="四、面试技巧"><a href="#四、面试技巧" class="headerlink" title="四、面试技巧"></a>四、面试技巧</h4><p>后端开发程序员面试外企，硬实力部分主要是算法、系统设计，有的还要求英语。不过硬实力有了，不一定发挥好，或者说错话，导致被 Pass。有个朋友面试亚马逊，面试官问离职原因，说领导不行，这个不能这么说啊。可能就是一时嘴快说漏嘴了。</p>
+<p>这个问题也很常见，面外企就说希望 WLB 呗，向多陪陪家人，想多点自己学习时间。面试国内大厂，就说想换个环境，想要更多挑战。如果不是面试官不想要你，就不会再继续为难你。</p>
+<p>在做算法时，一定要提前和面试管沟通好问题，以及边界 case。我一般是在快速思考后，然后面试官提问，不明白的，以及特殊 case 怎么处理提前问清楚。然后就是快速把代码写出来。写完代码后，不要着急说写完了，一定要在检查一遍，一般都会有小的问题。不要被面试官发现了再指出来。</p>
+<p>面系统设计时，提前明确需求更重要。面试官很看重沟通能力。提前把问题，以及可能面试官都没想到的关键点提出来，会增加好感。后来亚马逊 hr 和我说过，面试官评价里面有个沟通很好，提前明确了需求。如果遇到没做过的设计题，也不能慌，总得给个答案不是，总不能说不会吧。先把问题简化，模型简化，再一步步去解决。</p>
+<p>面试 Tik Tok 让我设计一个打车系统，这个真没遇到过。司机和乘客都在地理位置上不断移动，这怎么搞。想了几分钟后，我按最原始的思路，将地图分隔成很多小块，然后打车是，找乘客所在小块周围 8 个小块的司机，进行通知，匹配打车。</p>
+<p>还有一点就是及时观察面试官态度，自我介绍是不是说的太细太多了，方案是不是面试官不太喜欢，及时调整。BQ 行为考察的问题，在基于自己实际情况下，慢一点回答，多想想，朝着有利，真诚真实的方向说。</p>
+<h4 id="五-offer沟通"><a href="#五-offer沟通" class="headerlink" title="五.offer沟通"></a>五.offer沟通</h4><p>如果幸运走到这一步，谈薪真的是很重要了。</p>
+<p>对于 dream company，我一般先找几个小公司练手，然后找几家开工资比较高的好好面，拿到较高的工资，最后去面试想去的公司，走到最后谈薪时，会问你当前薪资，以及手里 offer 的薪资。这两个都会参考的。要把握好面试进度。</p>
+<p>问我期望薪资是多少时，我一般说上一家薪资涨 30% 左右，不过不绝对，根据我的面试表现和公司薪酬体系来。</p>
+<p>想拿到好的薪资，主要还是两点，面试表现好，当前薪资较高，另外有其他 offer 也是一个因素。最重要的是，缺不缺人，缺人面试好薪资就开的好。</p>
+<p>今年大厂小厂都在裁员，面试环境很严峻，我前后投了八九家，小公司练手的基本都给我挂了，最后拿到 offer 的只有亚马逊，和新加坡 Tik Tok。还有一个走完流程不发 offer 的，两家主动终止面试。去年投的国内大厂，除了腾讯没有拿 offer 也都拿到了，有个搜狗 offer，后来被合并入腾讯。</p>
+<p>面试挂了不要否定自己。要好好刷题，好好准备基础知识，面试常问的知识点要用自己的话总结下来；不要广撒网，这样很浪费时间，要好好准备然后拿两三个练手后直接去面大公司。</p>
+<h2 id="外包招聘"><a href="#外包招聘" class="headerlink" title="外包招聘"></a>外包招聘</h2><h3 id="1、软件外包公司名单"><a href="#1、软件外包公司名单" class="headerlink" title="1、软件外包公司名单"></a>1、软件外包公司名单</h3><p>国内软件外包公司多如牛毛，下面列举的占全部名单可能不到千分之一 。</p>
+<p>名单不分先后 ：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DMP9YVibia1dSIbtDFiaQzC0hnXO58VM3wB5Xv68qibeREYYsk7xtpGmUbCJickoXCG5VoiacxHibwFicb537YibfNaCicWA/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"><img src="https://mmbiz.qpic.cn/mmbiz_png/DMP9YVibia1dSIbtDFiaQzC0hnXO58VM3wBNcl4Rpj2FCJpN8ibTMStP3TG7tFtuWIoMoJCDqjZn7zRP2gnO04BGow/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"><img src="https://mmbiz.qpic.cn/mmbiz_png/DMP9YVibia1dSIbtDFiaQzC0hnXO58VM3wB6Cq9ylUEcTVrzbDJzMB0fXq85aOFPWTobe4OpPpSvN1J7llo96BZTQ/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"><img src="https://mmbiz.qpic.cn/mmbiz_png/DMP9YVibia1dSIbtDFiaQzC0hnXO58VM3wBHnQ0vW5icKkbTWialtibsbibhXRqicAJC9ibIn73r5sBqGu2zYmhvGRFZHOA/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"><img src="https://mmbiz.qpic.cn/mmbiz_png/eQPyBffYbud970udpEHNF67Sn34x8Y6icYtCdVf4H7goOVqkic7jwV1553ZAHHsNYCKQfSFMe9ibXc5ygicHYFF7fw/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"><img src="https://mmbiz.qpic.cn/mmbiz_png/DMP9YVibia1dSIbtDFiaQzC0hnXO58VM3wBujdhlrF7EwtEyibvf0wL5JqkvCuSRRNHx3pjsPSqOibQuSJSMEysIIjg/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<h3 id="2、如何区分是否是外包公司"><a href="#2、如何区分是否是外包公司" class="headerlink" title="2、如何区分是否是外包公司"></a>2、如何区分是否是外包公司</h3><ul>
+<li>电话邀请面试时，对方问学历、做过哪些项目、用过哪些技术等问题，99%是外包公司(且是外派形式)。因为，外包HR从来不会认真去阅读你的简历，只要发现你的简历更新了，立马给你打电话，在电话里问东问西。</li>
+<li>公司简介中出现 系统提供商、服务提供商、IT外包 、人力资源 等字眼，99%是外包公司；</li>
+<li>面试的地址和公司的地址不一样；</li>
+<li>包吃、包住；</li>
+<li>不在本公司，去其他公司，或者出差到外地；</li>
+<li>以总公司名义进行招聘，等入职时签的是子公司，子公司是外包公司。（一些正规的公司也都喜欢搞这种套路）</li>
+</ul>
+<h3 id="3、外包公司真是一无是处？"><a href="#3、外包公司真是一无是处？" class="headerlink" title="3、外包公司真是一无是处？"></a>3、外包公司真是一无是处？</h3><p>不再赘述，大家可以搜索一下。</p>
+<p>补充几点：</p>
+<ul>
+<li><p>招聘是为开发新项目，特别是大型项目，累成狗。</p>
+</li>
+<li><p>不在本地工作，派到外地，或者所谓的 封闭式开发 。一旦进去，就跟到缅北差不多 。</p>
+</li>
+<li><p>签短期合同， 比如先3、5个月合同，后期看项目进度。这3、5个月估计不会把你当人用。</p>
+</li>
+<li><p>拿着3，4线城的工资，外派到一、二线城市工作。大冤种！</p>
+</li>
+</ul>
+<h3 id="4、软件外包公司的几种形式"><a href="#4、软件外包公司的几种形式" class="headerlink" title="4、软件外包公司的几种形式"></a>4、软件外包公司的几种形式</h3><ul>
+<li>人力外包。</li>
+</ul>
+<p>即将你外包给甲方公司，成为甲方公司项目组的一员。通俗点来说，就是在工作上你是属于甲方的，但是在薪酬福利方面还是属于外包公司的。这类型的外包是目前市场上较为流行的，可以大大解决传统企业的it人才缺口。</p>
+<ul>
+<li>以开发团队的形式外派开发新项目。</li>
+</ul>
+<p>这种形式经常需要开发团队各个地方各种公司到处跑，等项目完成后将开发成果交付给项目的开发团队，便可回到所在的公司继续开展项目。<strong>在开发期间把员工不当人，开发完毕后，没有接到下家项目的，要么被逼走，要么只发当地的最低工资。</strong></p>
+<p>在一个项目组中，会存在人力外包、项目外包等多种形式的外包团队。</p>
+<p>软件外包的形式灵活多样，不限上述几种。</p>
+<h3 id="5、哪些情况可选择外包"><a href="#5、哪些情况可选择外包" class="headerlink" title="5、哪些情况可选择外包"></a>5、哪些情况可选择外包</h3><ul>
+<li>经验不足、学历较低、 又想进大公司，可以通过外包公司进入；</li>
+<li>人力外包。除了工资和薪酬福利，其他与甲方完全一致，可以考虑一下；</li>
+<li>维护项目，工作量不大，可以考虑；</li>
+<li>年龄偏大，众所周知，超过35岁的开发人员找工作特别难，可以考虑；</li>
+</ul>
+<h2 id="互联网黑话"><a href="#互联网黑话" class="headerlink" title="互联网黑话"></a>互联网黑话</h2><h3 id="1、HC、BG、BU、JD、OD、OT（公司相关）"><a href="#1、HC、BG、BU、JD、OD、OT（公司相关）" class="headerlink" title="1、HC、BG、BU、JD、OD、OT（公司相关）"></a>1、HC、BG、BU、JD、OD、OT（公司相关）</h3><p>HC，也就是Headcount，就是一家公司的招聘人头数。</p>
+<p>BG：Business Group，指的就是事业群，比如腾讯的微信BG，QQ音乐BG，微信事业群（WeiXin Group，简称 WXG ）和互动娱乐事业群（Interactive Entertainment Group，简称 IEG）</p>
+<p>BU：Business Unit，通常指挂靠在BG下细分的业务单元，通常指业务线或者产品线。</p>
+<p>OD：Outsourcing Dispacth（直译为“外包派遣”）的简称，只有研发类岗位，比如华为OD</p>
+<p>OT：overtime，指加班。</p>
+<h3 id="2、岗位相关黑话"><a href="#2、岗位相关黑话" class="headerlink" title="2、岗位相关黑话"></a>2、岗位相关黑话</h3><p><strong>base</strong>:两个意思，一个是薪水：举个例子 15k*16 base代表15k；一个是地点：比如这个base是在背景还是在上海，就是指的具体的工作地点</p>
+<p><strong>JD</strong>：job description，就是职位的描述，岗位职责和要求。例如招聘后端研发，一般会要求你熟悉 Java&#x2F;C++&#x2F;Golang 等主流语言；熟悉常见的数据结构与算法等等。。</p>
+<p><strong>HR</strong>（Human Resource），即人力资源，全称人力资源管理，又称人事。人事管理是为实现一定的目标，对所属工作人员进行选拔、使用、培养、考核、奖惩等一系列的管理活动。说人话就是招人的，招打工人的。</p>
+<p><strong>RD</strong>:Research and Development engineer，研发工程师，一般分为前端开发工程师或者后端开发工程师，比如C++后端开发工程师、Java后端开发工程师、Golang后端开发工程师等都属于RD。</p>
+<p><strong>QA</strong>：Qualtiy Assurance，品质保证，QA的主要职责就是质量保证工作，也就是很多人口中俗称的测试。</p>
+<p><strong>PM</strong>：Product Manager&#x2F;Project Manager，产品经理或项目经理。在产品的研发过程中，PM会负责调查并根据用户的需求，确定开发何种产品,选择何种技术、商业模式等。</p>
+<p><strong>PR</strong>：Public Relationship，公共关系，即平时说的公关，一般在传媒、互联网、品牌营销各种行业会出现。主要的工作范围就是舆情监测，客户管理，媒体关系，文案输出，活动策划等等。</p>
+<p><strong>PD</strong>：Product Designer，产品设计或产品负责人。程序员经常需要和PD和PM打交道，他们需要程序员去实现XXX的功能，然后程序员去编码实现，在此过程中也会出现一些撕逼，这就是产品和研发之间的爱恨情仇了。</p>
+<p>1、管理层</p>
+<ul>
+<li><p>CEO – Chief Executive Officer 首席执行官</p>
+</li>
+<li><p>VP – Vice President 副总裁</p>
+</li>
+<li><p>HRD – Humen Resource Director 人力资源总监</p>
+</li>
+<li><p>OD – Operations Director 运营总监</p>
+</li>
+<li><p>MD – Marketing Director 市场总监</p>
+</li>
+<li><p>GM – General Manager 总经理</p>
+</li>
+<li><p>PM – Production Manager 产品经理</p>
+</li>
+<li><p>CM –  Customer Manager 客户经理</p>
+</li>
+</ul>
+<p>2、工程师<br>RD – Research &amp; Develop 研发工程师</p>
+<ul>
+<li><p>BE – Back End 后端工程师</p>
+</li>
+<li><p>FE –  Front End 前端工程师</p>
+</li>
+<li><p>QA – Quality Assurance 测试工程师</p>
+</li>
+<li><p>DBA – Database Administrator 数据库管理员</p>
+</li>
+<li><p>OP – Operation 运维工程师</p>
+</li>
+<li><p>UE(UX) – User Experience 用户体验设计师</p>
+</li>
+<li><p>UI – User Interface 用户界面设计师</p>
+</li>
+<li><p>TS – Technology Support 技术支持</p>
+</li>
+</ul>
+<p>3、文档资料<br>PSD – 图像处理软件Photoshop处理后保存的源文件,一般容量比JPG格式的图片大</p>
+<ul>
+<li><p>SOP – 标准作业程序</p>
+</li>
+<li><p>MRD – 市场需求文档</p>
+</li>
+<li><p>PRD – 产品需求文档，重点放在为一个被提议的新产品或者现有产品的改进定义市场需求</p>
+</li>
+<li><p>FSD – 功能详细设计说明</p>
+</li>
+</ul>
+<h3 id="3、求职-amp-薪资相关黑话"><a href="#3、求职-amp-薪资相关黑话" class="headerlink" title="3、求职&amp;薪资相关黑话"></a>3、求职&amp;薪资相关黑话</h3><p><strong>八股文</strong></p>
+<p>八股文一般指的是概念性题目，比如 操作系统中进程和线程的区别是什么？数据结构与算法中的栈和队列的区别是什么？又或者是计算机网络中的三次握手四次挥手过程这类问题与回答。</p>
+<p>因为这些问题与回答往往问法固定，标准回答也固定，类似于我国明清科举制度规定的八股文。</p>
+<p>特别指技术的同学，就是面试喜欢考的一些理论知识，这些偏向于比较严格的答案，一般同学都会直接背。</p>
+<p><strong>OC&#x2F;意向书</strong></p>
+<p>意向书的意思是指，在秋招中顺利通过面试获得口头offer的一种录用意向，没有具体的薪资待遇说明，换句话说就是：你很不错，我们打算要你了。意向书一般在每年的7-10月份会逐渐发放，而带有薪资待遇的详细offer一般是10月中下旬开始陆续发放。</p>
+<p><strong>开奖</strong></p>
+<p>互联工作基本上是先有意向，之后打电话的形式，或者直接发邮件给你，这个时候你的薪水，互联网人称之为开奖。</p>
+<p><strong>泡池子</strong></p>
+<p>就是说迟迟不发offer也没有结果，一直被放在人才池里面，有可能会有被捞起来重新安排后续流程的可能，也可能没有。</p>
+<p><strong>保温</strong></p>
+<p>一般就是HR或者直接主管时不时和你联系，没发offer之前来打听一下你的offer情况，发了offer就看看你是不是确定能来报道会不会有变动。</p>
+<p><strong>A（argue）</strong></p>
+<p>开出来的薪资不满意，想要跟HRA一下薪资，建议是有更高offer的情况下再去A，要不然很难成功。</p>
+<p><strong>总包</strong></p>
+<p>指总收入，年薪，包括基础工资+绩效+年终奖+补贴+各类奖金+岗位福利</p>
+<p>这个时候同学同学们一定要注意base（基础薪资）到底是多少，然后其他的项的薪资情况是多少，很多同学是会在这里栽跟头了。</p>
+<p><strong>烂白菜</strong></p>
+<p>offer的最低一等，也是最近两年新出来的一个词，以前是只有白菜价这一个说法的。</p>
+<p><strong>白菜</strong></p>
+<p>指校招生中占据60%-70%的人拿到的offer薪资待遇，毕竟大佬还是比较少的，大部分人的offer都是白菜价格。</p>
+<p><strong>大白菜</strong></p>
+<p>也是最近两年新兴的一个词语，意思就是比白菜价稍高一档的薪资待遇。</p>
+<p><strong>小SP</strong></p>
+<p>大佬拿到的 offer 偏低的一档，但也比大白菜要高一点。</p>
+<p><strong>SP</strong></p>
+<p>这是真大佬才能拿到的，能够拿到SSP的同学基本都是校招生中的人中龙凤，极其稀少。比如 2021 年校招中快手的快star、中兴的蓝剑计划、阿里的阿里星、小米的未来星、京东的猎聘计划等，能够通过上述考核人拿到的基本都是SSP。</p>
+<p><strong>SSP+</strong></p>
+<p>一般很少出现 SSP+，这种offer一般只发给那些神仙选手，就是很厉害很厉害很厉害的选手，可以理解为神仙级选手中的神仙了！</p>
+<h3 id="4、大厂背书"><a href="#4、大厂背书" class="headerlink" title="4、大厂背书"></a>4、大厂背书</h3><p>可以理解为“认证”或者“镀金”的意思，能去一些顶尖大公司实习或者工作，说明他们认可你的能力，那么你正式找工作面试同行业其他公司的时候只要表现正常基本offer是可以顺利拿到的。</p>
+<p>其实也就是去一个工作地点团队最后的认可度怎么样，在跳槽的时候之前的工作团队的加成和作用有多大，是否可以提升自己的经历背景</p>
+<h3 id="5、各种厂的外号合集"><a href="#5、各种厂的外号合集" class="headerlink" title="5、各种厂的外号合集"></a>5、各种厂的外号合集</h3><p>鹅厂——腾讯；猪场——网易；狗厂&#x2F;兄弟厂——京东；菊厂——华为；</p>
+<p>动物园&#x2F;猫厂&#x2F;福报厂——阿里巴巴；开水厂——美团；宇宙厂——字节跳动；</p>
+<p>体面厂——海康威视；发点厂——B站；狐厂——搜狐；渣厂——新浪；</p>
+<p>蓝厂——VIVO；鸟厂——迅雷；真香厂——拼多多；</p>
+<p>桔厂——滴滴‘；数字厂——360；wifi厂——爱奇艺；</p>
+<p>菊厂——华为；猴厂——小米；老铁厂——快手；</p>
+<h2 id="北京互联网公司盘点"><a href="#北京互联网公司盘点" class="headerlink" title="北京互联网公司盘点"></a>北京互联网公司盘点</h2><img src="/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/1680498023304.jpeg" alt="1680498023304" style="zoom:33%;" />
+
+
+
+<h3 id="1-微软"><a href="#1-微软" class="headerlink" title="1.微软"></a>1.微软</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSYchtpHDVLKPkz9ut90dhOoye2ZN6Tu9g4qUykxvMYr7WMV8iaHlelibg/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:33%;" />
+
+<p>这应该是全球知名的外企了，在中关村附近。确实很不错，外企难进, 但是很香~</p>
+<h3 id="2-谷歌"><a href="#2-谷歌" class="headerlink" title="2.谷歌"></a>2.谷歌</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSQ9VWuz6HUAjo2UrWX56thsLic0Qpbyc1qvgdkbN9SHL8lLjtnczNXgA/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:33%;" />
+
+<p>我一直在用的就是他们家的浏览器，真的好用。这家待遇真的不错, 薪资水平在北京也是较高的水平~</p>
+<h3 id="3-亚马逊"><a href="#3-亚马逊" class="headerlink" title="3.亚马逊"></a>3.亚马逊</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSVNibC1GczlqHicfVCAqibr8epTrIB5JpIib1Cl8fFjs3iaRgPL0vKDhSVxA/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:33%;" />
+
+<p>亚马逊其实跟微软确实很像，在外企圈子名气都是挺大的~能进去也是很nice!</p>
+<h3 id="4-Airbnb"><a href="#4-Airbnb" class="headerlink" title="4.Airbnb"></a>4.Airbnb</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSDjkJkVTMUUG84OFibyyamrwvdYsmWRCE15SORCSiczAzTLS6OUhkS3GQ/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:33%;" />
+
+<p>Airbnb主要做的民宿项目, 出去旅游啥的，用这家的还是很多的。小程了解到这家公司，感觉是特别注重动手能力，实战能力,而且这家公司给钱也是很大方。</p>
+<h3 id="5-FreeWheel"><a href="#5-FreeWheel" class="headerlink" title="5.FreeWheel"></a>5.FreeWheel</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSImV7PdRbu63x0oCzNaosvc0909BwINWJSKibgdibmibDaUxvtwudqM2YA/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:33%;" />
+
+<p>小程发现这家很适合校招生的哈,愿意给新人机会,可以快速接触一个产品从设计到最终上线的各个环节，能够快速提升新人的能力。</p>
+<h3 id="6-印象笔记"><a href="#6-印象笔记" class="headerlink" title="6.印象笔记"></a>6.印象笔记</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSel6wzpow1HxXMncs5swwP33xicnrYZPOafPQD3uYSneb4lia1h9w5v0w/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:33%;" />
+
+<p>据说这家团队氛围很好, 技术氛围也很好, 尤其大佬不少, WLB在这里也挺适用的~</p>
+<h3 id="7-Hulu"><a href="#7-Hulu" class="headerlink" title="7.Hulu"></a>7.Hulu</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSylUKfMSk5Jt7R6gYGgE9K86icZSia7Nrf8TMrGicVJvAaQtYibhLAPlqwQ/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:33%;" />
+
+<p>小程了解到,Hulu主要是做多媒体业务的，前两年也被迪士尼收购了, 但是待遇嘛<del>你懂得</del></p>
+<h3 id="8-Grab"><a href="#8-Grab" class="headerlink" title="8.Grab"></a>8.Grab</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSOQsCibUcsmPH68QuhKaVrE6mhbG0SypcSecy38CnupORQ3pCDpfZ7nQ/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:33%;" />
+
+<p>如果是对标外企的话，薪资水平中上吧, 福利待遇跟一般外企差不太多~</p>
+<h3 id="9-字节跳动"><a href="#9-字节跳动" class="headerlink" title="9.字节跳动"></a>9.字节跳动</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVS2FFTlBQRdwu8RxmxOWgYecvNusmt9XGLn3Vo3Xb5K7dxaJFEPF4Wew/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:33%;" />
+
+<p>心脏和字节只有一个能跳动<del>来了之这里，你基本上跟WLB可以说拜拜了。不过薪资水平挺高,卷是真的，毕竟北京这种寸土寸金的地方。 大家朝气也足, 团队和技术氛围都很好的, 就是新人要自己主动多学习了哦</del></p>
+<h3 id="10-阿里"><a href="#10-阿里" class="headerlink" title="10.阿里"></a>10.阿里</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSo0PiakAHG8pahbQroxvDa4huz4azhLYnjWuKIuTfSwgj5S32TupAlLw/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:33%;" />
+
+<h3 id="11-腾讯"><a href="#11-腾讯" class="headerlink" title="11.腾讯"></a>11.腾讯</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSRwKVnQxJwjU2qafBvWqSIeQ4ap2NnoziaibTBiaepCiaIEwThucP4k4gJA/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:33%;" />
+
+<p>待遇不错~有钱也是真的。</p>
+<h3 id="12-美团"><a href="#12-美团" class="headerlink" title="12.美团"></a>12.美团</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSQjEaTUB7kBMT2WKT15WVnRJb78WgpsuUAiajmQibYa84EtgU1bWczpTw/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom: 25%;" />
+
+<p>薪资还行<del>开水团嘛，大家懂得都懂</del>不过这两年确实薪资水平上了一个台阶，据说要对标大厂，把公积金都提上去的。</p>
+<h3 id="13-京东"><a href="#13-京东" class="headerlink" title="13.京东"></a>13.京东</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVS8iaOibzRQUERMsC9ywg1CV9EccvTYXutBmnLtiajVnftlTSlTFLGMfNQw/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>团队氛围挺好的, 至于加班还是看部门吧~狗东还是可以做兄弟的！</p>
+<h3 id="14-网易"><a href="#14-网易" class="headerlink" title="14.网易"></a>14.网易</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSndof1GYLGb0KaMY6Cr4phHteou6bd7ibLvLsTJd4JjDYKDaOTWSNg9A/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>薪资和其他厂比可能没有很大竞争力, 但是和JD一样大部分部门团队氛围挺不错的~食堂的饭不错，管饭！🍚</p>
+<h3 id="15-华为"><a href="#15-华为" class="headerlink" title="15.华为"></a>15.华为</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSgDD0Ly9OIPGia0pnvZGb1ys4TcpibVoQA3PmK1HJBnFRd8TuWv6TXibmA/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>啃吃苦,就去咱们家华为, 薪资肯定有的, 但是高压~狼性文化不是说着玩的</p>
+<h3 id="16-百度"><a href="#16-百度" class="headerlink" title="16.百度"></a>16.百度</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSw2ic04bfdiaVbdGxH1ouibRkIkpaQaJHPnwSqwicdYhoPpsibuDBtpibP0dA/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>校招能进百度是一个很不错的背书，以后跳槽还是很easy<del>也是比较应届生的哦</del></p>
+<h3 id="17-小米"><a href="#17-小米" class="headerlink" title="17.小米"></a>17.小米</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSfe7icicib8jtxsTyE4MCTgI9Ixqgo1icbpIa2mHI9ZEGzeVjvwqH9CLNuQ/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>小米现在全面开花了，啥都做，福利待遇挺好的哇~</p>
+<h3 id="18-360"><a href="#18-360" class="headerlink" title="18.360"></a>18.360</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSZibWbO1r8Uoj6V5jV07hUEqdickxZlUSsxxxuF0ib8rF1oP9kDMJgVibLA/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>这个小程学姐了解到的不多~据说还不错</p>
+<h3 id="19-滴滴"><a href="#19-滴滴" class="headerlink" title="19.滴滴"></a>19.滴滴</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSibibicbgAKj8QpwZeksBzPA1xXoggxT7ePmqFaDLicZ8xFibKaK5Ih4rsLg/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>emmmm<del>现在应该已经谈完了吧</del>可以开始注册新用户了，也能下载了~</p>
+<h3 id="20-快手"><a href="#20-快手" class="headerlink" title="20.快手"></a>20.快手</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSwwiaiavDp9gdXYxBnqbKpVP98VRTiadWhajC5Cx9y7VbdTjj5uE6SXmicQ/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>待遇还行，但是貌似不管饭也没房补了&#96;ε&#x3D;(´ο｀*)))唉</p>
+<h3 id="21-搜狐"><a href="#21-搜狐" class="headerlink" title="21.搜狐"></a>21.搜狐</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSlr4mQyyI2Ckwibm2d7kEejjtiac3x3lKLdHLDbUiaeJ8rbeibJFeAqVHNw/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>搜狐的大楼不错，很值钱！</p>
+<h3 id="22-搜狗"><a href="#22-搜狗" class="headerlink" title="22.搜狗"></a>22.搜狗</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSWo7IGECf8O7nf9ib7C4sm1bBsDrgBJGmySImP3VEvc949tbecSR0Nnw/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>同学们多了解下企业文化哦~我一直在用他家的输入法，nice！</p>
+<h3 id="23-爱奇艺"><a href="#23-爱奇艺" class="headerlink" title="23.爱奇艺"></a>23.爱奇艺</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSYL5e7WRIlZMTJiczBcI3giaUNRLBiaIhibFPFwvv0U05K6ahJuqxKXDSeA/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>爆料不多~前段时间裁员了一批，现在还行吧</p>
+<h3 id="24-知乎"><a href="#24-知乎" class="headerlink" title="24.知乎"></a>24.知乎</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSKOibjasCjwD1M9VfE5xXBnek5aZlwD8yHpgiaJbRDnTAHDN6zfyvNNQg/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>这个爆料更少…毕竟掌握着爆料区的命脉~</p>
+<h3 id="25-去哪儿"><a href="#25-去哪儿" class="headerlink" title="25.去哪儿"></a>25.去哪儿</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSYmGlvQqyQ8qERgkHbLm9Qc8SaotSRLWjFM7XguyxCccHIYoFgPVx4g/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>加班有点严重，给钱一般吧<del>也算是ota领域的前几名了（总共也就那几家</del>）</p>
+<h3 id="26-腾讯音乐"><a href="#26-腾讯音乐" class="headerlink" title="26.腾讯音乐"></a>26.腾讯音乐</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSK5elYYj4ZS9OcT4ecxDUkX9QGB2wlic15toz8icSb1EccH0wWJ9D2LWA/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>爆料不太多<del>毕竟腾讯旗下的，金主有钱</del></p>
+<h3 id="27-新浪"><a href="#27-新浪" class="headerlink" title="27.新浪"></a>27.新浪</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSOv9WBSnwQkNImMhFKGmcvtoibhOkK7HjBvhWB5IA6Nd60fd5icU10qSg/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>喜欢来热搜区吃瓜，每一次轰动都服务器都有点吃不消~</p>
+<h3 id="28-58同城"><a href="#28-58同城" class="headerlink" title="28.58同城"></a>28.58同城</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSpxYy6rtOxLsmABKRt3m8XMOSVBapvpSXrz745HpbYNLHSY9ib1yRjWw/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>爆料不多<del>待遇一般吧</del></p>
+<h3 id="29-当当"><a href="#29-当当" class="headerlink" title="29.当当"></a>29.当当</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSkMoOP8X3WfcZPpOlu7P43zmOqk95Iicib3b3LtUHyuVILSnZagXibia7jQ/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>爆料不多~</p>
+<h3 id="30-每日优鲜"><a href="#30-每日优鲜" class="headerlink" title="30.每日优鲜"></a>30.每日优鲜</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSRK5ASjJlLEAUp93DMaTPWcoINJuvPUGOicSrzssYOVIORf4f2pBFVMA/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>据说团队氛围挺好的~就是现在可能也许大概那啥了。。。</p>
+<h3 id="31-转转"><a href="#31-转转" class="headerlink" title="31.转转"></a>31.转转</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSENA6sD9E23Y3zPv8uK0PdowrCb6FGOINiaExicB7o1OujFYq5d9R2MIQ/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>年轻人比较多, 工作氛围挺好的, 虽然薪资可能很一般吧~</p>
+<h3 id="32-明星衣橱"><a href="#32-明星衣橱" class="headerlink" title="32.明星衣橱"></a>32.明星衣橱</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVS73Lw65icicOSGFrAuyTsLNAXqCyJM8boGGib0JQ3Ec6CjThEAZyNl5xibA/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>研岗发爆料不多~</p>
+<h3 id="33-Nice"><a href="#33-Nice" class="headerlink" title="33.Nice"></a>33.Nice</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSJXP3Ff1ib3n12SicQgvKhFIZ347yjSjDpjB8D0wEKFenM2A91MvzfYiag/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>我没怎么听说过这家的新闻啥的，有知道的小伙伴可以说说</p>
+<h3 id="34-美菜"><a href="#34-美菜" class="headerlink" title="34.美菜"></a>34.美菜</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSWheichxTC2UDywl3XqaxQEGmGwtqdcFQMHcKmzQuxibcUvh9nphU6gFg/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>可以多多了解下企业文化吧~</p>
+<h3 id="35-蜜芽"><a href="#35-蜜芽" class="headerlink" title="35.蜜芽"></a>35.蜜芽</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVShcSNPzVvpTaVK6QsVIiaSYuicw7w0bKTQgEQWtjIdLiblibhwwE8MhvlYw/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>智者见智吧~</p>
+<h3 id="36-便利蜂"><a href="#36-便利蜂" class="headerlink" title="36.便利蜂"></a>36.便利蜂</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVS6icIUzwIYDHl4lCicOYDGeFmiaHqAxAzQIodfJhRR1IBs20ic1mtP3ajlw/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>据说这两年大肆招人，给出的很诱人呢<del>可以看看</del></p>
+<h3 id="37-瓜子二手车"><a href="#37-瓜子二手车" class="headerlink" title="37.瓜子二手车"></a>37.瓜子二手车</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVS6zCRQHpiaNMg2HVwgRIAo2ktdqyI9SU9I7icZEp7W70914CZXO8kg2OA/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>买瓜子上二手车~</p>
+<h3 id="38-优信"><a href="#38-优信" class="headerlink" title="38.优信"></a>38.优信</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSDaekPjNZHglL2sHbwU4cPuicaFnNyAoOjQfbhriazSYhckMPjHp5iaypA/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>也还行~中小厂吧</p>
+<h3 id="39-人人车"><a href="#39-人人车" class="headerlink" title="39.人人车"></a>39.人人车</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSdsS8OfZdDaaIcia1A0k2eekMJ3LWaQj8JFGcw5Oy5fL5NtwNsiaPROcQ/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>年轻人比较多, 工作时间稍微弹性<del>中小厂还算中规中矩吧</del></p>
+<h3 id="40-多抓鱼"><a href="#40-多抓鱼" class="headerlink" title="40.多抓鱼"></a>40.多抓鱼</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSQb4TnskpXQpV3AiaaiasOB8t6WapCicz4Ka0ciaXQZGNAxN3JhbUTlal2A/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>工作比较弹性哦~</p>
+<h3 id="41-拉手网"><a href="#41-拉手网" class="headerlink" title="41.拉手网"></a>41.拉手网</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSoLYiaTcickHj12bIQdjEzgFjHzAQ7glvtAhgia769naiayGAHpYOOpj39w/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<h3 id="42-美丽联合"><a href="#42-美丽联合" class="headerlink" title="42.美丽联合"></a>42.美丽联合</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSGahWWC0KOSiarc1DibxhUQsJSzuOoHOiboV8GeYib83NXOStgsokmhHqcQ/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom: 50%;" />
+
+<p>个人了解知道的不多</p>
+<h3 id="43-值得买科技（总部）"><a href="#43-值得买科技（总部）" class="headerlink" title="43.值得买科技（总部）"></a>43.值得买科技（总部）</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSOOpMtqqcGQnH7XgnMwcrDf4Hv95adZjbALo2BqOzI8hytUhtbtv6qw/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>个人了解的不多~</p>
+<h3 id="44-新氧"><a href="#44-新氧" class="headerlink" title="44.新氧"></a>44.新氧</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSCKgpszQP7c6maXc47GDeaGyzwrgRj0PgfCn9iarrqsNHBDbKWiaUGYyA/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>个人了解的不多~</p>
+<p>45.好未来</p>
+<img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSBOHCDRs4TibUBCPjRRLw12gmgeI86k1zkUNxpBPnOiaopIZ3ricllbzGA/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>年轻人比较多~还是比较不错的</p>
+<h3 id="46-猿辅导"><a href="#46-猿辅导" class="headerlink" title="46.猿辅导"></a>46.猿辅导</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSr7xA6TXw4NCC8icWnAjhL4XNoiaNuMBIzfYtf3pT4KOrDVW3eHnBuzew/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>emmm，好像现在去卖衣服了？</p>
+<h3 id="47-跟谁学"><a href="#47-跟谁学" class="headerlink" title="47.跟谁学"></a>47.跟谁学</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSM2QjQR4ApricBVJSwHEEib5OlmIVDu7PwM01do5j8MgUPzonoHefT3Mw/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>前几年开的很不错，这两年嘛。。。。</p>
+<h3 id="48-作业帮"><a href="#48-作业帮" class="headerlink" title="48.作业帮"></a>48.作业帮</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSOZ7usN1Ix0RXqtZnn9VmAVAYsyuYuMBJn1gNbDQU5nSNA6ojokucRg/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>还不错~</p>
+<h3 id="49-粉笔"><a href="#49-粉笔" class="headerlink" title="49.粉笔"></a>49.粉笔</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVS7gustrPDv6g2JFvwIqdeHibQm39pK0RAxOGqXERIGmp0DVTF3yGf3PA/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>加班情况还是看部门吧~</p>
+<h3 id="50-罗辑思维"><a href="#50-罗辑思维" class="headerlink" title="50.罗辑思维"></a>50.罗辑思维</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82PkqACYcLujiaLKQ43bjtVSjZ830OaTnwCJ2R8BD8yBWfcWNmj71TewU8LM1l5OtYyNwsIqg9LjIA/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>有谁知道这家的，可以聊聊~</p>
+<h3 id="51-美术宝"><a href="#51-美术宝" class="headerlink" title="51.美术宝"></a>51.美术宝</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82iaeMMXjXEcb8ET55PKq8gHNozIMTuvlN39XQYqOcG1Gs9zw7WKjBHxqy690VXsF1DCMmBZ0N64cQ/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>研发爆料不多据说工资水平一般,福利待遇尚可,加班貌似有点严重,技术人员,可能需要写各种文档之类的~</p>
+<h3 id="52-编程猫"><a href="#52-编程猫" class="headerlink" title="52.编程猫"></a>52.编程猫</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82iaeMMXjXEcb8ET55PKq8gHQpd0WPFBvpxic3hZBgeTiaaO0ptTC6xEDGvgnUnFt7EQAJKlrk664qlg/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>编程猫前些年比较火，但是如今的品牌力确实有点拉胯了~</p>
+<h3 id="53-新东方在线"><a href="#53-新东方在线" class="headerlink" title="53.新东方在线"></a>53.新东方在线</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82iaeMMXjXEcb8ET55PKq8gHlhHF3rodLUuX8lYTic3SeCics58RcBa5icAXiaaHYIKXicNRrSibuVr1rzRw/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>转行做直播之后，影响力确实上来了<del>待遇还是很不错的</del>东方甄选</p>
+<h3 id="54-VIPKID"><a href="#54-VIPKID" class="headerlink" title="54.VIPKID"></a>54.VIPKID</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82iaeMMXjXEcb8ET55PKq8gHWf7A6wwfsjd1PoRibNmW8dPOtEcB3FVWibrzmu6V7efNN1SnOZrE3nNg/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>研发爆料不多<del>有住房补贴,待遇在中小厂来说还是不错的,福利多,专属班车等等</del></p>
+<h3 id="55-艺龙"><a href="#55-艺龙" class="headerlink" title="55.艺龙"></a>55.艺龙</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82iaeMMXjXEcb8ET55PKq8gHibdox2nXgomTcBBKodq6X6BCqkU3HdicJmS2g6icugPPob0ZOZMW9queA/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>艺龙近两年发展的很不错，毕竟背靠腾讯<del>技术还是不错的，在国内OTA也是数得上号的</del></p>
+<h3 id="56-猫眼娱乐"><a href="#56-猫眼娱乐" class="headerlink" title="56.猫眼娱乐"></a>56.猫眼娱乐</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82iaeMMXjXEcb8ET55PKq8gHJhlLIPJqvcuK9PHOlTkjDhTGqbrJTf5ibloGxrR5sGiawFD2nicicGENPQ/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>普通的五险一金、 有住房公积金啥的。平时上班时间基本准时下班，周六周日均不加班，双休，待遇也还行~</p>
+<h3 id="57-途家"><a href="#57-途家" class="headerlink" title="57.途家"></a>57.途家</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82iaeMMXjXEcb8ET55PKq8gHoVPbZpIx1E45jTny9UhDLpxMsANm7noYDxSPNZvzFxdsQqB7H0WsBg/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>待遇还行，氛围不错~ota领域也比较知名吧</p>
+<h3 id="58-Keep"><a href="#58-Keep" class="headerlink" title="58.Keep"></a>58.Keep</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82iaeMMXjXEcb8ET55PKq8gHajtmKDPHdPgibru4CzU1vMEA7U5y06tibrtwCUQiaA4KNWOUmegFwOh9w/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>爆料不多~公司研发岗的待遇相对还行。</p>
+<h3 id="59-小猪短租"><a href="#59-小猪短租" class="headerlink" title="59.小猪短租"></a>59.小猪短租</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82iaeMMXjXEcb8ET55PKq8gHIiafAEznIquGU0aO9UKmoY2wxUvvdSElWDSmL0YS5IaR4hNnmdmWu8w/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>短租行业近年来还算可以，待遇相对行业平均水平略低，但公司提供的福利和工作氛围较好，有较大的晋升空间和培训机会。</p>
+<h3 id="60-闪送"><a href="#60-闪送" class="headerlink" title="60.闪送"></a>60.闪送</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82iaeMMXjXEcb8ET55PKq8gHvwmWbBT6NEfM3YbLlHcknFNbt6w04uZ3aG6x6IuIRhyjX8hbTJgq3A/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>研发岗的薪资水平还算一般吧</p>
+<h3 id="61-途牛"><a href="#61-途牛" class="headerlink" title="61.途牛"></a>61.途牛</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82iaeMMXjXEcb8ET55PKq8gHKUc59eVLJaHYaZVH2RusViaaT2kr5Ef6icibJQtHZs93M2bviba7YrnHWA/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>研发岗的薪资水平较高，福利待遇还可以，工作氛围不错~</p>
+<h3 id="62-BOSS直聘"><a href="#62-BOSS直聘" class="headerlink" title="62.BOSS直聘"></a>62.BOSS直聘</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82iaeMMXjXEcb8ET55PKq8gHaOXU3RMVDvXVavLLzgvWcibJtPlu20DjMIyvv44EPibshWqnrWcBuQFQ/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>待遇一般，比较注重员工的个人发展和生活质量~</p>
+<h3 id="63-智联招聘"><a href="#63-智联招聘" class="headerlink" title="63.智联招聘"></a>63.智联招聘</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82iaeMMXjXEcb8ET55PKq8gHicITicHZuiakdqK9juvIcUgNE57oIdnd6nJrvv8mEeDQhO2wicM41IjDpA/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>薪资水平相对较高，有比较完善的福利待遇和培训机制。</p>
+<h3 id="64-猎聘"><a href="#64-猎聘" class="headerlink" title="64.猎聘"></a>64.猎聘</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82iaeMMXjXEcb8ET55PKq8gHbZeDrUafHLTCz8GDGFDHsIXgVjkppwx4aMSkpaNz7iaO0unoadRwdibg/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>弹性工作时间，待遇也不错~</p>
+<h3 id="65-前程无忧"><a href="#65-前程无忧" class="headerlink" title="65.前程无忧"></a>65.前程无忧</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82iaeMMXjXEcb8ET55PKq8gHVQUdoibN2IqdNyicIn3LzyicCgwibEaEU1z6bibhmiaqsdxcB35z8OGbQz9g/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>找工作的网站一般待遇都是差不多~</p>
+<h3 id="66-领英"><a href="#66-领英" class="headerlink" title="66.领英"></a>66.领英</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82iaeMMXjXEcb8ET55PKq8gH6aLzB8Y0QKibic72ROVicksz1yBmmFYEnz85LQTM7bQBvUgfLnlOwef0Q/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>不错的外企，待遇也好，加班不多~</p>
+<h3 id="67-大街网"><a href="#67-大街网" class="headerlink" title="67.大街网"></a>67.大街网</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82iaeMMXjXEcb8ET55PKq8gH8Og52ibNf971vIVbuGRC7NibwSqzjsaxTKat7jIqVvD9YZOCRV9I7L4Q/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>个人了解不多~</p>
+<h3 id="68-拉勾"><a href="#68-拉勾" class="headerlink" title="68.拉勾"></a>68.拉勾</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82iaeMMXjXEcb8ET55PKq8gHZ46eqaMeLR3MriaE0cqayybMl7I9bonl6WHOMKxopGjkasZaWPccqicQ/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>工资待遇一般吧~</p>
+<h3 id="69-融360"><a href="#69-融360" class="headerlink" title="69.融360"></a>69.融360</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82iaeMMXjXEcb8ET55PKq8gHmtlibVaiatQeChFR3ASQicn657A1RYRYq8g1lpciaxFqp9V1WJZaXqzicrg/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>了解不多~</p>
+<h3 id="70-易鑫"><a href="#70-易鑫" class="headerlink" title="70.易鑫"></a>70.易鑫</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82iaeMMXjXEcb8ET55PKq8gHtPxOmnRuodC5WmqzHB9HPETvTicspQ6HsaTqJNJLnVlJ9Sy24iaCA06w/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>了解不多~</p>
+<h3 id="71-雪球"><a href="#71-雪球" class="headerlink" title="71.雪球"></a>71.雪球</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82iaeMMXjXEcb8ET55PKq8gHqkrOawW0VUnjCB0KBRdKcmoiaFpicgJl1NdGMQoDWJu90vYseWXGhIPA/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+
+
+<h3 id="72-宜信"><a href="#72-宜信" class="headerlink" title="72.宜信"></a>72.宜信</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82iaeMMXjXEcb8ET55PKq8gHozWZVL32icFLtpEq7VPntFAwzBMgFaJw05SGsg1rt2eEf0VH1jliaW2g/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>可以多了解下哦~</p>
+<h3 id="73-微店"><a href="#73-微店" class="headerlink" title="73.微店"></a>73.微店</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82iaeMMXjXEcb8ET55PKq8gHL5c784sqJiazlz2lRxdKGWvWqpLmqz7vPufx3jic34lv5iaNa9F1wEraA/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:33%;" />
+
+<p>现在貌似很少了~</p>
+<h3 id="74-用友网络科技"><a href="#74-用友网络科技" class="headerlink" title="74.用友网络科技"></a>74.用友网络科技</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82iaeMMXjXEcb8ET55PKq8gHwtNPuPqW1ibW8CNYr3IJ3L7I92fcRySfxic79nLXVeMTBKc2uYqSXgjA/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>待遇很不错，听同学说晚上下班同事经常约烧烤，哈哈~</p>
+<h3 id="75-友盟"><a href="#75-友盟" class="headerlink" title="75.友盟"></a>75.友盟</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82iaeMMXjXEcb8ET55PKq8gHdu91UezknjGqKDs86JpReIJGCFagsPiaPpSQURtcicF67X7zeDEgk1hA/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>爆料不多~</p>
+<h3 id="76-优米网"><a href="#76-优米网" class="headerlink" title="76.优米网"></a>76.优米网</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82iaeMMXjXEcb8ET55PKq8gHfQU53LOHAG4jWxyGXmWANMZzI0oefHbdvdxomUGYgEfBibDkSG8S4eQ/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>薪资还是不错的~</p>
+<h3 id="77-云从科技"><a href="#77-云从科技" class="headerlink" title="77.云从科技"></a>77.云从科技</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82iaeMMXjXEcb8ET55PKq8gHI03Eq4SO1N40PmwiaGtlVTOOnWqiaXNDUmtKwiczTSIabxTuvHMqJ3nBQ/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom: 50%;" />
+
+<p>爆料不多~</p>
+<h3 id="78-有赞"><a href="#78-有赞" class="headerlink" title="78.有赞"></a>78.有赞</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82iaeMMXjXEcb8ET55PKq8gHTJEVrNibJte9VGMDdfX5mmCPnOKKGE9AicDKPTyiaMoYFQ2QPcpI1P00w/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>待遇还可以，中小厂里面算不错的~</p>
+<h3 id="79-国双（总部）"><a href="#79-国双（总部）" class="headerlink" title="79.国双（总部）"></a>79.国双（总部）</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82iaeMMXjXEcb8ET55PKq8gHbX5FHrXwiahJqibRuzp4V0Gu4n3gsdqFrmVeXelT26tuzFFbTibY0sulw/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>了解不多~</p>
+<h3 id="80-36氪"><a href="#80-36氪" class="headerlink" title="80.36氪"></a>80.36氪</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82iaeMMXjXEcb8ET55PKq8gHr4koTILd6YDMhicQWicG2ySRmlcTrqZ3JZ8BQAhXXsHj8Smd6C5bVuAw/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>了解不多~</p>
+<h3 id="81-果壳"><a href="#81-果壳" class="headerlink" title="81.果壳"></a>81.果壳</h3><img src="https://mmbiz.qpic.cn/mmbiz_png/K6qw09sHw82iaeMMXjXEcb8ET55PKq8gH2mibFI6K9f7iaRQuu6Q1C8umaY5YBg5uVtaY5nJeOy4KOSibZUEicWTGmg/640?wx_fmt=png&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:25%;" />
+
+<p>管饭~环境也不错，待遇还可以，加班强度不太大</p>
+<img src="/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/Screenshot_20230302_085302_com.android.gallery3d.jpg" alt="Screenshot_20230302_085302_com.android.gallery3d" style="zoom: 25%;" />
+
+<img src="/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/Screenshot_20230302_085311_com.android.gallery3d.jpg" alt="Screenshot_20230302_085311_com.android.gallery3d" style="zoom:25%;" />
+
+
+
+
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">WangXinYi</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://wxydaydayup.github.io/2022/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/">https://wxydaydayup.github.io/2022/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">WangXinYi</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/">
+                                    <span class="chip bg-color">计算机资源汇总</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,qzone,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/12/08/%E5%90%8E%E7%AB%AF%E5%B8%B8%E7%94%A8%E4%B8%9A%E5%8A%A1/">
+                    <div class="card-image">
+                        
+                        <img src="/images/homePage/%E5%90%8E%E7%AB%AF%E5%B8%B8%E8%A7%81%E4%B8%9A%E5%8A%A1%E5%AE%9E%E7%8E%B0.webp" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Java后端常用业务总结
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-12-08
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/">
+                    <div class="card-image">
+                        
+                        <img src="/images/homePage/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6.webp" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            计算机图形学
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%9B%BE%E5%BD%A2%E5%AD%A6/" class="post-category">
+                                    图形学
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/">
+                        <span class="chip bg-color">图形学</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+
+<!-- 代码块复制 -->
+
+
+<!-- 代码块收缩 -->
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            <!-- Copyright&nbsp;&copy; -->
+            
+                <span id="year">2021-2023</span>
+            
+            <!-- <a href="/about" target="_blank">WangXinYi</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br> -->
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">191.5k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2021";
+                        var startMonth = "9";
+                        var startDate = "28";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/wxydaydayup" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1766695273@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1766695273" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1766695273" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i["DaoVoiceObject"] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            a.charset = "utf-8";
+            m.parentNode.insertBefore(a, m)
+        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
+        daovoice('init', {
+            app_id: "e55b5a96"
+        });
+        daovoice('update');
+    </script>
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
