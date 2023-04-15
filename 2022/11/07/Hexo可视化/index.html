@@ -428,7 +428,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.8k
+                    2.9k
                 </div>
                 
 
@@ -511,7 +511,19 @@
 <h4 id="2、极致性能之webp图片格式"><a href="#2、极致性能之webp图片格式" class="headerlink" title="2、极致性能之webp图片格式"></a>2、极致性能之webp图片格式</h4><p>将图片格式转换为<code>webp</code>，能降低至少1&#x2F;3的大小。在线转换的工具很多，对于博客而言，图片的开销往往是一篇文章中最大的开销，如果一篇文章中图片比较多，或者有高清大图的时候，转为webp格式，那效果就明显了。</p>
 <p><a target="_blank" rel="noopener" href="https://cdkm.com/cn/jpg-to-webp">JPG转WEBP - 免费在线将JPG文件转换成WEBP (cdkm.com)</a></p>
 <h4 id="3、不使用图床"><a href="#3、不使用图床" class="headerlink" title="3、不使用图床"></a>3、不使用图床</h4><p>直接放到每篇博客对应图片的目录下</p>
-<h2 id="Hexo搜索引擎收录"><a href="#Hexo搜索引擎收录" class="headerlink" title="Hexo搜索引擎收录"></a>Hexo搜索引擎收录</h2><h2 id="Hexo可视化"><a href="#Hexo可视化" class="headerlink" title="Hexo可视化"></a>Hexo可视化</h2><p>由于每次都需要切换到Hexo目录，在CMD输入Hexo指令。</p>
+<h2 id="Hexo搜索引擎收录"><a href="#Hexo搜索引擎收录" class="headerlink" title="Hexo搜索引擎收录"></a>Hexo搜索引擎收录</h2><p><strong>文件验证的方式</strong></p>
+<p>验证失败：验证文件内容错误<br>hexo在每个page加了一个layout，导致认证内容无法识别，这里设置成false即可。</p>
+<p>2分钟前<code>https:// xx .gitee.io</code>使用文件验证<br>原因：验证的文件内容错误。</p>
+<p>问题分析&amp;解决办法： 验证文件的内容与我们提供的不符，请确定是原样上传搜索资源平台的问题，检查方式：访问验证文件——查看源代码检查，部分服务器会自动加上一些内容导致校验失败。</p>
+<p>解决办法是在验证文件前面加上</p>
+<pre class="line-numbers language-none"><code class="language-none">---
+layout: false
+---
+1e656dd6423592f4033b1134369e9478<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="Hexo可视化"><a href="#Hexo可视化" class="headerlink" title="Hexo可视化"></a>Hexo可视化</h2><p>由于每次都需要切换到Hexo目录，在CMD输入Hexo指令。</p>
 <p>为了简化该操作，使用了Python自带的tkinter简单的实现了Windows的可视化界面。</p>
 <p>Tkinter是Python GUI界面开发的库，并不需要额外引入相关库。</p>
 <p>详细的步骤也已经给出，如果要直接使用，可以直接到GitHub下载代码，但需要改一配置，将rootDir改为自己Hexo的根目录。</p>
@@ -1251,7 +1263,7 @@ rootDir <span class="token operator">=</span> <span class="token string">"F:/MyB
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">167.6k</span>
+                        class="white-color">167.7k</span>
             
             
             
