@@ -428,14 +428,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.5k
+                    2.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    11 分
+                    13 分
                 </div>
                 
 
@@ -458,64 +458,69 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><h2 id="Hexo-部署必看"><a href="#Hexo-部署必看" class="headerlink" title="Hexo 部署必看"></a>Hexo 部署必看</h2><p>截至2023年4月各部署的优缺点</p>
+                <h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><h2 id="Hexo-部署必看"><a href="#Hexo-部署必看" class="headerlink" title="Hexo 部署必看"></a>Hexo 部署必看</h2><p>截至 2023年4月 各部署方案的优缺点</p>
 <table>
 <thead>
 <tr>
-<th align="center">部署</th>
+<th>序号</th>
+<th align="center">部署平台</th>
 <th align="center">优点</th>
 <th align="center">缺点</th>
+<th>推荐指数</th>
 </tr>
 </thead>
 <tbody><tr>
+<td>1</td>
 <td align="center">Github</td>
 <td align="center">最简单通用的部署方式</td>
 <td align="center">1、国内访问巨慢  <br />2、不支持百度收录</td>
+<td>:star::star:</td>
 </tr>
 <tr>
+<td>2</td>
 <td align="center">Gitee</td>
 <td align="center">国内访问快</td>
 <td align="center">1、每次都需要手动点击部署 <br />2、莫名其妙检测文章违规，之前可以部署<br />没有变化，再一次部署就出现违规？？？<br />3、自定义域名要收费</td>
+<td>:star::star:</td>
 </tr>
 <tr>
+<td>3</td>
 <td align="center">Cloudflare</td>
 <td align="center">国内访问比Github快，但比Gitee慢一点</td>
-<td align="center">1、不自定义域名网站有点长，而且百度收录为低质站点，需要自定义域名<img src="/images/Hexo%E5%8F%AF%E8%A7%86%E5%8C%96/image-20230415093505034.png" alt="image-20230415093505034" style="zoom: 50%;" /><br />2、</td>
+<td align="center">1、不自定义域名网站有点长，而且搜索引擎收录为低质站点，需要自定义域名<img src="/images/Hexo%E5%8F%AF%E8%A7%86%E5%8C%96/image-20230415093505034.png" alt="image-20230415093505034" style="zoom: 50%;" /><br />2、免费版只有每有500次部署次数，但除了肝帝应该没有这样高产</td>
+<td>:star::star::star:</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
+<td>4</td>
+<td align="center">Vercel</td>
+<td align="center">没有实践过，但据说在所有方案中最快且最稳定</td>
+<td align="center">知乎上发现好像有这样的问题，遂没有尝试该部署<img src="/images/Hexo%E5%8F%AF%E8%A7%86%E5%8C%96/image-20230415104658256.png" alt="image-20230415104658256" style="zoom:50%;" /></td>
+<td>:star:</td>
 </tr>
 <tr>
+<td>5</td>
 <td align="center">Coding</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
+<td align="center">国内访问快</td>
+<td align="center">被腾讯云收购后，现在好像不直接支持静态部署了，<br />找了半天发现好像还需要借助腾讯云部署，<br />又麻烦又要收费，遂放弃这种方式</td>
+<td>:star:</td>
 </tr>
 </tbody></table>
-<h3 id="压缩图片大小"><a href="#压缩图片大小" class="headerlink" title="压缩图片大小"></a>压缩图片大小</h3><p><a target="_blank" rel="noopener" href="https://cdkm.com/cn/compress-image">在线压缩JPG、PNG、WEBP、GIF、SVG和HEIC图片 (cdkm.com)</a></p>
+<h2 id="Hexo提高体验"><a href="#Hexo提高体验" class="headerlink" title="Hexo提高体验"></a>Hexo提高体验</h2><h3 id="一、图片加载"><a href="#一、图片加载" class="headerlink" title="一、图片加载"></a>一、图片加载</h3><p>图片加载太慢，首先考虑压缩图片大小，再转为webp图片格式，最后可以不使用图床，直接放到每篇博客对应图片的目录下</p>
+<h4 id="1、压缩图片大小"><a href="#1、压缩图片大小" class="headerlink" title="1、压缩图片大小"></a>1、压缩图片大小</h4><p><a target="_blank" rel="noopener" href="https://cdkm.com/cn/compress-image">在线压缩JPG、PNG、WEBP、GIF、SVG和HEIC图片 (cdkm.com)</a></p>
 <p><a target="_blank" rel="noopener" href="https://tinypng.com/">TinyPNG – Compress WebP, PNG and JPEG images intelligently</a></p>
-<h3 id="极致性能之webp图片格式"><a href="#极致性能之webp图片格式" class="headerlink" title="极致性能之webp图片格式"></a>极致性能之webp图片格式</h3><p>将图片格式转换为<code>webp</code>，能降低至少1&#x2F;3的大小。在线转换的工具很多，对于博客而言，图片的开销往往是一篇文章中最大的开销，如果一篇文章中图片比较多，或者有高清大图的时候，转为webp格式，那效果就明显了。</p>
+<h4 id="2、极致性能之webp图片格式"><a href="#2、极致性能之webp图片格式" class="headerlink" title="2、极致性能之webp图片格式"></a>2、极致性能之webp图片格式</h4><p>将图片格式转换为<code>webp</code>，能降低至少1&#x2F;3的大小。在线转换的工具很多，对于博客而言，图片的开销往往是一篇文章中最大的开销，如果一篇文章中图片比较多，或者有高清大图的时候，转为webp格式，那效果就明显了。</p>
 <p><a target="_blank" rel="noopener" href="https://cdkm.com/cn/jpg-to-webp">JPG转WEBP - 免费在线将JPG文件转换成WEBP (cdkm.com)</a></p>
-<h2 id="Hexo可视化"><a href="#Hexo可视化" class="headerlink" title="Hexo可视化"></a>Hexo可视化</h2><p>由于每次都需要切换到Hexo目录，在CMD输入Hexo指令，为了简化该操作，使用了Python自带的tkinter简单的开发了一款可视化界面！！！</p>
+<h4 id="3、不使用图床"><a href="#3、不使用图床" class="headerlink" title="3、不使用图床"></a>3、不使用图床</h4><p>直接放到每篇博客对应图片的目录下</p>
+<h2 id="Hexo搜索引擎收录"><a href="#Hexo搜索引擎收录" class="headerlink" title="Hexo搜索引擎收录"></a>Hexo搜索引擎收录</h2><h2 id="Hexo可视化"><a href="#Hexo可视化" class="headerlink" title="Hexo可视化"></a>Hexo可视化</h2><p>由于每次都需要切换到Hexo目录，在CMD输入Hexo指令。</p>
+<p>为了简化该操作，使用了Python自带的tkinter简单的实现了Windows的可视化界面。</p>
+<p>Tkinter是Python GUI界面开发的库，并不需要额外引入相关库。</p>
+<p>详细的步骤也已经给出，如果要直接使用，可以直接到GitHub下载代码，但需要改一配置，将rootDir改为自己Hexo的根目录。</p>
+<pre class="line-numbers language-none"><code class="language-none">rootDir &#x3D; &quot;F:&#x2F;MyBlog&quot; #这个需要改成自己Hexo的根目录<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <img src="/images/Hexo%E5%8F%AF%E8%A7%86%E5%8C%96%E8%84%9A%E6%9C%AC/image-20221107120308554.png" alt="Hexo可视化脚本效果图" style="zoom: 40%;" />
 
-<p>Tkinter是Python GUI界面开发的库，并不需要额外引入相关库</p>
+
+
 <p>博客链接：<a href="https://wxydaydayup.github.io/2022/11/07/Hexo%E5%8F%AF%E8%A7%86%E5%8C%96%E8%84%9A%E6%9C%AC/">Hexo可视化脚本 | Wxy’s blogs </a></p>
 <p>代码仓库：<a target="_blank" rel="noopener" href="https://github.com/wxydaydayup/HexoPanel">Hexo可视化控制台(自制)</a></p>
 <h3 id="一、引入相关库，并构建主界面"><a href="#一、引入相关库，并构建主界面" class="headerlink" title="一、引入相关库，并构建主界面"></a>一、引入相关库，并构建主界面</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> tkinter <span class="token keyword">as</span> tk  <span class="token comment"># 导入Tkinter</span>
@@ -1246,7 +1251,7 @@ rootDir <span class="token operator">=</span> <span class="token string">"F:/MyB
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">167.3k</span>
+                        class="white-color">167.6k</span>
             
             
             
@@ -1519,6 +1524,16 @@ $(function () {
     
 
     <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?d9cd09f7e471719ee08b08f369233ee4";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
 
     <!-- Baidu Push -->
 
