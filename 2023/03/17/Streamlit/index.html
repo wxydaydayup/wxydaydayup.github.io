@@ -61,7 +61,9 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
 
 
 <body>
@@ -474,7 +476,7 @@
 <pre class="line-numbers language-none"><code class="language-none">streamlit hello<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>服务启动后，它会自动帮我们打开页面，地址是 <code>http://localhost:8501</code></p>
-<img src="https://image.xugaoxiang.com/imgs/2021/08/9f19eafb1e61e516.png" alt="streamlit" style="zoom: 25%;" />
+<img src="https://image.xugaoxiang.com/imgs/2021/08/9f19eafb1e61e516.png" alt="streamlit" style="zoom: 25%;">
 
 <p>可以看到，<code>streamlit</code> 默认使用端口8501，你可以在启动服务时，使用参数 <code>--server.port</code>更换端口</p>
 <pre class="line-numbers language-none"><code class="language-none">streamlit run main.py --server.port 80<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -489,7 +491,7 @@
 
 <span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     name <span class="token operator">=</span> st<span class="token punctuation">.</span>text_input<span class="token punctuation">(</span><span class="token string">"请输入您的名字"</span><span class="token punctuation">)</span>
-    message <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"欢迎来到Streamlit，</span><span class="token interpolation"><span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span></span><span class="token string">!"</span></span>
+    message <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"欢迎来到Streamlit，</span><span class="token interpolation"><span class="token punctuation">{</span>name<span class="token punctuation">}</span></span><span class="token string">!"</span></span>
     st<span class="token punctuation">.</span>write<span class="token punctuation">(</span>message<span class="token punctuation">)</span>
 
 <span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
@@ -526,9 +528,9 @@ st<span class="token punctuation">.</span>text<span class="token punctuation">(<
 
 <span class="token comment"># LaTeX 公式</span>
 st<span class="token punctuation">.</span>latex<span class="token punctuation">(</span><span class="token triple-quoted-string string">r'''
-  a + ar + a r^2 + a r^3 + \cdots + a r^&#123;n-1&#125; =
-  \sum_&#123;k=0&#125;^&#123;n-1&#125; ar^k =
-  a \left(\frac&#123;1-r^&#123;n&#125;&#125;&#123;1-r&#125;\right)
+  a + ar + a r^2 + a r^3 + \cdots + a r^{n-1} =
+  \sum_{k=0}^{n-1} ar^k =
+  a \left(\frac{1-r^{n}}{1-r}\right)
 '''</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>上述是 Streamlit 支持的文本展示组件，代码存放 my_code.py 文件中。编码完成后，执行 streamlit run my_code.py ，streamlit 会启动 web 服务，加载指定的源文件。</p>
@@ -557,26 +559,26 @@ st<span class="token punctuation">.</span>table<span class="token punctuation">(
 
 
 
-<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1b99016e5e4143efa86256f2a26597ae~tplv-k3u1fbpfcp-zoom-1.image" alt="img" style="zoom:33%;box-shadow:rgba(0,0,0,0) 0 1px 5px 0px;" />
+<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1b99016e5e4143efa86256f2a26597ae~tplv-k3u1fbpfcp-zoom-1.image" alt="img" style="zoom:33%;box-shadow:rgba(0,0,0,0) 0 1px 5px 0px;">
 
 <p>dateframe 和 table 的区别是，前者可以在表格上做交互（如：排序），后者只是静态的展示。‘’</p>
 <p>它们支持展示的数据类型包括 pandas.DataFrame、pandas.Styler、pyarrow.Table、numpy.ndarray、Iterable、dict。</p>
 <p>metric 组件用来展示指标的变化，数据分析中经常会用到。</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">st<span class="token punctuation">.</span>metric<span class="token punctuation">(</span>label<span class="token operator">=</span><span class="token string">"Temperature"</span><span class="token punctuation">,</span> value<span class="token operator">=</span><span class="token string">"70 °F"</span><span class="token punctuation">,</span> delta<span class="token operator">=</span><span class="token string">"1.2 °F"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7510bbbe0f774820a7659449f45014e6~tplv-k3u1fbpfcp-zoom-1.image" alt="img" style="zoom: 50%;box-shadow:rgba(0,0,0,0) 0 1px 5px 0px;" />
+<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7510bbbe0f774820a7659449f45014e6~tplv-k3u1fbpfcp-zoom-1.image" alt="img" style="zoom: 50%;box-shadow:rgba(0,0,0,0) 0 1px 5px 0px;">
 
 <p>value 参数表示当前指标值，delta 参数表示与前值的差值，向上的绿色箭头代表相比于前值，是涨的，反之向下的红箭头代表相比于前值是跌的。当然涨跌颜色可以通过 delta_color 参数来控制。</p>
 <p>json 组件用来展示 json 类型数据</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">st<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">st<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">{</span>
     <span class="token string">'foo'</span><span class="token punctuation">:</span> <span class="token string">'bar'</span><span class="token punctuation">,</span>
     <span class="token string">'stuff'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
         <span class="token string">'stuff 1'</span><span class="token punctuation">,</span>
         <span class="token string">'stuff 2'</span><span class="token punctuation">,</span>
     <span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/dc1f3d52c98a49a8b3b45a31c17f7168~tplv-k3u1fbpfcp-zoom-1.image" alt="img" style="zoom:50%;" />
+<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/dc1f3d52c98a49a8b3b45a31c17f7168~tplv-k3u1fbpfcp-zoom-1.image" alt="img" style="zoom:50%;">
 
 <p>Streamlit 会将 json 数据格式化，展示地更美观，并且提供交互，可以展开、收起 json 的子节点。</p>
 <h3 id="三、图表组件"><a href="#三、图表组件" class="headerlink" title="三、图表组件"></a>三、图表组件</h3><p>Streamlit 的图表组件包含两部分，一部分是原生组件，另一部分是渲染第三方库。</p>
@@ -587,7 +589,7 @@ st<span class="token punctuation">.</span>table<span class="token punctuation">(
 
 st<span class="token punctuation">.</span>line_chart<span class="token punctuation">(</span>chart_data<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5990347dbf5c49cfb81f0442db8680bf~tplv-k3u1fbpfcp-zoom-1.image" alt="img" style="zoom:50%;" />
+<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5990347dbf5c49cfb81f0442db8680bf~tplv-k3u1fbpfcp-zoom-1.image" alt="img" style="zoom:50%;">
 
 <p>上述是 line_chart 的示例，其他图表的使用方法与之类似。</p>
 <p>Streamlit 图表可设置的参数很少，除了数据源外，剩下只能设置图表的宽度和高度。</p>
@@ -601,7 +603,7 @@ ax<span class="token punctuation">.</span>hist<span class="token punctuation">(<
 
 st<span class="token punctuation">.</span>pyplot<span class="token punctuation">(</span>fig<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bd97f228349d4abea1ab14013daba12f~tplv-k3u1fbpfcp-zoom-1.image" alt="img" style="zoom:33%;" />
+<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bd97f228349d4abea1ab14013daba12f~tplv-k3u1fbpfcp-zoom-1.image" alt="img" style="zoom:33%;">
 
 <p>跟直接写 matplotlib.pyplot 一样，只不过最终展示的时候调用 st.pyplot 便可以将图表展示 Streamlit 页面上。其他 Python 库的使用方法与之类似。</p>
 <h3 id="四、输入组件"><a href="#四、输入组件" class="headerlink" title="四、输入组件"></a>四、输入组件</h3><p>前面我们介绍的三类组件都是输出类、展示类的。对于交互式的页面来说，接受用户的输入是必不可少的。</p>
@@ -628,7 +630,7 @@ st<span class="token punctuation">.</span>pyplot<span class="token punctuation">
 <li>label：组件上展示的内容（如：按钮名称）</li>
 <li>key：当前页面唯一标识一个组件</li>
 <li>help：鼠标放在组件上展示说明信息</li>
-<li>on_click &#x2F; on_change：组件发生交互（如：输入、点击）后的回调函数</li>
+<li>on_click / on_change：组件发生交互（如：输入、点击）后的回调函数</li>
 <li>args：回调函数的参数</li>
 <li>kwargs：回调函数的参数</li>
 </ul>
@@ -639,16 +641,16 @@ st<span class="token punctuation">.</span>pyplot<span class="token punctuation">
 
 st<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'选择了：'</span><span class="token punctuation">,</span> option<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/12917ea8af4d46fc8a0ff92873db0b39~tplv-k3u1fbpfcp-zoom-1.image" alt="img" style="zoom:33%;" />
+<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/12917ea8af4d46fc8a0ff92873db0b39~tplv-k3u1fbpfcp-zoom-1.image" alt="img" style="zoom:33%;">
 
 <p>selectbox 展示三个选项，并输出当前选中的项（默认选中第一个）。当我们在页面下拉选择其他选项后，整个页面代码会重新执行，但组件的选择状态 会保留在 option 中，因此，调用 st.write 后会输出选择后的选项。</p>
 <p>st.write 也是一个输出组件，可以输出字符串、DataFrame、普通对象等各种类型数据。</p>
 <p>其他组件的使用与之类似，组件效果图如下：</p>
-<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/430eafabd5714406853e641548dff1ed~tplv-k3u1fbpfcp-zoom-1.image" alt="img" style="zoom:50%;" />
+<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/430eafabd5714406853e641548dff1ed~tplv-k3u1fbpfcp-zoom-1.image" alt="img" style="zoom:50%;">
 
 <h3 id="五、多媒体组件"><a href="#五、多媒体组件" class="headerlink" title="五、多媒体组件"></a>五、多媒体组件</h3><p>Streamlit 定义了 image、audio 和 video 用于展示图片、音频和视频。</p>
 <p>可以展示本地多媒体，也通过 url 展示网络多媒体。</p>
-<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ed0d833dde424dbebcec9b8f429635bf~tplv-k3u1fbpfcp-zoom-1.image" alt="img" style="zoom:50%;" />
+<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ed0d833dde424dbebcec9b8f429635bf~tplv-k3u1fbpfcp-zoom-1.image" alt="img" style="zoom:50%;">
 
 <p>用法跟前面的组件是一样的，后面的垃圾分类 APP 我们会用到 image 组件。</p>
 <h3 id="六、状态组件"><a href="#六、状态组件" class="headerlink" title="六、状态组件"></a>六、状态组件</h3><p>状态组件用来向用户展示当前程序的运行状态，包括：</p>
@@ -663,7 +665,7 @@ st<span class="token punctuation">.</span>write<span class="token punctuation">(
 <li>exception：显示异常信息（代码错误栈）</li>
 </ul>
 <p>效果如下：</p>
-<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/203caef5bf0b42b3a6eb5cb4f6669815~tplv-k3u1fbpfcp-zoom-1.image" alt="img" style="zoom:33%;" />
+<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/203caef5bf0b42b3a6eb5cb4f6669815~tplv-k3u1fbpfcp-zoom-1.image" alt="img" style="zoom:33%;">
 
 <h3 id="七、其他内容"><a href="#七、其他内容" class="headerlink" title="七、其他内容"></a>七、其他内容</h3><p>到这里，Streamlit 的组件基本上就全介绍完了，组件也是 Streamlit 的主要内容。</p>
 <p>这小节介绍一下其他比较重要的内容，包括页面布局、控制流和缓存。</p>
@@ -705,59 +707,59 @@ DATA_URL <span class="token operator">=</span> <span class="token punctuation">(
 </thead>
 <tbody><tr>
 <td align="center">爱心选择框：<a target="_blank" rel="noopener" href="https://pypi.org/project/streamlit-custom-toggle/">streamlit-custom-toggle · PyPI</a></td>
-<td align="center"><img src="/images/Streamlit/image-20230325142250609.png" alt="image-20230325142250609" style="zoom: 25%;" /><img src="/images/Streamlit/image-20230325142638431.png" alt="image-20230325142638431" style="zoom:50%;" /></td>
+<td align="center"><img src="/images/Streamlit/image-20230325142250609.png" alt="image-20230325142250609" style="zoom: 25%;"><img src="/images/Streamlit/image-20230325142638431.png" alt="image-20230325142638431" style="zoom:50%;"></td>
 </tr>
 <tr>
 <td align="center">点赞：<a target="_blank" rel="noopener" href="https://pypi.org/project/streamlit-text-rating/">streamlit-text-rating · PyPI</a></td>
-<td align="center"><img src="/images/Streamlit/image-20230325142837021.png" alt="image-20230325142837021" style="zoom: 50%;" /></td>
+<td align="center"><img src="/images/Streamlit/image-20230325142837021.png" alt="image-20230325142837021" style="zoom: 50%;"></td>
 </tr>
 <tr>
 <td align="center">图片选择：<a target="_blank" rel="noopener" href="https://pypi.org/project/streamlit-image-select/">streamlit-image-select · PyPI</a></td>
-<td align="center"><img src="/images/Streamlit/image-20230325143950337.png" alt="image-20230325143950337" style="zoom: 50%;" /></td>
+<td align="center"><img src="/images/Streamlit/image-20230325143950337.png" alt="image-20230325143950337" style="zoom: 50%;"></td>
 </tr>
 <tr>
 <td align="center">自定义通知栏 ：<a target="_blank" rel="noopener" href="https://pypi.org/project/streamlit-pretty-notification-box/">streamlit-pretty-notification-box · PyPI</a></td>
-<td align="center"><img src="/images/Streamlit/image-20230325143123663.png" alt="image-20230325143123663" style="zoom:50%;" /></td>
+<td align="center"><img src="/images/Streamlit/image-20230325143123663.png" alt="image-20230325143123663" style="zoom:50%;"></td>
 </tr>
 <tr>
 <td align="center">卡片 ：<a target="_blank" rel="noopener" href="https://pypi.org/project/streamlit-cardselectable/">streamlit-cardselectable · PyPI</a></td>
-<td align="center"><img src="/images/Streamlit/image-20230325143258444.png" alt="image-20230325143258444" style="zoom: 25%;" /></td>
+<td align="center"><img src="/images/Streamlit/image-20230325143258444.png" alt="image-20230325143258444" style="zoom: 25%;"></td>
 </tr>
 <tr>
 <td align="center">图片放大：<a target="_blank" rel="noopener" href="https://pypi.org/project/streamlit-image-crop/">streamlit-image-crop · PyPI</a></td>
-<td align="center"><img src="/images/Streamlit/image-20230325143646031.png" alt="image-20230325143646031" style="zoom: 25%;" /></td>
+<td align="center"><img src="/images/Streamlit/image-20230325143646031.png" alt="image-20230325143646031" style="zoom: 25%;"></td>
 </tr>
 <tr>
 <td align="center">图片裁切：<a target="_blank" rel="noopener" href="https://pypi.org/project/streamlit-cropper/">streamlit-cropper · PyPI</a></td>
-<td align="center"><img src="/images/Streamlit/image-20230325144045224.png" alt="image-20230325144045224" style="zoom:67%;" /></td>
+<td align="center"><img src="/images/Streamlit/image-20230325144045224.png" alt="image-20230325144045224" style="zoom:67%;"></td>
 </tr>
 <tr>
 <td align="center">词云：<a target="_blank" rel="noopener" href="https://pypi.org/project/streamlit-wordcloud/#description">streamlit-wordcloud · PyPI</a></td>
-<td align="center"><img src="/images/Streamlit/image-20230325144221627.png" alt="image-20230325144221627" style="zoom:33%;" /></td>
+<td align="center"><img src="/images/Streamlit/image-20230325144221627.png" alt="image-20230325144221627" style="zoom:33%;"></td>
 </tr>
 <tr>
 <td align="center">图片标注：<a target="_blank" rel="noopener" href="https://discuss.streamlit.io/t/new-component-streamlit-img-label-an-easy-app-for-image-annotation/20672">New Component: streamlit-img-label, an easy app for image annotation - 🧩 Streamlit Components - Streamlit</a></td>
-<td align="center"><img src="/images/Streamlit/image-20230325144402984.png" alt="image-20230325144402984" style="zoom: 25%;" /></td>
+<td align="center"><img src="/images/Streamlit/image-20230325144402984.png" alt="image-20230325144402984" style="zoom: 25%;"></td>
 </tr>
 <tr>
 <td align="center">显示批注高亮文本：<a target="_blank" rel="noopener" href="https://pypi.org/project/st-annotated-text/">st-annotated-text · PyPI</a></td>
-<td align="center"><img src="/images/Streamlit/image-20230325145556636.png" alt="image-20230325145556636" style="zoom:50%;" /></td>
+<td align="center"><img src="/images/Streamlit/image-20230325145556636.png" alt="image-20230325145556636" style="zoom:50%;"></td>
 </tr>
 <tr>
 <td align="center">接入聊天机器人： <a target="_blank" rel="noopener" href="https://ai-yash-st-chat-exampleschatbot-fkuecs.streamlit.app/">Streamlit Chat - Demo · Streamlit</a></td>
-<td align="center"><img src="/images/Streamlit/image-20230325145852298.png" alt="image-20230325145852298" style="zoom: 25%;" /></td>
+<td align="center"><img src="/images/Streamlit/image-20230325145852298.png" alt="image-20230325145852298" style="zoom: 25%;"></td>
 </tr>
 <tr>
-<td align="center">streamlit扩展：<a target="_blank" rel="noopener" href="https://github.com/arnaudmiribel/streamlit-extras">arnaudmiribel&#x2F;streamlit-extras: Discover, try, install and share Streamlit re-usable bits we call “extras”! (github.com)</a></td>
+<td align="center">streamlit扩展：<a target="_blank" rel="noopener" href="https://github.com/arnaudmiribel/streamlit-extras">arnaudmiribel/streamlit-extras: Discover, try, install and share Streamlit re-usable bits we call “extras”! (github.com)</a></td>
 <td align="center">徽章，卡片，分割线颜色，扩展器中省略代码，日期范围选择器指标以卡片的形式，按钮的页面切换，自定义颜色开关</td>
 </tr>
 <tr>
-<td align="center">折线图等图像：<a target="_blank" rel="noopener" href="https://github.com/tvst/plost">tvst&#x2F;plost: A deceptively simple plotting library for Streamlit (github.com)</a></td>
+<td align="center">折线图等图像：<a target="_blank" rel="noopener" href="https://github.com/tvst/plost">tvst/plost: A deceptively simple plotting library for Streamlit (github.com)</a></td>
 <td align="center"></td>
 </tr>
 <tr>
 <td align="center">评论编辑等</td>
-<td align="center"><img src="/images/Streamlit/image-20230325154209254.png" alt="image-20230325154209254" style="zoom:67%;" /></td>
+<td align="center"><img src="/images/Streamlit/image-20230325154209254.png" alt="image-20230325154209254" style="zoom:67%;"></td>
 </tr>
 </tbody></table>
 <h3 id="九、多页面侧边栏"><a href="#九、多页面侧边栏" class="headerlink" title="九、多页面侧边栏"></a>九、多页面侧边栏</h3><p>使用 <a target="_blank" rel="noopener" href="https://docs.streamlit.io/en/stable/api.html#add-widgets-to-sidebar"><code>st.sidebar</code></a>可以轻易的将部件组织在左侧侧边栏。每个传到 <a target="_blank" rel="noopener" href="https://docs.streamlit.io/en/stable/api.html#add-widgets-to-sidebar"><code>st.sidebar</code></a> 的元素将被固定到左边侧边栏, 这样可以让用户在使用UI进行控制的时候专注于关注app内容。</p>
@@ -777,18 +779,18 @@ add_slider <span class="token operator">=</span> st<span class="token punctuatio
 <span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>注意</strong>：<br>边栏当前不支持以下Streamlit命令：<code>st.write</code>（应使用<code>st.sidebar.markdown()</code>代替），<code>st.echo</code>和<code>st.spinner</code>。</p>
-<h2 id="使用HTML语法"><a href="#使用HTML语法" class="headerlink" title="使用HTML语法"></a>使用HTML语法</h2><h3 id="一、st-markdown"><a href="#一、st-markdown" class="headerlink" title="一、st.markdown"></a>一、st.markdown</h3><p>使用 <strong>st.markdown</strong> 撰写前端语言，需要启用它的可选参数 unsafe_allow_html&#x3D;True 。</p>
+<h2 id="使用HTML语法"><a href="#使用HTML语法" class="headerlink" title="使用HTML语法"></a>使用HTML语法</h2><h3 id="一、st-markdown"><a href="#一、st-markdown" class="headerlink" title="一、st.markdown"></a>一、st.markdown</h3><p>使用 <strong>st.markdown</strong> 撰写前端语言，需要启用它的可选参数 unsafe_allow_html=True 。</p>
 <p>markdown是一种轻量级标记语言，它很容易转换为HTML。而HTML就是构成网页骨架的语言，所以我们启用st.markdown的 unsafe_allow_html 后，便可以在st.markdown内撰写HTML或CSS。</p>
 <p><strong>上图2演示了用st.markdown撰写CSS来修改st组件的样式（直接复制粘贴应当无效）。</strong></p>
 <p>下图3演示了用st.markdown<strong>撰写HTML</strong>为st添加一个极简的自定义组件：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">st<span class="token punctuation">.</span>button<span class="token punctuation">(</span><span class="token string">'禁用'</span><span class="token punctuation">,</span> disabled<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
 st<span class="token punctuation">.</span>button<span class="token punctuation">(</span><span class="token string">'正常'</span><span class="token punctuation">)</span>
-st<span class="token punctuation">.</span>markdown<span class="token punctuation">(</span><span class="token triple-quoted-string string">'''&lt;span>
+st<span class="token punctuation">.</span>markdown<span class="token punctuation">(</span><span class="token triple-quoted-string string">'''&lt;span&gt;
 我位于st.markdown中
-&lt;/span>'''</span><span class="token punctuation">,</span> unsafe_allow_html<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+&lt;/span&gt;'''</span><span class="token punctuation">,</span> unsafe_allow_html<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
 st<span class="token punctuation">.</span>button<span class="token punctuation">(</span><span class="token string">'正常2'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<img src="https://pic2.zhimg.com/80/v2-08090b8a5a54f4518118389c4c13fb59_720w.webp" alt="img" style="zoom:50%;" />
+<img src="https://pic2.zhimg.com/80/v2-08090b8a5a54f4518118389c4c13fb59_720w.webp" alt="img" style="zoom:50%;">
 
 <p>图3 演示被其他st组件包围的st.markdown效果</p>
 <p>所以，用<strong>st.markdown</strong>撰写前端代码的特点如下：</p>
@@ -805,29 +807,29 @@ st<span class="token punctuation">.</span>button<span class="token punctuation">
 st<span class="token punctuation">.</span>button<span class="token punctuation">(</span><span class="token string">'禁用'</span><span class="token punctuation">,</span> disabled<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
 st<span class="token punctuation">.</span>button<span class="token punctuation">(</span><span class="token string">'正常'</span><span class="token punctuation">)</span>
 html<span class="token punctuation">(</span><span class="token triple-quoted-string string">'''
-&lt;span>
+&lt;span&gt;
 我位于html()中
-&lt;/span>
+&lt;/span&gt;
 '''</span><span class="token punctuation">,</span> height<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">)</span>
 st<span class="token punctuation">.</span>button<span class="token punctuation">(</span><span class="token string">'正常2'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<img src="https://pic3.zhimg.com/80/v2-20385bb933aa3ca7f25c656570b592f2_720w.webp" alt="img" style="zoom:33%;" />
+<img src="https://pic3.zhimg.com/80/v2-20385bb933aa3ca7f25c656570b592f2_720w.webp" alt="img" style="zoom:33%;">
 
 <p>图4 演示被其他st组件包围的html()效果，高度已设置</p>
 <p>并且，我们可以通过用html()撰写<strong>JavaScript</strong>来修改、添加、删除原本的st组件内容或是为他们增加一些事件，比如点击事件（需要较好的JavaScript语言基础），如下图，我用JavaScript删除了Streamlit右上角的汉堡菜单按钮：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">js_code <span class="token operator">=</span> <span class="token triple-quoted-string string">'''
-$(document).ready(function()&#123;
+$(document).ready(function(){
     $("button[kind=icon]", window.parent.document).remove()
-&#125;);
+});
 '''</span>
 <span class="token comment"># 因为JS不需要展示，所以html宽高均设为0，避免占用空间，且放置在所有组件最后</span>
 <span class="token comment"># 引用了JQuery v2.2.4</span>
-html<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'''&lt;script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.2.4/jquery.min.js">&lt;/script>
-    &lt;script></span><span class="token interpolation"><span class="token punctuation">&#123;</span>js_code<span class="token punctuation">&#125;</span></span><span class="token string">&lt;/script>'''</span></span><span class="token punctuation">,</span>
+html<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'''&lt;script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.2.4/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;</span><span class="token interpolation"><span class="token punctuation">{</span>js_code<span class="token punctuation">}</span></span><span class="token string">&lt;/script&gt;'''</span></span><span class="token punctuation">,</span>
      width<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>
      height<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<img src="https://pic1.zhimg.com/80/v2-622f11b3abc4a5a74ff7d9c6198db4a4_720w.webp" alt="img" style="zoom:33%;" />
+<img src="https://pic1.zhimg.com/80/v2-622f11b3abc4a5a74ff7d9c6198db4a4_720w.webp" alt="img" style="zoom:33%;">
 
 <p>图5 演示JS删除st汉堡菜单按钮</p>
 <p>所以，用**html()**撰写前端代码的特点如下：</p>
@@ -840,63 +842,63 @@ html<span class="token punctuation">(</span><span class="token string-interpolat
 <ul>
 <li>对于<strong>HTML，一般来说使用st.markdown撰写更加保险，也方便页面内相互调用。但也需要用st.markdown写css对样式进行支持。</strong>如果只需要撰写简单的HTML元素，<strong>也可以直接使用html()（记得要设置宽高）</strong></li>
 <li>对于<strong>CSS，</strong>如果想简单直接地修改页面内st组件的样式，<strong>一般需要选择st.markdown。而用html()调用JS也可以做到</strong></li>
-<li>对于<strong>JavaScript，</strong>由于st.markdown的位置本身就在<body>标签内，所以无法像常规的JavaScript一样写在<head>标签内。<strong>所以只能使用html()</strong></li>
+<li>对于<strong>JavaScript，</strong>由于st.markdown的位置本身就在标签内，所以无法像常规的JavaScript一样写在标签内。<strong>所以只能使用html()</strong></li>
 </ul>
 <hr>
 <h3 id="三、结合Chrome开发者工具，使用st-markdown添加、修改CSS"><a href="#三、结合Chrome开发者工具，使用st-markdown添加、修改CSS" class="headerlink" title="三、结合Chrome开发者工具，使用st.markdown添加、修改CSS"></a><strong>三、结合Chrome开发者工具，使用st.markdown添加、修改CSS</strong></h3><p>一般来说，撰写前端语言有一定的门槛，至少需要对html有一定的了解。但善用<strong>Chrome开发者工具（F12）</strong>，则可以<strong>大大降低</strong>撰写CSS的难度（复制粘贴能有什么难度）。下面来示范如何使用：</p>
 <h3 id="四、开发者工具详解"><a href="#四、开发者工具详解" class="headerlink" title="四、开发者工具详解"></a>四、开发者工具详解</h3><p>首先需要有一个Chrome浏览器（或至少是Chrome内核的浏览器）。打开自己的Streamlit页面后，按下F12（Mac用户可能需要按住Fn再按F12），即可打开<strong>开发者工具</strong>，如下图：</p>
-<img src="https://pic1.zhimg.com/80/v2-fa671936482e21b676f612198404ee8c_720w.webp" alt="img" style="zoom:50%;" />
+<img src="https://pic1.zhimg.com/80/v2-fa671936482e21b676f612198404ee8c_720w.webp" alt="img" style="zoom:50%;">
 
 <p>图6 开发者工具中要用到的内容</p>
 <p>接下来按顺序演示我们需要了解的开发者工具中的内容：</p>
 <h3 id="五、页面的HTML代码"><a href="#五、页面的HTML代码" class="headerlink" title="五、页面的HTML代码"></a><strong>五、页面的HTML代码</strong></h3><p>左侧页面中的st组件，本质上是由HTML代码+CSS样式组成。HTML代码决定它「是什么」，CSS样式决定它「长什么样」。那么1. 中的内容，就是开发者工具中用于显示当前页面HTML代码的<strong>元素（英文版本是Elements）</strong>窗口。例如，当前元素窗口中，被选中的HTML内容就是：</p>
-<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">kind</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>css-1cpxqw2 edgvbvh1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>正常<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">kind</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>css-1cpxqw2 edgvbvh1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>正常<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>HTML代码由一个个标签嵌套、排列组成。如上述代码就是选中的button标签。一个最简单的button标签就是以<button>开头，以</button>结尾。</p>
 <h3 id="六、使用辅助检查功能快速定位标签"><a href="#六、使用辅助检查功能快速定位标签" class="headerlink" title="六、使用辅助检查功能快速定位标签"></a><strong>六、使用辅助检查功能快速定位标签</strong></h3><p>那么，如何在茫茫多的折叠标签中找到我们想要修改的st组件的标签呢？这就要用到2.中的按钮，点击一下，就可以使光标进入辅助检查模式。</p>
 <p>例如此处想要选择第二个按钮，那么就按下<strong>辅助检查按钮（快捷键：Ctrl+Shift+C）</strong>将鼠标悬停到左侧页面中的组件上，可以看到蓝色绿色等颜色。将色彩范围缩小到这个按钮范围内，就代表已经锁定了这个按钮，再按下左键即可在元素窗口中看到对应的标签已经被选中：</p>
-<img src="https://pic2.zhimg.com/80/v2-d1d9b1b04409b71f4575e869b887b791_720w.webp" alt="img" style="zoom:50%;" />
+<img src="https://pic2.zhimg.com/80/v2-d1d9b1b04409b71f4575e869b887b791_720w.webp" alt="img" style="zoom:50%;">
 
 <p>图7 使用辅助检查功能选中一个标签</p>
 <h3 id="七、在开发者工具中尝试修改CSS样式"><a href="#七、在开发者工具中尝试修改CSS样式" class="headerlink" title="七、在开发者工具中尝试修改CSS样式"></a><strong>七、在开发者工具中尝试修改CSS样式</strong></h3><p>既然已经选中了想要修改的st组件，接下来就是要写代码去修改它的样式。但是在写代码之前，可以在开发者工具中先模拟一下，尝试修改，确保选中的HTML标签就是自己想要修改的那一个。在图6的3. 中就是当前选中的元素的CSS样式代码，它由一段段CSS代码组成。一个CSS代码的构成如下：</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.css-1cpxqw2:focus:not(:active)</span> <span class="token punctuation">&#123;</span>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.css-1cpxqw2:focus:not(:active)</span> <span class="token punctuation">{</span>
     <span class="token property">border-color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>255<span class="token punctuation">,</span> 75<span class="token punctuation">,</span> 75<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>255<span class="token punctuation">,</span> 75<span class="token punctuation">,</span> 75<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>它的结构类似于Python字典的键值对，只不过不同的<strong>CSS属性</strong>之间以”;”分隔。在{}之前的是<strong>CSS选择器路径</strong>，这个路径决定了{}中的属性应用于HTML中的哪个标签。</p>
 <p>在开发者工具里，任何一个CSS中，没有变为灰色，且没有被划线删除的CSS属性都会被应用。而如果两个CSS中出现相同的属性，排布更靠上的将会覆盖排布靠下的，这就是划线删除的来源。判断哪个CSS被使用比较复杂，所以可以点击「样式」后的第二栏「计算样式」来查看当前标签应用的CSS属性都有哪些：</p>
-<img src="https://pic1.zhimg.com/80/v2-baacbcafc63c48404fb2f6a0561e9de4_720w.webp" alt="img" style="zoom:50%;" />
+<img src="https://pic1.zhimg.com/80/v2-baacbcafc63c48404fb2f6a0561e9de4_720w.webp" alt="img" style="zoom:50%;">
 
 <p>图7 计算样式</p>
 <p>如果对这些CSS属性不了解，或者是英文阅读比较吃力，可以在<a href="https://link.zhihu.com/?target=https://www.w3school.com.cn/cssref/index.asp">CSS 参考手册</a>中对照理解。</p>
 <p>现在来进行一个最直观的测试演示，修改button的背景色。图7中已经给出，background-color（背景色）的属性值为白色，RGBA为rgb(255, 255, 255)。点击background-color后的箭头（鼠标悬停后显示），就会定位到样式中的对应CSS去：</p>
-<img src="https://pic1.zhimg.com/80/v2-905803ee01960bdc605933e868811384_720w.webp" alt="img" style="zoom: 50%;" />
+<img src="https://pic1.zhimg.com/80/v2-905803ee01960bdc605933e868811384_720w.webp" alt="img" style="zoom: 50%;">
 
 <p>图9 计算样式定位到样式中</p>
 <p>此时点击rgb前的白色色块，在取色器中随意修改一个颜色（按回车确认），可以看到按钮的背景色已经发生了变化。证明找到的标签没有错（<strong>如果有错，则可以在当前标签的上下继续找，并且尝试修改</strong>）。但是也会发现，不止一个button的背景色发生了变化，所有button都变了：</p>
-<img src="https://pic3.zhimg.com/80/v2-e4a59c696b5b75f13c011ad8e7f30092_720w.webp" alt="img" style="zoom: 67%;" />
+<img src="https://pic3.zhimg.com/80/v2-e4a59c696b5b75f13c011ad8e7f30092_720w.webp" alt="img" style="zoom: 67%;">
 
 <p>图9 修改CSS，所有应用该CSS的标签都会受影响</p>
-<p>这是因为不止一个button使用了该CSS，所有的st.button应用的CSS都应用了这一个CSS（<strong>这是因为CSS选择器的选择方式是选择HTML中class&#x3D;”css-1cpxqw2”的所有标签，而目前button都应用了这个标签</strong>）。</p>
+<p>这是因为不止一个button使用了该CSS，所有的st.button应用的CSS都应用了这一个CSS（<strong>这是因为CSS选择器的选择方式是选择HTML中class=”css-1cpxqw2”的所有标签，而目前button都应用了这个标签</strong>）。</p>
 <p>如果想只修改单个标签，则不能继续在这个CSS中进行修改了。需要在更高级的CSS中写background-color来覆盖掉它。而样式中最上层正好是element.style {}，指该元素的样式，只针对该元素。那么就在它中间新写一条background-color属性，来覆盖下面的属性，且仅应用于当前标签，如图：</p>
-<img src="https://pic3.zhimg.com/80/v2-33109985dffb2491cbfe0f6bb1cf3332_720w.webp" alt="img" style="zoom: 67%;" />
+<img src="https://pic3.zhimg.com/80/v2-33109985dffb2491cbfe0f6bb1cf3332_720w.webp" alt="img" style="zoom: 67%;">
 
 <p>图9 在element.style里新增一条css属性</p>
 <p>可以看到成功了，但是如何把它应用到后端的Python代码中呢？</p>
 <h3 id="八、复制CSS选择器路径，构造st-markdown代码"><a href="#八、复制CSS选择器路径，构造st-markdown代码" class="headerlink" title="八、复制CSS选择器路径，构造st.markdown代码"></a>八、复制CSS选择器路径，构造st.markdown代码</h3><p>前面提到，CSS代码由CSS选择器和CSS属性组成。CSS选择器决定了这些属性将应用于哪些元素。如果没有使用CSS选择器的能力（并且由于Streamlit组件的高度近似性，很难通过自己写CSS选择器来精准定位到一个元素），<strong>不如直接从开发者工具中复制</strong>：只需要右键点击选中的HTML元素，选择复制-复制selector（英文版本可能不同，但是位置相同），就获得了CSS选择器路径，如图：</p>
-<img src="https://pic2.zhimg.com/80/v2-085ef18c73888c1ae71bfd2722458cb5_720w.webp" alt="img" style="zoom:33%;" />
+<img src="https://pic2.zhimg.com/80/v2-085ef18c73888c1ae71bfd2722458cb5_720w.webp" alt="img" style="zoom:33%;">
 
 <p>图10 复制CSS选择器路径</p>
 <p>会得到一行选择器的代码。现在就可以在后端构造st.markdown中的CSS代码了：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 1. 代码需要为多行 </span>
-<span class="token comment"># 2. 需以&lt;style>开头，以&lt;/style结尾> </span>
+<span class="token comment"># 2. 需以&lt;style&gt;开头，以&lt;/style结尾&gt; </span>
 <span class="token comment"># 3. 每个人的项目中需要复制的CSS选择器路径不同，直接复制我的代码大概率无效</span>
-st<span class="token punctuation">.</span>markdown<span class="token punctuation">(</span><span class="token triple-quoted-string string">'''&lt;style>
-#root > div:nth-child(1) > div > div > div > div > section > div > div:nth-child(1) > div > div:nth-child(2) > div > button &#123;
+st<span class="token punctuation">.</span>markdown<span class="token punctuation">(</span><span class="token triple-quoted-string string">'''&lt;style&gt;
+#root &gt; div:nth-child(1) &gt; div &gt; div &gt; div &gt; div &gt; section &gt; div &gt; div:nth-child(1) &gt; div &gt; div:nth-child(2) &gt; div &gt; button {
     background-color: rgb(255 75 75 / 50%);
-&#125; 
-&lt;/style>'''</span><span class="token punctuation">,</span> unsafe_allow_html<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+} 
+&lt;/style&gt;'''</span><span class="token punctuation">,</span> unsafe_allow_html<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>将这段代码放置在所有组件最后（<strong>因为st.markdown虽然不显示，但会占用一定空间，放在最后可以避免影响布局</strong>），就可以在前端页面发现已经成功应用了。至此大功告成，别的CSS属性也可以以这种方法修改了。</p>
 <p>如果需要修改多个组件，只需要将多个CSS放在同一个st.markdown的<style>标签内即可</p>
@@ -959,7 +961,7 @@ html<span class="token punctuation">(</span><span class="token string-interpolat
 <li><code>streamlit cache clear</code> 清缓存</li>
 </ul>
 <h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>Streamlit是一个强大的工具，可用于快速构建数据驱动的Web应用程序。它易于使用且具有许多有用的功能，使其成为数据科学家和机器学习工程师的首选工具之一。使用Streamlit，您可以快速构建交互式应用程序，展示数据和分析结果，以及与团队或客户共享您的发现。</p>
-
+</style></p>
                 
             </div>
             <hr/>
@@ -1334,7 +1336,7 @@ html<span class="token punctuation">(</span><span class="token string-interpolat
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">167.8k</span>
+                        class="white-color">165.3k</span>
             
             
             

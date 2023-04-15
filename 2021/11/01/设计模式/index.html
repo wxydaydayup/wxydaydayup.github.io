@@ -61,7 +61,9 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
 
 
 <body>
@@ -428,7 +430,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.1k
+                    3k
                 </div>
                 
 
@@ -473,82 +475,82 @@
 <li><strong>3.创建对象时耗时过多或者耗资源过多，但又经常用到的对象。</strong> </li>
 <li><strong>4.方便资源相互通信的环境</strong></li>
 </ul>
-<h4 id="1、饿汉式"><a href="#1、饿汉式" class="headerlink" title="1、饿汉式"></a><strong>1、饿汉式</strong></h4><pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">&#x2F;&#x2F; 饿汉式单例
-public class Singleton1 &#123;
+<h4 id="1、饿汉式"><a href="#1、饿汉式" class="headerlink" title="1、饿汉式"></a><strong>1、饿汉式</strong></h4><pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">// 饿汉式单例
+public class Singleton1 {
  
-    &#x2F;&#x2F; 指向自己实例的私有静态引用，主动创建
-    private static Singleton1 singleton1 &#x3D; new Singleton1();
+    // 指向自己实例的私有静态引用，主动创建
+    private static Singleton1 singleton1 = new Singleton1();
  
-    &#x2F;&#x2F; 私有的构造方法
-    private Singleton1()&#123;&#125;
+    // 私有的构造方法
+    private Singleton1(){}
  
-    &#x2F;&#x2F; 以自己实例为返回值的静态的公有方法，静态工厂方法
-    public static Singleton1 getSingleton1()&#123;
+    // 以自己实例为返回值的静态的公有方法，静态工厂方法
+    public static Singleton1 getSingleton1(){
         return singleton1;
-    &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>我们知道，<strong>类加载的方式是按需加载，且加载一次</strong>。。因此，在上述单例类被加载时，就会实例化一个对象并交给自己的引用，供系统使用；而且，由于这个类在整个生命周期中只会被加载一次，因此只会创建一个实例，即能够充分保证单例。</p>
 <p>优点：这种写法比较简单，就是在类装载的时候就完成实例化。避免了线程同步问题。</p>
 <p>缺点：在类装载的时候就完成实例化，没有达到Lazy Loading的效果。如果从始至终从未使用过这个实例，则会造成内存的浪费。</p>
 <p>Java实现</p>
-<img src="/images/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/image-20230319095148458.png" alt="" style="zoom: 80%;" />
+<img src="/images/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/image-20230319095148458.png" alt="" style="zoom: 80%;">
 
 <p>问题1：防止子类重写破坏单例</p>
 <p>问题2：就是加入最下面的方法</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token class-name">Object</span> <span class="token function">readResovle</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token class-name">Object</span> <span class="token function">readResovle</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 	<span class="token keyword">return</span> <span class="token constant">INSTANCE</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="2、懒汉式"><a href="#2、懒汉式" class="headerlink" title="2、懒汉式"></a><strong>2、懒汉式</strong></h4><pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">&#x2F;&#x2F; 懒汉式单例
-public class Singleton2 &#123;
+<h4 id="2、懒汉式"><a href="#2、懒汉式" class="headerlink" title="2、懒汉式"></a><strong>2、懒汉式</strong></h4><pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">// 懒汉式单例
+public class Singleton2 {
  
-    &#x2F;&#x2F; 指向自己实例的私有静态引用
+    // 指向自己实例的私有静态引用
     private static Singleton2 singleton2;
  
-    &#x2F;&#x2F; 私有的构造方法
-    private Singleton2()&#123;&#125;
+    // 私有的构造方法
+    private Singleton2(){}
  
-    &#x2F;&#x2F; 以自己实例为返回值的静态的公有方法，静态工厂方法
-    public static Singleton2 getSingleton2()&#123;
-        &#x2F;&#x2F; 被动创建，在真正需要使用时才去创建
-        if (singleton2 &#x3D;&#x3D; null) &#123;
-            singleton2 &#x3D; new Singleton2();
-        &#125;
+    // 以自己实例为返回值的静态的公有方法，静态工厂方法
+    public static Singleton2 getSingleton2(){
+        // 被动创建，在真正需要使用时才去创建
+        if (singleton2 == null) {
+            singleton2 = new Singleton2();
+        }
         return singleton2;
-    &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>我们从懒汉式单例可以看到，单例实例被<strong>延迟加载</strong>，即只有在真正使用的时候才会实例化一个对象并交给自己的引用。</p>
-<p>这种写法起到了Lazy Loading的效果，但是只能在单线程下使用。如果在多线程下，一个线程进入了if (singleton &#x3D;&#x3D; null)判断语句块，还未来得及往下执行，另一个线程也通过了这个判断语句，这时便会产生多个实例。所以在多线程环境下不可使用这种方式。</p>
-<h4 id="3、双重加锁机制"><a href="#3、双重加锁机制" class="headerlink" title="3、双重加锁机制"></a><strong>3、双重加锁机制</strong></h4><pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">public class Singleton &#123;
+<p>这种写法起到了Lazy Loading的效果，但是只能在单线程下使用。如果在多线程下，一个线程进入了if (singleton == null)判断语句块，还未来得及往下执行，另一个线程也通过了这个判断语句，这时便会产生多个实例。所以在多线程环境下不可使用这种方式。</p>
+<h4 id="3、双重加锁机制"><a href="#3、双重加锁机制" class="headerlink" title="3、双重加锁机制"></a><strong>3、双重加锁机制</strong></h4><pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">public class Singleton {
     private static Singleton instance;
-    &#x2F;&#x2F;程序运行时创建一个静态只读的进程辅助对象
-    private static readonly object syncRoot &#x3D; new object();
-    private Singleton() &#123; &#125;
+    //程序运行时创建一个静态只读的进程辅助对象
+    private static readonly object syncRoot = new object();
+    private Singleton() { }
     public static Singleton GetInstance()
-    &#123;
-        &#x2F;&#x2F;先判断是否存在，不存在再加锁处理
-        if (instance &#x3D;&#x3D; null)
-        &#123;
-            &#x2F;&#x2F;在同一个时刻加了锁的那部分程序只有一个线程可以进入
+    {
+        //先判断是否存在，不存在再加锁处理
+        if (instance == null)
+        {
+            //在同一个时刻加了锁的那部分程序只有一个线程可以进入
             lock (syncRoot)
-            &#123;
-                if (instance &#x3D;&#x3D; null)
-                &#123;
-                    instance &#x3D; new Singleton();
-                &#125;
-            &#125;
-        &#125;
+            {
+                if (instance == null)
+                {
+                    instance = new Singleton();
+                }
+            }
+        }
         return instance;
-    &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>Double-Check概念对于多线程开发者来说不会陌生，如代码中所示，我们进行了两次if (singleton &#x3D;&#x3D; null)检查，这样就可以保证线程安全了。这样，实例化代码只用执行一次，后面再次访问时，判断if (singleton &#x3D;&#x3D; null)，直接return实例化对象。</p>
+<p>Double-Check概念对于多线程开发者来说不会陌生，如代码中所示，我们进行了两次if (singleton == null)检查，这样就可以保证线程安全了。这样，实例化代码只用执行一次，后面再次访问时，判断if (singleton == null)，直接return实例化对象。</p>
 <p>使用双重检测同步延迟加载去创建单例的做法是一个非常优秀的做法，<strong>其不但保证了单例，而且切实提高了程序运行效率</strong></p>
 <p>优点：线程安全；延迟加载；效率较高。</p>
 <p>java实现</p>
-<img src="/images/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/image-20230319100230399.png" alt="" style="zoom: 67%;" />
+<img src="/images/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/image-20230319100230399.png" alt="" style="zoom: 67%;">
 
 <h3 id="三、单例模式的优缺点"><a href="#三、单例模式的优缺点" class="headerlink" title="三、单例模式的优缺点"></a>三、单例模式的优缺点</h3><p><strong>优点</strong>：</p>
 <ul>
@@ -587,7 +589,7 @@ user01<span class="token punctuation">.</span><span class="token function">setSc
 </ul>
 <p>建造者模式给我们提供了另一种建造对象的思路。使用建造者模式，对象的建造细节均交给建造者来完成，调用者只需要掌控总体流程即可，而不需要了解被建造对象的细节。</p>
 <p>例如，我们编写一个UserBuilder接口作为建造User对象的接口，如下所示。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserBuilder</span> <span class="token punctuation">&#123;</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserBuilder</span> <span class="token punctuation">{</span>
 
     <span class="token keyword">public</span> <span class="token class-name">UserBuilder</span> <span class="token function">setEmail</span><span class="token punctuation">(</span><span class="token class-name">String</span> email<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -596,49 +598,49 @@ user01<span class="token punctuation">.</span><span class="token function">setSc
     <span class="token keyword">public</span> <span class="token class-name">UserBuilder</span> <span class="token function">setSex</span><span class="token punctuation">(</span><span class="token class-name">Integer</span> sex<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
     <span class="token keyword">public</span> <span class="token class-name">User</span> <span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>然后我们继承UserBuilder接口编写一个SunnySchoolUserBuilder类，它用来建造Sunny School的用户，如下所示。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SunnySchoolUserBuilder</span> <span class="token keyword">implements</span> <span class="token class-name">UserBuilder</span> <span class="token punctuation">&#123;</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SunnySchoolUserBuilder</span> <span class="token keyword">implements</span> <span class="token class-name">UserBuilder</span> <span class="token punctuation">{</span>
     <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
     <span class="token keyword">private</span> <span class="token class-name">String</span> email<span class="token punctuation">;</span>
     <span class="token keyword">private</span> <span class="token class-name">Integer</span> age<span class="token punctuation">;</span>
     <span class="token keyword">private</span> <span class="token class-name">Integer</span> sex<span class="token punctuation">;</span>
     <span class="token keyword">private</span> <span class="token class-name">String</span> schoolName<span class="token punctuation">;</span>
 
-    <span class="token keyword">public</span> <span class="token class-name">SunnySchoolUserBuilder</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token class-name">SunnySchoolUserBuilder</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="token keyword">public</span> <span class="token class-name">SunnySchoolUserBuilder</span> <span class="token function">setEmail</span><span class="token punctuation">(</span><span class="token class-name">String</span> email<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token class-name">SunnySchoolUserBuilder</span> <span class="token function">setEmail</span><span class="token punctuation">(</span><span class="token class-name">String</span> email<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>email <span class="token operator">=</span> email<span class="token punctuation">;</span>
         <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="token keyword">public</span> <span class="token class-name">SunnySchoolUserBuilder</span> <span class="token function">setAge</span><span class="token punctuation">(</span><span class="token class-name">Integer</span> age<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token class-name">SunnySchoolUserBuilder</span> <span class="token function">setAge</span><span class="token punctuation">(</span><span class="token class-name">Integer</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
         <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="token keyword">public</span> <span class="token class-name">SunnySchoolUserBuilder</span> <span class="token function">setSex</span><span class="token punctuation">(</span><span class="token class-name">Integer</span> sex<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token class-name">SunnySchoolUserBuilder</span> <span class="token function">setSex</span><span class="token punctuation">(</span><span class="token class-name">Integer</span> sex<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>sex <span class="token operator">=</span> sex<span class="token punctuation">;</span>
         <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="token keyword">public</span> <span class="token class-name">User</span> <span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>email <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token class-name">User</span> <span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>email <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
             <span class="token keyword">this</span><span class="token punctuation">.</span>email <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token string">"@sunnyschool.com"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
             <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">7</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>sex <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>sex <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
             <span class="token keyword">this</span><span class="token punctuation">.</span>sex <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">}</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>schoolName <span class="token operator">=</span> <span class="token string">"Sunny School"</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> email<span class="token punctuation">,</span> age<span class="token punctuation">,</span> sex<span class="token punctuation">,</span> schoolName<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>这样一来，我们可以灵活地建造对象。</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 用匿名建造者建造一个对象</span>
@@ -663,47 +665,47 @@ userBuilder04<span class="token punctuation">.</span><span class="token function
 <li>适配器： Adapter, 将被适配者和目标抽象类组合到一起的类。</li>
 </ul>
 <h3 id="二、适配器模式的实现"><a href="#二、适配器模式的实现" class="headerlink" title="二、适配器模式的实现"></a>二、适配器模式的实现</h3><p><strong>被适配类：Adaptee</strong></p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Adaptee</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">adapterRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Adaptee</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">adapterRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"被适配者的方法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>目标抽象：Target接口</strong></p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Target</span> <span class="token punctuation">&#123;</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Target</span> <span class="token punctuation">{</span>
     <span class="token keyword">void</span> <span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>怎么才可以在目标接口中的 request() 调用 Adaptee 的 adapteeRequest() 方法呢？</p>
 <p>通过一个适配器类，实现 Target 接口，同时继承了 Adaptee 类，然后在实现的 request() 方法中调用父类的 adapteeRequest() 即可实现</p>
 <p><strong>Adapter</strong>类继承了Adaptee类，所以称为<strong>类适配器</strong>（通过继承来实现）</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Adapter</span> <span class="token keyword">extends</span> <span class="token class-name">Adaptee</span> <span class="token keyword">implements</span> <span class="token class-name">Target</span> <span class="token punctuation">&#123;</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Adapter</span> <span class="token keyword">extends</span> <span class="token class-name">Adaptee</span> <span class="token keyword">implements</span> <span class="token class-name">Target</span> <span class="token punctuation">{</span>
 	<span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">adapterRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="三、示例"><a href="#三、示例" class="headerlink" title="三、示例"></a><strong>三、示例</strong></h3><p>我们平时用充电器给手机充电，充电器可能需要将220v的电压转换成5v的电压，我们才能给手机正常充电。</p>
 <p><strong>AC220类（Adaptee），被适配者类，原有220v的电压。</strong></p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AC220</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">outputAC220V</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AC220</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">outputAC220V</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
         <span class="token keyword">int</span> output <span class="token operator">=</span> <span class="token number">220</span><span class="token punctuation">;</span>
         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"输出交流电"</span><span class="token operator">+</span>output<span class="token operator">+</span><span class="token string">"V"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> output<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 <p><strong>DC5类（Target接口），目标接口，需要转换成5v的电压。</strong></p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">DC5</span> <span class="token punctuation">&#123;</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">DC5</span> <span class="token punctuation">{</span>
     <span class="token keyword">int</span> <span class="token function">outputDC5V</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>PowerAdapter类（Adapter类），适配器类，将220v的电压转换成5v的电压。</strong></p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PowerAdapter</span> <span class="token keyword">implements</span> <span class="token class-name">DC5</span> <span class="token punctuation">&#123;</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PowerAdapter</span> <span class="token keyword">implements</span> <span class="token class-name">DC5</span> <span class="token punctuation">{</span>
     <span class="token keyword">private</span> <span class="token class-name">AC220</span> ac220 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AC220</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">outputDC5V</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">outputDC5V</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">int</span> adapterInput <span class="token operator">=</span> ac220<span class="token punctuation">.</span><span class="token function">outputAC220V</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
         <span class="token comment">//变压器...</span>
@@ -711,15 +713,15 @@ userBuilder04<span class="token punctuation">.</span><span class="token function
 
         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"使用PowerAdapter输入AC"</span><span class="token operator">+</span>adapterInput<span class="token operator">+</span><span class="token string">"V"</span><span class="token operator">+</span><span class="token string">"输出DC"</span><span class="token operator">+</span>adapterOutput<span class="token operator">+</span><span class="token string">"V"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> adapterInput<span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>应用层代码：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token class-name">DC5</span> dc5 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PowerAdapter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         dc5<span class="token punctuation">.</span><span class="token function">outputDC5V</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -1093,7 +1095,7 @@ userBuilder04<span class="token punctuation">.</span><span class="token function
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">167.8k</span>
+                        class="white-color">165.3k</span>
             
             
             

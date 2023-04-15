@@ -61,7 +61,9 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
 
 
 <body>
@@ -523,17 +525,17 @@ testA<span class="token punctuation">[</span><span class="token string">'grade'<
 <p>或者利用map自定义特征，</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#数据清洗特征添加</span>
 <span class="token keyword">for</span> data <span class="token keyword">in</span> <span class="token punctuation">[</span>train<span class="token punctuation">]</span><span class="token punctuation">:</span>
-    data<span class="token punctuation">[</span><span class="token string">'grade'</span><span class="token punctuation">]</span> <span class="token operator">=</span> data<span class="token punctuation">[</span><span class="token string">'grade'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">'A'</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">'B'</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">'C'</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token string">'D'</span><span class="token punctuation">:</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token string">'E'</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token string">'F'</span><span class="token punctuation">:</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token string">'G'</span><span class="token punctuation">:</span><span class="token number">7</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    data<span class="token punctuation">[</span><span class="token string">'grade'</span><span class="token punctuation">]</span> <span class="token operator">=</span> data<span class="token punctuation">[</span><span class="token string">'grade'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'A'</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">'B'</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">'C'</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token string">'D'</span><span class="token punctuation">:</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token string">'E'</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token string">'F'</span><span class="token punctuation">:</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token string">'G'</span><span class="token punctuation">:</span><span class="token number">7</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
     
     data<span class="token punctuation">[</span><span class="token string">'employmentLength'</span><span class="token punctuation">]</span> <span class="token operator">=</span> data<span class="token punctuation">[</span><span class="token string">'employmentLength'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span>
-    <span class="token punctuation">&#123;</span><span class="token string">'1 year'</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">'2 years'</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">'3 years'</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token string">'4 years'</span><span class="token punctuation">:</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token string">'5 years'</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token string">'6 years'</span><span class="token punctuation">:</span><span class="token number">6</span><span class="token punctuation">,</span>
-    <span class="token string">'7 years'</span><span class="token punctuation">:</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token string">'8 years'</span><span class="token punctuation">:</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token string">'9 years'</span><span class="token punctuation">:</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token string">'10+ years'</span><span class="token punctuation">:</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token string">'&lt; 1 year'</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span><span class="token string">'1 year'</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">'2 years'</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">'3 years'</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token string">'4 years'</span><span class="token punctuation">:</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token string">'5 years'</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token string">'6 years'</span><span class="token punctuation">:</span><span class="token number">6</span><span class="token punctuation">,</span>
+    <span class="token string">'7 years'</span><span class="token punctuation">:</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token string">'8 years'</span><span class="token punctuation">:</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token string">'9 years'</span><span class="token punctuation">:</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token string">'10+ years'</span><span class="token punctuation">:</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token string">'&lt; 1 year'</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
     
     data<span class="token punctuation">[</span><span class="token string">'subGrade'</span><span class="token punctuation">]</span> <span class="token operator">=</span> data<span class="token punctuation">[</span><span class="token string">'subGrade'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span>
-    <span class="token punctuation">&#123;</span><span class="token string">'E2'</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">'D2'</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">'D3'</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token string">'A4'</span><span class="token punctuation">:</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token string">'C2'</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token string">'A5'</span><span class="token punctuation">:</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token string">'C3'</span><span class="token punctuation">:</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token string">'B4'</span><span class="token punctuation">:</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token string">'B5'</span><span class="token punctuation">:</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token string">'E5'</span><span class="token punctuation">:</span><span class="token number">10</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span><span class="token string">'E2'</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">'D2'</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">'D3'</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token string">'A4'</span><span class="token punctuation">:</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token string">'C2'</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token string">'A5'</span><span class="token punctuation">:</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token string">'C3'</span><span class="token punctuation">:</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token string">'B4'</span><span class="token punctuation">:</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token string">'B5'</span><span class="token punctuation">:</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token string">'E5'</span><span class="token punctuation">:</span><span class="token number">10</span><span class="token punctuation">,</span>
     <span class="token string">'D4'</span><span class="token punctuation">:</span><span class="token number">11</span><span class="token punctuation">,</span><span class="token string">'B3'</span><span class="token punctuation">:</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token string">'B2'</span><span class="token punctuation">:</span><span class="token number">13</span><span class="token punctuation">,</span><span class="token string">'D1'</span><span class="token punctuation">:</span><span class="token number">14</span><span class="token punctuation">,</span><span class="token string">'E1'</span><span class="token punctuation">:</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token string">'C5'</span><span class="token punctuation">:</span><span class="token number">16</span><span class="token punctuation">,</span><span class="token string">'C1'</span><span class="token punctuation">:</span><span class="token number">17</span><span class="token punctuation">,</span><span class="token string">'A2'</span><span class="token punctuation">:</span><span class="token number">18</span><span class="token punctuation">,</span><span class="token string">'A3'</span><span class="token punctuation">:</span><span class="token number">19</span><span class="token punctuation">,</span><span class="token string">'B1'</span><span class="token punctuation">:</span><span class="token number">20</span><span class="token punctuation">,</span>
     <span class="token string">'E3'</span><span class="token punctuation">:</span><span class="token number">21</span><span class="token punctuation">,</span><span class="token string">'F1'</span><span class="token punctuation">:</span><span class="token number">22</span><span class="token punctuation">,</span><span class="token string">'C4'</span><span class="token punctuation">:</span><span class="token number">23</span><span class="token punctuation">,</span><span class="token string">'A1'</span><span class="token punctuation">:</span><span class="token number">24</span><span class="token punctuation">,</span><span class="token string">'D5'</span><span class="token punctuation">:</span><span class="token number">25</span><span class="token punctuation">,</span><span class="token string">'F2'</span><span class="token punctuation">:</span><span class="token number">26</span><span class="token punctuation">,</span><span class="token string">'E4'</span><span class="token punctuation">:</span><span class="token number">27</span><span class="token punctuation">,</span><span class="token string">'F3'</span><span class="token punctuation">:</span><span class="token number">28</span><span class="token punctuation">,</span><span class="token string">'G2'</span><span class="token punctuation">:</span><span class="token number">29</span><span class="token punctuation">,</span><span class="token string">'F5'</span><span class="token punctuation">:</span><span class="token number">30</span><span class="token punctuation">,</span>
-    <span class="token string">'G3'</span><span class="token punctuation">:</span><span class="token number">31</span><span class="token punctuation">,</span><span class="token string">'G1'</span><span class="token punctuation">:</span><span class="token number">32</span><span class="token punctuation">,</span><span class="token string">'F4'</span><span class="token punctuation">:</span><span class="token number">33</span><span class="token punctuation">,</span><span class="token string">'G4'</span><span class="token punctuation">:</span><span class="token number">34</span><span class="token punctuation">,</span><span class="token string">'G5'</span><span class="token punctuation">:</span><span class="token number">35</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token string">'G3'</span><span class="token punctuation">:</span><span class="token number">31</span><span class="token punctuation">,</span><span class="token string">'G1'</span><span class="token punctuation">:</span><span class="token number">32</span><span class="token punctuation">,</span><span class="token string">'F4'</span><span class="token punctuation">:</span><span class="token number">33</span><span class="token punctuation">,</span><span class="token string">'G4'</span><span class="token punctuation">:</span><span class="token number">34</span><span class="token punctuation">,</span><span class="token string">'G5'</span><span class="token punctuation">:</span><span class="token number">35</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="2、时间多尺度变换与时间差计算"><a href="#2、时间多尺度变换与时间差计算" class="headerlink" title="2、时间多尺度变换与时间差计算"></a>2、时间多尺度变换与时间差计算</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> datetime
 <span class="token keyword">def</span> <span class="token function">create_days_diff</span><span class="token punctuation">(</span>selected_cols<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -580,10 +582,10 @@ cat_fea <span class="token operator">=</span><span class="token punctuation">[</
     <span class="token keyword">print</span><span class="token punctuation">(</span>feature<span class="token punctuation">,</span>train<span class="token punctuation">[</span>feature<span class="token punctuation">]</span><span class="token punctuation">.</span>nunique<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 df <span class="token operator">=</span> pd<span class="token punctuation">.</span>concat<span class="token punctuation">(</span><span class="token punctuation">[</span>train<span class="token punctuation">,</span>test<span class="token punctuation">]</span><span class="token punctuation">,</span>axis <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span>
 <span class="token keyword">for</span> col <span class="token keyword">in</span> cat_fea<span class="token punctuation">:</span>
-    temp <span class="token operator">=</span> train<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span>col<span class="token punctuation">,</span>as_index<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">[</span>col<span class="token punctuation">]</span><span class="token punctuation">.</span>agg<span class="token punctuation">(</span><span class="token punctuation">&#123;</span>col<span class="token operator">+</span><span class="token string">'_count'</span><span class="token punctuation">:</span> <span class="token string">'count'</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    temp <span class="token operator">=</span> train<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span>col<span class="token punctuation">,</span>as_index<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">[</span>col<span class="token punctuation">]</span><span class="token punctuation">.</span>agg<span class="token punctuation">(</span><span class="token punctuation">{</span>col<span class="token operator">+</span><span class="token string">'_count'</span><span class="token punctuation">:</span> <span class="token string">'count'</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
     df <span class="token operator">=</span> pd<span class="token punctuation">.</span>merge<span class="token punctuation">(</span>df<span class="token punctuation">,</span>temp<span class="token punctuation">,</span>on <span class="token operator">=</span> col<span class="token punctuation">,</span>how <span class="token operator">=</span> <span class="token string">'left'</span><span class="token punctuation">)</span>
     <span class="token comment">#isDefault为标签项，需要替换</span>
-    temp <span class="token operator">=</span> train<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span>col<span class="token punctuation">,</span>as_index<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'isDefault'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>agg<span class="token punctuation">(</span><span class="token punctuation">&#123;</span>col<span class="token operator">+</span><span class="token string">'_isDefault_mean'</span><span class="token punctuation">:</span> <span class="token string">'mean'</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    temp <span class="token operator">=</span> train<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span>col<span class="token punctuation">,</span>as_index<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'isDefault'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>agg<span class="token punctuation">(</span><span class="token punctuation">{</span>col<span class="token operator">+</span><span class="token string">'_isDefault_mean'</span><span class="token punctuation">:</span> <span class="token string">'mean'</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
     df <span class="token operator">=</span> pd<span class="token punctuation">.</span>merge<span class="token punctuation">(</span>df<span class="token punctuation">,</span>temp<span class="token punctuation">,</span>on <span class="token operator">=</span> col<span class="token punctuation">,</span>how <span class="token operator">=</span> <span class="token string">'left'</span><span class="token punctuation">)</span>
 train <span class="token operator">=</span> df<span class="token punctuation">[</span>df<span class="token punctuation">[</span><span class="token string">'isDefault'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>notnull<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
 test <span class="token operator">=</span> df<span class="token punctuation">[</span>df<span class="token punctuation">[</span><span class="token string">'isDefault'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isnull<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -595,7 +597,7 @@ features <span class="token operator">=</span> <span class="token punctuation">[
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'批量删除字段已完成'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="四、模型建立"><a href="#四、模型建立" class="headerlink" title="四、模型建立"></a>四、模型建立</h3><p>机器学习神器：XGBoost，LightGBM，Catboost</p>
-<p>图像&#x2F;文本分类：各种NN</p>
+<p>图像/文本分类：各种NN</p>
 <p>通常LightGBM更快（在CPU机上，优先使用）</p>
 <h3 id="五、参数调优"><a href="#五、参数调优" class="headerlink" title="五、参数调优"></a>五、参数调优</h3><p>1、可视化的方式查看特征的重要程度</p>
 <p>lightgbm</p>
@@ -766,6 +768,54 @@ plot_importance<span class="token punctuation">(</span>model_xgb<span class="tok
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/2022/10/24/Golang/">
+                    <div class="card-image">
+                        
+                        <img src="/images/homePage/golang.webp" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Go基础与Go Modules
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-24
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Go/" class="post-category">
+                                    Go
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Go/">
+                        <span class="chip bg-color">Go</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2022/10/24/%E7%88%AC%E8%99%AB/">
                     <div class="card-image">
                         
@@ -781,9 +831,9 @@ plot_importance<span class="token punctuation">(</span>model_xgb<span class="tok
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -817,62 +867,6 @@ plot_importance<span class="token punctuation">(</span>model_xgb<span class="tok
                     
                     <a href="/tags/%E5%85%AB%E7%88%AA%E9%B1%BC/">
                         <span class="chip bg-color">八爪鱼</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/10/24/%E9%98%BF%E9%87%8C%E4%BA%91%E5%A4%A9%E6%B1%A0-%E6%81%B6%E6%84%8F%E7%A8%8B%E5%BA%8F%E6%A3%80%E6%B5%8B/">
-                    <div class="card-image">
-                        
-                        <img src="/images/homePage/%E6%81%B6%E6%84%8F%E7%A8%8B%E5%BA%8F%E6%A3%80%E6%B5%8B.webp" class="responsive-img" alt="">
-                        
-                        <span class="card-title"></span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            阿里云天池-恶意程序检测
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-24
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    机器学习
-                                </a>
-                            
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" class="post-category">
-                                    数据分析
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">机器学习</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
-                        <span class="chip bg-color">数据分析</span>
                     </a>
                     
                 </div>
@@ -1009,7 +1003,7 @@ plot_importance<span class="token punctuation">(</span>model_xgb<span class="tok
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">167.8k</span>
+                        class="white-color">165.3k</span>
             
             
             
