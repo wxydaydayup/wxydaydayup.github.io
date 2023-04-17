@@ -446,14 +446,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.1k
+                    5.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    22 分
+                    24 分
                 </div>
                 
 
@@ -638,10 +638,64 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="重排链表"><a href="#重排链表" class="headerlink" title="重排链表"></a>重排链表</h3><h4 id="相关链接-2"><a href="#相关链接-2" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="链表中的节点每k个一组翻转"><a href="#链表中的节点每k个一组翻转" class="headerlink" title="链表中的节点每k个一组翻转"></a>链表中的节点每k个一组翻转</h3><h4 id="相关链接-2"><a href="#相关链接-2" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://www.nowcoder.com/practice/b49c3dc907814e9bbfa8437c251b028e?tpId=295&amp;tqId=722&amp;ru=/exam/oj&amp;qru=/ta/format-top101/question-ranking&amp;sourceUrl=/exam/oj?page=1&amp;tab=%E7%AE%97%E6%B3%95%E7%AF%87&amp;topicId=295&amp;fromPut=pc_kol_aaaxiu">链表中的节点每k个一组翻转_牛客题霸</a></li>
+</ul>
+<h4 id="相关题目-2"><a href="#相关题目-2" class="headerlink" title="相关题目"></a>相关题目</h4><p>将给出的链表中的节点每 k 个一组翻转，返回翻转后的链表<br>如果链表中的节点数不是 k 的倍数，将最后剩下的节点保持原样<br>你不能更改节点中的值，只能更改节点本身。</p>
+<h4 id="解题思路-2"><a href="#解题思路-2" class="headerlink" title="解题思路"></a>解题思路</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    ListNode<span class="token operator">*</span> <span class="token function">reverseKGroup</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> head<span class="token punctuation">,</span> <span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        ListNode<span class="token operator">*</span> tail <span class="token operator">=</span> head<span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span>i <span class="token operator">&lt;</span> k<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>tail<span class="token punctuation">)</span> <span class="token keyword">return</span> head<span class="token punctuation">;</span>
+            tail <span class="token operator">=</span> tail<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        ListNode<span class="token operator">*</span> pre <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">,</span> <span class="token operator">*</span>cur <span class="token operator">=</span> head<span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>cur <span class="token operator">!=</span> tail<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            ListNode<span class="token operator">*</span> tmp <span class="token operator">=</span> cur<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+            cur<span class="token operator">-&gt;</span>next <span class="token operator">=</span> pre<span class="token punctuation">;</span>
+            pre <span class="token operator">=</span> cur<span class="token punctuation">;</span>
+            cur <span class="token operator">=</span> tmp<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        head<span class="token operator">-&gt;</span>next <span class="token operator">=</span> <span class="token function">reverseKGroup</span><span class="token punctuation">(</span>tail<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> pre<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="链表内指定区间反转"><a href="#链表内指定区间反转" class="headerlink" title="链表内指定区间反转"></a>链表内指定区间反转</h3><h4 id="相关链接-3"><a href="#相关链接-3" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://www.nowcoder.com/practice/b58434e200a648c589ca2063f1faf58c?tpId=295&amp;tqId=654&amp;ru=/exam/oj&amp;qru=/ta/format-top101/question-ranking&amp;sourceUrl=/exam/oj?page=1&amp;tab=%E7%AE%97%E6%B3%95%E7%AF%87&amp;topicId=295&amp;fromPut=pc_kol_aaaxiu">链表内指定区间反转_牛客题霸</a></li>
+</ul>
+<h4 id="相关题目-3"><a href="#相关题目-3" class="headerlink" title="相关题目"></a>相关题目</h4><p>将一个节点数为 size 链表 m 位置到 n 位置之间的区间反转，要求时间复杂度<em>O</em>(<em>n</em>)，空间复杂度 <em>O</em>(1)。</p>
+<img src="/images/%E7%AE%97%E6%B3%95-%E9%93%BE%E8%A1%A8%E4%B8%93%E9%A2%98/image-20230416101231865.png" alt="image-20230416101231865" style="zoom:67%;">
+
+<h4 id="解题思路-3"><a href="#解题思路-3" class="headerlink" title="解题思路"></a>解题思路</h4><p><strong>示例1</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">输入：{1,2,3,4,5},2,4
+返回值：{1,4,3,2,5}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    ListNode<span class="token operator">*</span> <span class="token function">reverseBetween</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> head<span class="token punctuation">,</span> <span class="token keyword">int</span> m<span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        ListNode<span class="token operator">*</span> dummy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">ListNode</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        dummy<span class="token operator">-&gt;</span>next <span class="token operator">=</span> head<span class="token punctuation">;</span>
+        <span class="token keyword">auto</span> pre <span class="token operator">=</span> dummy<span class="token punctuation">,</span> cur <span class="token operator">=</span> head<span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> m<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            pre <span class="token operator">=</span> pre<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+            cur <span class="token operator">=</span> cur<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> m<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">auto</span> tmp <span class="token operator">=</span> cur<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+            cur<span class="token operator">-&gt;</span>next <span class="token operator">=</span> cur<span class="token operator">-&gt;</span>next<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+            tmp<span class="token operator">-&gt;</span>next <span class="token operator">=</span> pre<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+            pre<span class="token operator">-&gt;</span>next <span class="token operator">=</span> tmp<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> dummy<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="重排链表"><a href="#重排链表" class="headerlink" title="重排链表"></a>重排链表</h3><h4 id="相关链接-4"><a href="#相关链接-4" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/LGjMqU/description/">剑指 Offer II  重排链表</a></li>
 </ul>
-<h4 id="相关题目-2"><a href="#相关题目-2" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定一个单链表 <code>L</code> 的头节点 <code>head</code> ，单链表 <code>L</code> 表示为：</p>
+<h4 id="相关题目-4"><a href="#相关题目-4" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定一个单链表 <code>L</code> 的头节点 <code>head</code> ，单链表 <code>L</code> 表示为：</p>
 <p><code>L0 → L1 → … → Ln-1 → Ln</code><br>请将其重新排列后变为：</p>
 <pre class="line-numbers language-none"><code class="language-none">L0 → Ln → L1 → Ln-1 → L2 → Ln-2 → …<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -652,7 +706,7 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
 <pre class="line-numbers language-none"><code class="language-none">输入: head = [1,2,3,4]
 输出: [1,4,2,3]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-2"><a href="#解题思路-2" class="headerlink" title="解题思路"></a>解题思路</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<h4 id="解题思路-4"><a href="#解题思路-4" class="headerlink" title="解题思路"></a>解题思路</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
     <span class="token keyword">void</span> <span class="token function">reorderList</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>head <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>head<span class="token operator">-&gt;</span>next<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
@@ -690,11 +744,11 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
         <span class="token keyword">return</span> res<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="回文链表"><a href="#回文链表" class="headerlink" title="回文链表"></a>回文链表</h3><h4 id="相关链接-3"><a href="#相关链接-3" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="回文链表"><a href="#回文链表" class="headerlink" title="回文链表"></a>回文链表</h3><h4 id="相关链接-5"><a href="#相关链接-5" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/aMhZSa/description/">剑指 Offer II  回文链表 </a></li>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/palindrome-linked-list/?favorite=2cktkvj">234. 回文链表</a></li>
 </ul>
-<h4 id="相关题目-3"><a href="#相关题目-3" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定一个链表的 <strong>头节点</strong> <code>head</code> <strong>，</strong>请判断其是否为回文链表。</p>
+<h4 id="相关题目-5"><a href="#相关题目-5" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定一个链表的 <strong>头节点</strong> <code>head</code> <strong>，</strong>请判断其是否为回文链表。</p>
 <p>如果一个链表是回文，那么链表节点序列从前往后看和从后往前看是相同的。</p>
 <p><strong>示例 1：</strong></p>
 <img src="/images/%E7%AE%97%E6%B3%95-%E9%93%BE%E8%A1%A8%E4%B8%93%E9%A2%98/image-20221211112820854.png" alt="示例1" style="zoom:100%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;">
@@ -702,7 +756,7 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
 <pre class="line-numbers language-none"><code class="language-none">输入: head = [1,2,3,3,2,1]
 输出: true<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-3"><a href="#解题思路-3" class="headerlink" title="解题思路"></a>解题思路</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<h4 id="解题思路-5"><a href="#解题思路-5" class="headerlink" title="解题思路"></a>解题思路</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>    
 	<span class="token keyword">bool</span> <span class="token function">isPalindrome</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">if</span><span class="token punctuation">(</span>head <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
@@ -740,17 +794,17 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="删除链表元素"><a href="#删除链表元素" class="headerlink" title="删除链表元素"></a>删除链表元素</h3><h4 id="相关链接-4"><a href="#相关链接-4" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="删除链表元素"><a href="#删除链表元素" class="headerlink" title="删除链表元素"></a>删除链表元素</h3><h4 id="相关链接-6"><a href="#相关链接-6" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/remove-linked-list-elements/description/">203. 移除链表元素</a></li>
 </ul>
-<h4 id="相关题目-4"><a href="#相关题目-4" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你一个链表的头节点 <code>head</code> 和一个整数 <code>val</code> ，请你删除链表中所有满足 <code>Node.val == val</code> 的节点，并返回 <strong>新的头节点</strong> 。</p>
+<h4 id="相关题目-6"><a href="#相关题目-6" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你一个链表的头节点 <code>head</code> 和一个整数 <code>val</code> ，请你删除链表中所有满足 <code>Node.val == val</code> 的节点，并返回 <strong>新的头节点</strong> 。</p>
 <p><strong>示例 1：</strong></p>
 <img src="https://assets.leetcode.com/uploads/2021/03/06/removelinked-list.jpg" alt="示例1" style="zoom:50%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;">
 
 <pre class="line-numbers language-none"><code class="language-none">输入：head = [1,2,6,3,4,5,6], val = 6
 输出：[1,2,3,4,5]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-4"><a href="#解题思路-4" class="headerlink" title="解题思路"></a>解题思路</h4><p><strong>设置一个虚拟头结点</strong>，这样原链表的所有节点就都可以按照统一的方式进行移除了。</p>
+<h4 id="解题思路-6"><a href="#解题思路-6" class="headerlink" title="解题思路"></a>解题思路</h4><p><strong>设置一个虚拟头结点</strong>，这样原链表的所有节点就都可以按照统一的方式进行移除了。</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
     ListNode<span class="token operator">*</span> <span class="token function">removeElements</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> head<span class="token punctuation">,</span> <span class="token keyword">int</span> val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -767,18 +821,18 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="删除链表倒数第-N-个结点"><a href="#删除链表倒数第-N-个结点" class="headerlink" title="删除链表倒数第 N 个结点"></a>删除链表倒数第 N 个结点</h3><h4 id="相关链接-5"><a href="#相关链接-5" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="删除链表倒数第-N-个结点"><a href="#删除链表倒数第-N-个结点" class="headerlink" title="删除链表倒数第 N 个结点"></a>删除链表倒数第 N 个结点</h3><h4 id="相关链接-7"><a href="#相关链接-7" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/remove-nth-node-from-end-of-list/description/">19. 删除链表的倒数第 N 个结点</a></li>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/SLwz0R/?favorite=e8X3pBZi">剑指 Offer II 删除链表的倒数第 N 个结点 </a></li>
 </ul>
-<h4 id="相关题目-5"><a href="#相关题目-5" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你一个链表，删除链表的倒数第 <code>n</code> 个结点，并且返回链表的头结点。</p>
+<h4 id="相关题目-7"><a href="#相关题目-7" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你一个链表，删除链表的倒数第 <code>n</code> 个结点，并且返回链表的头结点。</p>
 <p><strong>示例 1：</strong></p>
 <img src="https://assets.leetcode.com/uploads/2020/10/03/remove_ex1.jpg" alt="示例1" style="zoom:50%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;">
 
 <pre class="line-numbers language-none"><code class="language-none">输入：head = [1,2,3,4,5], n = 2
 输出：[1,2,3,5]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-5"><a href="#解题思路-5" class="headerlink" title="解题思路"></a>解题思路</h4><p>双指针的经典应用，如果要删除倒数第n个节点，让fast移动n步，然后让fast和slow同时移动，直到fast指向链表末尾。删掉slow所指向的节点就可以了。</p>
+<h4 id="解题思路-7"><a href="#解题思路-7" class="headerlink" title="解题思路"></a>解题思路</h4><p>双指针的经典应用，如果要删除倒数第n个节点，让fast移动n步，然后让fast和slow同时移动，直到fast指向链表末尾。删掉slow所指向的节点就可以了。</p>
 <ol>
 <li>定义fast指针和slow指针，初始值为虚拟头结点，如图：</li>
 </ol>
@@ -811,17 +865,17 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="两两交换链表中的节点"><a href="#两两交换链表中的节点" class="headerlink" title="两两交换链表中的节点"></a>两两交换链表中的节点</h3><h4 id="相关链接-6"><a href="#相关链接-6" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="两两交换链表中的节点"><a href="#两两交换链表中的节点" class="headerlink" title="两两交换链表中的节点"></a>两两交换链表中的节点</h3><h4 id="相关链接-8"><a href="#相关链接-8" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/swap-nodes-in-pairs/">24. 两两交换链表中的节点 </a></li>
 </ul>
-<h4 id="相关题目-6"><a href="#相关题目-6" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你一个链表，两两交换其中相邻的节点，并返回交换后链表的头节点。你必须在不修改节点内部的值的情况下完成本题（即，只能进行节点交换）。</p>
+<h4 id="相关题目-8"><a href="#相关题目-8" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你一个链表，两两交换其中相邻的节点，并返回交换后链表的头节点。你必须在不修改节点内部的值的情况下完成本题（即，只能进行节点交换）。</p>
 <p><strong>示例 1：</strong></p>
 <img src="https://assets.leetcode.com/uploads/2020/10/03/swap_ex1.jpg" alt="示例1" style="zoom:50%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;">
 
 <pre class="line-numbers language-none"><code class="language-none">输入：head = [1,2,3,4]
 输出：[2,1,4,3]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-6"><a href="#解题思路-6" class="headerlink" title="解题思路"></a>解题思路</h4><p>交换相邻两个元素了，<strong>此时一定要画图，不画图，操作多个指针很容易乱，而且要操作的先后顺序</strong></p>
+<h4 id="解题思路-8"><a href="#解题思路-8" class="headerlink" title="解题思路"></a>解题思路</h4><p>交换相邻两个元素了，<strong>此时一定要画图，不画图，操作多个指针很容易乱，而且要操作的先后顺序</strong></p>
 <p>初始时，cur指向虚拟头结点，然后进行如下三步：</p>
 <img src="https://code-thinking.cdn.bcebos.com/pics/24.%E4%B8%A4%E4%B8%A4%E4%BA%A4%E6%8D%A2%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B91.png" alt="两两交换链表中的节点1" style="zoom: 33%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;">
 
@@ -852,17 +906,17 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="排序链表问题"><a href="#排序链表问题" class="headerlink" title="排序链表问题"></a>排序链表问题</h2><h3 id="合并两个有序链表"><a href="#合并两个有序链表" class="headerlink" title="合并两个有序链表"></a>合并两个有序链表</h3><h4 id="相关链接-7"><a href="#相关链接-7" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h2 id="排序链表问题"><a href="#排序链表问题" class="headerlink" title="排序链表问题"></a>排序链表问题</h2><h3 id="合并两个有序链表"><a href="#合并两个有序链表" class="headerlink" title="合并两个有序链表"></a>合并两个有序链表</h3><h4 id="相关链接-9"><a href="#相关链接-9" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/merge-two-sorted-lists/">21. 合并两个有序链表</a></li>
 </ul>
-<h4 id="相关题目-7"><a href="#相关题目-7" class="headerlink" title="相关题目"></a>相关题目</h4><p>将两个升序链表合并为一个新的 <strong>升序</strong> 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 </p>
+<h4 id="相关题目-9"><a href="#相关题目-9" class="headerlink" title="相关题目"></a>相关题目</h4><p>将两个升序链表合并为一个新的 <strong>升序</strong> 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 </p>
 <p><strong>示例 1：</strong></p>
 <img src="https://assets.leetcode.com/uploads/2020/10/03/merge_ex1.jpg" alt="img" style="zoom:33%;">
 
 <pre class="line-numbers language-none"><code class="language-none">输入：l1 = [1,2,4], l2 = [1,3,4]
 输出：[1,1,2,3,4,4]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-7"><a href="#解题思路-7" class="headerlink" title="解题思路"></a>解题思路</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<h4 id="解题思路-9"><a href="#解题思路-9" class="headerlink" title="解题思路"></a>解题思路</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
     ListNode<span class="token operator">*</span> <span class="token function">mergeTwoLists</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> list1<span class="token punctuation">,</span> ListNode<span class="token operator">*</span> list2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">!</span>list1<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token punctuation">(</span><span class="token operator">!</span>list2<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> list1 <span class="token operator">?</span> list1 <span class="token operator">:</span> list2<span class="token punctuation">;</span>
@@ -884,10 +938,10 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="合并-K-个升序链表"><a href="#合并-K-个升序链表" class="headerlink" title="合并 K 个升序链表"></a>合并 K 个升序链表</h3><h4 id="相关链接-8"><a href="#相关链接-8" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="合并-K-个升序链表"><a href="#合并-K-个升序链表" class="headerlink" title="合并 K 个升序链表"></a>合并 K 个升序链表</h3><h4 id="相关链接-10"><a href="#相关链接-10" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/merge-k-sorted-lists/description/?favorite=2cktkvj">23. 合并 K 个升序链表</a></li>
 </ul>
-<h4 id="相关题目-8"><a href="#相关题目-8" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你一个链表数组，每个链表都已经按升序排列。</p>
+<h4 id="相关题目-10"><a href="#相关题目-10" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你一个链表数组，每个链表都已经按升序排列。</p>
 <p>请你将所有链表合并到一个升序链表中，返回合并后的链表。</p>
 <p><strong>示例 1：</strong></p>
 <pre class="line-numbers language-none"><code class="language-none">输入：lists = [[1,4,5],[1,3,4],[2,6]]
@@ -901,7 +955,7 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
 将它们合并到一个有序链表中得到。
 1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4-&gt;5-&gt;6<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-8"><a href="#解题思路-8" class="headerlink" title="解题思路"></a>解题思路</h4><p><strong>三种方法</strong></p>
+<h4 id="解题思路-10"><a href="#解题思路-10" class="headerlink" title="解题思路"></a>解题思路</h4><p><strong>三种方法</strong></p>
 <p>1、扔到vector，排序后再建链表</p>
 <p>2、合并两个有序链表+分治合并优化</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
@@ -971,10 +1025,10 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
 <li>时间复杂度：考虑优先队列中的元素不超过 k 个，那么插入和删除的时间代价为 O(log⁡k)，这里最多有 kn个点，对于每个点都被插入删除各一次，故总的时间代价即渐进时间复杂度为 O(kn×log⁡k)。</li>
 <li>空间复杂度：这里用了优先队列，优先队列中的元素不超过 k 个，故渐进空间复杂度为 O(k)。</li>
 </ul>
-<h3 id="对链表进行插入排序"><a href="#对链表进行插入排序" class="headerlink" title="对链表进行插入排序"></a>对链表进行插入排序</h3><h4 id="相关链接-9"><a href="#相关链接-9" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="对链表进行插入排序"><a href="#对链表进行插入排序" class="headerlink" title="对链表进行插入排序"></a>对链表进行插入排序</h3><h4 id="相关链接-11"><a href="#相关链接-11" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/insertion-sort-list/">147. 对链表进行插入排序</a></li>
 </ul>
-<h4 id="相关题目-9"><a href="#相关题目-9" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定单个链表的头 <code>head</code> ，使用 <strong>插入排序</strong> 对链表进行排序，并返回 <em>排序后链表的头</em> 。</p>
+<h4 id="相关题目-11"><a href="#相关题目-11" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定单个链表的头 <code>head</code> ，使用 <strong>插入排序</strong> 对链表进行排序，并返回 <em>排序后链表的头</em> 。</p>
 <p><strong>插入排序</strong> 算法的步骤:</p>
 <ol>
 <li>插入排序是迭代的，每次只移动一个元素，直到所有元素可以形成一个有序的输出列表。</li>
@@ -989,7 +1043,7 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
 <pre class="line-numbers language-none"><code class="language-none">输入: head = [4,2,1,3]
 输出: [1,2,3,4]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-9"><a href="#解题思路-9" class="headerlink" title="解题思路"></a>解题思路</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<h4 id="解题思路-11"><a href="#解题思路-11" class="headerlink" title="解题思路"></a>解题思路</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
     ListNode<span class="token operator">*</span> <span class="token function">insertionSortList</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>head<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
@@ -1012,17 +1066,17 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="排序链表"><a href="#排序链表" class="headerlink" title="排序链表"></a>排序链表</h3><h4 id="相关链接-10"><a href="#相关链接-10" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="排序链表"><a href="#排序链表" class="headerlink" title="排序链表"></a>排序链表</h3><h4 id="相关链接-12"><a href="#相关链接-12" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/sort-list/description/?favorite=2cktkvj">148. 排序链表</a></li>
 </ul>
-<h4 id="相关题目-10"><a href="#相关题目-10" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你链表的头结点 <code>head</code> ，请将其按 <strong>升序</strong> 排列并返回 <strong>排序后的链表</strong> 。</p>
+<h4 id="相关题目-12"><a href="#相关题目-12" class="headerlink" title="相关题目"></a>相关题目</h4><p>给你链表的头结点 <code>head</code> ，请将其按 <strong>升序</strong> 排列并返回 <strong>排序后的链表</strong> 。</p>
 <p><strong>示例 1：</strong></p>
 <img src="https://assets.leetcode.com/uploads/2020/09/14/sort_list_1.jpg" alt="img" style="zoom:67%;">
 
 <pre class="line-numbers language-none"><code class="language-none">输入：head = [4,2,1,3]
 输出：[1,2,3,4]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-10"><a href="#解题思路-10" class="headerlink" title="解题思路"></a>解题思路</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<h4 id="解题思路-12"><a href="#解题思路-12" class="headerlink" title="解题思路"></a>解题思路</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
     ListNode<span class="token operator">*</span> <span class="token function">sortList</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>head<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
@@ -1079,12 +1133,12 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="多个链表问题"><a href="#多个链表问题" class="headerlink" title="多个链表问题"></a>多个链表问题</h2><h3 id="链表的首个重合节点"><a href="#链表的首个重合节点" class="headerlink" title="链表的首个重合节点"></a>链表的首个重合节点</h3><h4 id="相关链接-11"><a href="#相关链接-11" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h2 id="多个链表问题"><a href="#多个链表问题" class="headerlink" title="多个链表问题"></a>多个链表问题</h2><h3 id="链表的首个重合节点"><a href="#链表的首个重合节点" class="headerlink" title="链表的首个重合节点"></a>链表的首个重合节点</h3><h4 id="相关链接-13"><a href="#相关链接-13" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/intersection-of-two-linked-lists/description/">160. 相交链表 </a></li>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/intersection-of-two-linked-lists-lcci/">面试题 链表相交 </a></li>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/3u1WK4/description/">剑指 Offer II  两个链表的第一个重合节点</a></li>
 </ul>
-<h4 id="相关题目-11"><a href="#相关题目-11" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定两个单链表的头节点 <code>headA</code> 和 <code>headB</code> ，请找出并返回两个单链表相交的起始节点。如果两个链表没有交点，返回 <code>null</code> 。</p>
+<h4 id="相关题目-13"><a href="#相关题目-13" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定两个单链表的头节点 <code>headA</code> 和 <code>headB</code> ，请找出并返回两个单链表相交的起始节点。如果两个链表没有交点，返回 <code>null</code> 。</p>
 <p>图示两个链表在节点 <code>c1</code> 开始相交<strong>：</strong></p>
 <img src="/images/%E7%AE%97%E6%B3%95-%E9%93%BE%E8%A1%A8%E4%B8%93%E9%A2%98/image-20221211113011498.png" alt="示例1" style="zoom: 33%; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;">
 
@@ -1099,7 +1153,7 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
 从各自的表头开始算起，链表 A 为 [4,1,8,4,5]，链表 B 为 [5,0,1,8,4,5]。
 在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-11"><a href="#解题思路-11" class="headerlink" title="解题思路"></a>解题思路</h4><p>经典环的入口类问题，从A出发再走B的路程，和从B出发再走A的路程是距离是一样。可以根据这个特性求出链表重合的节点。</p>
+<h4 id="解题思路-13"><a href="#解题思路-13" class="headerlink" title="解题思路"></a>解题思路</h4><p>经典环的入口类问题，从A出发再走B的路程，和从B出发再走A的路程是距离是一样。可以根据这个特性求出链表重合的节点。</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
     ListNode <span class="token operator">*</span><span class="token function">getIntersectionNode</span><span class="token punctuation">(</span>ListNode <span class="token operator">*</span>headA<span class="token punctuation">,</span> ListNode <span class="token operator">*</span>headB<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1113,10 +1167,10 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="链表的两数相加"><a href="#链表的两数相加" class="headerlink" title="链表的两数相加"></a>链表的两数相加</h3><h4 id="相关链接-12"><a href="#相关链接-12" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h3 id="链表的两数相加"><a href="#链表的两数相加" class="headerlink" title="链表的两数相加"></a>链表的两数相加</h3><h4 id="相关链接-14"><a href="#相关链接-14" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/lMSNwu/description/">剑指 Offer II 链表中的两数相加</a></li>
 </ul>
-<h4 id="相关题目-12"><a href="#相关题目-12" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定两个 <strong>非空链表</strong> <code>l1</code>和 <code>l2</code> 来代表两个非负整数。数字最高位位于链表开始位置。它们的每个节点只存储一位数字。将这两数相加会返回一个新的链表。</p>
+<h4 id="相关题目-14"><a href="#相关题目-14" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定两个 <strong>非空链表</strong> <code>l1</code>和 <code>l2</code> 来代表两个非负整数。数字最高位位于链表开始位置。它们的每个节点只存储一位数字。将这两数相加会返回一个新的链表。</p>
 <p>可以假设除了数字 0 之外，这两个数字都不会以零开头。</p>
 <p><strong>示例1：</strong></p>
 <img src="/images/%E7%AE%97%E6%B3%95-%E9%93%BE%E8%A1%A8%E4%B8%93%E9%A2%98/image-20221211113202918.png" alt="示例1" style="zoom:40%;box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;">
@@ -1126,7 +1180,7 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
 <pre class="line-numbers language-none"><code class="language-none">输入：l1 = [7,2,4,3], l2 = [5,6,4]
 输出：[7,8,0,7]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-12"><a href="#解题思路-12" class="headerlink" title="解题思路"></a>解题思路</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<h4 id="解题思路-14"><a href="#解题思路-14" class="headerlink" title="解题思路"></a>解题思路</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
     ListNode<span class="token operator">*</span> <span class="token function">addTwoNumbers</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> l1<span class="token punctuation">,</span> ListNode<span class="token operator">*</span> l2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         stack<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span> s1<span class="token punctuation">,</span> s2<span class="token punctuation">;</span>
@@ -1160,13 +1214,13 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
 
 
 
-<h2 id="链表环问题"><a href="#链表环问题" class="headerlink" title="链表环问题"></a>链表环问题</h2><h3 id="链表中环的入口节点"><a href="#链表中环的入口节点" class="headerlink" title="链表中环的入口节点"></a>链表中环的入口节点</h3><h4 id="相关链接-13"><a href="#相关链接-13" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<h2 id="链表环问题"><a href="#链表环问题" class="headerlink" title="链表环问题"></a>链表环问题</h2><h3 id="链表中环的入口节点"><a href="#链表中环的入口节点" class="headerlink" title="链表中环的入口节点"></a>链表中环的入口节点</h3><h4 id="相关链接-15"><a href="#相关链接-15" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/linked-list-cycle-ii/description/">142. 环形链表 II </a></p>
 </li>
 <li><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/c32eOV/description/">剑指 Offer II  链表中环的入口节点</a></p>
 </li>
 </ul>
-<h4 id="相关题目-13"><a href="#相关题目-13" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定一个链表，返回链表开始入环的第一个节点。 从链表的头节点开始沿着 <code>next</code> 指针进入环的第一个节点为环的入口节点。如果链表无环，则返回 <code>null</code>。</p>
+<h4 id="相关题目-15"><a href="#相关题目-15" class="headerlink" title="相关题目"></a>相关题目</h4><p>给定一个链表，返回链表开始入环的第一个节点。 从链表的头节点开始沿着 <code>next</code> 指针进入环的第一个节点为环的入口节点。如果链表无环，则返回 <code>null</code>。</p>
 <p>为了表示给定链表中的环，我们使用整数 <code>pos</code> 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 <code>pos</code> 是 <code>-1</code>，则在该链表中没有环。<strong>注意，<code>pos</code> 仅仅是用于标识环的情况，并不会作为参数传递到函数中。</strong></p>
 <p><strong>说明：</strong>不允许修改给定的链表。</p>
 <p><strong>示例 1：</strong></p>
@@ -1176,7 +1230,7 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
 输出：返回索引为 1 的链表节点
 解释：链表中有一个环，其尾部连接到第二个节点。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="解题思路-13"><a href="#解题思路-13" class="headerlink" title="解题思路"></a>解题思路</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<h4 id="解题思路-15"><a href="#解题思路-15" class="headerlink" title="解题思路"></a>解题思路</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
     ListNode <span class="token operator">*</span><span class="token function">detectCycle</span><span class="token punctuation">(</span>ListNode <span class="token operator">*</span>head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">auto</span> fast <span class="token operator">=</span> head<span class="token punctuation">,</span> slow <span class="token operator">=</span> head<span class="token punctuation">;</span>
@@ -1632,54 +1686,6 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/10/21/sheng-ri-ti-xing-jiao-ben/">
-                    <div class="card-image">
-                        
-                        <img src="/images/homePage/%E7%94%9F%E6%97%A5%E6%8F%90%E9%86%92%E8%84%9A%E6%9C%AC.webp" class="responsive-img" alt="">
-                        
-                        <span class="card-title"></span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            生日提醒脚本
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-21
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="post-category">
-                                    生活
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%94%9F%E6%B4%BB/">
-                        <span class="chip bg-color">生活</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/2021/10/20/suan-fa-shuang-zhi-zhen/">
                     <div class="card-image">
                         
@@ -1695,9 +1701,9 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-20
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-20
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1731,6 +1737,70 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
                     
                     <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">
                         <span class="chip bg-color">双指针</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/10/20/suan-fa-bao-sou-hui-su/">
+                    <div class="card-image">
+                        
+                        <img src="/images/homePage/%E6%9A%B4%E6%90%9C%E5%9B%9E%E6%BA%AF.webp" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            算法-暴搜回溯
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
+                                </a>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95/C/" class="post-category">
+                                    C++
+                                </a>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95/C/%E6%9A%B4%E6%90%9C%E5%9B%9E%E6%BA%AF/" class="post-category">
+                                    暴搜回溯
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9A%B4%E6%90%9C%E5%9B%9E%E6%BA%AF/">
+                        <span class="chip bg-color">暴搜回溯</span>
                     </a>
                     
                 </div>
@@ -1867,7 +1937,7 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">165.4k</span>
+                        class="white-color">165.8k</span>
             
             
             
