@@ -446,14 +446,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.5k
+                    5.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    24 分
+                    25 分
                 </div>
                 
 
@@ -623,6 +623,8 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
 <p>然后就要开始反转了，首先要把 cur-&gt;next 节点用tmp指针保存一下，也就是保存一下这个节点。为什么要保存一下这个节点呢，因为接下来要改变 cur-&gt;next 的指向了，将cur-&gt;next 指向pre ，此时已经反转了第一个节点了。</p>
 <p>接下来就是继续移动pre和cur指针。</p>
 <p>最后，cur 指针已经指向了null，循环结束，链表也反转完毕了。 此时我们return pre指针就可以了，pre指针就指向了新的头结点。</p>
+<img src="/images/%E7%AE%97%E6%B3%95-%E9%93%BE%E8%A1%A8%E4%B8%93%E9%A2%98/E8EC98F7B78A51A486D13CD1BA319199.jpg" alt="E8EC98F7B78A51A486D13CD1BA319199" style="zoom: 25%;">
+
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
     ListNode<span class="token operator">*</span> <span class="token function">reverseList</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -637,6 +639,40 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
         <span class="token keyword">return</span> pre<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>递归版本实现</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>    
+    ListNode<span class="token operator">*</span> <span class="token function">ReverseList</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> pHead<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token function">reverse</span><span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">,</span> pHead<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+	ListNode<span class="token operator">*</span> <span class="token function">reverse</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> pre<span class="token punctuation">,</span> ListNode<span class="token operator">*</span> cur<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>cur<span class="token punctuation">)</span> <span class="token keyword">return</span> pre<span class="token punctuation">;</span>
+		ListNode<span class="token operator">*</span> tmp <span class="token operator">=</span> cur<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+		cur<span class="token operator">-&gt;</span>next <span class="token operator">=</span> pre<span class="token punctuation">;</span>
+		<span class="token keyword">return</span> <span class="token function">reverse</span><span class="token punctuation">(</span>cur<span class="token punctuation">,</span> tmp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>换一种思路</p>
+<img src="/images/%E7%AE%97%E6%B3%95-%E9%93%BE%E8%A1%A8%E4%B8%93%E9%A2%98/9807F6A5F8976BE8D9FFD7E353AE1208.jpg" alt="第二种思路" style="zoom: 25%;">
+
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>   
+	ListNode<span class="token operator">*</span> <span class="token function">ReverseList</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> pHead<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>pHead<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+		ListNode<span class="token operator">*</span> pre <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">ListNode</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		pre<span class="token operator">-&gt;</span>next <span class="token operator">=</span> pHead<span class="token punctuation">;</span>
+		ListNode<span class="token operator">*</span> cur <span class="token operator">=</span> pHead<span class="token punctuation">;</span>
+		<span class="token keyword">while</span><span class="token punctuation">(</span>cur<span class="token operator">-&gt;</span>next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">auto</span> tmp <span class="token operator">=</span> cur<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+			cur<span class="token operator">-&gt;</span>next <span class="token operator">=</span> cur<span class="token operator">-&gt;</span>next<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+			tmp<span class="token operator">-&gt;</span>next <span class="token operator">=</span> pre<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+			pre<span class="token operator">-&gt;</span>next <span class="token operator">=</span> tmp<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span> 
+		<span class="token keyword">return</span> pre<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="链表中的节点每k个一组翻转"><a href="#链表中的节点每k个一组翻转" class="headerlink" title="链表中的节点每k个一组翻转"></a>链表中的节点每k个一组翻转</h3><h4 id="相关链接-2"><a href="#相关链接-2" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://www.nowcoder.com/practice/b49c3dc907814e9bbfa8437c251b028e?tpId=295&amp;tqId=722&amp;ru=/exam/oj&amp;qru=/ta/format-top101/question-ranking&amp;sourceUrl=/exam/oj?page=1&amp;tab=%E7%AE%97%E6%B3%95%E7%AF%87&amp;topicId=295&amp;fromPut=pc_kol_aaaxiu">链表中的节点每k个一组翻转_牛客题霸</a></li>
@@ -657,10 +693,11 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
             pre <span class="token operator">=</span> cur<span class="token punctuation">;</span>
             cur <span class="token operator">=</span> tmp<span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
+        <span class="token comment">// head 指的就是反转后的末尾</span>
         head<span class="token operator">-&gt;</span>next <span class="token operator">=</span> <span class="token function">reverseKGroup</span><span class="token punctuation">(</span>tail<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> pre<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="链表内指定区间反转"><a href="#链表内指定区间反转" class="headerlink" title="链表内指定区间反转"></a>链表内指定区间反转</h3><h4 id="相关链接-3"><a href="#相关链接-3" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://www.nowcoder.com/practice/b58434e200a648c589ca2063f1faf58c?tpId=295&amp;tqId=654&amp;ru=/exam/oj&amp;qru=/ta/format-top101/question-ranking&amp;sourceUrl=/exam/oj?page=1&amp;tab=%E7%AE%97%E6%B3%95%E7%AF%87&amp;topicId=295&amp;fromPut=pc_kol_aaaxiu">链表内指定区间反转_牛客题霸</a></li>
@@ -671,6 +708,36 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
 <h4 id="解题思路-3"><a href="#解题思路-3" class="headerlink" title="解题思路"></a>解题思路</h4><p><strong>示例1</strong></p>
 <pre class="line-numbers language-none"><code class="language-none">输入：{1,2,3,4,5},2,4
 返回值：{1,4,3,2,5}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>和之前同样的思路，只不过是记忆了修改之前的位置</p>
+<img src="/images/%E7%AE%97%E6%B3%95-%E9%93%BE%E8%A1%A8%E4%B8%93%E9%A2%98/E8EC98F7B78A51A486D13CD1BA319199.jpg" alt="E8EC98F7B78A51A486D13CD1BA319199" style="zoom: 25%;">
+
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>    
+    ListNode<span class="token operator">*</span> <span class="token function">reverseBetween</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> head<span class="token punctuation">,</span> <span class="token keyword">int</span> m<span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        ListNode<span class="token operator">*</span> dummy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">ListNode</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        dummy<span class="token operator">-&gt;</span>next <span class="token operator">=</span> head<span class="token punctuation">;</span>
+        <span class="token keyword">auto</span> pre <span class="token operator">=</span> dummy<span class="token punctuation">,</span> cur <span class="token operator">=</span> head<span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> m<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            pre <span class="token operator">=</span> pre<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+            cur <span class="token operator">=</span> cur<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        ListNode<span class="token operator">*</span> beforePre <span class="token operator">=</span> pre<span class="token punctuation">;</span><span class="token comment">//1.</span>
+        ListNode<span class="token operator">*</span> beforeCur <span class="token operator">=</span> cur<span class="token punctuation">;</span><span class="token comment">//2.</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> m<span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">auto</span> tmp <span class="token operator">=</span> cur<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+            cur<span class="token operator">-&gt;</span>next <span class="token operator">=</span> pre<span class="token punctuation">;</span>
+            pre <span class="token operator">=</span> cur<span class="token punctuation">;</span>
+            cur <span class="token operator">=</span> tmp<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        beforePre<span class="token operator">-&gt;</span>next <span class="token operator">=</span> pre<span class="token punctuation">;</span><span class="token comment">//3.</span>
+        beforeCur<span class="token operator">-&gt;</span>next <span class="token operator">=</span> cur<span class="token punctuation">;</span><span class="token comment">//4.</span>
+        <span class="token keyword">return</span> dummy<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>换了一种思路</p>
+<img src="/images/%E7%AE%97%E6%B3%95-%E9%93%BE%E8%A1%A8%E4%B8%93%E9%A2%98/9807F6A5F8976BE8D9FFD7E353AE1208.jpg" alt="第二种思路" style="zoom: 25%;">
 
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
@@ -1937,7 +2004,7 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">165.8k</span>
+                        class="white-color">166.8k</span>
             
             
             
