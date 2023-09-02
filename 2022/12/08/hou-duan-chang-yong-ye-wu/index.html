@@ -430,7 +430,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    590
+                    595
                 </div>
                 
 
@@ -460,7 +460,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Java常用后端业务总结"><a href="#Java常用后端业务总结" class="headerlink" title="Java常用后端业务总结"></a>Java常用后端业务总结</h1><h2 id="分页查询与返回"><a href="#分页查询与返回" class="headerlink" title="分页查询与返回"></a>分页查询与返回</h2><h3 id="一、Mybatis-Plus自带的分页"><a href="#一、Mybatis-Plus自带的分页" class="headerlink" title="一、Mybatis-Plus自带的分页"></a>一、Mybatis-Plus自带的分页</h3><h4 id="1、config包中新建MybatisPlusConfig"><a href="#1、config包中新建MybatisPlusConfig" class="headerlink" title="1、config包中新建MybatisPlusConfig"></a>1、config包中新建MybatisPlusConfig</h4><p>Mybatis-Plus的分页功能默认是不开启的，需要通过配置开启</p>
+                <h1 id="Java常用后端业务总结"><a href="#Java常用后端业务总结" class="headerlink" title="Java常用后端业务总结"></a>Java常用后端业务总结</h1><h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><h2 id="分页查询与返回"><a href="#分页查询与返回" class="headerlink" title="分页查询与返回"></a>分页查询与返回</h2><h3 id="一、Mybatis-Plus自带的分页"><a href="#一、Mybatis-Plus自带的分页" class="headerlink" title="一、Mybatis-Plus自带的分页"></a>一、Mybatis-Plus自带的分页</h3><h4 id="1、config包中新建MybatisPlusConfig"><a href="#1、config包中新建MybatisPlusConfig" class="headerlink" title="1、config包中新建MybatisPlusConfig"></a>1、config包中新建MybatisPlusConfig</h4><p>Mybatis-Plus的分页功能默认是不开启的，需要通过配置开启</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Configuration</span>
 <span class="token comment">//@MapperScan("scan.your.mapper.package") 如果全局配过就不用</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MybatisPlusConfig</span> <span class="token punctuation">{</span>
@@ -530,12 +530,12 @@
 <p>协议层：消息头（整个消息的控制位和整个消息的长度）消息体，一些有效的负载信息</p>
 <p>注册中心：让客户端感知到有那些server实例，再通过负载均衡器</p>
 <p>配置模块：配置RPC框架的一些特性和开关，</p>
-<h2 id="分布式的主键生成方案"><a href="#分布式的主键生成方案" class="headerlink" title="分布式的主键生成方案"></a>分布式的主键生成方案</h2><h3 id="一、UUID"><a href="#一、UUID" class="headerlink" title="一、UUID"></a>一、UUID</h3><p><strong>UUID 全局甚至全球唯一，太长了，数据量比较大</strong></p>
+<h2 id="短信验证码和随机验证码"><a href="#短信验证码和随机验证码" class="headerlink" title="短信验证码和随机验证码"></a>短信验证码和随机验证码</h2><h2 id="百万级数据量Excel导入导出及优化"><a href="#百万级数据量Excel导入导出及优化" class="headerlink" title="百万级数据量Excel导入导出及优化"></a>百万级数据量Excel导入导出及优化</h2><h2 id="PDF的导出与生成"><a href="#PDF的导出与生成" class="headerlink" title="PDF的导出与生成"></a>PDF的导出与生成</h2><h2 id="文件的上传和存储"><a href="#文件的上传和存储" class="headerlink" title="文件的上传和存储"></a>文件的上传和存储</h2><h2 id="自定义代码生成器CRUD"><a href="#自定义代码生成器CRUD" class="headerlink" title="自定义代码生成器CRUD"></a>自定义代码生成器CRUD</h2><h2 id="工作流管理"><a href="#工作流管理" class="headerlink" title="工作流管理"></a>工作流管理</h2><h3 id="一、Activiti工作流管理"><a href="#一、Activiti工作流管理" class="headerlink" title="一、Activiti工作流管理"></a>一、Activiti工作流管理</h3><img src="/images/%E5%90%8E%E7%AB%AF%E5%B8%B8%E7%94%A8%E4%B8%9A%E5%8A%A1/image-20230308185743758.png" alt="image-20230308185743758" style="zoom:50%;">
+
+<h1 id="分布式"><a href="#分布式" class="headerlink" title="分布式"></a>分布式</h1><h2 id="分布式的主键生成方案"><a href="#分布式的主键生成方案" class="headerlink" title="分布式的主键生成方案"></a>分布式的主键生成方案</h2><h3 id="一、UUID"><a href="#一、UUID" class="headerlink" title="一、UUID"></a>一、UUID</h3><p><strong>UUID 全局甚至全球唯一，太长了，数据量比较大</strong></p>
 <h3 id="二、全局Redis"><a href="#二、全局Redis" class="headerlink" title="二、全局Redis"></a>二、全局Redis</h3><p>网络开销太大！</p>
 <h3 id="三、分布式ID生成器"><a href="#三、分布式ID生成器" class="headerlink" title="三、分布式ID生成器"></a>三、分布式ID生成器</h3><p>开源的推特的snowflake(雪花算法) </p>
-<h2 id="分布式无状态的权限管理"><a href="#分布式无状态的权限管理" class="headerlink" title="分布式无状态的权限管理"></a>分布式无状态的权限管理</h2><h2 id="有状态的用户登录管理"><a href="#有状态的用户登录管理" class="headerlink" title="有状态的用户登录管理"></a>有状态的用户登录管理</h2><h2 id="短信验证码和随机验证码"><a href="#短信验证码和随机验证码" class="headerlink" title="短信验证码和随机验证码"></a>短信验证码和随机验证码</h2><h2 id="百万级数据量Excel导入导出及优化"><a href="#百万级数据量Excel导入导出及优化" class="headerlink" title="百万级数据量Excel导入导出及优化"></a>百万级数据量Excel导入导出及优化</h2><h2 id="PDF的导出与生成"><a href="#PDF的导出与生成" class="headerlink" title="PDF的导出与生成"></a>PDF的导出与生成</h2><h2 id="文件的上传和存储"><a href="#文件的上传和存储" class="headerlink" title="文件的上传和存储"></a>文件的上传和存储</h2><h2 id="自定义代码生成器CRUD"><a href="#自定义代码生成器CRUD" class="headerlink" title="自定义代码生成器CRUD"></a>自定义代码生成器CRUD</h2><h2 id="工作流管理"><a href="#工作流管理" class="headerlink" title="工作流管理"></a>工作流管理</h2><h3 id="一、Activiti工作流管理"><a href="#一、Activiti工作流管理" class="headerlink" title="一、Activiti工作流管理"></a>一、Activiti工作流管理</h3><img src="/images/%E5%90%8E%E7%AB%AF%E5%B8%B8%E7%94%A8%E4%B8%9A%E5%8A%A1/image-20230308185743758.png" alt="image-20230308185743758" style="zoom:50%;">
-
-
+<h2 id="分布式无状态的权限管理"><a href="#分布式无状态的权限管理" class="headerlink" title="分布式无状态的权限管理"></a>分布式无状态的权限管理</h2><h2 id="有状态的用户登录管理"><a href="#有状态的用户登录管理" class="headerlink" title="有状态的用户登录管理"></a>有状态的用户登录管理</h2>
                 
             </div>
             <hr/>
@@ -1177,7 +1177,7 @@
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">168k</span>
+                        class="white-color">177.5k</span>
             
             
             

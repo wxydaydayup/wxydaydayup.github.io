@@ -669,7 +669,7 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
 			cur<span class="token operator">-&gt;</span>next <span class="token operator">=</span> cur<span class="token operator">-&gt;</span>next<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
 			tmp<span class="token operator">-&gt;</span>next <span class="token operator">=</span> pre<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
 			pre<span class="token operator">-&gt;</span>next <span class="token operator">=</span> tmp<span class="token punctuation">;</span>
-		<span class="token punctuation">}</span> 
+		<span class="token punctuation">}</span>
 		<span class="token keyword">return</span> pre<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -710,7 +710,7 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
 返回值：{1,4,3,2,5}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>和之前同样的思路，只不过是记忆了修改之前的位置</p>
-<img src="/images/%E7%AE%97%E6%B3%95-%E9%93%BE%E8%A1%A8%E4%B8%93%E9%A2%98/E8EC98F7B78A51A486D13CD1BA319199.jpg" alt="E8EC98F7B78A51A486D13CD1BA319199" style="zoom: 25%;">
+<img src="/images/%E7%AE%97%E6%B3%95-%E9%93%BE%E8%A1%A8%E4%B8%93%E9%A2%98/E8EC98F7B78A51A486D13CD1BA319199.jpg" alt="E8EC98F7B78A51A486D13CD1BA319199" style="zoom: 150%;">
 
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>    
@@ -737,7 +737,7 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>换了一种思路</p>
-<img src="/images/%E7%AE%97%E6%B3%95-%E9%93%BE%E8%A1%A8%E4%B8%93%E9%A2%98/9807F6A5F8976BE8D9FFD7E353AE1208.jpg" alt="第二种思路" style="zoom: 25%;">
+<img src="/images/%E7%AE%97%E6%B3%95-%E9%93%BE%E8%A1%A8%E4%B8%93%E9%A2%98/9807F6A5F8976BE8D9FFD7E353AE1208.jpg" alt="第二种思路" style="zoom: 33%;">
 
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
@@ -820,11 +820,10 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
 <h4 id="解题思路-5"><a href="#解题思路-5" class="headerlink" title="解题思路"></a>解题思路</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>   
 	ListNode<span class="token operator">*</span> <span class="token function">oddEvenList</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment">// write code here</span>
         <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>head<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span>
-        ListNode <span class="token operator">*</span>evenHead <span class="token operator">=</span> head<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+        ListNode<span class="token operator">*</span> evenHead <span class="token operator">=</span> head<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
         ListNode<span class="token operator">*</span> old <span class="token operator">=</span> head<span class="token punctuation">,</span> <span class="token operator">*</span>even <span class="token operator">=</span> evenHead<span class="token punctuation">;</span>
-        <span class="token keyword">while</span><span class="token punctuation">(</span>even <span class="token operator">&amp;&amp;</span> even<span class="token operator">-&gt;</span>next<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token number">1</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>even <span class="token operator">&amp;&amp;</span> even<span class="token operator">-&gt;</span>next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
             old<span class="token operator">-&gt;</span>next <span class="token operator">=</span> even<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
             old <span class="token operator">=</span> old<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
             even<span class="token operator">-&gt;</span>next <span class="token operator">=</span> old<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
@@ -833,7 +832,7 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
         old<span class="token operator">-&gt;</span>next <span class="token operator">=</span> evenHead<span class="token punctuation">;</span>
         <span class="token keyword">return</span> head<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 <h3 id="回文链表"><a href="#回文链表" class="headerlink" title="回文链表"></a>回文链表</h3><h4 id="相关链接-6"><a href="#相关链接-6" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
@@ -855,7 +854,7 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
         <span class="token keyword">auto</span> half <span class="token operator">=</span> <span class="token function">halfList</span><span class="token punctuation">(</span>head<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">auto</span> rev <span class="token operator">=</span> <span class="token function">reverseList</span><span class="token punctuation">(</span>half<span class="token operator">-&gt;</span>next<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">auto</span> p <span class="token operator">=</span> rev<span class="token punctuation">;</span>
-        <span class="token keyword">while</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token punctuation">{</span>
             <span class="token keyword">if</span><span class="token punctuation">(</span>p<span class="token operator">-&gt;</span>val <span class="token operator">!=</span> head<span class="token operator">-&gt;</span>val<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
             p <span class="token operator">=</span> p<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
             head <span class="token operator">=</span> head<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
@@ -907,7 +906,7 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
             <span class="token keyword">if</span><span class="token punctuation">(</span>cur<span class="token operator">-&gt;</span>next<span class="token operator">-&gt;</span>val <span class="token operator">==</span> val<span class="token punctuation">)</span> cur<span class="token operator">-&gt;</span>next <span class="token operator">=</span> cur<span class="token operator">-&gt;</span>next<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
             <span class="token keyword">else</span> cur <span class="token operator">=</span> cur<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
         <span class="token punctuation">}</span> 
-        head <span class="token operator">=</span> dummyHead<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+        head <span class="token operator">=</span> dummyHead<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span><span class="token comment">//防止删除的是原来的头节点</span>
         <span class="token keyword">delete</span> dummyHead<span class="token punctuation">;</span>
         <span class="token keyword">return</span> head<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
@@ -959,15 +958,15 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>链表中倒数最后k个结点</p>
+<p>返回链表中倒数最后k个结点</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">ListNode<span class="token operator">*</span> <span class="token function">FindKthToTail</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> pHead<span class="token punctuation">,</span> <span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>pHead<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span>
     <span class="token keyword">auto</span> fast <span class="token operator">=</span> pHead<span class="token punctuation">,</span> slow <span class="token operator">=</span> pHead<span class="token punctuation">;</span>
     <span class="token keyword">while</span><span class="token punctuation">(</span>fast <span class="token operator">&amp;&amp;</span> k<span class="token operator">--</span><span class="token punctuation">)</span> fast <span class="token operator">=</span> fast<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
     <span class="token keyword">if</span><span class="token punctuation">(</span>k <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span><span class="token comment">//尤其需要注意这一点</span>
     <span class="token keyword">while</span><span class="token punctuation">(</span>fast<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    fast <span class="token operator">=</span> fast<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
-    slow <span class="token operator">=</span> slow<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+        fast <span class="token operator">=</span> fast<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+        slow <span class="token operator">=</span> slow<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> slow<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -1013,8 +1012,6 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
         <span class="token keyword">return</span> dummy<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
 
 <h3 id="两两交换链表中的节点"><a href="#两两交换链表中的节点" class="headerlink" title="两两交换链表中的节点"></a>两两交换链表中的节点</h3><h4 id="相关链接-11"><a href="#相关链接-11" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/swap-nodes-in-pairs/">24. 两两交换链表中的节点 </a></li>
@@ -1111,9 +1108,9 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
 <h4 id="解题思路-13"><a href="#解题思路-13" class="headerlink" title="解题思路"></a>解题思路</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
     ListNode<span class="token operator">*</span> <span class="token function">mergeTwoLists</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> list1<span class="token punctuation">,</span> ListNode<span class="token operator">*</span> list2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">!</span>list1<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token punctuation">(</span><span class="token operator">!</span>list2<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> list1 <span class="token operator">?</span> list1 <span class="token operator">:</span> list2<span class="token punctuation">;</span>
-        ListNode<span class="token operator">*</span> head <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">ListNode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        ListNode<span class="token operator">*</span> tail <span class="token operator">=</span> head<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>list1 <span class="token operator">||</span> <span class="token operator">!</span>list2<span class="token punctuation">)</span> <span class="token keyword">return</span> list1 <span class="token operator">?</span> list1 <span class="token operator">:</span> list2<span class="token punctuation">;</span>
+        ListNode<span class="token operator">*</span> dummy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">ListNode</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ListNode<span class="token operator">*</span> tail <span class="token operator">=</span> dummy<span class="token punctuation">;</span>
         ListNode<span class="token operator">*</span> a <span class="token operator">=</span> list1<span class="token punctuation">,</span><span class="token operator">*</span> b <span class="token operator">=</span> list2<span class="token punctuation">;</span><span class="token comment">//可以不声明</span>
         <span class="token keyword">while</span><span class="token punctuation">(</span>a <span class="token operator">&amp;&amp;</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
             <span class="token keyword">if</span><span class="token punctuation">(</span>a<span class="token operator">-&gt;</span>val <span class="token operator">&lt;</span> b<span class="token operator">-&gt;</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1125,8 +1122,8 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
             <span class="token punctuation">}</span>
             tail <span class="token operator">=</span> tail<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-        tail<span class="token operator">-&gt;</span>next <span class="token operator">=</span> <span class="token punctuation">(</span>a <span class="token operator">?</span> a <span class="token operator">:</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> head<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+        tail<span class="token operator">-&gt;</span>next <span class="token operator">=</span> a <span class="token operator">?</span> a <span class="token operator">:</span> b<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> dummy<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
@@ -1153,18 +1150,18 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
     ListNode<span class="token operator">*</span> <span class="token function">mergeTwoLists</span><span class="token punctuation">(</span>ListNode <span class="token operator">*</span>a<span class="token punctuation">,</span> ListNode <span class="token operator">*</span>b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">!</span>a<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token punctuation">(</span><span class="token operator">!</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> a <span class="token operator">?</span> a <span class="token operator">:</span> b<span class="token punctuation">;</span>
-        ListNode <span class="token operator">*</span>head <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">ListNode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">*</span>tail <span class="token operator">=</span> head<span class="token punctuation">,</span> <span class="token operator">*</span>aPtr <span class="token operator">=</span> a<span class="token punctuation">,</span> <span class="token operator">*</span>bPtr <span class="token operator">=</span> b<span class="token punctuation">;</span>
-        <span class="token keyword">while</span> <span class="token punctuation">(</span>aPtr <span class="token operator">&amp;&amp;</span> bPtr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>aPtr<span class="token operator">-&gt;</span>val <span class="token operator">&lt;</span> bPtr<span class="token operator">-&gt;</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                tail<span class="token operator">-&gt;</span>next <span class="token operator">=</span> aPtr<span class="token punctuation">;</span> aPtr <span class="token operator">=</span> aPtr<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>a <span class="token operator">||</span> <span class="token operator">!</span>b<span class="token punctuation">)</span> <span class="token keyword">return</span> a <span class="token operator">?</span> a <span class="token operator">:</span> b<span class="token punctuation">;</span>
+        ListNode <span class="token operator">*</span>dummy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">ListNode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">*</span>tail <span class="token operator">=</span> head<span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>a <span class="token operator">&amp;&amp;</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token operator">-&gt;</span>val <span class="token operator">&lt;</span> b<span class="token operator">-&gt;</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                tail<span class="token operator">-&gt;</span>next <span class="token operator">=</span> a<span class="token punctuation">;</span> a <span class="token operator">=</span> a<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
             <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-                tail<span class="token operator">-&gt;</span>next <span class="token operator">=</span> bPtr<span class="token punctuation">;</span> bPtr <span class="token operator">=</span> bPtr<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+                tail<span class="token operator">-&gt;</span>next <span class="token operator">=</span> b<span class="token punctuation">;</span> b <span class="token operator">=</span> b<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
             <span class="token punctuation">}</span>
             tail <span class="token operator">=</span> tail<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-        tail<span class="token operator">-&gt;</span>next <span class="token operator">=</span> <span class="token punctuation">(</span>aPtr <span class="token operator">?</span> aPtr <span class="token operator">:</span> bPtr<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> head<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+        tail<span class="token operator">-&gt;</span>next <span class="token operator">=</span> <span class="token punctuation">(</span>a <span class="token operator">?</span> a <span class="token operator">:</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> dummy<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
     ListNode<span class="token operator">*</span> <span class="token function">merge</span><span class="token punctuation">(</span>vector <span class="token operator">&lt;</span>ListNode<span class="token operator">*</span><span class="token operator">&gt;</span> <span class="token operator">&amp;</span>lists<span class="token punctuation">,</span> <span class="token keyword">int</span> l<span class="token punctuation">,</span> <span class="token keyword">int</span> r<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1236,6 +1233,7 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
 <li>step 2：准备三个指针，快指针right每次走两步，慢指针mid每次走一步，前序指针left每次跟在mid前一个位置。三个指针遍历链表，当快指针到达链表尾部的时候，慢指针mid刚好走了链表的一半，正好是中间位置。</li>
 <li>step 3：从left位置将链表断开，刚好分成两个子问题开始递归</li>
 </ul>
+<p>对应例子的来说，2相当于left位置，1相当于mid位置，最后的空节点是right的位置</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
     ListNode<span class="token operator">*</span> <span class="token function">sortInList</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1250,7 +1248,7 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
         <span class="token keyword">return</span> <span class="token function">merge</span><span class="token punctuation">(</span><span class="token function">sortInList</span><span class="token punctuation">(</span>head<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">sortInList</span><span class="token punctuation">(</span>mid<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
     ListNode<span class="token operator">*</span> <span class="token function">merge</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> p1<span class="token punctuation">,</span> ListNode<span class="token operator">*</span> p2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>p1 <span class="token operator">||</span> <span class="token operator">!</span>p2<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token operator">!</span>p1 <span class="token operator">?</span> p1 <span class="token operator">:</span> p2<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>p1 <span class="token operator">||</span> <span class="token operator">!</span>p2<span class="token punctuation">)</span> <span class="token keyword">return</span> p1 <span class="token operator">?</span> p1 <span class="token operator">:</span> p2<span class="token punctuation">;</span>
         ListNode<span class="token operator">*</span> dummy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">ListNode</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         ListNode<span class="token operator">*</span> cur <span class="token operator">=</span> dummy<span class="token punctuation">;</span>
         <span class="token keyword">while</span><span class="token punctuation">(</span>p1 <span class="token operator">&amp;&amp;</span> p2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1263,7 +1261,7 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
             <span class="token punctuation">}</span>
             cur <span class="token operator">=</span> cur<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>p1 <span class="token operator">||</span> p2<span class="token punctuation">)</span> cur<span class="token operator">-&gt;</span>next <span class="token operator">=</span> p1 <span class="token operator">?</span> p1 <span class="token operator">:</span> p2<span class="token punctuation">;</span>
+        cur<span class="token operator">-&gt;</span>next <span class="token operator">=</span> p1 <span class="token operator">?</span> p1 <span class="token operator">:</span> p2<span class="token punctuation">;</span>
         <span class="token keyword">return</span> dummy<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -1350,11 +1348,11 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
     ListNode <span class="token operator">*</span><span class="token function">getIntersectionNode</span><span class="token punctuation">(</span>ListNode <span class="token operator">*</span>headA<span class="token punctuation">,</span> ListNode <span class="token operator">*</span>headB<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>headA <span class="token operator">==</span> <span class="token constant">NULL</span> <span class="token operator">||</span> headB <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>headA <span class="token operator">||</span> <span class="token operator">!</span>headB<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
         <span class="token keyword">auto</span> p1 <span class="token operator">=</span> headA<span class="token punctuation">,</span> p2 <span class="token operator">=</span> headB<span class="token punctuation">;</span>
         <span class="token keyword">while</span><span class="token punctuation">(</span>p1 <span class="token operator">!=</span> p2<span class="token punctuation">)</span><span class="token punctuation">{</span>
-            p1 <span class="token operator">=</span> p1 <span class="token operator">==</span> <span class="token constant">NULL</span> <span class="token operator">?</span> headB <span class="token operator">:</span> p1<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span> <span class="token comment">// 一定要注意，这里传入的是headB，不是p2</span>
-            p2 <span class="token operator">=</span> p2 <span class="token operator">==</span> <span class="token constant">NULL</span> <span class="token operator">?</span> headA <span class="token operator">:</span> p2<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+            p1 <span class="token operator">=</span> <span class="token operator">!</span>p1 <span class="token operator">?</span> headB <span class="token operator">:</span> p1<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span> <span class="token comment">// 一定要注意，这里传入的是headB，不是p2</span>
+            p2 <span class="token operator">=</span> <span class="token operator">!</span>p2 <span class="token operator">?</span> headA <span class="token operator">:</span> p2<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
         <span class="token keyword">return</span> p1<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
@@ -1404,8 +1402,6 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
         <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
 
 <h2 id="链表环问题"><a href="#链表环问题" class="headerlink" title="链表环问题"></a>链表环问题</h2><h3 id="链表中环的入口节点"><a href="#链表中环的入口节点" class="headerlink" title="链表中环的入口节点"></a>链表中环的入口节点</h3><h4 id="相关链接-18"><a href="#相关链接-18" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
 <li><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/linked-list-cycle-ii/description/">142. 环形链表 II </a></p>
@@ -2129,7 +2125,7 @@ linkedList.get(1);            //返回3<span aria-hidden="true" class="line-numb
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">168k</span>
+                        class="white-color">177.5k</span>
             
             
             

@@ -430,14 +430,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.9k
+                    6.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    20 分
+                    31 分
                 </div>
                 
 
@@ -969,6 +969,240 @@ studentMapper<span class="token punctuation">.</span><span class="token function
 <p>7、lombok注解 @Data 可以自动生成get，set方法</p>
 <p>8、导入jar包， idea右键-》Add as Libraris</p>
 <p>9、maven项目源文件java用包名.包名.包名的方式，resource用包名/包名/包名</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!doctype html&gt;
+&lt;html lang="en" xmlns:th="http://www.thymeleaf.org"&gt;
+&lt;head&gt;
+	&lt;meta charset="utf-8"&gt;
+	&lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
+	&lt;link rel="icon" href="https://static.nowcoder.com/images/logo_87_87.png"/&gt;
+	&lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous"&gt;
+	&lt;link rel="stylesheet" th:href="@{/css/global.css}" /&gt;
+	&lt;title&gt;牛客网-首页&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;	
+	&lt;div class="nk-container"&gt;
+		&lt;!-- 头部 --&gt;
+		&lt;header class="bg-dark sticky-top"&gt;
+			&lt;div class="container"&gt;
+				&lt;!-- 导航 --&gt;
+				&lt;nav class="navbar navbar-expand-lg navbar-dark"&gt;
+					&lt;!-- logo --&gt;
+					&lt;a class="navbar-brand" href="#"&gt;&lt;/a&gt;
+					&lt;button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"&gt;
+						&lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+					&lt;/button&gt;
+					&lt;!-- 功能 --&gt;
+					&lt;div class="collapse navbar-collapse" id="navbarSupportedContent"&gt;
+						&lt;ul class="navbar-nav mr-auto"&gt;
+							&lt;li class="nav-item ml-3 btn-group-vertical"&gt;
+								&lt;a class="nav-link" href="index.html"&gt;首页&lt;/a&gt;
+							&lt;/li&gt;
+							&lt;li class="nav-item ml-3 btn-group-vertical"&gt;
+								&lt;a class="nav-link position-relative" href="site/letter.html"&gt;消息&lt;span class="badge badge-danger"&gt;12&lt;/span&gt;&lt;/a&gt;
+							&lt;/li&gt;
+							&lt;li class="nav-item ml-3 btn-group-vertical"&gt;
+								&lt;a class="nav-link" href="site/register.html"&gt;注册&lt;/a&gt;
+							&lt;/li&gt;
+							&lt;li class="nav-item ml-3 btn-group-vertical"&gt;
+								&lt;a class="nav-link" href="site/login.html"&gt;登录&lt;/a&gt;
+							&lt;/li&gt;
+							&lt;li class="nav-item ml-3 btn-group-vertical dropdown"&gt;
+								&lt;a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"&gt;
+									&lt;img src="http://images.nowcoder.com/head/1t.png" class="rounded-circle" style="width:30px;"/&gt;
+								&lt;/a&gt;
+								&lt;div class="dropdown-menu" aria-labelledby="navbarDropdown"&gt;
+									&lt;a class="dropdown-item text-center" href="site/profile.html"&gt;个人主页&lt;/a&gt;
+									&lt;a class="dropdown-item text-center" href="site/setting.html"&gt;账号设置&lt;/a&gt;
+									&lt;a class="dropdown-item text-center" href="site/login.html"&gt;退出登录&lt;/a&gt;
+									&lt;div class="dropdown-divider"&gt;&lt;/div&gt;
+									&lt;span class="dropdown-item text-center text-secondary"&gt;nowcoder&lt;/span&gt;
+								&lt;/div&gt;
+							&lt;/li&gt;
+						&lt;/ul&gt;
+						&lt;!-- 搜索 --&gt;
+						&lt;form class="form-inline my-2 my-lg-0" action="site/search.html"&gt;
+							&lt;input class="form-control mr-sm-2" type="search" aria-label="Search" /&gt;
+							&lt;button class="btn btn-outline-light my-2 my-sm-0" type="submit"&gt;搜索&lt;/button&gt;
+						&lt;/form&gt;
+					&lt;/div&gt;
+				&lt;/nav&gt;
+			&lt;/div&gt;
+		&lt;/header&gt;
+ 
+		&lt;!-- 内容 --&gt;
+		&lt;div class="main"&gt;
+			&lt;div class="container"&gt;
+				&lt;div class="position-relative"&gt;
+					&lt;!-- 筛选条件 --&gt;
+					&lt;ul class="nav nav-tabs mb-3"&gt;
+						&lt;li class="nav-item"&gt;
+							&lt;a class="nav-link active" href="#"&gt;最新&lt;/a&gt;
+						&lt;/li&gt;
+						&lt;li class="nav-item"&gt;
+							&lt;a class="nav-link" href="#"&gt;最热&lt;/a&gt;
+						&lt;/li&gt;
+					&lt;/ul&gt;
+					&lt;button type="button" class="btn btn-primary btn-sm position-absolute rt-0" data-toggle="modal" data-target="#publishModal"&gt;我要发布&lt;/button&gt;
+				&lt;/div&gt;
+				&lt;!-- 弹出框 --&gt;
+				&lt;div class="modal fade" id="publishModal" tabindex="-1" role="dialog" aria-labelledby="publishModalLabel" aria-hidden="true"&gt;
+					&lt;div class="modal-dialog modal-lg" role="document"&gt;
+						&lt;div class="modal-content"&gt;
+							&lt;div class="modal-header"&gt;
+								&lt;h5 class="modal-title" id="publishModalLabel"&gt;新帖发布&lt;/h5&gt;
+								&lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;
+									&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;
+								&lt;/button&gt;
+							&lt;/div&gt;
+							&lt;div class="modal-body"&gt;
+								&lt;form&gt;
+									&lt;div class="form-group"&gt;
+										&lt;label for="recipient-name" class="col-form-label"&gt;标题：&lt;/label&gt;
+										&lt;input type="text" class="form-control" id="recipient-name"&gt;
+									&lt;/div&gt;
+									&lt;div class="form-group"&gt;
+										&lt;label for="message-text" class="col-form-label"&gt;正文：&lt;/label&gt;
+										&lt;textarea class="form-control" id="message-text" rows="15"&gt;&lt;/textarea&gt;
+									&lt;/div&gt;
+								&lt;/form&gt;
+							&lt;/div&gt;
+							&lt;div class="modal-footer"&gt;
+								&lt;button type="button" class="btn btn-secondary" data-dismiss="modal"&gt;取消&lt;/button&gt;
+								&lt;button type="button" class="btn btn-primary" id="publishBtn"&gt;发布&lt;/button&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;!-- 提示框 --&gt;
+				&lt;div class="modal fade" id="hintModal" tabindex="-1" role="dialog" aria-labelledby="hintModalLabel" aria-hidden="true"&gt;
+					&lt;div class="modal-dialog modal-lg" role="document"&gt;
+						&lt;div class="modal-content"&gt;
+							&lt;div class="modal-header"&gt;
+								&lt;h5 class="modal-title" id="hintModalLabel"&gt;提示&lt;/h5&gt;
+							&lt;/div&gt;
+							&lt;div class="modal-body" id="hintBody"&gt;
+								发布完毕!
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+				
+				&lt;!-- 帖子列表 --&gt;
+				&lt;ul class="list-unstyled"&gt;
+					&lt;li class="media pb-3 pt-3 mb-3 border-bottom" th:each="map:${discussPosts}"&gt;
+						&lt;a href="site/profile.html"&gt;
+							&lt;img th:src="${map.user.headerUrl}" class="mr-4 rounded-circle" alt="用户头像" style="width:50px;height:50px;"&gt;
+						&lt;/a&gt;
+						&lt;div class="media-body"&gt;
+							&lt;h6 class="mt-0 mb-3"&gt;
+								&lt;a href="#" th:utext="${map.post.title}"&gt;备战春招，面试刷题跟他复习，一个月全搞定！&lt;/a&gt;
+								&lt;span class="badge badge-secondary bg-primary" th:if="${map.post.type==1}"&gt;置顶&lt;/span&gt;
+								&lt;span class="badge badge-secondary bg-danger" th:if="${map.post.status==1}"&gt;精华&lt;/span&gt;
+							&lt;/h6&gt;
+							&lt;div class="text-muted font-size-12"&gt;
+								&lt;u class="mr-3" th:utext="${map.user.username}"&gt;寒江雪&lt;/u&gt; 发布于 &lt;b th:text="${#dates.format(map.post.createTime,'yyyy-MM-dd HH:mm:ss')}"&gt;2019-04-15 15:32:18&lt;/b&gt;
+								&lt;ul class="d-inline float-right"&gt;
+									&lt;li class="d-inline ml-2"&gt;赞 11&lt;/li&gt;
+									&lt;li class="d-inline ml-2"&gt;|&lt;/li&gt;
+									&lt;li class="d-inline ml-2"&gt;回帖 7&lt;/li&gt;
+								&lt;/ul&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;						
+					&lt;/li&gt;
+				&lt;/ul&gt;
+				&lt;!-- 分页 --&gt;
+				&lt;nav class="mt-5" th:if="${page.rows&gt;0}"&gt;
+					&lt;ul class="pagination justify-content-center"&gt;
+						&lt;li class="page-item"&gt;
+							&lt;a class="page-link" th:href="@{${page.path}(current=1)}"&gt;首页&lt;/a&gt;
+						&lt;/li&gt;
+						&lt;li th:class="|page-item ${page.current==1?'disabled':''}|"&gt;
+							&lt;a class="page-link" th:href="@{${page.path}(current=${page.current-1})}"&gt;上一页&lt;/a&gt;&lt;/li&gt;
+						&lt;li th:class="|page-item ${i==page.current?'active':''}|" th:each="i:${#numbers.sequence(page.from,page.to)}"&gt;
+							&lt;a class="page-link" href="#" th:text="${i}"&gt;1&lt;/a&gt;
+						&lt;/li&gt;
+						&lt;li th:class="|page-item ${page.current==page.total?'disabled':''}|"&gt;
+							&lt;a class="page-link" th:href="@{${page.path}(current=${page.current+1})}"&gt;下一页&lt;/a&gt;
+						&lt;/li&gt;
+						&lt;li class="page-item"&gt;
+							&lt;a class="page-link" th:href="@{${page.path}(current=${page.total})}"&gt;末页&lt;/a&gt;
+						&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/nav&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+ 
+		&lt;!-- 尾部 --&gt;
+		&lt;footer class="bg-dark"&gt;
+			&lt;div class="container"&gt;
+				&lt;div class="row"&gt;
+					&lt;!-- 二维码 --&gt;
+					&lt;div class="col-4 qrcode"&gt;
+						&lt;img src="https://uploadfiles.nowcoder.com/app/app_download.png" class="img-thumbnail" style="width:136px;" /&gt;
+					&lt;/div&gt;
+					&lt;!-- 公司信息 --&gt;
+					&lt;div class="col-8 detail-info"&gt;
+						&lt;div class="row"&gt;
+							&lt;div class="col"&gt;
+								&lt;ul class="nav"&gt;
+									&lt;li class="nav-item"&gt;
+										&lt;a class="nav-link text-light" href="#"&gt;关于我们&lt;/a&gt;
+									&lt;/li&gt;
+									&lt;li class="nav-item"&gt;
+										&lt;a class="nav-link text-light" href="#"&gt;加入我们&lt;/a&gt;
+									&lt;/li&gt;
+									&lt;li class="nav-item"&gt;
+										&lt;a class="nav-link text-light" href="#"&gt;意见反馈&lt;/a&gt;
+									&lt;/li&gt;
+									&lt;li class="nav-item"&gt;
+										&lt;a class="nav-link text-light" href="#"&gt;企业服务&lt;/a&gt;
+									&lt;/li&gt;
+									&lt;li class="nav-item"&gt;
+										&lt;a class="nav-link text-light" href="#"&gt;联系我们&lt;/a&gt;
+									&lt;/li&gt;
+									&lt;li class="nav-item"&gt;
+										&lt;a class="nav-link text-light" href="#"&gt;免责声明&lt;/a&gt;
+									&lt;/li&gt;
+									&lt;li class="nav-item"&gt;
+										&lt;a class="nav-link text-light" href="#"&gt;友情链接&lt;/a&gt;
+									&lt;/li&gt;
+								&lt;/ul&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+						&lt;div class="row"&gt;
+							&lt;div class="col"&gt;
+								&lt;ul class="nav btn-group-vertical company-info"&gt;
+									&lt;li class="nav-item text-white-50"&gt;
+										公司地址：北京市朝阳区大屯路东金泉时代3-2708北京牛客科技有限公司
+									&lt;/li&gt;
+									&lt;li class="nav-item text-white-50"&gt;
+										联系方式：010-60728802(电话)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;admin@nowcoder.com
+									&lt;/li&gt;
+									&lt;li class="nav-item text-white-50"&gt;
+										牛客科技©2018 All rights reserved
+									&lt;/li&gt;
+									&lt;li class="nav-item text-white-50"&gt;
+										京ICP备14055008号-4 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+										&lt;img src="http://static.nowcoder.com/company/images/res/ghs.png" style="width:18px;" /&gt;
+										京公网安备 11010502036488号
+									&lt;/li&gt;
+								&lt;/ul&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/footer&gt;
+	&lt;/div&gt;
+ 
+	&lt;script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;
+	&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;
+	&lt;script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;
+	&lt;script th:src="@{/js/global.js}"&gt;&lt;/script&gt;
+	&lt;script th:src="@{js/index.js}"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -1611,7 +1845,7 @@ studentMapper<span class="token punctuation">.</span><span class="token function
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">168k</span>
+                        class="white-color">177.5k</span>
             
             
             

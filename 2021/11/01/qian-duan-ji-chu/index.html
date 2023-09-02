@@ -430,14 +430,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.2k
+                    3.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    13 分
                 </div>
                 
 
@@ -601,12 +601,14 @@ eg: <span class="token tag"><span class="token tag"><span class="token punctuati
         <span class="token selector">.css选择器的名字</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
         <span class="token comment">/* 3. 标签选择器，通过标签名进行标签的选择*/</span>
         <span class="token selector">p</span><span class="token punctuation">{</span><span class="token property">width</span><span class="token punctuation">:</span>100px<span class="token punctuation">}</span>
+        <span class="token selector">div</span><span class="token punctuation">{</span><span class="token punctuation">}</span>...
     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="3、外部样式"><a href="#3、外部样式" class="headerlink" title="3、外部样式"></a>3、外部样式</h4><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>css文件的路径<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="二、常用CSS的样式"><a href="#二、常用CSS的样式" class="headerlink" title="二、常用CSS的样式"></a>二、常用CSS的样式</h3><pre class="line-numbers language-css" data-language="css"><code class="language-css">宽 <span class="token property">width</span><span class="token punctuation">:</span>100px<span class="token punctuation">;</span>
+<h3 id="二、常用CSS的样式"><a href="#二、常用CSS的样式" class="headerlink" title="二、常用CSS的样式"></a>二、常用CSS的样式</h3><h4 id="1、基础样式"><a href="#1、基础样式" class="headerlink" title="1、基础样式"></a>1、基础样式</h4><p><strong>字体</strong></p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css">宽 <span class="token property">width</span><span class="token punctuation">:</span>100px<span class="token punctuation">;</span>
 高 <span class="token property">height</span><span class="token punctuation">:</span>100px<span class="token punctuation">;</span>
 圆角 <span class="token property">border-radius</span><span class="token punctuation">:</span>30px<span class="token punctuation">;</span>
 字体 <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"黑体"</span><span class="token punctuation">;</span>
@@ -623,6 +625,86 @@ CSS的定位
 相对定位 <span class="token property">position</span><span class="token punctuation">:</span>relative<span class="token punctuation">;</span>
 浮动定位 <span class="token property">position</span><span class="token punctuation">:</span>fixed<span class="token punctuation">;</span>	不受滚动条的影响，一直可以显示<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<p><strong>颜色</strong></p>
+<p>电脑里的颜色表示方式</p>
+<p>颜色名：英文单词，纯色</p>
+<ul>
+<li>rgb(0-255，0-255，0-255) rgba加了个透明度</li>
+<li>#六位数：#FF0000<br>#000000</li>
+<li>hsl 色相—颜色，饱和度，亮度（0-120，50%，50%） hsla<br>加了个透明度</li>
+</ul>
+<h4 id="2、布局样式"><a href="#2、布局样式" class="headerlink" title="2、布局样式"></a>2、布局样式</h4><p><strong>框模型</strong>：主要讲的是一个元素占多大的空间</p>
+<ul>
+<li>content 内容区：有放内容的区域<br>默认内容区大小不同元素也不一样</li>
+<li>padding 内边距：内容区和内边框线之间的距离<br>内边距共享背景</li>
+<li>border 边框</li>
+<li>margin 外边距：变量之外要占的距离<br>外边距透明的</li>
+</ul>
+<p>元素大小的计算方式<br>内容区+内边距+边框+外边距</p>
+<p>box-sizing:</p>
+<ul>
+<li>content-box<br>内边距和边框的改变会影响整体大小</li>
+<li>border-box<br>内边距和边框的改变不会影响整体大小</li>
+</ul>
+<hr>
+<p><strong>框类型</strong> display</p>
+<ul>
+<li>none 什么都没有，但只是隐藏，仍然存在，元素没有大小，带来的表面效果是隐藏效果</li>
+<li>inline 行内元素，内联元素，宽高（width和height)不生效，前后没有换行效果</li>
+<li>block<br>块级元素，宽高生效，前后有换行效果</li>
+<li>inline-block<br>行内块元素，宽高生效，前后没有换行效果</li>
+</ul>
+<p>一行多列解决方法</p>
+<ul>
+<li>inline-block Bug:  1、有缝隙 2、往下掉</li>
+<li>嵌套子元素</li>
+<li>浮动布局 Bug: 父元素需要撑开 需要设置 overflow: hidden;</li>
+<li>直接使用flex布局 display: flex; justify-content: space-between</li>
+</ul>
+<p><strong>浮动布局</strong></p>
+<p>float：</p>
+<ul>
+<li>属性：left<br>right</li>
+<li>让一个元素浮动到他的父元素的某一侧，浮动的元素会脱离正常的文档流，进入浮动流</li>
+<li>表面现象，让出原来的位置</li>
+<li>要解决的问题<br>浮动元素不撑开父元素的高度  加overflow: hidden;可以解决，即让父元素成为<strong>BFC</strong></li>
+</ul>
+<p>clear：清除其他元素浮给自己带来的影响 属性有<br>left<br>right<br>both</p>
+<p>浮动容易出现的问题，浮动卡住 </p>
+<p><u>BFC</u></p>
+<p><code>BFC</code> 全称：<code>Block Formatting Context</code>， 名为 “块级格式化上下文”。</p>
+<p><code>W3C</code>官方解释为：<code>BFC</code>它决定了元素如何对其内容进行定位，以及与其它元素的关系和相互作用，当涉及到可视化布局时，<code>Block Formatting Context</code>提供了一个环境，<code>HTML</code>在这个环境中按照一定的规则进行布局。</p>
+<p>简单来说就是，<code>BFC</code>是一个完全独立的空间（布局环境），让空间里的子元素不会影响到外面的布局。那么怎么使用<code>BFC</code>呢，<code>BFC</code>可以看做是一个<code>CSS</code>元素属性</p>
+<p><u>怎样触发BFC</u></p>
+<p>这里简单列举几个触发<code>BFC</code>使用的<code>CSS</code>属性</p>
+<ul>
+<li>overflow: hidden</li>
+<li>display: inline-block</li>
+<li>position: absolute</li>
+<li>position: fixed</li>
+<li>display: table-cell</li>
+<li>display: flex</li>
+</ul>
+<p><u>BFC的规则</u></p>
+<ul>
+<li><code>BFC</code>就是一个块级元素，块级元素会在垂直方向一个接一个的排列</li>
+<li><code>BFC</code>就是页面中的一个隔离的独立容器，容器里的标签不会影响到外部标签</li>
+<li>垂直方向的距离由margin决定， 属于同一个<code>BFC</code>的两个相邻的标签外边距会发生重叠</li>
+<li>计算<code>BFC</code>的高度时，浮动元素也参与计算</li>
+</ul>
+<p><strong>弹性布局</strong></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://ruanyifeng.com/blog/2015/07/flex-grammar.html">Flex 布局教程：语法篇 - 阮一峰</a></p>
+</blockquote>
+<p><strong>定位</strong></p>
+<p>position 决定元素的定位方式</p>
+<ul>
+<li>static：默认值，静态定位，没有定位</li>
+<li>relative：相对定位，相对于自己原来的位置定位，不脱离文档流   <strong>适合做一些微调的，实在没办法了用它</strong></li>
+<li>absolute：绝对定位，最近一层的非static定位的父元素的边沿为参照物 <strong>适合做一些遮罩层，显示按钮，右上角广告等</strong></li>
+<li>fixed：固定定位，参照物为浏览器边沿，会脱离文档流<br><strong>例如淘宝的右侧菜单或顶部菜单</strong></li>
+</ul>
+<p>left、right、top、bottom<br>left表示距离参照物的左侧有多远<br>会脱离文档流</p>
 <h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><h3 id="一、基本语法"><a href="#一、基本语法" class="headerlink" title="一、基本语法"></a>一、基本语法</h3><h4 id="1、数据类型"><a href="#1、数据类型" class="headerlink" title="1、数据类型"></a>1、数据类型</h4><p>JavaScript:解释型，弱类型，变量定义后数据类型可以更改 </p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
     <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span>
@@ -634,7 +716,7 @@ CSS的定位
 
 <h4 id="2、方法的定义"><a href="#2、方法的定义" class="headerlink" title="2、方法的定义"></a>2、方法的定义</h4><p>JavaScript方法的定义</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//第 1 种写法，不需要写数据类型</span>
-<span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span>b</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
 	<span class="token keyword">return</span> <span class="token punctuation">(</span>a <span class="token operator">+</span> b<span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
 <span class="token comment">//第 2 种写法</span>
@@ -709,13 +791,39 @@ arr<span class="token punctuation">.</span><span class="token function">splice</
     <span class="token keyword">return</span> a<span class="token operator">+</span>b
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="二、DOM节点"><a href="#二、DOM节点" class="headerlink" title="二、DOM节点"></a>二、DOM节点</h3><h4 id="1、JavaScript-中获取HTML标签"><a href="#1、JavaScript-中获取HTML标签" class="headerlink" title="1、JavaScript 中获取HTML标签"></a>1、JavaScript 中获取HTML标签</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token punctuation">)</span>：根据id获取节点，传入id值，获取节点对象
+<h3 id="二、DOM节点"><a href="#二、DOM节点" class="headerlink" title="二、DOM节点"></a>二、DOM节点</h3><h4 id="1、JavaScript-中获取HTML标签"><a href="#1、JavaScript-中获取HTML标签" class="headerlink" title="1、JavaScript 中获取HTML标签"></a>1、JavaScript 中获取HTML标签</h4><p><strong>htmldom</strong></p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token punctuation">)</span>：根据id获取节点，传入id值，获取节点对象
 document<span class="token punctuation">.</span><span class="token function">getElementsByName</span><span class="token punctuation">(</span><span class="token punctuation">)</span>：根据name属性获取节点，传入name属性，获取节点集合、数组
 document<span class="token punctuation">.</span><span class="token function">getElementsByClassName</span><span class="token punctuation">(</span><span class="token punctuation">)</span>：根据<span class="token keyword">class</span>获取节点，传入<span class="token keyword">class</span>的值，获取节点集合、数组
 document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token punctuation">)</span>：根据标签名获取节点，传入标签名的值，获取节点集合、数组
-document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token punctuation">)</span>：根据类似于css选择器的东西获取，传入字符串形式的选择器，获取节点对象
-document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span>：根据类似于css选择器的东西获取，传入字符串形式的选择器，获取节点集合<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token punctuation">)</span>：根据类似于css选择器的东西获取，传入字符串形式的选择器，获取节点对象
+document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span>：根据类似于css选择器的东西获取，传入字符串形式的选择器，获取节点集合<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>htmldom</strong>特点：</p>
+<ol>
+<li><p>属性名跟关键字冲突会变个名字</p>
+</li>
+<li><p>遇到带-的，-去掉，-后面的第一个字母大写</p>
+</li>
+<li><p>操作不了自定义属性</p>
+</li>
+<li><p>操作一些”特殊属性”的时候，值”不一致”，例如checked属性，htmldom获取到的时候true和false</p>
+</li>
+</ol>
+<p><strong>w3cdom</strong>，一般遇到自定义属性才用<strong>w3cdom</strong></p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">a<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">'href'</span><span class="token punctuation">,</span><span class="token string">'slkfg'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+a<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">'href'</span><span class="token punctuation">)</span>
+<span class="token function">removeAttribute</span><span class="token punctuation">(</span><span class="token string">'href'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>w3cdom</strong>特点：</p>
+<ol>
+<li>不存在关踺字冲突问题</li>
+<li>遇到带一的直接写</li>
+<li>能操作自定义属性</li>
+<li>所有属性都是看得见的那个值</li>
+<li>获取不到看不到的属性例如input输入的内容，但是html可以</li>
+</ol>
 <h4 id="2、dom节点设置标签值"><a href="#2、dom节点设置标签值" class="headerlink" title="2、dom节点设置标签值"></a>2、dom节点设置标签值</h4><p>dom节点的设置标签值</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> elementById <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 elementById<span class="token punctuation">.</span>innerText <span class="token operator">=</span> <span class="token string">"js设置的文本"</span>
@@ -1448,7 +1556,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">168k</span>
+                        class="white-color">177.5k</span>
             
             
             

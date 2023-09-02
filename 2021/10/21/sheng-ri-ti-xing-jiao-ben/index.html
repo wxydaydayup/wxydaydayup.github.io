@@ -430,14 +430,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.3k
+                    2.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    11 分
                 </div>
                 
 
@@ -778,7 +778,8 @@ conda info -e<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
 </ol>
 <pre class="line-numbers language-text" data-language="text"><code class="language-text">conda create -n your_env_name python=x.x
 
-conda create -n PSDWEB37 python=3.7<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+conda create -n wangxinyi python=3.6
+conda create -n PSDWEB37 python=3.7<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>anaconda命令创建python版本为x.x，名字为your_env_name的虚拟环境。</p>
 <p><strong>your_env_name文件可以在Anaconda安装目录envs文件下找到</strong>。</p>
@@ -830,6 +831,17 @@ import torch
 print(torch.cuda.is_available())
 ctrl+z退出<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
+<p>13.改环境的名字</p>
+<p><strong>已有方法  通过克隆一个新环境，并删除旧环境达到更名的目的</strong></p>
+<p>如题，目前网络上网络的方法都是先使用–clone命令复制一份老环境，然后改名并删除老环境，如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">conda create --name newName（新环境名） --clone oldName（旧环境名）
+conda remove --name oldName（旧环境名） --all <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>改进后的方法（1秒搞定）</strong></p>
+<p>查询到目前电脑上存在的虚拟环境及其绝对路径 ：conda info –envs</p>
+<p>虚拟环境更名：如我这边需要对detectron2进行更名，那么找到detectron2对应的文件夹，直接将文件夹名称修改为任意你想要修改的名字即可！如我这边将detectron2修改为change_name：</p>
+<p>验证更名是否成功<br>        再次输入conda info –envs，可以看到虚拟环境已被成功 </p>
+<p>直接运行之前虚拟环境的程序，发现改名后的虚拟环境可以正常运行之前的程序！</p>
 <h4 id="9、Pytorch的安装"><a href="#9、Pytorch的安装" class="headerlink" title="9、Pytorch的安装"></a>9、Pytorch的安装</h4><p>在这里面 <a target="_blank" rel="noopener" href="https://download.pytorch.org/whl/torch_stable.html">全部pytorch版本</a> 手动找到要下载的版本，</p>
 <p>下载torch、torchvision、torchaudio </p>
 <ul>
@@ -1311,10 +1323,10 @@ pip install torchvision-0.4.1-cp36-cp36m-win_amd64.whl<span aria-hidden="true" c
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/10/20/suan-fa-shuang-zhi-zhen/">
+                <a href="/2021/10/20/suan-fa-tu-lun-zhuan-ti/">
                     <div class="card-image">
                         
-                        <img src="/images/homePage/%E5%8F%8C%E6%8C%87%E9%92%88.webp" class="responsive-img" alt="">
+                        <img src="/images/homePage/%E5%9B%BE%E8%AE%BA.png" class="responsive-img" alt="">
                         
                         <span class="card-title"></span>
                     </div>
@@ -1322,7 +1334,7 @@ pip install torchvision-0.4.1-cp36-cp36m-win_amd64.whl<span aria-hidden="true" c
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            算法-双指针
+                            算法-图论
                         
                     </div>
                     <div class="publish-info">
@@ -1341,8 +1353,8 @@ pip install torchvision-0.4.1-cp36-cp36m-win_amd64.whl<span aria-hidden="true" c
                                     C++
                                 </a>
                             
-                            <a href="/categories/%E7%AE%97%E6%B3%95/C/%E5%8F%8C%E6%8C%87%E9%92%88/" class="post-category">
-                                    双指针
+                            <a href="/categories/%E7%AE%97%E6%B3%95/C/%E5%9B%BE%E8%AE%BA/" class="post-category">
+                                    图论
                                 </a>
                             
                             
@@ -1360,8 +1372,8 @@ pip install torchvision-0.4.1-cp36-cp36m-win_amd64.whl<span aria-hidden="true" c
                         <span class="chip bg-color">C++</span>
                     </a>
                     
-                    <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">
-                        <span class="chip bg-color">双指针</span>
+                    <a href="/tags/%E5%9B%BE%E8%AE%BA/">
+                        <span class="chip bg-color">图论</span>
                     </a>
                     
                 </div>
@@ -1498,7 +1510,7 @@ pip install torchvision-0.4.1-cp36-cp36m-win_amd64.whl<span aria-hidden="true" c
             <br> -->
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">168k</span>
+                        class="white-color">177.5k</span>
             
             
             
