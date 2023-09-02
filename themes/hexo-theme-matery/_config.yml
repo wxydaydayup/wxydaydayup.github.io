@@ -364,16 +364,17 @@ tcaptcha:
 
 # Valine 评论模块的配置，默认为不激活，如要使用，就请激活该配置项，并设置 appId 和 appKey.
 valine:
-  enable: false
-  appId:  # 必填
-  appKey: # 必填
-  serverURLs: # 必填 https://你的api
-  notify: false
-  verify: false
-  visitor: true
-  avatar: 'mm' # Gravatar style : mm/identicon/monsterid/wavatar/retro/hide
+  enable: true
+  appId:  jJH5wa7LcWXg70RrX1mQaiH2-gzGzoHsz # 必填
+  appKey: MKhShXCMZI2bzdxRwI4sWTLL # 必填
+  serverURLs: https://jjh5wa7l.lc-cn-n1-shared.com # 必填 https://你的api
+  notify: true
+  verify: true # 是否要验证码
+  visitor: true 
+  #avatar: 'mm' # Gravatar style : mm/identicon/monsterid/wavatar/retro/hide
+  avatar: /medias/visitHead.jpg
   pageSize: 10
-  placeholder: 'just go go' # Comment Box placeholder
+  placeholder: '如果您有其他问题，可通过右下角聊天图标和我直接联系！' # Comment Box placeholder
   background: /medias/comment_bg.png
   coolpushkey: 
 
@@ -434,8 +435,8 @@ googleAnalytics:
 
 # 添加 baidu Analytics 配置
 baiduAnalytics:
-  enable: false
-  id:
+  enable: true
+  id: d9cd09f7e471719ee08b08f369233ee4
 
 # 百度搜索资源平台提交链接
 baiduPush: true

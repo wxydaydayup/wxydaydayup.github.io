@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://wxydaydayup.github.io/
+url: https://wxydaydayup.gitee.io/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -29,6 +29,7 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+- ".github/**/*"
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -91,6 +92,7 @@ pagination_dir: page
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
 include:
+- ".github/**/*"
 exclude:
 ignore:
 
@@ -103,17 +105,57 @@ theme: hexo-theme-matery
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
 - type: git
+  ignore_hidden: false # 添加这个属性值为false
   repo: git@github.com:wxydaydayup/wxydaydayup.github.io.git
   branch: main
 - type: git
+  ignore_hidden: false # 添加这个属性值为false
   repo: git@gitee.com:wxydaydayup/wxydaydayup.git
   branch: master
+- type: cjh_google_url_submitter
+- type: cjh_bing_url_submitter
+- type: cjh_baidu_url_submitter
+
 ##备份
 backup:
     type: git
     repository:
        github: git@github.com:wxydaydayup/wxydaydayup.github.io.git,source
+       
 search:
   path: search.xml
   field: post
+
+# 自动推送给搜索引擎
+hexo_submit_urls_to_search_engine:
+  submit_condition: count #链接被提交的条件，可选值：count | period 现仅支持count
+  count: 10 # 提交最新的10个链接
+  period: 900 # 提交修改时间在 900 秒内的链接
+  google: 0 # 是否向Google提交，可选值：1 | 0（0：否；1：是）
+  bing: 1 # 是否向bing提交，可选值：1 | 0（0：否；1：是）
+  baidu: 1 # 是否向baidu提交，可选值：1 | 0（0：否；1：是）
+  txt_path: submit_urls.txt ## 文本文档名， 需要推送的链接会保存在此文本文档里
+  baidu_host: https://wxydaydayup.gitee.io ## 在百度站长平台中注册的域名
+  baidu_token: SHaZ2jXBgFJenZmu ## 请注意这是您的秘钥， 所以请不要把它直接发布在公众仓库里!
+  bing_host: https://wxydaydayup.gitee.io ## 在bing站长平台中注册的域名
+  bing_token: 1683f76c303141eaa1556a4efe6b5299 ## 请注意这是您的秘钥， 所以请不要把它直接发布在公众仓库里!
+  google_host: https://wxydaydayup.gitee.io ## 在google站长平台中注册的域名
+  google_key_file: Project.json #存放google key的json文件，放于网站根目录（与hexo _config.yml文件位置相同），请不要把json文件内容直接发布在公众仓库里!
+  google_proxy: http://127.0.0.1:8080 # 向谷歌提交网址所使用的系统 http 代理，填 0 不使用
+  #replace: 0  # 是否替换链接中的部分字符串，可选值：1 | 0（0：否；1：是）
+  #find_what: https://wxydaydayup.github.io
+  #replace_with: https://cjh0613.com
+
+# 表情支持
+githubEmojis:
+  enable: true
+  className: github-emoji
+  inject: true
+  styles:
+  customEmojis:
+  
+# 中文转拼音
+permalink_pinyin:
+  enable: true
+  separator: '-' # default: '-'
   

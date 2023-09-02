@@ -159,7 +159,7 @@ Exception: dst exists: ‘/mnt/f/Ubuntu/anaconda3/share/terminfo/e/eterm’
 
 +  `\\wsl$` 
 
-<img src="/images/Linux/image-20230414195739477.png" alt="" style="zoom: 80%;" />
+<img src="/images/Linux/image-20230414195739477.png" alt="" style="zoom: 80%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
 
 
 
@@ -171,7 +171,7 @@ C:\Users\baimo\AppData\Local\Packages\
 
 CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs
 
-<img src="/images/Linux/image-20230414195755827.png" alt="" style="zoom: 80%;" />
+<img src="/images/Linux/image-20230414195755827.png" alt="" style="zoom: 80%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
 
 #### 5、查看Ubuntu的版本
 
@@ -194,7 +194,7 @@ lsb_release -a
 
 保存成 `.cmd` 或者 `.bat` 文件，使用管理员身份运行即可。
 
-```
+```cmd
 @echo off
 setlocal enabledelayedexpansion
 
@@ -226,6 +226,10 @@ pause
 至此，你可以通过 `192.168.56.100` 从 Windows 下访问 WSL2（由于 Windows 会为 WSL2 自动配置端口转发，因此也可以直接访问 localhost 访问里面的应用），通过 `192.168.56.101` 从 WSL2 访问 Windows 了。
 
 [给 WSL2 设置静态 IP 地址 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/380779630)
+
+
+
+
 
 ## Linux命令
 
@@ -294,7 +298,7 @@ docker-ce/focal 5:19.03.9~3-0~ubuntu-focal amd64
 sudo apt install docker-ce=<VERSION> docker-ce-cli=<VERSION> containerd.io
 ```
 
-3. 验证是否安装成功
+3. 验证是否安装成功（Unbunt版本）
 
 一旦安装完成，Docker 服务将会自动启动。你可以输入下面的命令，验证它：
 
@@ -312,7 +316,7 @@ sudo apt-mark hold docker-ce
 
 #### 3、docker命令
 
-+ 重启docker
++ 重启docker（CentOS版本）
 
 
 ```
@@ -392,11 +396,11 @@ sudo docker-compose logs --tail 30 -f
 
   （4）输入mysql的密码
 
-<img src="/images/Linux/image-20230320091309428.png" alt="" style="zoom:50%;" />
+<img src="/images/Linux/image-20230320091309428.png" alt="" style="zoom:50%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
 
 
 
-<img src="/images/Linux/image-20230320091446358.png" alt="" style="zoom:50%;" />
+<img src="/images/Linux/image-20230320091446358.png" alt="" style="zoom:50%;box-shadow:rgba(0,0,0,0) 0 0px 0px 0px;" />
 
 
 
